@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+// define variables for the font, and colors frequently used in the project
+font-main = 'Lato', sans-serif
+black = #252525
+white = #fff
+
+// define a mixin for button elements, to remove the default styling
+.button-reset 
+    background none 
+    border none 
+    font-family inherit 
+    color inherit 
+
+// define a mixin for anchor link elements, to remove the underline and alter the color to the chosen hue
+.anchor-links-reset 
+    text-decoration none 
+    color inherit
+
+*
+    box-sizing border-box
+    margin 0
+    padding 0
+  
+body
+    min-height 100vh
+    width 100%
+    font-family font-main
+    color black
+    background white 
+
+.container 
+    // properties for the container 
+
+    nav.navbar
+        // display the navigation bar in a single row layout, fixed at the top of the page
+        display flex 
+        align-items center
+        position fixed
+        top 0
+        left 0
+        // width 100% to extend the fixed navbar across the entirety of the div.container 
+        width 100%
+        // background white to superimpose the navigation bar on the following sections
+        background white
+        padding 0.8rem 1.2rem
+        // z-index to lay the navbar atop the rest of the page
+        z-index 10
+
+        svg.navbar__logo 
+            // include dimensions following the ratio defined by the svg itself
+            width 56px
+            height @width*0.56
+
+        span.navbar__whitespace
+            // expand the span.whitespace to push the surrounding content to the left and to the right
+            flex-grow 1
+
+        button.navbar__toggle-links
+            // extend the styles defined in the reset mixin
+            @extends .button-reset
+            height 14px
+            width 22px
+            // position relative to absolute position the nested span elements, intermittently
+            position relative
+            // display none to hide the button by default (and show it on mobile devices)
+            display none
+            
+            span 
+                // create three lines with the three span elements and position them at equal distance from each other, in the parent button
+                width 22px 
+                height 2px 
+                background black
+                position absolute
+                top 0 
+                left -3px
+                // include a transition to alter the property of left when the toggle is switched to active
+                transition left 0.2s ease
+
+                &:nth-of-type(2)
+                    top 7px
+                    left 0
+                &:nth-of-type(3)
+                    top 14px
+                    left 3px
+                    
+        div.navbar__links
+            // display the links in a row, following the pattern of the navigation bar
+            display flex 
+            align-items center
+            line-height 1.5
+            
+            a
+                // extend the style defined by the anchor link mixin
+                @extends .anchor-links-reset
+                margin 0 1rem
+                text-transform uppercase
+                // position relative to absolute the pseudo-element beneath the anchor links
+                position relative
+
+                &:before 
+                    // include a line below each anchor link, animated on hover to appear from the bottom center of each element
+                    content ''
+                    position absolute
+                    bottom -1.8px
+                    left 50%
+                    height 1.8px
+                    width 0
+                    background black + 10%
+                    transition all 0.3s ease
+
+                &:hover:before 
+                    left 0
+                    width 100%
+                    
+
+// for small screen devices 
+@media screen and (max-width: 650px
+
+    // instructions for the navigation bar
+    .container nav.navbar button.navbar__toggle-links 
+        // display the toggle button 
+        display inline-block
+        // set transition for the rotation occurring when the button is clicked
+        transition all 0.3s ease
+
+        &.toggle-button-active 
+            // define a class for the button, which is toggled in the JS script when the button is clicked
+            // for the toggle button, transform it and its contents to have three vertical lines lined up one after another
+            transform rotate(90deg)
+
+            span
+                left 0
+
+    .container nav.navbar div.navbar__links
+        // change the layout of the anchor links to display them in a single column layout, in a div spanning the entire width and height of the viewport, below the navigation bar
+        position absolute
+        // push the panel below the visible logo and toggle button, which occupy the height of the svg (56px*0.56) + the padding (0.8rem on each side)
+        top calc(56px * 0.56 + 1.6rem)
+        left 0
+        width 100%
+        height 100vh
+        padding 0 1rem
+        flex-direction column
+        align-items flex-start
+        background white
+        // move the panel out of sight, to the right of the screen
+        transform translateX(100%)
+        // set visibility hidden to remove the panel from reach
+        visibility hidden
+        // transition to alter the horizontal position and visibility of the panel, when the toggle button is pressed
+        transition all 0.3s ease
+
+        a
+            // separate the anchor links from one another (they are displayed vertically in a column)
+            margin 0.5rem 0
+
+            &:before 
+                // show the faux-border-bottom (and not as a consequence of a hover event like previously stated by default)
+                left 0
+                width 100%
+                transition none
+
+        &.panel-active
+            // for the div containing the anchor link elements, transform it to display it in the screen, when the toggle button is pressed
+            transform translateX(0)
+            visibility visible
