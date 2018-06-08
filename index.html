@@ -23,6 +23,8 @@
     
   <!-- in a wrapping container include 
     - a navigation bar in a nav element 
+    - a welcome message in a section element
+    
   -->
     
   <div class="container">
@@ -53,6 +55,29 @@
         <a href="#contacts">contacts</a>
       </div>
     </nav><!-- close the navigation bar -->
+
+    <!-- in the welcome section include a figure element for an image and a div for connecting text -->
+    <section class="welcome">
+      <figure class="welcome__profile-img">
+        <img src="https://pbs.twimg.com/profile_images/969337754567004160/1GnoGMz-_400x400.jpg" alt="My profile picture"/>
+      </figure>
+      
+      <!-- format break lines and isolate particularly important text in a span element (important as in needed to be styled directly in CSS) -->
+      <div class="welcome__profile-txt">
+        <p>Hello there 👋<br>
+          My name is 
+          <!-- separate the text in a span to include a tooltip through CSS pseudo-elements -->
+          <span class="profile-txt__name">
+            Gabriele Corti
+          </span> 
+          and I'm particularly interested in web technologies.<br> 
+          Be it web development, web design, UX, I 
+          find the field to be incredibly challenging and 
+          rewarding. <br>
+          I hope this page conveys this sentiment well enough to convince you.
+        </p>        
+      </div>
+    </section><!-- close the welcome section bar -->
     
   </div><!-- close the .container div -->
 
