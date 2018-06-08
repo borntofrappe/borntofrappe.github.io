@@ -11,3 +11,5 @@ Ultimately, and for now, I consider it a sweet place in which to showcase such s
 The website as visualized in the previous chapter is built in manageable steps.
 
 V1: include a navigation bar which is fixed to the top of the page and primed for mobile devices.
+
+V2: include a welcome section right below the navigation bar.
