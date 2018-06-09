@@ -15,3 +15,5 @@ V1: include a navigation bar which is fixed to the top of the page and primed fo
 V2: include a welcome section right below the navigation bar.
 
 V3: include a section displaying the technology stack, through SVG icons.
+
+V4: prior to the section devoted on showcasing a few projects (for which I want to spend some time), include a section with social icons
