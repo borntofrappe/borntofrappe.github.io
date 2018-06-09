@@ -122,7 +122,8 @@
     
   <div class="container">
     <nav class="navbar">
-      <!-- in the navigation bar:
+      <!-- 
+        in the navigation bar:
         - for large screen devices include a logo and three anchor link elements redirecting elsewhere in the page
         - for small screen sizes include the logo and a toggle button, which shows the three anchor links element in a panel below the navbar itself  
       -->
@@ -141,7 +142,7 @@
         <span></span>
       </button>
 
-      <!-- include the anchor links in a panel as to position them together in small screen devices  -->
+      <!-- include the anchor links in a panel as to position them together and display them separately in small screen devices  -->
       <div class="navbar__links">
         <a href="#stack">stack</a>
         <a href="#projects">projects</a>
@@ -152,11 +153,11 @@
 
     <!-- in the welcome section include a figure element for an image and a div for connecting text -->
     <section class="welcome">
+
       <figure class="welcome__profile-img">
         <img src="https://pbs.twimg.com/profile_images/969337754567004160/1GnoGMz-_400x400.jpg" alt="My profile picture"/>
       </figure>
       
-      <!-- format break lines and isolate particularly important text in a span element (important as in needed to be styled directly in CSS) -->
       <div class="welcome__profile-txt">
         <p>Hello there 👋<br>
           My name is 
@@ -170,15 +171,19 @@
           rewarding. <br>
           I hope this page conveys this sentiment well enough to convince you.
         </p>        
-      </div>
+      </div><!-- close the text div -->
     </section><!-- close the welcome section -->
 
 
     <!-- in the section for the technology stack include some explanatory text and a div for all the SVG icons representing the stack itself -->
     <section id="stack">
-      <p>In my brief <span class="stack__carreer">web-development life</span>, I've come to appreciate and regularly use several tools.</p>
+      <p>In my brief 
+        <span class="stack__webdev">web-development life</span>, 
+        I've come to appreciate and regularly use several tools.
+      </p>
       
       <div class="stack__icons">
+
         <svg>
           <use href="#html-icon"/>
         </svg>
@@ -230,14 +235,17 @@
         <svg>
           <use href="#tools-icon"/>
         </svg>
-      </div>
+
+      </div><!-- close the icons div -->
+
     </section><!-- close the technology stack section -->
 
 
     <!-- in the contacts section include a brief string of text and icons redirecting to pertinent profiles -->
     <section id="contacts">
-      <p>Whether you'd like to explore more projects or just feel like saying hello, feel free to <span class="contacts__notice">contact me</span></p>
-
+      <p>Whether you'd like to explore more projects or just feel like saying hello, feel free to 
+        <span class="contacts__notice">contact me</span>
+      </p>
 
       <div class="contacts__icons">
         <!-- nest each svg icon in an anchor link element, redirecting toward the profiles themselves -->
@@ -246,28 +254,32 @@
             <use href="#codepen-icon"/>
           </svg>
         </a>
+
         <a href="https://www.freecodecamp.org/borntofrappe">
           <svg>
             <use href="#freecodecamp-icon"/>
           </svg>
         </a>
+        
         <a href="https://github.com/borntofrappe">
           <svg>
             <use href="#github-icon"/>
           </svg>
         </a>
+
         <a href="https://twitter.com/borntofrappe">
           <svg>
             <use href="#twitter-icon"/>
           </svg>
         </a>
 
-      </div>
+      </div><!-- close the icons div -->
 
     </section><!-- close the contacts section -->
     
   </div><!-- close the .container div -->
 
+<!-- reference a JS script with the logic which toggles the navigation bar for small devices -->
 <script src="script.js"></script>
 </body>
 </html>
