@@ -213,6 +213,74 @@ body
                     left 70%
                     transition transition-cubic
                     transition-delay 0.2s
+
+    section#stack
+        // center the section in the middle of the viewport, while limiting its width 
+        max-width 700px
+        height 700px
+        margin 0 auto
+        padding 2rem
+
+        p
+            margin 2rem 0 0
+            text-align center 
+            font-size 1.3rem
+            line-height 1.8
+
+            span.stack__carreer
+                // include a tooltip for the selected keywords, like in the welcome section
+                // see previous comments which describe the use of the pseudo elements
+                position relative
+                font-weight bold
+
+                &:before
+                    content '10 months and counting'
+                    position absolute 
+                    top 0
+                    right 0
+                    @extend .tooltip-style
+                    opacity 0
+                    transition transition-cubic
+                    font-weight initial
+
+                &:hover:before
+                    top -45px
+                    opacity 1
+
+                &:after
+                    content ''
+                    position absolute 
+                    top -5px
+                    left 10%
+                    border-left 10px solid transparent
+                    border-right 10px solid transparent
+                    border-top 10px solid black
+                    border-bottom 10px solid transparent
+                    filter filter-shadow
+                    opacity 0
+
+                &:hover:after
+                    opacity 1
+                    left 80%
+                    transition transition-cubic
+                    transition-delay 0.2s
+
+
+        div.stack__icons
+            // for the svg icons, display them in a wrapping row (change the disposition on large devices with a media query)
+            display flex 
+            flex-wrap wrap 
+            justify-content center
+            margin 1.5rem 0
+        
+            svg
+                width 90px
+                height @width
+                margin 12px
+
+                &:last-of-type
+                    // rotate the tool's icon to visually separate the section from the rest of the page
+                    transform rotate(90deg)
                     
 
 @media screen and (max-width: 650px)
@@ -284,3 +352,49 @@ body
         max-width 1000px
     .container section.welcome div.welcome__profile-txt, .container section#stack p
         font-size 3rem
+
+@media screen and (min-width: 700px)
+    // for large screens, display the SVG icons on a circle
+    .container section#stack
+        width 700px
+        height @width
+
+        div.stack__icons
+            // position relative to absolute position the svg icons 
+            position relative 
+            height 100%
+            width 100%
+            // negative vetrtical margin to remove excessive whitespace between the icons and the rest of the page 
+            margin -2rem 0
+
+            svg
+                position absolute 
+                width 90px
+                height @width
+                filter filter-shadow 
+                // center the icons in the middle of the parent container
+                top calc(50% - 45px)
+                left @top
+                //drop-shadow(0px 1px 5px rgba(0,0,0,0.1))
+
+                &:last-of-type
+                    // for the last icon, position it in the center of the circle, and move the remaining icons around it 
+                    height 150px
+                    width 60px
+                    top calc(50% - 75px)
+                    left calc(50% - 30px)
+                    transform rotate(-40deg)
+                    // transition triggered when a cursor hovers on the svg section
+                    transition transform 0.3s cubic-bezier(.2,-0.32,.76,1.48)
+
+            &:hover svg:last-of-type
+                transform rotate(-75deg)
+                    
+            for icon in 1..12
+                // for all svg icons (excluding the last one)
+                svg:nth-of-type({icon})
+                    // position them around the center, at different coordinates, to visually create a circle
+                    // rotate rotates the icon in the center
+                    // translateX moves the icon horizontally and on the basis of the rotation
+                    // rotate with an opposite value of the first instance rotates the icon in place, back to the correct inclination
+                    transform rotate(360deg/12*icon) translateX(250px) rotate(-360deg/12*icon)
