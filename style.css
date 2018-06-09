@@ -14,7 +14,8 @@
 .tooltip-style,
 .container section.welcome figure.welcome__profile-img:before,
 .container section.welcome div.welcome__profile-txt span.profile-txt__name:before,
-.container section#stack p span.stack__carreer:before {
+.container section#stack p span.stack__carreer:before,
+.container section#contacts p span.contacts__notice:before {
   background: #252525;
   color: #fff;
   padding: 0.3rem 0.5rem;
@@ -171,7 +172,7 @@ body {
 }
 .container section#stack {
   max-width: 700px;
-  height: 700px;
+  min-height: 100vh;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -229,6 +230,51 @@ body {
 }
 .container section#stack div.stack__icons svg:last-of-type {
   transform: rotate(90deg);
+}
+.container section#contacts {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.2rem;
+}
+.container section#contacts p {
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.container section#contacts p span.contacts__notice {
+  position: relative;
+  font-weight: bold;
+}
+.container section#contacts p span.contacts__notice:before {
+  content: '😉✌';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.22, -0.3, 0.68, 1.44);
+  font-weight: initial;
+}
+.container section#contacts p span.contacts__notice:hover:before {
+  bottom: -45px;
+  opacity: 1;
+}
+.container section#contacts .contacts__icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+.container section#contacts .contacts__icons a {
+  margin: 25px;
+}
+.container section#contacts .contacts__icons a svg {
+  width: 80px;
+  height: 80px;
 }
 @media screen and (max-width: 650px) {
   .container nav.navbar button.navbar__toggle-links {

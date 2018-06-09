@@ -217,7 +217,7 @@ body
     section#stack
         // center the section in the middle of the viewport, while limiting its width 
         max-width 700px
-        height 700px
+        min-height 100vh
         margin 0 auto
         padding 2rem
 
@@ -281,6 +281,60 @@ body
                 &:last-of-type
                     // rotate the tool's icon to visually separate the section from the rest of the page
                     transform rotate(90deg)
+
+    section#contacts 
+        // center the contents of the contacts div in the page, in a single column layout
+        min-height 80vh
+        display flex 
+        flex-direction column 
+        justify-content center
+        padding 1.2rem
+
+        p
+            text-align center 
+            font-size 1.3rem
+            line-height 1.8
+            // limit the width of the paragraph element, reducing the number of words in a single line
+            max-width 500px
+            margin 0 auto
+
+            span.contacts__notice 
+                // include a tooltip for the selected keyword, like in the welcome section
+                // see previous comments which describe the use of the pseudo elements
+                position relative
+                font-weight bold
+
+                &:before
+                    content '😉✌'
+                    position absolute 
+                    bottom 0
+                    right 0
+                    @extend .tooltip-style
+                    opacity 0
+                    transition transition-cubic
+                    font-weight initial
+
+                &:hover:before
+                    bottom -45px
+                    opacity 1
+
+
+        .contacts__icons
+            // for the svg icons, position them in a wrapping row
+            display flex 
+            justify-content center 
+            align-items center 
+            flex-wrap wrap 
+            margin 1.5rem 0
+
+            a
+                margin 25px
+                
+                svg  
+                    width 80px
+                    height @width 
+                
+                
                     
 
 @media screen and (max-width: 650px)
