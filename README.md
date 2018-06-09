@@ -13,3 +13,5 @@ The website as visualized in the previous chapter is built in manageable steps.
 V1: include a navigation bar which is fixed to the top of the page and primed for mobile devices.
 
 V2: include a welcome section right below the navigation bar.
+
+V3: include a section displaying the technology stack, through SVG icons.

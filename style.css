@@ -13,7 +13,8 @@
 }
 .tooltip-style,
 .container section.welcome figure.welcome__profile-img:before,
-.container section.welcome div.welcome__profile-txt span.profile-txt__name:before {
+.container section.welcome div.welcome__profile-txt span.profile-txt__name:before,
+.container section#stack p span.stack__carreer:before {
   background: #252525;
   color: #fff;
   padding: 0.3rem 0.5rem;
@@ -168,6 +169,67 @@ body {
   transition: all 0.3s cubic-bezier(0.22, -0.3, 0.68, 1.44);
   transition-delay: 0.2s;
 }
+.container section#stack {
+  max-width: 700px;
+  height: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.container section#stack p {
+  margin: 2rem 0 0;
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 1.8;
+}
+.container section#stack p span.stack__carreer {
+  position: relative;
+  font-weight: bold;
+}
+.container section#stack p span.stack__carreer:before {
+  content: '10 months and counting';
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.22, -0.3, 0.68, 1.44);
+  font-weight: initial;
+}
+.container section#stack p span.stack__carreer:hover:before {
+  top: -45px;
+  opacity: 1;
+}
+.container section#stack p span.stack__carreer:after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 10%;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #252525;
+  border-bottom: 10px solid transparent;
+  filter: drop-shadow(0 1px 5px rgba(37,37,37,0.5));
+  opacity: 0;
+}
+.container section#stack p span.stack__carreer:hover:after {
+  opacity: 1;
+  left: 80%;
+  transition: all 0.3s cubic-bezier(0.22, -0.3, 0.68, 1.44);
+  transition-delay: 0.2s;
+}
+.container section#stack div.stack__icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+.container section#stack div.stack__icons svg {
+  width: 90px;
+  height: 90px;
+  margin: 12px;
+}
+.container section#stack div.stack__icons svg:last-of-type {
+  transform: rotate(90deg);
+}
 @media screen and (max-width: 650px) {
   .container nav.navbar button.navbar__toggle-links {
     display: inline-block;
@@ -224,5 +286,72 @@ body {
   .container section.welcome div.welcome__profile-txt,
   .container section#stack p {
     font-size: 3rem;
+  }
+}
+@media screen and (min-width: 700px) {
+  .container section#stack {
+    width: 700px;
+    height: 700px;
+  }
+  .container section#stack div.stack__icons {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin: -2rem 0;
+  }
+  .container section#stack div.stack__icons svg {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    filter: drop-shadow(0px 1px 5px rgba(0,0,0,0.1));
+    top: calc(50% - 45px);
+    left: calc(50% - 45px);
+  }
+  .container section#stack div.stack__icons svg:last-of-type {
+    height: 150px;
+    width: 60px;
+    top: calc(50% - 75px);
+    left: calc(50% - 30px);
+    transform: rotate(-40deg);
+    transition: transform 0.3s cubic-bezier(0.2, -0.32, 0.76, 1.48);
+  }
+  .container section#stack div.stack__icons:hover svg:last-of-type {
+    transform: rotate(-75deg);
+  }
+  .container section#stack div.stack__icons svg:nth-of-type(1) {
+    transform: rotate(30deg) translateX(250px) rotate(-30deg);
+  }
+  .container section#stack div.stack__icons svg:nth-of-type(2) {
+    transform: rotate(60deg) translateX(250px) rotate(-60deg);
+  }
+  .container section#stack div.stack__icons svg:nth-of-type(3) {
+    transform: rotate(90deg) translateX(250px) rotate(-90deg);
+  }
+  .container section#stack div.stack__icons svg:nth-of-type(4) {
+    transform: rotate(120deg) translateX(250px) rotate(-120deg);
+  }
+  .container section#stack div.stack__icons svg:nth-of-type(5) {
+    transform: rotate(150deg) translateX(250px) rotate(-150deg);
+  }
+  .container section#stack div.stack__icons svg:nth-of-type(6) {
+    transform: rotate(180deg) translateX(250px) rotate(-180deg);
+  }
+  .container section#stack div.stack__icons svg:nth-of-type(7) {
+    transform: rotate(210deg) translateX(250px) rotate(-210deg);
+  }
+  .container section#stack div.stack__icons svg:nth-of-type(8) {
+    transform: rotate(240deg) translateX(250px) rotate(-240deg);
+  }
+  .container section#stack div.stack__icons svg:nth-of-type(9) {
+    transform: rotate(270deg) translateX(250px) rotate(-270deg);
+  }
+  .container section#stack div.stack__icons svg:nth-of-type(10) {
+    transform: rotate(300deg) translateX(250px) rotate(-300deg);
+  }
+  .container section#stack div.stack__icons svg:nth-of-type(11) {
+    transform: rotate(330deg) translateX(250px) rotate(-330deg);
+  }
+  .container section#stack div.stack__icons svg:nth-of-type(12) {
+    transform: rotate(360deg) translateX(250px) rotate(-360deg);
   }
 }
