@@ -43,16 +43,18 @@ body
     // properties for the container 
 
     nav.navbar
-        // display the navigation bar in a single row layout, fixed at the top of the page
-        display flex 
-        align-items center
+        // display the contents of the navigation bar in a single row, fixed at the top of the page
         position fixed
         top 0
         left 0
         // width 100% to extend the fixed navbar across the entirety of the div.container 
         width 100%
-        // background white to superimpose the navigation bar on the following sections
+        // center the contents vertically (aligning the anchor link elements with the SVG asset)
+        display flex 
+        align-items center
+        // background white to superimpose the navigation bar on the rest of the page
         background white
+        // padding to separate the content of the navigation bar from the edges of the surrounding window
         padding 0.8rem 1.2rem
         // z-index to lay the navbar atop the rest of the page
         z-index 10
@@ -67,42 +69,28 @@ body
             flex-grow 1
 
         button.navbar__toggle-links
-            // extend the styles defined in the reset mixin
+            // extend the styles defined in the button-reset mixin
             @extends .button-reset
+            // arbitrary height and width to create three lines of the same width, separated at the beginning, middle and end of the button
             height 14px
             width 22px
             // position relative to absolute position the nested span elements, intermittently
+            // span elements are defined in the media query, where they need to be displayed
             position relative
             // display none to hide the button by default (and show it on mobile devices)
             display none
-            
-            span 
-                // create three lines with the three span elements and position them at equal distance from each other, in the parent button
-                width 22px 
-                height 2px 
-                background black
-                position absolute
-                top 0 
-                left -3px
-                // include a transition to alter the property of left when the toggle is switched to active
-                transition left 0.2s ease
-
-                &:nth-of-type(2)
-                    top 7px
-                    left 0
-                &:nth-of-type(3)
-                    top 14px
-                    left 3px
                     
         div.navbar__links
             // display the links in a row, following the pattern of the navigation bar
             display flex 
+            // align the anchor links vertically
             align-items center
             line-height 1.5
             
             a
-                // extend the style defined by the anchor link mixin
+                // extend the style defined by the anchor-link-reset mixin
                 @extends .anchor-links-reset
+                // margin to separate the anchor links from each other
                 margin 0 1rem
                 text-transform uppercase
                 // position relative to absolute the pseudo-element beneath the anchor links
@@ -116,7 +104,8 @@ body
                     left 50%
                     height 1.8px
                     width 0
-                    background black + 10%
+                    background black
+                    // transition for the hover state (hover on the element which affects the pseudo-element)
                     transition all 0.3s ease
 
                 &:hover:before 
@@ -125,31 +114,36 @@ body
 
 
     section.welcome
-        // center the welcome section in the screen and reduce the width of the container
+        // reduce the width of the container
         max-width 800px
-        margin 10rem auto
+        // margin to distance the section from the navigation bar and the underlying section
+        // horizontal margin to also center the section
+        margin 25vh auto
+        // padding to distance the contents from the borders of the section and of the surrounding window
         padding 0 2rem
 
         figure.welcome__profile-img
-            // float the image to the left of the parent container and include a shape-outside property to let the neighboring text coast on the circle created by the border-radius property
+            // float the image to the left of the parent container and include a shape-outside property to let the neighboring text coast on the circle created with the border-radius property
             float left
             border-radius 50%
             shape-outside circle()
+            // margin to distance the image from the text right next to it
             margin 2rem
             // position relative to absolute position the connected pseudo-element, used to create a tooltip on hover 
             position relative 
 
             &:before
-                // position the tooltip to be display on hover atop the image
+                // position the tooltip to be display on hover, atop the image
                 content 'Nice Picture'
                 position absolute 
                 top 0
                 left 1rem
                 // include some style shared by all tooltip in the page
                 @extend .tooltip-style
+                // opacity 0 by default, and altered on hover
                 opacity 0
-                // include a transition with an easing function also specified in a variable
-                // transition the properties of top and opacity, on hover
+                // transition with an easing function also specified in a variable
+                // transition for the properties of top and opacity
                 transition transition-cubic
 
             &:hover:before
@@ -161,6 +155,7 @@ body
                 width 200px
                 height 200px
                 border-radius 50%
+                // drop shadow specified by the variable
                 filter filter-shadow
                 
 
@@ -180,11 +175,13 @@ body
                     top -1rem
                     right 0
                     @extends .tooltip-style
+                    // gain the font-weight of normal, not the bold style of the connected span
                     font-weight initial
                     filter filter-shadow
+                    // opacity 0 by default, and altered on hover
+                    opacity 0
                     // transition the properties of top and opacity
                     transition transition-cubic
-                    opacity 0
 
                 &:hover:before
                     top -2.8rem
@@ -217,19 +214,19 @@ body
     section#stack
         // center the section in the middle of the viewport, while limiting its width 
         max-width 700px
-        min-height 100vh
         margin 0 auto
-        padding 2rem
+        min-height 100vh
+        // padding to distance the section from the surrounding window and allow the anchor link to redirect to the correct vertical coordinate 
+        padding 4rem 2rem
 
         p
-            margin 2rem 0 0
             text-align center 
             font-size 1.3rem
             line-height 1.8
 
-            span.stack__carreer
-                // include a tooltip for the selected keywords, like in the welcome section
-                // see previous comments which describe the use of the pseudo elements
+            span.stack__webdev
+                // include a tooltip for the selected keyword(s), like in the welcome section
+                // see previous comments which describe the use of the pseudo-element(s)
                 position relative
                 font-weight bold
 
@@ -270,8 +267,9 @@ body
             // for the svg icons, display them in a wrapping row (change the disposition on large devices with a media query)
             display flex 
             flex-wrap wrap 
+            // center the icons horizontally (especially for the last icon)
             justify-content center
-            margin 1.5rem 0
+            margin 2.5rem 0
         
             svg
                 width 90px
@@ -284,19 +282,20 @@ body
 
     section#contacts 
         // center the contents of the contacts div in the page, in a single column layout
-        min-height 80vh
+        min-height 100vh
         display flex 
         flex-direction column 
         justify-content center
-        padding 1.2rem
+        // padding similar to the section regarding the technology stack
+        padding 4rem 2rem
 
         p
-            text-align center 
-            font-size 1.3rem
-            line-height 1.8
             // limit the width of the paragraph element, reducing the number of words in a single line
             max-width 500px
             margin 0 auto
+            text-align center 
+            font-size 1.3rem
+            line-height 1.8
 
             span.contacts__notice 
                 // include a tooltip for the selected keyword, like in the welcome section
@@ -320,21 +319,53 @@ body
 
 
         .contacts__icons
-            // for the svg icons, position them in a wrapping row
+            // display the anchor link elements in a single wrapping row
             display flex 
             justify-content center 
             align-items center 
             flex-wrap wrap 
+            // margin to distance the icons from the text above
             margin 1.5rem 0
 
             a
+                width 80px
+                height @width
+                border-radius 50%
                 margin 25px
+                // position relative to absolute position the pseudo-element used to create the hover animation
+                position relative
+                // background to give the cut-out portions of the svg icons a white background
+                background white
+
+                &:before
+                    // the psudo-element creates a circle of the same size of the anchor link, but with a different background 
+                    content ''
+                    position absolute 
+                    top 0
+                    left 0
+                    bottom 0
+                    right 0
+                    border-radius 50%
+                    background rgba(black, 0.5) 
+                    z-index -5
+                    
+                &:hover:before
+                    // on hover, include an animation which expands the circle and changes the background color to be completely transparent
+                    animation pulse 1s infinite ease-out
                 
                 svg  
-                    width 80px
-                    height @width 
+                    // expand the svg to completely take the size of the parent anchor link elements
+                    width 100%
+                    height 100%
                 
-                
+@keyframes pulse 
+    70%, 100%
+        top -1.5rem
+        left -1.5rem
+        bottom -1.5rem
+        right -1.5rem
+        background rgba(black, 0) 
+
                     
 
 @media screen and (max-width: 650px)
@@ -345,6 +376,24 @@ body
         display inline-block
         // set transition for the rotation occurring when the button is clicked
         transition all 0.3s ease
+
+        span 
+            // create lines with the three span elements and position them at equal distance from each other, in the parent button
+            width 22px 
+            height 2px 
+            background black
+            position absolute
+            top 0 
+            left -3px
+            // include a transition to alter the property of left when the toggle is switched to active
+            transition left 0.2s ease
+
+            &:nth-of-type(2)
+                top 7px
+                left 0
+            &:nth-of-type(3)
+                top 14px
+                left 3px
 
         &.toggle-button-active 
             // define a class for the button, which is toggled in the JS script when the button is clicked
@@ -362,11 +411,13 @@ body
         left 0
         width 100%
         height 100vh
+        // padding to separate the anchor links from the surrounding window (and have the anchor links match the SVG logo horizontally)
         padding 0 1rem
         flex-direction column
         align-items flex-start
+        // background white to superimpose the panel on the rest of the page
         background white
-        // move the panel out of sight, to the right of the screen
+        // by default move the panel out of sight, to the right of the screen
         transform translateX(100%)
         // set visibility hidden to remove the panel from reach
         visibility hidden
@@ -374,7 +425,7 @@ body
         transition all 0.3s ease
 
         a
-            // separate the anchor links from one another (they are displayed vertically in a column)
+            // separate the anchor links from one another (as they are displayed vertically in a column)
             margin 0.5rem 0
 
             &:before 
@@ -393,22 +444,15 @@ body
         margin 5rem auto
 
 @media screen and (max-width: 400px)
-    // for (very) small screen sizes display image and text in a single column layout
+    // for (very) small screen sizes display image and text in a single column layout (one on top of the other)
     .container section.welcome
         display flex 
         flex-direction column 
         justify-content center 
         align-items center
 
-@media screen and (min-width: 1400px) 
-    // for (very) large screen sizes, increase the font-size of the text and the width of the parent section
-    .container section.welcome
-        max-width 1000px
-    .container section.welcome div.welcome__profile-txt, .container section#stack p
-        font-size 3rem
-
 @media screen and (min-width: 700px)
-    // for large screens, display the SVG icons on a circle
+    // for large screens, display the SVG icons as orbiting around the center of the screen
     .container section#stack
         width 700px
         height @width
@@ -418,14 +462,15 @@ body
             position relative 
             height 100%
             width 100%
-            // negative vetrtical margin to remove excessive whitespace between the icons and the rest of the page 
-            margin -2rem 0
+            // margin 0 to get the svg icons close to the connetected paragraph element
+            margin 0
 
             svg
                 position absolute 
                 width 90px
                 height @width
-                filter drop-shadow(0px 1px 5px rgba(0,0,0,0.1))
+                // lighter drop shadow for the icons in the technology stack section
+                filter drop-shadow(0px 1px 4px rgba(0,0,0,0.1))
                 // center the icons in the middle of the parent container
                 top calc(50% - 45px)
                 left @top
@@ -436,7 +481,7 @@ body
                     width 60px
                     top calc(50% - 75px)
                     left calc(50% - 30px)
-                    transform rotate(-40deg)
+                    transform rotate(-45deg)
                     // transition triggered when a cursor hovers on the svg section
                     transition transform 0.3s cubic-bezier(.2,-0.32,.76,1.48)
 
@@ -451,3 +496,10 @@ body
                     // translateX moves the icon horizontally and on the basis of the rotation
                     // rotate with an opposite value of the first instance rotates the icon in place, back to the correct inclination
                     transform rotate(360deg/12*icon) translateX(250px) rotate(-360deg/12*icon)
+
+@media screen and (min-width: 1400px) 
+    // for (very) large screen sizes, increase the font-size of the text and the width of the parent section
+    .container section.welcome
+        max-width 1000px
+    .container section.welcome div.welcome__profile-txt, .container section#stack p
+        font-size 3rem

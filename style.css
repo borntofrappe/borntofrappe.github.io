@@ -14,7 +14,7 @@
 .tooltip-style,
 .container section.welcome figure.welcome__profile-img:before,
 .container section.welcome div.welcome__profile-txt span.profile-txt__name:before,
-.container section#stack p span.stack__carreer:before,
+.container section#stack p span.stack__webdev:before,
 .container section#contacts p span.contacts__notice:before {
   background: #252525;
   color: #fff;
@@ -36,12 +36,12 @@ body {
   background: #fff;
 }
 .container nav.navbar {
-  display: flex;
-  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  display: flex;
+  align-items: center;
   background: #fff;
   padding: 0.8rem 1.2rem;
   z-index: 10;
@@ -58,23 +58,6 @@ body {
   width: 22px;
   position: relative;
   display: none;
-}
-.container nav.navbar button.navbar__toggle-links span {
-  width: 22px;
-  height: 2px;
-  background: #252525;
-  position: absolute;
-  top: 0;
-  left: -3px;
-  transition: left 0.2s ease;
-}
-.container nav.navbar button.navbar__toggle-links span:nth-of-type(2) {
-  top: 7px;
-  left: 0;
-}
-.container nav.navbar button.navbar__toggle-links span:nth-of-type(3) {
-  top: 14px;
-  left: 3px;
 }
 .container nav.navbar div.navbar__links {
   display: flex;
@@ -93,7 +76,7 @@ body {
   left: 50%;
   height: 1.8px;
   width: 0;
-  background: #3b3b3b;
+  background: #252525;
   transition: all 0.3s ease;
 }
 .container nav.navbar div.navbar__links a:hover:before {
@@ -102,7 +85,7 @@ body {
 }
 .container section.welcome {
   max-width: 800px;
-  margin: 10rem auto;
+  margin: 25vh auto;
   padding: 0 2rem;
 }
 .container section.welcome figure.welcome__profile-img {
@@ -145,8 +128,8 @@ body {
   right: 0;
   font-weight: initial;
   filter: drop-shadow(0 1px 5px rgba(37,37,37,0.5));
-  transition: all 0.3s cubic-bezier(0.22, -0.3, 0.68, 1.44);
   opacity: 0;
+  transition: all 0.3s cubic-bezier(0.22, -0.3, 0.68, 1.44);
 }
 .container section.welcome div.welcome__profile-txt span.profile-txt__name:hover:before {
   top: -2.8rem;
@@ -172,21 +155,20 @@ body {
 }
 .container section#stack {
   max-width: 700px;
-  min-height: 100vh;
   margin: 0 auto;
-  padding: 2rem;
+  min-height: 100vh;
+  padding: 4rem 2rem;
 }
 .container section#stack p {
-  margin: 2rem 0 0;
   text-align: center;
   font-size: 1.3rem;
   line-height: 1.8;
 }
-.container section#stack p span.stack__carreer {
+.container section#stack p span.stack__webdev {
   position: relative;
   font-weight: bold;
 }
-.container section#stack p span.stack__carreer:before {
+.container section#stack p span.stack__webdev:before {
   content: '10 months and counting';
   position: absolute;
   top: 0;
@@ -195,11 +177,11 @@ body {
   transition: all 0.3s cubic-bezier(0.22, -0.3, 0.68, 1.44);
   font-weight: initial;
 }
-.container section#stack p span.stack__carreer:hover:before {
+.container section#stack p span.stack__webdev:hover:before {
   top: -45px;
   opacity: 1;
 }
-.container section#stack p span.stack__carreer:after {
+.container section#stack p span.stack__webdev:after {
   content: '';
   position: absolute;
   top: -5px;
@@ -211,7 +193,7 @@ body {
   filter: drop-shadow(0 1px 5px rgba(37,37,37,0.5));
   opacity: 0;
 }
-.container section#stack p span.stack__carreer:hover:after {
+.container section#stack p span.stack__webdev:hover:after {
   opacity: 1;
   left: 80%;
   transition: all 0.3s cubic-bezier(0.22, -0.3, 0.68, 1.44);
@@ -221,7 +203,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 1.5rem 0;
+  margin: 2.5rem 0;
 }
 .container section#stack div.stack__icons svg {
   width: 90px;
@@ -232,18 +214,18 @@ body {
   transform: rotate(90deg);
 }
 .container section#contacts {
-  min-height: 80vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 1.2rem;
+  padding: 4rem 2rem;
 }
 .container section#contacts p {
+  max-width: 500px;
+  margin: 0 auto;
   text-align: center;
   font-size: 1.3rem;
   line-height: 1.8;
-  max-width: 500px;
-  margin: 0 auto;
 }
 .container section#contacts p span.contacts__notice {
   position: relative;
@@ -270,16 +252,52 @@ body {
   margin: 1.5rem 0;
 }
 .container section#contacts .contacts__icons a {
-  margin: 25px;
-}
-.container section#contacts .contacts__icons a svg {
   width: 80px;
   height: 80px;
+  border-radius: 50%;
+  margin: 25px;
+  position: relative;
+  background: #fff;
+}
+.container section#contacts .contacts__icons a:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  background: rgba(37,37,37,0.5);
+  z-index: -5;
+}
+.container section#contacts .contacts__icons a:hover:before {
+  animation: pulse 1s infinite ease-out;
+}
+.container section#contacts .contacts__icons a svg {
+  width: 100%;
+  height: 100%;
 }
 @media screen and (max-width: 650px) {
   .container nav.navbar button.navbar__toggle-links {
     display: inline-block;
     transition: all 0.3s ease;
+  }
+  .container nav.navbar button.navbar__toggle-links span {
+    width: 22px;
+    height: 2px;
+    background: #252525;
+    position: absolute;
+    top: 0;
+    left: -3px;
+    transition: left 0.2s ease;
+  }
+  .container nav.navbar button.navbar__toggle-links span:nth-of-type(2) {
+    top: 7px;
+    left: 0;
+  }
+  .container nav.navbar button.navbar__toggle-links span:nth-of-type(3) {
+    top: 14px;
+    left: 3px;
   }
   .container nav.navbar button.navbar__toggle-links.toggle-button-active {
     transform: rotate(90deg);
@@ -325,15 +343,6 @@ body {
     align-items: center;
   }
 }
-@media screen and (min-width: 1400px) {
-  .container section.welcome {
-    max-width: 1000px;
-  }
-  .container section.welcome div.welcome__profile-txt,
-  .container section#stack p {
-    font-size: 3rem;
-  }
-}
 @media screen and (min-width: 700px) {
   .container section#stack {
     width: 700px;
@@ -343,13 +352,13 @@ body {
     position: relative;
     height: 100%;
     width: 100%;
-    margin: -2rem 0;
+    margin: 0;
   }
   .container section#stack div.stack__icons svg {
     position: absolute;
     width: 90px;
     height: 90px;
-    filter: drop-shadow(0px 1px 5px rgba(0,0,0,0.1));
+    filter: drop-shadow(0px 1px 4px rgba(0,0,0,0.1));
     top: calc(50% - 45px);
     left: calc(50% - 45px);
   }
@@ -358,7 +367,7 @@ body {
     width: 60px;
     top: calc(50% - 75px);
     left: calc(50% - 30px);
-    transform: rotate(-40deg);
+    transform: rotate(-45deg);
     transition: transform 0.3s cubic-bezier(0.2, -0.32, 0.76, 1.48);
   }
   .container section#stack div.stack__icons:hover svg:last-of-type {
@@ -399,5 +408,50 @@ body {
   }
   .container section#stack div.stack__icons svg:nth-of-type(12) {
     transform: rotate(360deg) translateX(250px) rotate(-360deg);
+  }
+}
+@media screen and (min-width: 1400px) {
+  .container section.welcome {
+    max-width: 1000px;
+  }
+  .container section.welcome div.welcome__profile-txt,
+  .container section#stack p {
+    font-size: 3rem;
+  }
+}
+@-moz-keyframes pulse {
+  70%, 100% {
+    top: -1.5rem;
+    left: -1.5rem;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    background: rgba(37,37,37,0);
+  }
+}
+@-webkit-keyframes pulse {
+  70%, 100% {
+    top: -1.5rem;
+    left: -1.5rem;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    background: rgba(37,37,37,0);
+  }
+}
+@-o-keyframes pulse {
+  70%, 100% {
+    top: -1.5rem;
+    left: -1.5rem;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    background: rgba(37,37,37,0);
+  }
+}
+@keyframes pulse {
+  70%, 100% {
+    top: -1.5rem;
+    left: -1.5rem;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    background: rgba(37,37,37,0);
   }
 }
