@@ -17,3 +17,5 @@ V2: include a welcome section right below the navigation bar.
 V3: include a section displaying the technology stack, through SVG icons.
 
 V4: prior to the section devoted on showcasing a few projects (for which I want to spend some time), include a section with social icons
+
+V4.5: re-consider the markup and style for the project, with the intention of creating understandable, readable, not-too-often-repeated code.
