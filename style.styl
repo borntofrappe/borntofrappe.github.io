@@ -357,6 +357,47 @@ body
                     // expand the svg to completely take the size of the parent anchor link elements
                     width 100%
                     height 100%
+    footer 
+        // center the contents in the middle of the page
+        display flex 
+        justify-content center 
+        // align items vertically, to align the paragraph with the span element 
+        align-items center 
+        // background of the chosen hue for black, with white text
+        background black 
+        color white 
+        // padding to distance the contents from the surrounding window 
+        padding 1rem 1.5rem
+
+        span 
+            // with the span element include a square and rotate it 45 degrees to provide the basis for the heart-shaped icon
+            width 15px
+            height 15px
+            background white 
+            // margin to horizontally space out the surrounding text
+            margin 0 0.8rem
+            // with pseudo element create two circles and position them at either end of the rotated square, as to create a heart-shape icon
+            position relative 
+            transform rotate(45deg)
+            
+            &:before, &:after
+                content ''
+                position absolute 
+                width 15px
+                height 15px 
+                border-radius 50%
+                background white 
+            &:before
+                // the parent element is rotated 45 degrees and therefore, including a bottom value pushes the element to the top right of the screen
+                bottom 60%
+                right 0
+            &:after
+                bottom 0
+                right 60%
+            
+
+        a
+            @extends .anchor-links-reset 
                 
 @keyframes pulse 
     70%, 100%
