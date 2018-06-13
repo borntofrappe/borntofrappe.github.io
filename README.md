@@ -21,3 +21,5 @@ V4: prior to the section devoted on showcasing a few projects (for which I want 
 V4.5: re-consider the markup and style for the project, with the intention of creating understandable, readable, not-too-often-repeated code.
 
 V4.8: always prior to the section for the projects (which is coming soon), include a simple footer at the very bottom of the page.
+
+V4.9: include minor changes prior to creating the section devoted on few showcased projects (it's coming soon, promise). Writing more concise and to-the-point text.
