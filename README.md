@@ -23,3 +23,5 @@ V4.5: re-consider the markup and style for the project, with the intention of cr
 V4.8: always prior to the section for the projects (which is coming soon), include a simple footer at the very bottom of the page.
 
 V4.9: include minor changes prior to creating the section devoted on few showcased projects (it's coming soon, promise). Writing more concise and to-the-point text.
+
+V5: begin including few projects with a new section and introductory text

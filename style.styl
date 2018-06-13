@@ -280,8 +280,74 @@ body
                     // rotate the tool's icon to visually separate the section from the rest of the page
                     transform rotate(90deg)
 
+    section#projects 
+        // center the contents of the projects section in the page, in a single column layout (the div nesting the projects will lay them in rows, but said rows are positioned vertically with respect to the surrounding text)
+        min-height 100vh
+        display flex 
+        flex-direction column
+        justify-content center 
+        // padding similar to the section regarding the technology stack
+        padding 4rem 2rem
+        
+        p
+            // limit the width of the paragraph element, reducing the number of words in a single line
+            max-width 600px
+            // a tad of vertical margin to distance the paragraphs slightly from each other
+            margin 0.5rem auto
+            text-align center 
+            font-size 1.3rem
+            line-height 1.8
+
+            span.projects__number, span.projects__something 
+                // include a tooltip for the selected keyword, like in the welcome section
+                // see previous comments which describe the use of the pseudo elements
+                position relative
+                font-weight bold
+
+                &:before
+                    position absolute 
+                    right 0
+                    @extend .tooltip-style
+                    opacity 0
+                    transition transition-cubic
+                    font-weight initial
+
+            span.projects__number:before
+                content 'A few indeed'
+                top 0
+                
+            span.projects__number:hover:before
+                top -45px
+                opacity 1
+
+            span.projects__number:after
+                content ''
+                position absolute 
+                top -5px
+                left 10%
+                border-left 10px solid transparent
+                border-right 10px solid transparent
+                border-top 10px solid black
+                border-bottom 10px solid transparent
+                filter filter-shadow
+                opacity 0
+
+            span.projects__number:hover:after
+                opacity 1
+                left 80%
+                transition transition-cubic
+                transition-delay 0.2s
+
+            span.projects__something:before
+                content '✌'
+                bottom -10px
+            span.projects__something:hover:before
+                bottom -45px
+                opacity 1
+
+
     section#contacts 
-        // center the contents of the contacts div in the page, in a single column layout
+        // center the contents of the contacts section in the page, in a single column layout
         min-height 100vh
         display flex 
         flex-direction column 
@@ -290,7 +356,7 @@ body
         padding 4rem 2rem
 
         p
-            // limit the width of the paragraph element, reducing the number of words in a single line
+            // paragraph styled similarly to the previous sections
             max-width 500px
             margin 0 auto
             text-align center 
@@ -357,6 +423,7 @@ body
                     // expand the svg to completely take the size of the parent anchor link elements
                     width 100%
                     height 100%
+
     footer 
         // center the contents in the middle of the page
         display flex 
