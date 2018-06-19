@@ -8,6 +8,7 @@
 }
 .anchor-links-reset,
 .container nav.navbar div.navbar__links a,
+.container section#projects div.projects__showcase .showcase--links a,
 .container footer a {
   text-decoration: none;
   color: inherit;
@@ -16,8 +17,7 @@
 .container section.welcome figure.welcome__profile-img:before,
 .container section.welcome div.welcome__profile-txt span.profile-txt__name:before,
 .container section#stack p span.stack__webdev:before,
-.container section#projects p span.projects__number:before,
-.container section#projects p span.projects__something:before,
+.container section#projects p span.projects__several:before,
 .container section#contacts p span.contacts__notice:before {
   background: #252525;
   color: #fff;
@@ -88,7 +88,7 @@ body {
 }
 .container section.welcome {
   max-width: 800px;
-  margin: 25vh auto;
+  margin: 25vh auto 20vh;
   padding: 0 2rem;
 }
 .container section.welcome figure.welcome__profile-img {
@@ -158,7 +158,7 @@ body {
 }
 .container section#stack {
   max-width: 700px;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
   min-height: 100vh;
   padding: 4rem 2rem;
 }
@@ -206,7 +206,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 2.5rem 0;
 }
 .container section#stack div.stack__icons svg {
   width: 90px;
@@ -230,28 +229,24 @@ body {
   font-size: 1.3rem;
   line-height: 1.8;
 }
-.container section#projects p span.projects__number,
-.container section#projects p span.projects__something {
+.container section#projects p span.projects__several {
   position: relative;
   font-weight: bold;
 }
-.container section#projects p span.projects__number:before,
-.container section#projects p span.projects__something:before {
+.container section#projects p span.projects__several:before {
   position: absolute;
   right: 0;
   opacity: 0;
   transition: all 0.3s cubic-bezier(0.22, -0.3, 0.68, 1.44);
   font-weight: initial;
-}
-.container section#projects p span.projects__number:before {
   content: 'A few indeed';
   top: 0;
 }
-.container section#projects p span.projects__number:hover:before {
+.container section#projects p span.projects__several:hover:before {
   top: -45px;
   opacity: 1;
 }
-.container section#projects p span.projects__number:after {
+.container section#projects p span.projects__several:after {
   content: '';
   position: absolute;
   top: -5px;
@@ -263,19 +258,47 @@ body {
   filter: drop-shadow(0 1px 5px rgba(37,37,37,0.5));
   opacity: 0;
 }
-.container section#projects p span.projects__number:hover:after {
+.container section#projects p span.projects__several:hover:after {
   opacity: 1;
   left: 80%;
   transition: all 0.3s cubic-bezier(0.22, -0.3, 0.68, 1.44);
   transition-delay: 0.2s;
 }
-.container section#projects p span.projects__something:before {
-  content: '✌';
-  bottom: -10px;
+.container section#projects div.projects__showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.container section#projects p span.projects__something:hover:before {
-  bottom: -45px;
-  opacity: 1;
+.container section#projects div.projects__showcase .showcase--description {
+  padding: 2.2rem 2.5rem;
+  margin: 2rem auto;
+  max-width: 350px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(37,37,37,0.8);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+.container section#projects div.projects__showcase .showcase--description svg {
+  filter: grayscale(1);
+  opacity: 0.5;
+  transition: all 0.2s ease-out;
+  margin-bottom: 1rem;
+}
+.container section#projects div.projects__showcase .showcase--description:hover svg {
+  opacity: 0.8;
+}
+.container section#projects div.projects__showcase .showcase--links a {
+  box-shadow: 0 1.5px 3px rgba(37,37,37,0.8);
+  padding: 1rem 1.2rem;
+  margin: 0 1rem;
+  font-size: 1.1rem;
+  font-weight: 300;
+  transition: all 0.2s ease-out;
+}
+.container section#projects div.projects__showcase .showcase--links a:hover {
+  background: #252525;
+  color: #fff;
 }
 .container section#contacts {
   min-height: 100vh;
@@ -335,7 +358,7 @@ body {
   z-index: -5;
 }
 .container section#contacts .contacts__icons a:hover:before {
-  animation: pulse 1s infinite ease-out;
+  animation: pulse 1.5s infinite ease-out;
 }
 .container section#contacts .contacts__icons a svg {
   width: 100%;
@@ -517,7 +540,7 @@ body {
   }
 }
 @-moz-keyframes pulse {
-  70%, 100% {
+  50%, 100% {
     top: -1.5rem;
     left: -1.5rem;
     bottom: -1.5rem;
@@ -526,7 +549,7 @@ body {
   }
 }
 @-webkit-keyframes pulse {
-  70%, 100% {
+  50%, 100% {
     top: -1.5rem;
     left: -1.5rem;
     bottom: -1.5rem;
@@ -535,7 +558,7 @@ body {
   }
 }
 @-o-keyframes pulse {
-  70%, 100% {
+  50%, 100% {
     top: -1.5rem;
     left: -1.5rem;
     bottom: -1.5rem;
@@ -544,7 +567,7 @@ body {
   }
 }
 @keyframes pulse {
-  70%, 100% {
+  50%, 100% {
     top: -1.5rem;
     left: -1.5rem;
     bottom: -1.5rem;
