@@ -223,6 +223,7 @@ body
             text-align center 
             font-size 1.3rem
             line-height 1.8
+            margin 1rem 0
 
             span.stack__webdev
                 // include a tooltip for the selected keyword(s), like in the welcome section
@@ -335,46 +336,65 @@ body
                     transition-delay 0.2s
 
         div.projects__showcase 
-
+            // display the projects in a single column layout
             display flex 
             flex-direction column
+            // center items horizontally 
             align-items center
         
             .showcase--description
-                padding 2.2rem 2.5rem
-                margin 2rem auto
-                max-width 350px
-                background white
-                box-shadow 0 1px 3px rgba(black, 0.8)
-                transition all 0.2s ease 
+                padding 2.2rem
+                margin 2rem 0
+                // limit the width of the card which described the project
+                max-width 300px
+                // give a light shadow to visually remark the presence of a card
+                box-shadow 0 1px 5px rgba(black, 0.5)
+                // display the svg icon and the short paragraph describing the project in a single column layout
                 display flex 
                 flex-direction column
 
                 svg 
-                    filter grayscale(1)
-                    opacity 0.5
-                    transition all 0.2s ease-out
+                    // reduce the opacity of the image
+                    opacity 0.3
+                    // separate the image from the paragraph below
                     margin-bottom 1rem
+                    // transition for the change in opacity, on hover
+                    transition opacity 0.2s ease-out
 
                 &:hover svg 
-                    opacity 0.8
+                    opacity 0.5
+
+                p
+                    font-style italic
+                    font-size 1.2rem
 
             .showcase--actions
-                a, button
+                // disply the anchor link and the button in a single row layout
+                display flex 
+                // reset the style of the anchor link and of the button
+                a 
                     @extends .anchor-links-reset 
-                    box-shadow 0 1.5px 3px rgba(black, 0.8)
-                    padding 1rem 1.2rem
-                    margin 0 1rem
-                    font-size 1.1rem
-                    font-weight 300
-                    transition all 0.2s ease-out
-
-                    &:hover
-                        background black
-                        color white
                 button 
                     @extends .button-reset  
                     cursor pointer                
+
+                // style the anchor link and the button in much the same way
+                a, button
+                    padding 1rem 1.2rem
+                    // margin to separate the elements from each other
+                    margin 0 1rem
+                    // box shadow matching the div above (which is connected to the elements)
+                    box-shadow 0 1.5px 3px rgba(black, 0.5)
+                    // transition for the hover state
+                    transition all 0.2s ease-out
+                    font-size 1.1rem
+                    text-align center
+                    line-height 1.4
+
+                    &:hover
+                        // on hover flip the color of the text and of the background
+                        background black
+                        color white
 
 
     section#contacts 
@@ -582,6 +602,14 @@ body
         // increase the spacing between the section and the vertical neighbours 
         margin 5rem auto
 
+    .container section#projects div.projects__showcase  .showcase--actions
+        // show the actions connected to the projects' card in a single column layout
+        flex-direction column
+
+        a, button
+            // increase vertical spacing between the elements (which would otherwise be connected)
+            margin 0.5rem 0
+
 @media screen and (max-width: 400px)
     // for (very) small screen sizes display image and text in a single column layout (one on top of the other)
     .container section.welcome
@@ -640,5 +668,3 @@ body
     // for (very) large screen sizes, increase the font-size of the text and the width of the parent section
     .container section.welcome
         max-width 1000px
-    .container section.welcome div.welcome__profile-txt, .container section#stack p
-        font-size 3rem
