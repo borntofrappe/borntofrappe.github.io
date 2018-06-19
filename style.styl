@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Lato')
 
 // define variables for the font, colors and other properties frequently used in the project
 font-main = 'Lato', sans-serif
@@ -18,6 +18,7 @@ transition-cubic = all 0.3s cubic-bezier(.22,-0.3,.68,1.44)
 .anchor-links-reset 
     text-decoration none 
     color inherit
+
 // define a mixin for the tooltip displayed on hover on particular span elements
 .tooltip-style
     background black 
@@ -26,7 +27,6 @@ transition-cubic = all 0.3s cubic-bezier(.22,-0.3,.68,1.44)
     border-radius 12px
     font-size 1.05rem
     filter filter-shadow
-
 *
     box-sizing border-box
     margin 0
@@ -118,7 +118,7 @@ body
         max-width 800px
         // margin to distance the section from the navigation bar and the underlying section
         // horizontal margin to also center the section
-        margin 25vh auto
+        margin 25vh auto 20vh
         // padding to distance the contents from the borders of the section and of the surrounding window
         padding 0 2rem
 
@@ -214,7 +214,7 @@ body
     section#stack
         // center the section in the middle of the viewport, while limiting its width 
         max-width 700px
-        margin 0 auto
+        margin 0 auto 2rem
         min-height 100vh
         // padding to distance the section from the surrounding window and allow the anchor link to redirect to the correct vertical coordinate 
         padding 4rem 2rem
@@ -269,7 +269,6 @@ body
             flex-wrap wrap 
             // center the icons horizontally (especially for the last icon)
             justify-content center
-            margin 2.5rem 0
         
             svg
                 width 90px
@@ -298,7 +297,7 @@ body
             font-size 1.3rem
             line-height 1.8
 
-            span.projects__number, span.projects__something 
+            span.projects__several
                 // include a tooltip for the selected keyword, like in the welcome section
                 // see previous comments which describe the use of the pseudo elements
                 position relative
@@ -311,39 +310,71 @@ body
                     opacity 0
                     transition transition-cubic
                     font-weight initial
+                    content 'A few indeed'
+                    top 0
+                &:hover:before
+                    top -45px
+                    opacity 1
 
-            span.projects__number:before
-                content 'A few indeed'
-                top 0
-                
-            span.projects__number:hover:before
-                top -45px
-                opacity 1
+                &:after
+                    content ''
+                    position absolute 
+                    top -5px
+                    left 10%
+                    border-left 10px solid transparent
+                    border-right 10px solid transparent
+                    border-top 10px solid black
+                    border-bottom 10px solid transparent
+                    filter filter-shadow
+                    opacity 0
 
-            span.projects__number:after
-                content ''
-                position absolute 
-                top -5px
-                left 10%
-                border-left 10px solid transparent
-                border-right 10px solid transparent
-                border-top 10px solid black
-                border-bottom 10px solid transparent
-                filter filter-shadow
-                opacity 0
+                &:hover:after
+                    opacity 1
+                    left 80%
+                    transition transition-cubic
+                    transition-delay 0.2s
 
-            span.projects__number:hover:after
-                opacity 1
-                left 80%
-                transition transition-cubic
-                transition-delay 0.2s
+        div.projects__showcase 
 
-            span.projects__something:before
-                content '✌'
-                bottom -10px
-            span.projects__something:hover:before
-                bottom -45px
-                opacity 1
+            display flex 
+            flex-direction column
+            align-items center
+        
+            .showcase--description
+                padding 2.2rem 2.5rem
+                margin 2rem auto
+                max-width 350px
+                background white
+                box-shadow 0 1px 3px rgba(black, 0.8)
+                transition all 0.2s ease 
+                display flex 
+                flex-direction column
+
+                svg 
+                    filter grayscale(1)
+                    opacity 0.5
+                    transition all 0.2s ease-out
+                    margin-bottom 1rem
+
+                &:hover svg 
+                    opacity 0.8
+
+            .showcase--actions
+                a, button
+                    @extends .anchor-links-reset 
+                    box-shadow 0 1.5px 3px rgba(black, 0.8)
+                    padding 1rem 1.2rem
+                    margin 0 1rem
+                    font-size 1.1rem
+                    font-weight 300
+                    transition all 0.2s ease-out
+
+                    &:hover
+                        background black
+                        color white
+                button 
+                    @extends .button-reset  
+                    cursor pointer                
 
 
     section#contacts 
@@ -417,7 +448,7 @@ body
                     
                 &:hover:before
                     // on hover, include an animation which expands the circle and changes the background color to be completely transparent
-                    animation pulse 1s infinite ease-out
+                    animation pulse 1.5s infinite ease-out
                 
                 svg  
                     // expand the svg to completely take the size of the parent anchor link elements
@@ -467,7 +498,7 @@ body
             @extends .anchor-links-reset 
                 
 @keyframes pulse 
-    70%, 100%
+    50%, 100%
         top -1.5rem
         left -1.5rem
         bottom -1.5rem
