@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lato");
 .button-reset,
-.container nav.navbar button.navbar__toggle-links {
+.container nav.navbar button.navbar__toggle-links,
+.container section#projects div.projects__showcase .showcase--actions button {
   background: none;
   border: none;
   font-family: inherit;
@@ -8,7 +9,8 @@
 }
 .anchor-links-reset,
 .container nav.navbar div.navbar__links a,
-.container section#projects div.projects__showcase .showcase--links a,
+.container section#projects div.projects__showcase .showcase--actions a,
+.container section#projects div.projects__showcase .showcase--actions button,
 .container footer a {
   text-decoration: none;
   color: inherit;
@@ -288,7 +290,8 @@ body {
 .container section#projects div.projects__showcase .showcase--description:hover svg {
   opacity: 0.8;
 }
-.container section#projects div.projects__showcase .showcase--links a {
+.container section#projects div.projects__showcase .showcase--actions a,
+.container section#projects div.projects__showcase .showcase--actions button {
   box-shadow: 0 1.5px 3px rgba(37,37,37,0.8);
   padding: 1rem 1.2rem;
   margin: 0 1rem;
@@ -296,9 +299,13 @@ body {
   font-weight: 300;
   transition: all 0.2s ease-out;
 }
-.container section#projects div.projects__showcase .showcase--links a:hover {
+.container section#projects div.projects__showcase .showcase--actions a:hover,
+.container section#projects div.projects__showcase .showcase--actions button:hover {
   background: #252525;
   color: #fff;
+}
+.container section#projects div.projects__showcase .showcase--actions button {
+  cursor: pointer;
 }
 .container section#contacts {
   min-height: 100vh;

@@ -359,8 +359,8 @@ body
                 &:hover svg 
                     opacity 0.8
 
-            .showcase--links
-                a
+            .showcase--actions
+                a, button
                     @extends .anchor-links-reset 
                     box-shadow 0 1.5px 3px rgba(black, 0.8)
                     padding 1rem 1.2rem
@@ -372,6 +372,9 @@ body
                     &:hover
                         background black
                         color white
+                button 
+                    @extends .button-reset  
+                    cursor pointer                
 
 
     section#contacts 
