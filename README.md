@@ -27,3 +27,5 @@ V4.9: include minor changes prior to creating the section devoted on few showcas
 V5: begin including few projects with a new section and introductory text
 
 V5.1: start working on the project section, including a card which showcases a project, an anchor link forwarding toward said project and a button picking another, different project.
+
+V5.5: // TODO add the functionality behind the anchor link and the button elements of the projects section
