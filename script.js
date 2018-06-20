@@ -61,13 +61,25 @@ const projects = [
         description: "A simple game in which to press colored buttons, in sequence.",
         url: "https://codepen.io/borntofrappe/full/jxXBgm",
         reference: "simon-game"
+    },
+    {
+        title: "Tick Chrome Extension",
+        description: "A chrome extension showing a working clock, with SVG and React.",
+        url: "https://github.com/borntofrappe/-Tick-Chrome-Extension",
+        reference: "chrome-extension"
+    },
+    {
+        title: "CSS Quiz",
+        description: "A multiple choice quiz built entirely with HTML and CSS.",
+        url: "https://codepen.io/borntofrappe/full/OZaOWo",
+        reference: "css-quiz"
+    },
+    {
+        title: "Tic Tac Toe",
+        description: "A simple game to play with somebody, or with a machine.",
+        url: "https://codepen.io/borntofrappe/full/JvZGdj",
+        reference: "tic-tac-toe"
     }
-    // {
-    //     title: "CSS Quiz",
-    //     description: "",
-    //     url: "https://codepen.io/borntofrappe/full/OZaOWo",
-    //     reference: "css-quiz"
-    // }
     
 ];
 
