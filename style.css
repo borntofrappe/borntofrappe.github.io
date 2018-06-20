@@ -167,7 +167,6 @@ body {
   text-align: center;
   font-size: 1.3rem;
   line-height: 1.8;
-  margin: 1rem 0;
 }
 .container section#stack p span.stack__webdev {
   position: relative;
@@ -497,14 +496,15 @@ body {
 }
 @media screen and (min-width: 700px) {
   .container section#stack {
-    width: 700px;
-    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .container section#stack div.stack__icons {
     position: relative;
-    height: 100%;
-    width: 100%;
-    margin: 0;
+    width: 700px;
+    height: 700px;
+    transform: translateX(-22.5px);
   }
   .container section#stack div.stack__icons svg {
     position: absolute;
@@ -560,11 +560,6 @@ body {
   }
   .container section#stack div.stack__icons svg:nth-of-type(12) {
     transform: rotate(360deg) translateX(250px) rotate(-360deg);
-  }
-}
-@media screen and (min-width: 1400px) {
-  .container section.welcome {
-    max-width: 1000px;
   }
 }
 @-moz-keyframes pulse {
