@@ -347,11 +347,13 @@ body
                 margin 2rem 0
                 // limit the width of the card which described the project
                 max-width 300px
-                // give a light shadow to visually remark the presence of a card
-                box-shadow 0 1px 5px rgba(black, 0.5)
+                box-shadow 0 2px 5px rgba(black, 0.6), 0 -1px 5px rgba(black, 0.2)
+                border-radius: 12px;
                 // display the svg icon and the short paragraph describing the project in a single column layout
                 display flex 
                 flex-direction column
+                /* transition to alter properties when a new project is included (through the JS script) */
+                transition transition-cubic
 
                 svg 
                     // reduce the opacity of the image
@@ -383,8 +385,8 @@ body
                     padding 1rem 1.2rem
                     // margin to separate the elements from each other
                     margin 0 1rem
-                    // box shadow matching the div above (which is connected to the elements)
-                    box-shadow 0 1.5px 3px rgba(black, 0.5)
+                    box-shadow 0 2px 5px rgba(black, 0.5), 0 -1px 5px rgba(black, 0.1)
+                    border-radius 12px
                     // transition for the hover state
                     transition all 0.2s ease-out
                     font-size 1.1rem
@@ -517,6 +519,18 @@ body
         a
             @extends .anchor-links-reset 
                 
+// class for the display of the projects section
+.showcase--description--new
+    transform translateX(20px) rotate(2deg)
+
+.showcase--description--new p
+    opacity 0
+
+.showcase--description--new svg
+    visibility hidden
+
+
+// animation for the icons in the contacts section
 @keyframes pulse 
     50%, 100%
         top -1.5rem
