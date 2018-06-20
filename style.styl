@@ -223,7 +223,6 @@ body
             text-align center 
             font-size 1.3rem
             line-height 1.8
-            margin 1rem 0
 
             span.stack__webdev
                 // include a tooltip for the selected keyword(s), like in the welcome section
@@ -347,11 +346,13 @@ body
                 margin 2rem 0
                 // limit the width of the card which described the project
                 max-width 300px
-                // give a light shadow to visually remark the presence of a card
-                box-shadow 0 1px 5px rgba(black, 0.5)
+                box-shadow 0 2px 5px rgba(black, 0.6), 0 -1px 5px rgba(black, 0.2)
+                border-radius: 12px;
                 // display the svg icon and the short paragraph describing the project in a single column layout
                 display flex 
                 flex-direction column
+                /* transition to alter properties when a new project is included (through the JS script) */
+                transition transition-cubic
 
                 svg 
                     // reduce the opacity of the image
@@ -383,8 +384,8 @@ body
                     padding 1rem 1.2rem
                     // margin to separate the elements from each other
                     margin 0 1rem
-                    // box shadow matching the div above (which is connected to the elements)
-                    box-shadow 0 1.5px 3px rgba(black, 0.5)
+                    box-shadow 0 2px 5px rgba(black, 0.5), 0 -1px 5px rgba(black, 0.1)
+                    border-radius 12px
                     // transition for the hover state
                     transition all 0.2s ease-out
                     font-size 1.1rem
@@ -517,6 +518,18 @@ body
         a
             @extends .anchor-links-reset 
                 
+// class for the display of the projects section
+.showcase--description--new
+    transform translateX(20px) rotate(2deg)
+
+.showcase--description--new p
+    opacity 0
+
+.showcase--description--new svg
+    visibility hidden
+
+
+// animation for the icons in the contacts section
 @keyframes pulse 
     50%, 100%
         top -1.5rem
@@ -621,16 +634,20 @@ body
 @media screen and (min-width: 700px)
     // for large screens, display the SVG icons as orbiting around the center of the screen
     .container section#stack
-        width 700px
-        height @width
+        // display the paragraph and the div nesting svg icons in a single column layout (to align them horizontally)
+        display flex
+        flex-direction column
+        align-items center
 
         div.stack__icons
             // position relative to absolute position the svg icons 
             position relative 
-            height 100%
-            width 100%
-            // margin 0 to get the svg icons close to the connetected paragraph element
-            margin 0
+            width 700px
+            height @width
+            // the svg icons are disposed in a circular patter by also modifying the translateX value of the transform property
+            // this translation doesn't take into account the size of the icon themselves, and therefore the icons are shown in the desired pattern, but slightly offset to the right
+            // this can be fixed by translating the div which nests the icons in the opposite direction
+            transform translateX(-22.5px)
 
             svg
                 position absolute 
@@ -664,7 +681,3 @@ body
                     // rotate with an opposite value of the first instance rotates the icon in place, back to the correct inclination
                     transform rotate(360deg/12*icon) translateX(250px) rotate(-360deg/12*icon)
 
-@media screen and (min-width: 1400px) 
-    // for (very) large screen sizes, increase the font-size of the text and the width of the parent section
-    .container section.welcome
-        max-width 1000px

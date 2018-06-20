@@ -167,7 +167,6 @@ body {
   text-align: center;
   font-size: 1.3rem;
   line-height: 1.8;
-  margin: 1rem 0;
 }
 .container section#stack p span.stack__webdev {
   position: relative;
@@ -275,9 +274,12 @@ body {
   padding: 2.2rem;
   margin: 2rem 0;
   max-width: 300px;
-  box-shadow: 0 1px 5px rgba(37,37,37,0.5);
+  box-shadow: 0 2px 5px rgba(37,37,37,0.6), 0 -1px 5px rgba(37,37,37,0.2);
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
+/* transition to alter properties when a new project is included (through the JS script) */
+  transition: all 0.3s cubic-bezier(0.22, -0.3, 0.68, 1.44);
 }
 .container section#projects div.projects__showcase .showcase--description svg {
   opacity: 0.3;
@@ -301,7 +303,8 @@ body {
 .container section#projects div.projects__showcase .showcase--actions button {
   padding: 1rem 1.2rem;
   margin: 0 1rem;
-  box-shadow: 0 1.5px 3px rgba(37,37,37,0.5);
+  box-shadow: 0 2px 5px rgba(37,37,37,0.5), 0 -1px 5px rgba(37,37,37,0.1);
+  border-radius: 12px;
   transition: all 0.2s ease-out;
   font-size: 1.1rem;
   text-align: center;
@@ -409,6 +412,15 @@ body {
   bottom: 0;
   right: 60%;
 }
+.showcase--description--new {
+  transform: translateX(20px) rotate(2deg);
+}
+.showcase--description--new p {
+  opacity: 0;
+}
+.showcase--description--new svg {
+  visibility: hidden;
+}
 @media screen and (max-width: 650px) {
   .container nav.navbar button.navbar__toggle-links {
     display: inline-block;
@@ -484,14 +496,15 @@ body {
 }
 @media screen and (min-width: 700px) {
   .container section#stack {
-    width: 700px;
-    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .container section#stack div.stack__icons {
     position: relative;
-    height: 100%;
-    width: 100%;
-    margin: 0;
+    width: 700px;
+    height: 700px;
+    transform: translateX(-22.5px);
   }
   .container section#stack div.stack__icons svg {
     position: absolute;
@@ -547,11 +560,6 @@ body {
   }
   .container section#stack div.stack__icons svg:nth-of-type(12) {
     transform: rotate(360deg) translateX(250px) rotate(-360deg);
-  }
-}
-@media screen and (min-width: 1400px) {
-  .container section.welcome {
-    max-width: 1000px;
   }
 }
 @-moz-keyframes pulse {
