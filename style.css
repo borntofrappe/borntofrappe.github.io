@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu");
 .button-reset,
 .container nav.navbar button.navbar__toggle-links,
 .container section#projects div.projects__showcase .showcase--actions button {
@@ -17,8 +17,8 @@
 .tooltip-style,
 .container section.welcome figure.welcome__profile-img:before,
 .container section.welcome div.welcome__profile-txt span.profile-txt__name:before,
-.container section#stack p span.stack__webdev:before,
-.container section#projects p span.projects__several:before,
+.container section#projects p span.projects__starting:before,
+.container section#stack p span.stack__expert:before,
 .container section#contacts p span.contacts__notice:before {
   background: #252525;
   color: #fff;
@@ -35,11 +35,12 @@
 body {
   min-height: 100vh;
   width: 100%;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #252525;
   background: #fff;
 }
 .container nav.navbar {
+  font-family: 'Ubuntu', sans-serif;
   position: fixed;
   top: 0;
   left: 0;
@@ -89,7 +90,7 @@ body {
 }
 .container section.welcome {
   max-width: 800px;
-  margin: 25vh auto 20vh;
+  margin: 30vh auto 30vh;
   padding: 0 2rem;
 }
 .container section.welcome figure.welcome__profile-img {
@@ -121,12 +122,16 @@ body {
   line-height: 1.8;
   font-size: 1.3rem;
 }
+.container section.welcome div.welcome__profile-txt blockquote {
+  font-style: italic;
+  margin-top: 2rem;
+}
 .container section.welcome div.welcome__profile-txt span.profile-txt__name {
   font-weight: bold;
   position: relative;
 }
 .container section.welcome div.welcome__profile-txt span.profile-txt__name:before {
-  content: 'Do wear it out';
+  content: 'Cool name 👌';
   position: absolute;
   top: -1rem;
   right: 0;
@@ -157,65 +162,6 @@ body {
   transition: all 0.3s cubic-bezier(0.22, -0.3, 0.68, 1.44);
   transition-delay: 0.2s;
 }
-.container section#stack {
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  min-height: 100vh;
-  padding: 4rem 2rem;
-}
-.container section#stack p {
-  text-align: center;
-  font-size: 1.3rem;
-  line-height: 1.8;
-}
-.container section#stack p span.stack__webdev {
-  position: relative;
-  font-weight: bold;
-}
-.container section#stack p span.stack__webdev:before {
-  content: '10 months and counting';
-  position: absolute;
-  top: 0;
-  right: 0;
-  opacity: 0;
-  transition: all 0.3s cubic-bezier(0.22, -0.3, 0.68, 1.44);
-  font-weight: initial;
-}
-.container section#stack p span.stack__webdev:hover:before {
-  top: -45px;
-  opacity: 1;
-}
-.container section#stack p span.stack__webdev:after {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: 10%;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid #252525;
-  border-bottom: 10px solid transparent;
-  filter: drop-shadow(0 1px 5px rgba(37,37,37,0.5));
-  opacity: 0;
-}
-.container section#stack p span.stack__webdev:hover:after {
-  opacity: 1;
-  left: 80%;
-  transition: all 0.3s cubic-bezier(0.22, -0.3, 0.68, 1.44);
-  transition-delay: 0.2s;
-}
-.container section#stack div.stack__icons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.container section#stack div.stack__icons svg {
-  width: 90px;
-  height: 90px;
-  margin: 12px;
-}
-.container section#stack div.stack__icons svg:last-of-type {
-  transform: rotate(90deg);
-}
 .container section#projects {
   min-height: 100vh;
   display: flex;
@@ -230,24 +176,24 @@ body {
   font-size: 1.3rem;
   line-height: 1.8;
 }
-.container section#projects p span.projects__several {
+.container section#projects p span.projects__starting {
   position: relative;
   font-weight: bold;
 }
-.container section#projects p span.projects__several:before {
+.container section#projects p span.projects__starting:before {
   position: absolute;
   right: 0;
   opacity: 0;
   transition: all 0.3s cubic-bezier(0.22, -0.3, 0.68, 1.44);
   font-weight: initial;
-  content: 'A few indeed';
+  content: '10 months and counting 🤠';
   top: 0;
 }
-.container section#projects p span.projects__several:hover:before {
+.container section#projects p span.projects__starting:hover:before {
   top: -45px;
   opacity: 1;
 }
-.container section#projects p span.projects__several:after {
+.container section#projects p span.projects__starting:after {
   content: '';
   position: absolute;
   top: -5px;
@@ -259,7 +205,7 @@ body {
   filter: drop-shadow(0 1px 5px rgba(37,37,37,0.5));
   opacity: 0;
 }
-.container section#projects p span.projects__several:hover:after {
+.container section#projects p span.projects__starting:hover:after {
   opacity: 1;
   left: 80%;
   transition: all 0.3s cubic-bezier(0.22, -0.3, 0.68, 1.44);
@@ -314,6 +260,65 @@ body {
 .container section#projects div.projects__showcase .showcase--actions button:hover {
   background: #252525;
   color: #fff;
+}
+.container section#stack {
+  max-width: 700px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+}
+.container section#stack p {
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 1.8;
+}
+.container section#stack p span.stack__expert {
+  position: relative;
+  font-weight: bold;
+}
+.container section#stack p span.stack__expert:before {
+  content: 'No kidding 🧐';
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.22, -0.3, 0.68, 1.44);
+  font-weight: initial;
+}
+.container section#stack p span.stack__expert:hover:before {
+  top: -45px;
+  opacity: 1;
+}
+.container section#stack p span.stack__expert:after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 10%;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #252525;
+  border-bottom: 10px solid transparent;
+  filter: drop-shadow(0 1px 5px rgba(37,37,37,0.5));
+  opacity: 0;
+}
+.container section#stack p span.stack__expert:hover:after {
+  opacity: 1;
+  left: 80%;
+  transition: all 0.3s cubic-bezier(0.22, -0.3, 0.68, 1.44);
+  transition-delay: 0.2s;
+}
+.container section#stack div.stack__icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.container section#stack div.stack__icons svg {
+  width: 90px;
+  height: 90px;
+  margin: 12px;
+}
+.container section#stack div.stack__icons svg:last-of-type {
+  transform: rotate(90deg);
 }
 .container section#contacts {
   min-height: 100vh;
