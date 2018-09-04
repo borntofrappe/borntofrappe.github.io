@@ -8,7 +8,7 @@ Welcome to the repository hosting, discussing and ever updating my personal webs
 
 What I'd like to include in the span of weeks:
 
-- [ ] new tab icon;
+- [x] new tab icon;
 
 - [x] better copy;
 
