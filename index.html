@@ -42,229 +42,37 @@
   </svg>
 
 
-  <!-- in a wrapping container include
-    - a navigation bar in a nav element
-    - a welcome message in a section element
-    - the technology stack in a section element
-    - [TODO] few projects to showcase in a section element
-    - few social icons in a section element
-    - a footer to close the page
+  <!-- in a wrapping container include one section for each of the following purposes:
+    - welcoming the visitor
+    - showing off projects
+    - describing where to look for more
+
+    each section is "interrupted" by a container fabricating an hypothetical conversation
+    between the visitor and the developer
   -->
 
-  <div class="container">
+  <div class="app">
 
-    <nav class="navbar">
-      <!--
-        in the navigation bar:
-        - for large screen devices include a logo and three anchor link elements redirecting elsewhere in the page
-        - for small screen devices include the logo and a toggle, which shows the three anchor links element in a panel below the navbar itself
-      -->
-
-      <svg class="navbar__logo">
-        <use href="#btf-logo" />
-      </svg>
-
-      <!-- include a span to separate the logo on the left and the anchor links on the right -->
-      <span class="navbar__whitespace"></span>
-
-      <!-- include a button shown only when the viewport is less than x wide -->
-      <button class="navbar__toggle-links">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <!-- include the anchor links in a panel as to position them together and display them separately in small screen devices  -->
-      <div class="navbar__links">
-        <a href="#projects">projects</a>
-        <a href="#stack">stack</a>
-        <a href="#contacts">come say hi</a>
-      </div>
-    </nav><!-- close the navigation bar -->
-
-
-    <!-- in the welcome section include a figure element for an image and a div for connecting text -->
-    <section class="welcome">
-
-      <figure class="welcome__profile-img">
-        <img src="https://pbs.twimg.com/profile_images/969337754567004160/1GnoGMz-_400x400.jpg" alt="My profile picture" />
+    <main>
+      <figure>
+        <img src="Resources/Brand/profile-picture.png" alt="Gabriele Corti trying to smile." />
       </figure>
-
-      <div class="welcome__profile-txt">
-
-        <p>Hello there 👋<br>
-          You have reached
-          <!-- separate the text in a span to include a tooltip through CSS pseudo-elements -->
-          <span class="profile-txt__name">
-            Gabriele Corti
-          </span>
-          , aspiring web developer.
-          <br>
+      <header>
+        <h1>Hello there</h1>
+        <h3>
+          You have reached one <strong>Gabriele Corti</strong>
+        </h3>
+        <p>
+          Aspiring web developer, designer <i>who knows what next</i>
         </p>
-        <blockquote>
-          "Be it on this page, or generally as you go through your day, I hope you'll find something neat."
-        </blockquote>
-
-      </div><!-- close the text div -->
-
-    </section><!-- close the welcome section -->
-
-    <!-- in the section for the projects, include introductory text followed by a div nesting a few examples -->
-    <section id="projects">
-
-      <p>
-        <span class="projects__starting">
-          Starting from
-          November 2017
-        </span>
-        , I've managed to create a few projects.
-      </p>
-
-      <!-- to showcase the different projects, include the card display created for a #codepenchallenge -->
-      <div class="projects__showcase">
-
-        <div class="showcase--description">
-          <svg>
-            <use href="#pomodoro-clock" />
-          </svg>
-          <p>
-            A pomodoro clock I actually enjoy to use from time to time.
-          </p>
-        </div>
-
-        <div class="showcase--actions">
-          <a href="https://codepen.io/borntofrappe/full/PeKwOW" target="_blank">
-            Check project out
-          </a>
-
-          <button>
-            Show another one
-          </button>
-        </div>
-
-      </div>
-
-    </section><!-- close the projects section -->
+      </header>
+    </main>
 
 
-    <!-- in the section for the technology stack include some explanatory text and a div for all the SVG icons representing the stack itself -->
-    <section id="stack">
 
-      <p>
-        I'm far from an expert in
-        <span class="stack__expert">
-          web development
-        </span>.
-        <br />
-        Still, I'll always strive to learn, to develop and maintain a solid stack.
-      </p>
+  </div><!-- close the .app div container -->
 
-      <div class="stack__icons">
-
-        <svg>
-          <use href="#html-icon" />
-        </svg>
-
-        <svg>
-          <use href="#css-icon" />
-        </svg>
-
-        <svg>
-          <use href="#bootstrap-icon" />
-        </svg>
-
-        <svg>
-          <use href="#sass-icon" />
-        </svg>
-
-        <svg>
-          <use href="#stylus-icon" />
-        </svg>
-
-        <svg>
-          <use href="#jquery-icon" />
-        </svg>
-
-        <svg>
-          <use href="#js-icon" />
-        </svg>
-
-        <svg>
-          <use href="#svg-icon" />
-        </svg>
-
-        <svg>
-          <use href="#d3-icon" />
-        </svg>
-
-        <svg>
-          <use href="#react-icon" />
-        </svg>
-
-        <svg>
-          <use href="#git-icon" />
-        </svg>
-
-        <svg>
-          <use href="#gulp-icon" />
-        </svg>
-
-        <svg>
-          <use href="#tools-icon" />
-        </svg>
-
-      </div><!-- close the icons div -->
-
-    </section><!-- close the technology stack section -->
-
-
-    <!-- in the contacts section include a brief string of text and icons redirecting to pertinent profiles -->
-    <section id="contacts">
-      <p>
-        Like a project? Missing a link? Simply want to say hi?
-        Here a few links just for you.
-        <br />
-        I'm just a
-        <span class="contacts__notice">
-          semi-stable
-        </span>
-        internet connection away.
-      </p>
-
-      <div class="contacts__icons">
-        <!-- nest each svg icon in an anchor link element, redirecting toward the profiles themselves -->
-        <a href="https://codepen.io/borntofrappe/">
-          <svg>
-            <use href="#codepen-icon" />
-          </svg>
-        </a>
-
-        <a href="https://www.freecodecamp.org/borntofrappe">
-          <svg>
-            <use href="#freecodecamp-icon" />
-          </svg>
-        </a>
-
-        <a href="https://github.com/borntofrappe">
-          <svg>
-            <use href="#github-icon" />
-          </svg>
-        </a>
-
-        <a href="https://twitter.com/borntofrappe">
-          <svg>
-            <use href="#twitter-icon" />
-          </svg>
-        </a>
-
-      </div><!-- close the icons div -->
-
-    </section><!-- close the contacts section -->
-
-
-  </div><!-- close the .container div -->
-
-  <!-- reference a JS script with the logic which toggles the navigation bar for small devices -->
+  <!-- reference the JS script allowing for a bit of dynamism in the project (to show different projects, to change slightly the appearance of the page) -->
   <script src="script.js"></script>
 
 </body>
