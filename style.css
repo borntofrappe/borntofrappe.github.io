@@ -21,6 +21,7 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg);
 }
+/* MAIN: WELCOME MESSAGE */
 /*
 display the welcome section as at least 90vh tall, 5h separated from each end
 center its content 
@@ -78,4 +79,80 @@ header p {
   letter-spacing: 0.1rem;
   font-size: 1.5rem;
   font-weight: 300;
+}
+/* on smaller viewports display the image atop the header */
+@media (max-width: 600px) {
+  main {
+    flex-direction: column;
+    margin: 10vh 5vw;
+  }
+}
+
+/* VISITOR: CONTAINER IN BETWEEN SECTIONS*/
+.visitor {
+  /* increase white space around and within the container */
+  margin: 5vh 0;
+  padding: 5vh 0;
+  /* detail the intermittent container to be smaller than the most prominent sections */
+  min-height: 70vh;
+  /* display the text-based elements in a column, centered */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  /* include a simple border atop and below, delimiting the area */
+  border-top: 0.5rem solid #333;
+  border-bottom: 0.5rem solid #333;
+  /* position relative to absolute position the pseudo elements */
+  position: relative;
+}
+/* remove whitespace for the last intermittent container, as it closes the page */
+.visitor:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+/* for the same container remove also the final pseudo element, inevitably without purpose */
+.visitor:last-child:after {
+  border: none;
+}
+/*
+through pseudo elements detail two arrows, pointing outwards
+this to detail the sections to which the intermittent containers' are related
+*/
+.visitor:before,
+.visitor:after {
+  position: absolute;
+  content: "";
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-right: 1rem solid transparent;
+  border-left: 1rem solid transparent;
+}
+.visitor:before {
+  border-top: 1rem solid transparent;
+  border-bottom: 1rem solid #333;
+  bottom: calc(100% + 0.5rem);
+}
+.visitor:after {
+  border-top: 1rem solid #333;
+  border-bottom: 1rem solid transparent;
+  top: calc(100% + 0.5rem);
+}
+/*
+for the text of the intermittent containers, feature it prominently
+add accent color to the <span> element 
+notably increase the distance between the last paragraph and the other elements
+*/
+.visitor p {
+  margin: 1rem 0;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+.visitor p:last-child {
+  margin-top: 5rem;
+}
+.visitor p span {
+  color: var(--color-accent);
+  font-weight: bold;
 }
