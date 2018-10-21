@@ -1,9 +1,10 @@
 /* import font(s) */
-@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Maven+Pro|Sansita:700");
 
 /* detail root variables */
 :root {
-  --font: "Lato", sans-serif;
+  --font: "Maven Pro", sans-serif;
+  --font-header: "Sansita", sans-serif;
   --color-text: #333;
   --color-accent: #ff6247;
   --color-bg: #fff;
@@ -61,15 +62,15 @@ header {
 }
 /* bold heading */
 header h1 {
-  text-align: center;
-  text-transform: uppercase;
+  font-family: var(--font-header);
+  font-weight: bold;
   margin-bottom: 3rem;
   letter-spacing: 0.1rem;
-  font-size: calc(3rem + 1vw);
+  font-size: calc(2.5rem + 2.5vw);
   color: var(--color-accent);
 }
 header h3 {
-  font-size: 2.5rem;
+  font-size: calc(1.5rem + 1vw);
   max-width: 450px;
 }
 /* accented name */
@@ -83,7 +84,7 @@ header p {
   margin: 2rem 0 0.5rem;
   line-height: 2;
   letter-spacing: 0.1rem;
-  font-size: 1.5rem;
+  font-size: calc(1rem + 0.75vw);
   font-weight: 300;
 }
 /* on smaller viewports display the image atop the header */
@@ -92,7 +93,13 @@ header p {
     flex-direction: column;
     margin: 10vh 5vw;
   }
+  /* center the main heading */
+  header h1 {
+    text-align: center;
+    letter-spacing: 0.5rem;
+  }
 }
+
 /* VISITOR: CONTAINER IN BETWEEN SECTIONS */
 .visitor {
   /* increase white space around and within the container */
@@ -153,7 +160,7 @@ add accent color to the <span> element
 notably increase the distance between the last paragraph and the other elements */
 .visitor p {
   margin: 1rem 0;
-  font-size: 2.5rem;
+  font-size: calc(1rem + 2vw);
   font-weight: 300;
 }
 .visitor p:last-child {
@@ -162,4 +169,20 @@ notably increase the distance between the last paragraph and the other elements 
 .visitor p span {
   color: var(--color-accent);
   font-weight: bold;
+}
+
+/* cap the font-size of the text-based elements above an established threshold */
+@media (min-width: 1200px) {
+  header h1 {
+    font-size: 5rem;
+  }
+  header h3 {
+    font-size: 2.3rem;
+  }
+  header p {
+    font-size: 1.6rem;
+  }
+  .visitor p {
+    font-size: 2.4rem;
+  }
 }
