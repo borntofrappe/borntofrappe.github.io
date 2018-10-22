@@ -89,14 +89,16 @@ header p {
 }
 
 /** SECTION.SOCIAL */
-/* display the social icons side by side */
+/* display the anchor link elements and the connected message atop one another */
 .social {
-  min-height: 70vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  overflow: hidden;
 }
+/* display the social icons side by side, in a wrapping row */
 .social__links {
   display: flex;
   justify-content: center;
@@ -106,10 +108,47 @@ header p {
   margin: 1rem;
   width: 125px;
   height: 125px;
+  border-radius: 50%;
+  position: relative;
+}
+.social__links a:nth-of-type(1) {
+  color: #3fb0fe;
+}
+.social__links a:nth-of-type(2) {
+  color: #109121;
+}
+.social__links a:nth-of-type(3) {
+  color: #545454;
+}
+.social__links a:nth-of-type(4) {
+  color: #242424;
+}
+/* include an expanding background through a pseudo element (expanding on hover) */
+.social__links a:before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%);
+  background: currentColor;
+  border-radius: 50%;
+  z-index: -10;
+  opacity: 0.8;
+}
+/* the expanding background is applied through JavaScript, adding/removing a selected class */
+.social__links a.hovered:before {
+  /* transition included on hover to smoothen the expansion and not the contraction */
+  transition: all 1.2s ease-out;
+  width: 200vmax;
+  height: 200vmax;
+  opacity: 0.2;
 }
 .social__links svg {
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 .social .social__copy {
   text-align: center;
@@ -118,7 +157,6 @@ header p {
 /* SECTION.TRANSITION: container in between sections */
 .transition {
   /* increase white space around and within the container */
-  margin: 5vh 0;
   padding: 5vh 0;
   /* detail the intermittent container to be smaller than the most prominent sections */
   min-height: 70vh; /* display the text-based elements in a column, centered */
@@ -202,8 +240,9 @@ notably increase the distance between the last paragraph and the other elements 
   }
 }
 
-/* on smaller viewports display the image atop the header */
+/* on smaller viewports */
 @media (max-width: 700px) {
+  /* display the image atop the header */
   main {
     flex-direction: column;
     margin: 10vh 5vw;
@@ -217,5 +256,24 @@ notably increase the distance between the last paragraph and the other elements 
   .social__links a {
     width: 100px;
     height: 100px;
+  }
+  /* increase the speed of the expansion of the background, for the social icons */
+  .social__links a.hovered:before {
+    transition-duration: 0.6s;
+  }
+}
+
+/* define the animation added through javascript for the message matching the hovered anchor links */
+@keyframes anchorLinkHover {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

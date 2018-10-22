@@ -1,7 +1,9 @@
 /** script logic
  * change the accent color depending on the time of day
  * change the job description at random
+ * "paint" the background of the .social section while describing the hovered anchor link
  */
+
 // create a function which accepts an array as argument and returns a random item from the same
 function randomItem(array) {
   return array[Math.floor(Math.random() * array.length)];
@@ -44,3 +46,63 @@ const job = [
 const jobDescription = document.querySelector('i');
 // change the text of the <i> element from one of the expressions at random
 jobDescription.textContent = randomItem(job);
+
+// SOCIAL SECTION
+// target all anchor link elements and the container in which to describe the hovered element
+const socialLinks = document.querySelectorAll('.social__links a');
+const socialCopy = document.querySelector('.social__copy');
+
+// describe each icon and the matching text
+const social = [
+  {
+    link: 'twitter',
+    copy: 'Posting almost daily',
+    color: '#3fb0fe'
+  },
+  {
+    link: 'freecodecamp',
+    copy: 'Always learning',
+    color: '#109121'
+  },
+  {
+    link: 'codepen',
+    copy: 'Coding plenty',
+    color: '#545454'
+  },
+  {
+    link: 'github',
+    copy: 'Open sourcing it all',
+    color: '#242424'
+  }
+];
+
+// create a function which takes as argument the mouseenter event
+// in turns this triggers the expansion of the pseudo element, "painting the background"
+// this includes also a text matching the hovered anchor link element
+function paint(event) {
+  // select the hovered element
+  const { target } = event;
+
+  // continue unless the element has already been hovered
+  if (!target.classList.contains('hovered')) {
+    // remove the .hovered class from all elements
+    socialLinks.forEach(socialLink => socialLink.classList.remove('hovered'));
+    // retrieve the data attribute to match the platform in the defined object
+    const { link } = target.dataset;
+
+    // retrieve the object matching the link
+    const match = social.find(socialLink => socialLink.link === link);
+
+    // add the class of hovered
+    target.classList.add('hovered');
+    // include a text with the information retrieved from the matching object
+    socialCopy.innerHTML = `
+      <h2 style="animation: anchorLinkHover 0.2s 0.18s linear both;">
+        ${match.copy}, on <strong style="color: ${match.color};">${match.link}</strong>
+      </h2>
+    `;
+  }
+}
+
+// trigger the function whenever hovering on one of the selected anchor links
+socialLinks.forEach(socialLink => socialLink.addEventListener('mouseenter', paint));
