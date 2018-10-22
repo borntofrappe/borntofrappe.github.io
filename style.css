@@ -87,21 +87,36 @@ header p {
   font-size: calc(1rem + 0.75vw);
   font-weight: 300;
 }
-/* on smaller viewports display the image atop the header */
-@media (max-width: 700px) {
-  main {
-    flex-direction: column;
-    margin: 10vh 5vw;
-  }
-  /* center the main heading */
-  header h1 {
-    text-align: center;
-    letter-spacing: 0.5rem;
-  }
+
+/** SECTION.SOCIAL */
+/* display the social icons side by side */
+.social {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.social__links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.social__links a {
+  margin: 1rem;
+  width: 125px;
+  height: 125px;
+}
+.social__links svg {
+  width: 100%;
+  height: 100%;
+}
+.social .social__copy {
+  text-align: center;
 }
 
-/* VISITOR: CONTAINER IN BETWEEN SECTIONS */
-.visitor {
+/* SECTION.TRANSITION: container in between sections */
+.transition {
   /* increase white space around and within the container */
   margin: 5vh 0;
   padding: 5vh 0;
@@ -126,18 +141,18 @@ header p {
   background-position-x: -300px, 0;
 }
 /* remove whitespace for the last intermittent container, as it closes the page */
-.visitor:last-child {
+.transition:last-child {
   margin-bottom: 0;
   padding-bottom: 0;
 }
 /* for the same container remove also the final pseudo element, inevitably without purpose */
-.visitor:last-child:after {
+.transition:last-child:after {
   border: none;
 }
 /* through pseudo elements detail two arrows, pointing outwards
 this to detail the sections to which the intermittent containers' are related */
-.visitor:before,
-.visitor:after {
+.transition:before,
+.transition:after {
   position: absolute;
   content: "";
   left: 50%;
@@ -145,12 +160,12 @@ this to detail the sections to which the intermittent containers' are related */
   border-right: 1rem solid transparent;
   border-left: 1rem solid transparent;
 }
-.visitor:before {
+.transition:before {
   border-top: 1rem solid transparent;
   border-bottom: 1rem solid #333;
   bottom: calc(100% + 0.5rem);
 }
-.visitor:after {
+.transition:after {
   border-top: 1rem solid #333;
   border-bottom: 1rem solid transparent;
   top: calc(100% + 0.5rem);
@@ -158,15 +173,15 @@ this to detail the sections to which the intermittent containers' are related */
 /* for the text of the intermittent containers, feature it prominently
 add accent color to the <span> element
 notably increase the distance between the last paragraph and the other elements */
-.visitor p {
+.transition p {
   margin: 1rem 0;
   font-size: calc(1rem + 2vw);
   font-weight: 300;
 }
-.visitor p:last-child {
+.transition p:last-child {
   margin-top: 5rem;
 }
-.visitor p span {
+.transition p span {
   color: var(--color-accent);
   font-weight: bold;
 }
@@ -182,7 +197,25 @@ notably increase the distance between the last paragraph and the other elements 
   header p {
     font-size: 1.6rem;
   }
-  .visitor p {
+  .transition p {
     font-size: 2.4rem;
+  }
+}
+
+/* on smaller viewports display the image atop the header */
+@media (max-width: 700px) {
+  main {
+    flex-direction: column;
+    margin: 10vh 5vw;
+  }
+  /* center the main heading */
+  header h1 {
+    text-align: center;
+    letter-spacing: 0.5rem;
+  }
+  /* reduce the size of the social icons */
+  .social__links a {
+    width: 100px;
+    height: 100px;
   }
 }
