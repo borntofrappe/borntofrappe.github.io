@@ -39,7 +39,7 @@ body {
 /* display the welcome section as at least 90vh tall, 5h separated from each end
 center its content */
 main {
-  margin: 5vh 0;
+  margin: 5vh 5vw;
   min-height: 90vh;
   display: flex;
   justify-content: center;
@@ -52,12 +52,11 @@ figure {
   max-width: 300px;
   width: 60vw; /* clip the image with a simple shape */
   clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-  border: 0rem solid var(--color-accent);
-  transition: all 0.25s ease-out;
+  border: 1.5em solid var(--color-accent);
+  transition: border-width 0.25s ease-out;
 }
 figure:hover {
-  border-width: 1rem;
-  transform: rotate(-2.5deg);
+  border-width: 0.5rem;
 }
 img {
   width: 100%;
@@ -97,7 +96,7 @@ header p {
 /** SECTION.SOCIAL */
 /* display the anchor link elements and the connected message atop one another */
 .social {
-  min-height: 80vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -141,7 +140,7 @@ header p {
   background: currentColor;
   border-radius: 50%;
   z-index: -10;
-  opacity: 0.8;
+  opacity: 0.5;
 }
 /* the expanding background is applied through JavaScript, adding/removing a selected class */
 .social__links a.hovered:before {
@@ -149,7 +148,7 @@ header p {
   transition: all 1.2s ease-out;
   width: 200vmax;
   height: 200vmax;
-  opacity: 0.2;
+  opacity: 0.1;
 }
 .social__links svg {
   width: 100%;
@@ -220,10 +219,11 @@ this to detail the sections to which the intermittent containers' are related */
 add accent color to the <span> element
 notably increase the distance between the last paragraph and the other elements */
 .transition h2 {
-  margin: 1rem 0;
+  margin: 1rem;
+  font-weight: 300;
 }
 .transition h2:last-child {
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 .transition h2 span {
   color: var(--color-accent);
@@ -235,8 +235,8 @@ notably increase the distance between the last paragraph and the other elements 
   /* display the image atop the header */
   main {
     flex-direction: column;
-    margin: 10vh 5vw;
   }
+
   /* center the main heading */
   header h1 {
     text-align: center;

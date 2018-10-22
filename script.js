@@ -77,6 +77,12 @@ const social = [
     url: 'https://github.com/borntofrappe',
     copy: 'Open sourcing it all',
     color: '#242424'
+  },
+  {
+    link: 'glitch',
+    url: 'https://glitch.com/@borntofrappe',
+    copy: 'Testing the back end',
+    color: '#923df2'
   }
 ];
 
