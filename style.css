@@ -15,6 +15,15 @@
   margin: 0;
   padding: 0;
 }
+html {
+  font-size: calc(18px + (22 - 18) * (100vw - 400px) / (1200 - 400));
+}
+h1 {
+  font-size: calc(42px + (72 - 42) * (100vw - 400px) / (1200 - 400));
+}
+h3 {
+  font-size: calc(26px + (36 - 26) * (100vw - 400px) / (1200 - 400));
+}
 body {
   min-height: 100vh;
   width: 100%;
@@ -43,7 +52,7 @@ figure {
   max-width: 300px;
   width: 60vw; /* clip the image with a simple shape */
   clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-  border: 1.5rem solid var(--color-accent);
+  border: 0rem solid var(--color-accent);
   transition: all 0.25s ease-out;
 }
 figure:hover {
@@ -66,11 +75,9 @@ header h1 {
   font-weight: bold;
   margin-bottom: 3rem;
   letter-spacing: 0.1rem;
-  font-size: calc(2.5rem + 2.5vw);
   color: var(--color-accent);
 }
 header h3 {
-  font-size: calc(1.5rem + 1vw);
   max-width: 450px;
 }
 /* accented name */
@@ -84,7 +91,6 @@ header p {
   margin: 2rem 0 0.5rem;
   line-height: 2;
   letter-spacing: 0.1rem;
-  font-size: calc(1rem + 0.75vw);
   font-weight: 300;
 }
 
@@ -152,6 +158,8 @@ header p {
 }
 .social .social__copy {
   text-align: center;
+  line-height: 2;
+  margin: 0 1rem;
 }
 
 /* SECTION.TRANSITION: container in between sections */
@@ -166,8 +174,8 @@ header p {
   text-align: center;
   justify-content: center;
   /* include a simple border atop and below, delimiting the area */
-  border-top: 0.5rem solid #333;
-  border-bottom: 0.5rem solid #333;
+  border-top: 0.4rem solid #333;
+  border-bottom: 0.4rem solid #333;
   /* position relative to absolute position the pseudo elements */
   position: relative;
   /* include the texture for the intermittent containers */
@@ -195,49 +203,31 @@ this to detail the sections to which the intermittent containers' are related */
   content: "";
   left: 50%;
   transform: translate(-50%, 0);
-  border-right: 1rem solid transparent;
-  border-left: 1rem solid transparent;
+  border-right: 0.75rem solid transparent;
+  border-left: 0.75rem solid transparent;
 }
 .transition:before {
-  border-top: 1rem solid transparent;
-  border-bottom: 1rem solid #333;
-  bottom: calc(100% + 0.5rem);
+  border-top: 0.75rem solid transparent;
+  border-bottom: 0.75rem solid #333;
+  bottom: calc(100% + 0.4rem);
 }
 .transition:after {
-  border-top: 1rem solid #333;
-  border-bottom: 1rem solid transparent;
-  top: calc(100% + 0.5rem);
+  border-top: 0.75rem solid #333;
+  border-bottom: 0.75rem solid transparent;
+  top: calc(100% + 0.4rem);
 }
 /* for the text of the intermittent containers, feature it prominently
 add accent color to the <span> element
 notably increase the distance between the last paragraph and the other elements */
-.transition p {
+.transition h2 {
   margin: 1rem 0;
-  font-size: calc(1rem + 2vw);
-  font-weight: 300;
 }
-.transition p:last-child {
+.transition h2:last-child {
   margin-top: 5rem;
 }
-.transition p span {
+.transition h2 span {
   color: var(--color-accent);
   font-weight: bold;
-}
-
-/* cap the font-size of the text-based elements above an established threshold */
-@media (min-width: 1200px) {
-  header h1 {
-    font-size: 5rem;
-  }
-  header h3 {
-    font-size: 2.3rem;
-  }
-  header p {
-    font-size: 1.6rem;
-  }
-  .transition p {
-    font-size: 2.4rem;
-  }
 }
 
 /* on smaller viewports */

@@ -56,21 +56,25 @@ const socialCopy = document.querySelector('.social__copy');
 const social = [
   {
     link: 'twitter',
+    url: 'https://twitter.com/borntofrappe',
     copy: 'Posting almost daily',
     color: '#3fb0fe'
   },
   {
     link: 'freecodecamp',
+    url: 'https://www.freecodecamp.org/borntofrappe',
     copy: 'Always learning',
     color: '#109121'
   },
   {
     link: 'codepen',
+    url: 'https://codepen.io/borntofrappe/',
     copy: 'Coding plenty',
     color: '#545454'
   },
   {
     link: 'github',
+    url: 'https://github.com/borntofrappe',
     copy: 'Open sourcing it all',
     color: '#242424'
   }
@@ -98,7 +102,7 @@ function paint(event) {
     // include a text with the information retrieved from the matching object
     socialCopy.innerHTML = `
       <h2 style="animation: anchorLinkHover 0.2s 0.18s linear both;">
-        ${match.copy}, on <strong style="color: ${match.color};">${match.link}</strong>
+        ${match.copy}, on <a href="${match.url}" style="color: ${match.color}; text-decoration:none;">${match.link}</a>
       </h2>
     `;
   }
