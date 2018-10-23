@@ -1,16 +1,19 @@
-/** script logic
- * change the accent color depending on the time of day
- * change the job description at random
- * "paint" the background of the .social section while describing the hovered anchor link
- */
+/** SCRIPT LOGIC
+ * accent color (change brightness and saturation depending on the time of day)
+ * job description (change the third title with a string at random)
+ * project (include a project from a selected few)
+ * social icons (paint the background when hovering on the icons)
+*/
 
-// create a function which accepts an array as argument and returns a random item from the same
+/* utility functions
+- a function returning a random item from an array
+*/
 function randomItem(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
 
-// COLOR ACCENT
-// compute the color accent choosing a selected hue (although a random color may be picked)
+// ACCENT COLOR
+// compute the color accent from the selected hue
 const hue = 9;
 // create an instance of the date object
 const date = new Date();
@@ -48,17 +51,14 @@ const jobDescription = document.querySelector('i');
 // change the text of the <i> element from one of the expressions at random
 jobDescription.textContent = randomItem(job);
 
-// SOCIAL SECTION
-// target all anchor link elements and the container in which to describe the hovered element
-const socialLinks = document.querySelectorAll('.social__links a');
-const socialCopy = document.querySelector('.social__copy');
-
+// SOCIAL ICONS
 // describe each icon and the matching text
 const social = [
   {
     link: 'twitter',
     url: 'https://twitter.com/borntofrappe',
     copy: 'Posting almost daily',
+    // the color might very well be retrieved from the stylesheet
     color: '#3fb0fe'
   },
   {
@@ -86,6 +86,10 @@ const social = [
     color: '#923df2'
   }
 ];
+
+// target all anchor link elements and the container in which to describe the hovered element
+const socialLinks = document.querySelectorAll('.social__links a');
+const socialCopy = document.querySelector('.social__copy');
 
 // create a function which takes as argument the mouseenter event
 // in turns this triggers the expansion of the pseudo element, "painting the background"
