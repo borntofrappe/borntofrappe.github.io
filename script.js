@@ -400,9 +400,9 @@ const borderRadius = () => {
 
 // create a function fabricating the markup for each project
 const projectMarkup = project => `
-<h2>${project.title}</h2>
-<p>${project.description}</p>
-<ul>
+<h2 style="animation: showProject 0.3s ease-out both">${project.title}</h2>
+<p style="animation: showProject 0.3s 0.05s ease-out both">${project.description}</p>
+<ul style="animation: showProject 0.3s 0.08s ease-out both">
 ${project.stack.map(stack => `
   <li>
     <svg>
