@@ -40,7 +40,8 @@ const job = [
   'something else tomorrow',
   'depends who\'s asking',
   'still figuring it out',
-  'by day'
+  'by day',
+  'possibly more'
 ];
 // target the <i> element wrapping the job description
 const jobDescription = document.querySelector('i');
@@ -107,7 +108,7 @@ function paint(event) {
     target.classList.add('hovered');
     // include a text with the information retrieved from the matching object
     socialCopy.innerHTML = `
-      <h2 style="animation: anchorLinkHover 0.2s 0.18s linear both;">
+      <h2 style="animation: hovered 0.2s 0.18s linear both;">
         ${match.copy}, on <a href="${match.url}" style="color: ${match.color}; text-decoration:none;">${match.link}</a>
       </h2>
     `;
