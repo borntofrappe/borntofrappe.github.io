@@ -311,6 +311,9 @@ this to detail the sections to which the intermittent containers' are related
 .social__links a:nth-of-type(4) {
   color: #242424;
 }
+.social__links a:nth-of-type(5) {
+  color: #923df2;
+}
 /* include an expanding background through a pseudo element */
 .social__links a:before {
   position: absolute;
