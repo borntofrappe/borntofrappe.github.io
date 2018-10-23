@@ -1,10 +1,12 @@
 # Welcome Page
 
-> welcome to the repository created and updated for my personal web page
+> Welcome to the repository created and updated for my personal web page
+>
+> Live [right here](https://borntofrappe.github.io/).
 
 ## To-do(s)
 
-> short to mid-term goals
+> Short to mid-term goals
 
 - [ ] re-write the README file to actually provide some value.
 
