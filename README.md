@@ -1,8 +1,28 @@
 # Welcome Page
 
-<!-- Link to the work-in-progress pen right [here](). -->
+> welcome to the repository created and updated for my personal web page
 
-## Preface
+## To-do(s)
+
+> short to mid-term goals
+
+- [ ] re-write the README file to actually provide some value.
+
+- [ ] better copy for the project section.
+
+- [ ] more descriptive anchor link and button element.
+
+- [ ] new job descriptions.
+
+- [ ] new icons for the stack. MongoDB and Mongoose at the top of my mind.
+
+- [ ] consider adding other profiles. Mail, linkedin (although this last one is close to defunct, at least personallly).
+
+- [ ] get to work on new projects!
+
+<!-- ## A few notes
+
+> a few thoughts on
 
 I want to implement a new version of my personal website, at least my personal website as available through Github Pages. The previous one was a rather proud result, involving quite a lot of care not only in the mobile-first layout, but also the design of beautiful icons and a slick navigation bar.
 
@@ -42,4 +62,4 @@ Of course, this journey might actually boil down to the following path (which I 
 
 Either way, and trying not to get discouraged by actual facts, the page ought to first and foremost inform the visitor, in a neat looking package.
 
-Inform the visitor on the personality behind the web page and the projects he's created so far. I want to maintain the colloquial, informal tone, but most importantly, I want to here consider the best way to showcase one's own project.
+Inform the visitor on the personality behind the web page and the projects he's created so far. I want to maintain the colloquial, informal tone, but most importantly, I want to here consider the best way to showcase one's own project. -->
