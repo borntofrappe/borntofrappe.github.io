@@ -63,7 +63,7 @@ const projects = [
   */
   {
     title: 'Teaching Dashboard',
-    description: 'An appealing visual summarising valuable information on JavaScript methods.',
+    description: 'Practice with JavaScript, with a visually appealing board.',
     stack: [
       'html',
       'css',
@@ -74,7 +74,7 @@ const projects = [
   },
   {
     title: 'Signature Generator',
-    description: 'An intriguing substite to hand-written signatures.',
+    description: 'Produce an intriguing, sharp substite to hand-written signatures.',
     stack: [
       'html',
       'css',
@@ -84,8 +84,172 @@ const projects = [
     url: 'https://codepen.io/borntofrappe/full/WyVZVp'
   },
   {
+    title: 'Card Layout',
+    description: 'Display hypothetical blog posts in a convenient format.',
+    stack: [
+      'html',
+      'css',
+      'js'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/xzgKYG'
+  },
+  {
+    title: 'Accordion Layout',
+    description: 'Provide detailed information only when requested.',
+    stack: [
+      'html',
+      'css',
+      'stylus',
+      'js'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/jKPaBv'
+  },
+  {
+    title: 'Carousel Layout',
+    description: 'Highlight information one slide at a time.',
+    stack: [
+      'html',
+      'css',
+      'js',
+      'react'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/OoWGYe'
+  },
+  {
+    title: 'Good Error Copy',
+    description: 'Detail error messages with empathy and a bit of style.',
+    stack: [
+      'html',
+      'css',
+      'js',
+      'react'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/zJJrEV'
+  },
+  {
+    title: 'Check Me If You Can',
+    description: 'A simple game built around a single checkbox.',
+    stack: [
+      'html',
+      'css',
+      'stylus',
+      'js'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/oMBQyV'
+  },
+  {
+    title: 'Wikipedia Viewer',
+    description: 'Look for entries on Wikipedia.',
+    stack: [
+      'html',
+      'css',
+      'js'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/PQNPwM'
+  },
+  {
+    title: 'Pomodoro Clock',
+    description: 'Increase productivity one pomodoro at a time.',
+    stack: [
+      'html',
+      'css',
+      'stylus',
+      'js'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/PeKwOW'
+  },
+  {
+    title: 'To-Do Application',
+    description: 'Schedule the day ahead one item at a time.',
+    stack: [
+      'html',
+      'css',
+      'js',
+      'react'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/GBqMdJ'
+  },
+  {
+    title: 'Random Quote Machine',
+    description: 'Be inspired by few simple words.',
+    stack: [
+      'html',
+      'css',
+      'js'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/VQYmpJ'
+  },
+  {
+    title: 'Random Color Machine',
+    description: 'Pick a new color, at random.',
+    stack: [
+      'html',
+      'css',
+      'js',
+      'react'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/yqXOXG'
+  },
+  {
+    title: 'Accountability Booster',
+    description: 'Share coding efforts on Twitter, effortlessly.',
+    stack: [
+      'html',
+      'css',
+      'js',
+      'react'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/YJWweQ'
+  },
+  {
+    title: 'Traditional Drum Machine',
+    description: 'Play a few tones with Japanese-inspired drums.',
+    stack: [
+      'html',
+      'css',
+      'js',
+      'react'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/BPOWxo'
+  },
+  {
+    title: 'Pomodoro Clock',
+    description: 'Increase productivity one pomodoro at a time.',
+    stack: [
+      'html',
+      'css',
+      'js',
+      'react'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/bjvmaJ'
+  },
+  {
+    title: 'Phone Calculator',
+    description: 'Compute simple math.',
+    stack: [
+      'html',
+      'css',
+      'js',
+      'react'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/OwxKEY'
+  },
+  {
+    title: 'High-Tech Clock',
+    description: 'Relate the current time.',
+    stack: [
+      'html',
+      'css',
+      'stylus',
+      'svg',
+      'js',
+      'react'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/wXGKpg'
+  },
+  {
     title: 'CSS Quiz',
-    description: 'A multiple choice game to practice with CSS.',
+    description: 'Practice with CSS, with a multiple choice game.',
     stack: [
       'html',
       'css',
@@ -95,7 +259,7 @@ const projects = [
   },
   {
     title: 'Day Picker',
-    description: 'No longer wondering which day it was. Or it will be.',
+    description: 'Stop wondering which day it was? Which day it will be',
     stack: [
       'html',
       'css',
@@ -104,6 +268,123 @@ const projects = [
       'pug'
     ],
     url: 'https://witty-recess.glitch.me/'
+  },
+  {
+    title: 'Timestamp Microservice',
+    description: 'Retrieve a date, for the current or a selected time.',
+    stack: [
+      'html',
+      'css',
+      'js',
+      'node'
+    ],
+    url: 'https://zest-hoe.glitch.me/'
+  },
+  {
+    title: 'File Metadata Microservice',
+    description: 'Provide basic information for any file.',
+    stack: [
+      'html',
+      'css',
+      'js',
+      'node'
+    ],
+    url: 'https://zest-hoe.glitch.me/'
+  },
+  {
+    title: 'Exercise Tracker Microservice',
+    description: 'Create an account. Register excercises.',
+    stack: [
+      'html',
+      'css',
+      'js',
+      'node'
+      // ,'mongo', 'mongoose'
+    ],
+    url: 'https://bold-lamprey.glitch.me/'
+  },
+  {
+    title: 'URL Shortener Microservice',
+    description: 'Process a lengthy URL, creating a short, valid counterpart.',
+    stack: [
+      'html',
+      'css',
+      'js',
+      'node'
+      // ,'mongo', 'mongoose'
+    ],
+    url: 'https://various-umbrella.glitch.me/'
+  },
+  {
+    title: 'Road Safety Metrics',
+    description: 'Visualize statistics connected to road safety in mainland France.',
+    stack: [
+      'html',
+      'css',
+      'stylus',
+      'js',
+      'd3'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/XxBXeR'
+  },
+  {
+    title: 'Hacktoberfest Dashboard',
+    description: 'Highlight statistics for to the Hacktoberfest initiative.',
+    stack: [
+      'html',
+      'css',
+      'stylus',
+      'js',
+      'd3'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/VEMGjP'
+  },
+  {
+    title: 'Unemployment Rate',
+    description: 'Chart the evolution of the unemployment rate in France.',
+    stack: [
+      'html',
+      'css',
+      'stylus',
+      'js',
+      'd3'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/dqQjwj'
+  },
+  {
+    title: 'Treemap Diagram',
+    description: 'Describe the highest grossing movies in a convenient visual.',
+    stack: [
+      'html',
+      'css',
+      'stylus',
+      'js',
+      'd3'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/RYbaOo'
+  },
+  {
+    title: 'Choropleth Map',
+    description: 'Detail the educational attainment in the US.',
+    stack: [
+      'html',
+      'css',
+      'stylus',
+      'js',
+      'd3'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/RBdrPG'
+  },
+  {
+    title: 'Bar Chart',
+    description: 'Plotting the gross domestic product for the US.',
+    stack: [
+      'html',
+      'css',
+      'js',
+      'd3'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/qKeGLM'
   }
 ];
 // create a function creating a new value for the border radius property
