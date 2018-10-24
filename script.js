@@ -62,19 +62,18 @@ const projects = [
   - url forwarding toward the project
   */
   {
-    title: 'Teaching Dashboard',
-    description: 'Practice with JavaScript, with a visually appealing board.',
+    title: 'JavaScript Dashboard',
+    description: 'Practice with JavaScript methods with an appealing and interactive board.',
     stack: [
-      'html',
       'css',
-      'js',
       'react'
+      // styled-components
     ],
     url: 'https://codepen.io/borntofrappe/full/KxdOVo'
   },
   {
     title: 'Signature Generator',
-    description: 'Produce an intriguing, sharp substite to hand-written signatures.',
+    description: 'Create an intriguing, sharp substite to hand-written signatures.',
     stack: [
       'html',
       'css',
@@ -85,7 +84,7 @@ const projects = [
   },
   {
     title: 'Card Layout',
-    description: 'Display hypothetical blog posts in a convenient format.',
+    description: 'Shuffle between hypothetical blog posts in a simple, yet effective format.',
     stack: [
       'html',
       'css',
@@ -95,10 +94,9 @@ const projects = [
   },
   {
     title: 'Accordion Layout',
-    description: 'Provide detailed information only when requested.',
+    description: 'Display general information and provide details only when requested.',
     stack: [
       'html',
-      'css',
       'stylus',
       'js'
     ],
@@ -106,44 +104,43 @@ const projects = [
   },
   {
     title: 'Carousel Layout',
-    description: 'Highlight information one slide at a time.',
+    description: 'Create a simple component displaying information one slide at a time.',
     stack: [
       'html',
       'css',
-      'js',
       'react'
     ],
     url: 'https://codepen.io/borntofrappe/full/OoWGYe'
   },
   {
     title: 'Good Error Copy',
-    description: 'Detail error messages with empathy and a bit of style.',
+    description: 'Display error messages with empathy and a bit of style.',
     stack: [
-      'html',
       'css',
-      'js',
       'react'
+      // styled-components
     ],
     url: 'https://codepen.io/borntofrappe/full/zJJrEV'
   },
   {
     title: 'Check Me If You Can',
-    description: 'A simple game built around a single checkbox.',
+    description: 'Play a simple game based entirely around a single checkbox.',
     stack: [
       'html',
-      'css',
       'stylus',
-      'js'
+      'js',
+      'svg'
     ],
     url: 'https://codepen.io/borntofrappe/full/oMBQyV'
   },
   {
-    title: 'Wikipedia Viewer',
-    description: 'Look for entries on Wikipedia.',
+    title: 'Wiki Viewer',
+    description: 'Search for Wikipedia entries.',
     stack: [
       'html',
       'css',
-      'js'
+      'js',
+      'svg'
     ],
     url: 'https://codepen.io/borntofrappe/full/PQNPwM'
   },
@@ -152,9 +149,9 @@ const projects = [
     description: 'Increase productivity one pomodoro at a time.',
     stack: [
       'html',
-      'css',
       'stylus',
-      'js'
+      'js',
+      'svg'
     ],
     url: 'https://codepen.io/borntofrappe/full/PeKwOW'
   },
@@ -162,10 +159,10 @@ const projects = [
     title: 'To-Do Application',
     description: 'Schedule the day ahead one item at a time.',
     stack: [
-      'html',
       'css',
       'js',
-      'react'
+      'react',
+      'redux'
     ],
     url: 'https://codepen.io/borntofrappe/full/GBqMdJ'
   },
@@ -176,6 +173,7 @@ const projects = [
       'html',
       'css',
       'js'
+      // jquery
     ],
     url: 'https://codepen.io/borntofrappe/full/VQYmpJ'
   },
@@ -183,10 +181,9 @@ const projects = [
     title: 'Random Color Machine',
     description: 'Pick a new color, at random.',
     stack: [
-      'html',
       'css',
-      'js',
-      'react'
+      'react',
+      'redux'
     ],
     url: 'https://codepen.io/borntofrappe/full/yqXOXG'
   },
@@ -194,10 +191,10 @@ const projects = [
     title: 'Accountability Booster',
     description: 'Share coding efforts on Twitter, effortlessly.',
     stack: [
-      'html',
       'css',
-      'js',
-      'react'
+      'react',
+      'redux'
+      // styled-components
     ],
     url: 'https://codepen.io/borntofrappe/full/YJWweQ'
   },
@@ -205,10 +202,9 @@ const projects = [
     title: 'Traditional Drum Machine',
     description: 'Play a few tones with Japanese-inspired drums.',
     stack: [
-      'html',
       'css',
-      'js',
       'react'
+      // styled-components
     ],
     url: 'https://codepen.io/borntofrappe/full/BPOWxo'
   },
@@ -216,40 +212,34 @@ const projects = [
     title: 'Pomodoro Clock',
     description: 'Increase productivity one pomodoro at a time.',
     stack: [
-      'html',
       'css',
-      'js',
       'react'
     ],
     url: 'https://codepen.io/borntofrappe/full/bjvmaJ'
   },
   {
     title: 'Phone Calculator',
-    description: 'Compute simple math.',
+    description: 'Compute simple mathematical operations.',
     stack: [
-      'html',
       'css',
-      'js',
       'react'
+      // styled-components
     ],
     url: 'https://codepen.io/borntofrappe/full/OwxKEY'
   },
   {
     title: 'High-Tech Clock',
-    description: 'Relate the current time.',
+    description: 'Showcase the current time with a sharp and punctual visual.',
     stack: [
-      'html',
-      'css',
       'stylus',
       'svg',
-      'js',
       'react'
     ],
     url: 'https://codepen.io/borntofrappe/full/wXGKpg'
   },
   {
     title: 'CSS Quiz',
-    description: 'Practice with CSS, with a multiple choice game.',
+    description: 'Practice with CSS with a multiple choice game.',
     stack: [
       'html',
       'css',
@@ -259,7 +249,7 @@ const projects = [
   },
   {
     title: 'Day Picker',
-    description: 'Stop wondering which day it was? Which day it will be',
+    description: 'Stop wondering which day it was, or which day it will be',
     stack: [
       'html',
       'css',
@@ -285,7 +275,7 @@ const projects = [
     description: 'Provide basic information for any file.',
     stack: [
       'html',
-      'css',
+      'sass',
       'js',
       'node'
     ],
@@ -293,34 +283,34 @@ const projects = [
   },
   {
     title: 'Exercise Tracker Microservice',
-    description: 'Create an account. Register excercises.',
+    description: 'Create an account and register exercises, safely stored in a database.',
     stack: [
       'html',
-      'css',
+      'sass',
       'js',
-      'node'
-      // ,'mongo', 'mongoose'
+      'node',
+      'mongo',
+      'mongoose'
     ],
     url: 'https://bold-lamprey.glitch.me/'
   },
   {
     title: 'URL Shortener Microservice',
-    description: 'Process a lengthy URL, creating a short, valid counterpart.',
+    description: 'Process a lengthy URL, creating a short and valid counterpart.',
     stack: [
       'html',
-      'css',
+      'sass',
       'js',
-      'node'
-      // ,'mongo', 'mongoose'
+      'node',
+      'mongo',
+      'mongoose'
     ],
     url: 'https://various-umbrella.glitch.me/'
   },
   {
-    title: 'Road Safety Metrics',
-    description: 'Visualize statistics connected to road safety in mainland France.',
+    title: 'Road Safety',
+    description: 'Visualize statistics on road safety in mainland France.',
     stack: [
-      'html',
-      'css',
       'stylus',
       'js',
       'd3'
@@ -331,8 +321,6 @@ const projects = [
     title: 'Hacktoberfest Dashboard',
     description: 'Highlight statistics for to the Hacktoberfest initiative.',
     stack: [
-      'html',
-      'css',
       'stylus',
       'js',
       'd3'
@@ -343,8 +331,6 @@ const projects = [
     title: 'Unemployment Rate',
     description: 'Chart the evolution of the unemployment rate in France.',
     stack: [
-      'html',
-      'css',
       'stylus',
       'js',
       'd3'
@@ -353,10 +339,8 @@ const projects = [
   },
   {
     title: 'Treemap Diagram',
-    description: 'Describe the highest grossing movies in a convenient visual.',
+    description: 'Highlight the highest grossing movies by genre.',
     stack: [
-      'html',
-      'css',
       'stylus',
       'js',
       'd3'
@@ -365,10 +349,8 @@ const projects = [
   },
   {
     title: 'Choropleth Map',
-    description: 'Detail the educational attainment in the US.',
+    description: 'Detail educational attainment in the US, and for every single county.',
     stack: [
-      'html',
-      'css',
       'stylus',
       'js',
       'd3'
@@ -376,15 +358,34 @@ const projects = [
     url: 'https://codepen.io/borntofrappe/full/RBdrPG'
   },
   {
-    title: 'Bar Chart',
-    description: 'Plotting the gross domestic product for the US.',
+    title: 'Heat map',
+    description: 'Plot the evolution of the global temperature across the centuries.',
     stack: [
-      'html',
       'css',
       'js',
       'd3'
     ],
     url: 'https://codepen.io/borntofrappe/full/qKeGLM'
+  },
+  {
+    title: 'Bar Chart',
+    description: 'Plot the gross domestic product for the US, and since 1947.',
+    stack: [
+      'css',
+      'js',
+      'd3'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/mKGZaO'
+  },
+  {
+    title: 'Scatter Plot map',
+    description: 'Visualize cycling records on the Alpe Duez, considering doping allegations.',
+    stack: [
+      'css',
+      'js',
+      'd3'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/ERzybV'
   }
 ];
 // create a function creating a new value for the border radius property

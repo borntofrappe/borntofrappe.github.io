@@ -6,15 +6,15 @@
 
 > Short to mid-term goals
 
-- [ ] update the project's icon, title and description to match the content of the page;
+- [x] update the project's icon, title and description to match the content of the page;
 
 - [ ] consider adding a simple animation atop the picture. Especially and perhaps only for smaller viewports (where the picture is prefaced by quite a lot of space. On purpose, I might add).
 
 - [ ] include new values in the array nesting possible job descriptions.
 
-- [ ] write better copy for the project section, specifically for the description of each project (although the icons need to also be updated as to relate the technology behind each effort).
+- [x] write better copy for the project section, specifically for the description of each project (although the icons need to also be updated as to relate the technology behind each effort).
 
-- [ ] new icons for the technology stack. Consider for instance **MongoDB**, **Mongoose** for the back end, **Redux** for the front end.
+- [/] new icons for the technology stack. Consider for instance **MongoDB**, **Mongoose** for the back end, **Redux** for the front end. Consider again **styled-components**.
 
 - [ ] more descriptive text for anchor link and button element.
 
