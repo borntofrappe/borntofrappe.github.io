@@ -1,67 +1,27 @@
 # Welcome Page
 
-> Welcome to the repository created and updated for my personal web page
->
-> Live [right here](https://borntofrappe.github.io/).
+> repo gathering the resouces making up my [personal website](https://borntofrappe.github.io/)
 
-## To-do(s)
+## Roadmap
 
 > Short to mid-term goals
 
-- [ ] re-write the README file to actually provide some value.
+- [ ] update the project's icon, title and description to match the content of the page;
 
-- [ ] better copy for the project section.
+- [ ] consider adding a simple animation atop the picture. Especially and perhaps only for smaller viewports (where the picture is prefaced by quite a lot of space. On purpose, I might add).
 
-- [ ] more descriptive anchor link and button element.
+- [ ] include new values in the array nesting possible job descriptions.
 
-- [ ] new job descriptions.
+- [ ] write better copy for the project section, specifically for the description of each project (although the icons need to also be updated as to relate the technology behind each effort).
 
-- [ ] new icons for the stack. MongoDB and Mongoose at the top of my mind.
+- [ ] new icons for the technology stack. Consider for instance **MongoDB**, **Mongoose** for the back end, **Redux** for the front end.
+
+- [ ] more descriptive text for anchor link and button element.
+
+- [ ] consider changing the icon, from a simple div modified through the `border-radius` property to an SVG shape.
 
 - [ ] consider adding other profiles. Mail, linkedin (although this last one is close to defunct, at least personallly).
 
+- [ ] detail a simple section closing the page, as a treat for having reached the end of the same. Consider for instance a simple canvas element, in which visitors can draw anything they fancy with a pencil or perhaps a paintbrush. Consider an equally elementary game. Maybe both.
+
 - [ ] get to work on new projects!
-
-<!-- ## A few notes
-
-> a few thoughts on
-
-I want to implement a new version of my personal website, at least my personal website as available through Github Pages. The previous one was a rather proud result, involving quite a lot of care not only in the mobile-first layout, but also the design of beautiful icons and a slick navigation bar.
-
-Alas, it was also rather conformant to a standard, default portfolio page. Most importantly, it was also plagued by the following critical issues:
-
-- the black and white motif was sure accommodating for grayscale devices, but I'm willing to admit that most web users benefit from color-filled screens. In this context, the website admittedly was rather dull;
-
-- the simple layout and bare-bone sections were excellent for smaller viewports, but rendered a rather sparse and deserted stucture for larger devices. While I've considered adding decorations here and there, this forced me to question what to actually include in the page, and with what king of granularity. Which brings me to the next point;
-
-- the section dedicated to the technology stack served very little purpose. I did spend a lot of time designing every single icon in an SVG format. The circular pattern was also rather pleasing to the eyes. But those are not valid grounds for the fundamental issue just introduced.
-
-All together, this considerations brought me to distill the following guiding principles:
-
-- colorful, while maintaining enough contrast to sustain grayscale devices;
-
-- informative, serving a purpose for the visitor more than for the designer;
-
-- neat. While function is a central theme in this re-write, I do not go back on a simple belief I have regarding web pages, that they should be neat. Be it a simple, miniscule animation, or a detail only a couple of people get to admire, there should be small surprises and visuals somebody gets to see only by accident, or on a second visit.
-
-For the stack, I want to keep it simple: HTML markup, CSS unprocessed stylesheet, possibly JS script to add some kind of dynamism.
-
-For the content of the page, a bit more attention and consideration is warranted. A hypothetical structure can be jotted down from the point of view of an eventual, hopeful visitor. Somebody reaching the site and going through the following queries:
-
-- who is this character?
-
-- why should I care?
-
-- (hopefully interested) how can I reach him?
-
-Of course, this journey might actually boil down to the following path (which I believe to be far more likely):
-
-- who this?
-
-- uh, neat.
-
-- leaves...
-
-Either way, and trying not to get discouraged by actual facts, the page ought to first and foremost inform the visitor, in a neat looking package.
-
-Inform the visitor on the personality behind the web page and the projects he's created so far. I want to maintain the colloquial, informal tone, but most importantly, I want to here consider the best way to showcase one's own project. -->
