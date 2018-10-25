@@ -251,11 +251,9 @@ const projects = [
     title: 'Day Picker',
     description: 'Stop wondering which day it was, or which day it will be',
     stack: [
-      'html',
+      'pug',
       'css',
-      'js',
-      'node',
-      'pug'
+      'node'
     ],
     url: 'https://witty-recess.glitch.me/'
   },
@@ -279,7 +277,7 @@ const projects = [
       'js',
       'node'
     ],
-    url: 'https://zest-hoe.glitch.me/'
+    url: 'https://melted-grin.glitch.me/'
   },
   {
     title: 'Exercise Tracker Microservice',
@@ -287,7 +285,6 @@ const projects = [
     stack: [
       'html',
       'sass',
-      'js',
       'node',
       'mongo',
       'mongoose'
@@ -300,7 +297,6 @@ const projects = [
     stack: [
       'html',
       'sass',
-      'js',
       'node',
       'mongo',
       'mongoose'
@@ -312,7 +308,6 @@ const projects = [
     description: 'Visualize statistics on road safety in mainland France.',
     stack: [
       'stylus',
-      'js',
       'd3'
     ],
     url: 'https://codepen.io/borntofrappe/full/XxBXeR'
@@ -322,7 +317,6 @@ const projects = [
     description: 'Highlight statistics for to the Hacktoberfest initiative.',
     stack: [
       'stylus',
-      'js',
       'd3'
     ],
     url: 'https://codepen.io/borntofrappe/full/VEMGjP'
@@ -332,7 +326,6 @@ const projects = [
     description: 'Chart the evolution of the unemployment rate in France.',
     stack: [
       'stylus',
-      'js',
       'd3'
     ],
     url: 'https://codepen.io/borntofrappe/full/dqQjwj'
@@ -342,7 +335,6 @@ const projects = [
     description: 'Highlight the highest grossing movies by genre.',
     stack: [
       'stylus',
-      'js',
       'd3'
     ],
     url: 'https://codepen.io/borntofrappe/full/RYbaOo'
@@ -352,7 +344,6 @@ const projects = [
     description: 'Detail educational attainment in the US, and for every single county.',
     stack: [
       'stylus',
-      'js',
       'd3'
     ],
     url: 'https://codepen.io/borntofrappe/full/RBdrPG'
@@ -362,7 +353,6 @@ const projects = [
     description: 'Plot the evolution of the global temperature across the centuries.',
     stack: [
       'css',
-      'js',
       'd3'
     ],
     url: 'https://codepen.io/borntofrappe/full/qKeGLM'
@@ -372,7 +362,6 @@ const projects = [
     description: 'Plot the gross domestic product for the US, and since 1947.',
     stack: [
       'css',
-      'js',
       'd3'
     ],
     url: 'https://codepen.io/borntofrappe/full/mKGZaO'
@@ -382,7 +371,6 @@ const projects = [
     description: 'Visualize cycling records on the Alpe Duez, considering doping allegations.',
     stack: [
       'css',
-      'js',
       'd3'
     ],
     url: 'https://codepen.io/borntofrappe/full/ERzybV'
