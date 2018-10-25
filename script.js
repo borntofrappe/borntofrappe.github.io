@@ -117,8 +117,8 @@ const projects = [
     description: 'Display error messages with empathy and a bit of style.',
     stack: [
       'css',
-      'react'
-      // styled-components
+      'react',
+      'styled-components'
     ],
     url: 'https://codepen.io/borntofrappe/full/zJJrEV'
   },
@@ -193,8 +193,8 @@ const projects = [
     stack: [
       'css',
       'react',
-      'redux'
-      // styled-components
+      'redux',
+      'styled-components'
     ],
     url: 'https://codepen.io/borntofrappe/full/YJWweQ'
   },
@@ -203,8 +203,8 @@ const projects = [
     description: 'Play a few tones with Japanese-inspired drums.',
     stack: [
       'css',
-      'react'
-      // styled-components
+      'react',
+      'styled-components'
     ],
     url: 'https://codepen.io/borntofrappe/full/BPOWxo'
   },
@@ -222,8 +222,8 @@ const projects = [
     description: 'Compute simple mathematical operations.',
     stack: [
       'css',
-      'react'
-      // styled-components
+      'react',
+      'styled-components'
     ],
     url: 'https://codepen.io/borntofrappe/full/OwxKEY'
   },
