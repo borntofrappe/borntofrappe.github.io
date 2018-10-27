@@ -374,6 +374,17 @@ const projects = [
       'd3'
     ],
     url: 'https://codepen.io/borntofrappe/full/ERzybV'
+  },
+  {
+    title: 'Winter-themed Quiz',
+    description: 'Answer multiple-choice questions regarding the winter seasons and its common misconceptions.',
+    stack: [
+      'css',
+      'react',
+      'redux',
+      'styled-components'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/ZqwVmm'
   }
 ];
 // create a function creating a new value for the border radius property
