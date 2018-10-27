@@ -6,22 +6,8 @@
 
 > Short to mid-term goals
 
-- [x] update the project's icon, title and description to match the content of the page;
+- [ ] add a simple animation atop the page, in the form of an airplane passing by every so often (perhaps only for smaller viewports where there is quite a bit of white space atop the application).
 
-- [ ] consider adding a simple animation atop the picture. Especially and perhaps only for smaller viewports (where the picture is prefaced by quite a lot of space. On purpose, I might add).
+- [ ] consider re-designing the icon for styled-components. Consider new icons for the upcoming back end projects.
 
-- [ ] include new values in the array nesting possible job descriptions.
-
-- [x] write better copy for the project section, specifically for the description of each project (although the icons need to also be updated as to relate the technology behind each effort).
-
-- [/] new icons for the technology stack. Consider for instance **MongoDB**, **Mongoose** for the back end, **Redux** for the front end. Consider again **styled-components**.
-
-- [ ] more descriptive text for anchor link and button element.
-
-- [ ] consider changing the icon, from a simple div modified through the `border-radius` property to an SVG shape.
-
-- [ ] consider adding other profiles. Mail, linkedin (although this last one is close to defunct, at least personallly).
-
-- [ ] detail a simple section closing the page, as a treat for having reached the end of the same. Consider for instance a simple canvas element, in which visitors can draw anything they fancy with a pencil or perhaps a paintbrush. Consider an equally elementary game. Maybe both.
-
-- [ ] get to work on new projects!
+- [ ] in the bottom of the page detail a simple drawing application through the canvas element.
