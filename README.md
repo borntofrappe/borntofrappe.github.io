@@ -2,6 +2,20 @@
 
 > repo gathering the resouces making up my [personal website](https://borntofrappe.github.io/)
 
+## Issues
+
+> Pressing matters
+
+There's seems to be quite a bug in Firefox. The SVG icons for the technology stack, and amusingly enough not those for the social icons, are indeed cropped. I assume it has something to do with default and explicit sizes. 
+
+**Update**
+
+A bit of experimentation helps guides me toward the following conclusion: it is a matter of explicit sizes only. In the "SVG" set I include icons with explicit values for the width and the height properties. These are 100px by 100px. In the DOM, I later set the size of the SVG to be 78px, but on firefox (apparently) this does not modify the original SVG, but the container in which the SVG is used. The original SVG gets cropped out, seemingly by 22px on either size.
+
+**To Do**
+
+Try to remove the default sizes in the SVG set.
+
 ## Roadmap
 
 > Short to mid-term goals
