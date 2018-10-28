@@ -4,11 +4,25 @@
 
 ## Issues
 
-> Pressing matters
+> updated 29/10/2018
 
-- [ ] due to a bug in firefox, setting an explicit width and heihgt attribute on the SVG as they are defined causes cropping when the SVG is then used with different (smaller) sizes. Remove said attributes.
+Recently, I discovered an issue with my personal website on firefox. Something that had to do with the SVG icons used for the technology stack and something stemming from the following:
 
-- [ ] in microsoft edge, which didn't seem to give me issues a while back, it appears the page doesn' render the color. I don't know if there's something with custom properties or an outdated version of Edge. More analysis is warranted.
+- SVG icons were defined atop the HTML file with an explicit `width` and `height` value of `100px`;
+
+- in the stylesheet, the same SVG icons were resized to be `78px`.
+
+However, this last re-sizing was being applied on the SVG elements as they were being used, in the following format.
+
+```html
+<svg>
+  <use href="#previously-declared-icon"/>
+</svg
+```
+
+Apparently and on Firefox, changing the size of this element doesn't affect the previous 100px by 100px explicit measures.
+
+Solution: remove the explicit measure, have the SVG being styled solely on the basis of the stylesheet. I tried this in a previous commit, but immediately found another issue in an old version of Edge and reversed the changes, suspecting this last browser somehow needed the explicit sizes. However, upon thorough consideration, it is clear the issue was raised because of a completely separate situation. I therefore push anew for removing the explicit measures.
 
 ## Roadmap
 
