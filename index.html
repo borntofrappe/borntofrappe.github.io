@@ -74,7 +74,7 @@
       - section.transition (guiding the user from the areas detailing the actual content)
       - section.social (detailing social profiles)
       - section.transition (guiding the user from the areas detailing the actual content)
-      - section.closure (closing the page with something random)
+      - section.closure (closing the page with something random, currently a canvas element in which to draw)
 
   -->
 
@@ -238,10 +238,35 @@
       <h2>
         <strong>Congrats!</strong>
       </h2>
-      <!-- <h2>
-        Here's a treat just for <strong>you</strong>.
-      </h2> -->
+      <h2>
+        Here's a treat for the <strong>artist within you</strong>
+      </h2>
+
     </section><!-- close section.transition -->
+
+    <section class="closure">
+      <!-- section structure
+        - canvas element
+        - a container nesting multiple buttons for the brush's colors
+        - button to clear the canvas
+      -->
+
+      <canvas class="closure__canvas"></canvas>
+
+      <div class="closure__colors">
+        <button data-hue="0"></button>
+        <button data-hue="60"></button>
+        <button data-hue="120"></button>
+        <button data-hue="180"></button>
+        <button data-hue="240"></button>
+        <button data-hue="300"></button>
+      </div>
+
+      <div class="closure__tools">
+        <button>Start Fresh</button>
+      </div>
+
+    </section>
 
   </div><!-- close the div.app container -->
 

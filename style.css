@@ -393,3 +393,117 @@ this to detail the sections to which the intermittent containers' are related
     opacity: 1;
   }
 }
+
+/** SECTION.CLOSURE */
+/* display the canvas and containers with the buttons one atop the other */
+.closure {
+  min-height: 90vh;
+  padding: 5vh 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+/* display the color buttons side by side in a wrapping row */
+.closure__colors {
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+/* style the buttons as circles */
+.closure__colors button {
+  width: 42px;
+  height: 42px;
+  border: none;
+  margin: 1rem 1.25rem;
+  border-radius: 50%;
+  opacity: 0.7;
+  /* position relative to include a couple of drops of paint with pseudo elements */
+  position: relative;
+  /* transition for the hover and active states */
+  transition: all 0.2s ease-out;
+}
+/* on hover set the element as fully opaque */
+.closure__colors button:hover,
+.closure__colors button:focus {
+  opacity: 1;
+}
+/* when active, scale them ever so slightly */
+.closure__colors button:active {
+  transform: scale(1.1);
+}
+/* detail the color matching the data-hue attribute */
+.closure__colors button:nth-of-type(1) {
+  background: hsl(0, 50%, 60%);
+}
+.closure__colors button:nth-of-type(2) {
+  background: hsl(60, 50%, 60%);
+}
+.closure__colors button:nth-of-type(3) {
+  background: hsl(120, 50%, 60%);
+}
+.closure__colors button:nth-of-type(4) {
+  background: hsl(180, 50%, 60%);
+}
+.closure__colors button:nth-of-type(5) {
+  background: hsl(240, 50%, 60%);
+}
+.closure__colors button:nth-of-type(6) {
+  background: hsl(300, 50%, 60%);
+}
+/* include two drops of paint with pseudo elements */
+.closure__colors button:before {
+  position: absolute;
+  content: "";
+  left: 80%;
+  top: 100%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: inherit;
+}
+.closure__colors button:after {
+  position: absolute;
+  content: "";
+  left: 100%;
+  top: 70%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: inherit;
+}
+/* include a noticeable border around the canvas (the width and height are set in the JS script) */
+.closure canvas {
+  border: 1rem solid var(--color-accent);
+}
+/*
+style the button to have a solid shadow as a border
+this to later transition the box-shadow property to show two overlapping borders
+*/
+.closure__tools button {
+  background: none;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0 0 0 1px var(--color-accent);
+  padding: 0.25rem 0.5rem;
+  margin: 1rem 0;
+  color: var(--color-accent);
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  font-family: inherit;
+  text-transform: uppercase;
+  /* transition for the hover and active states */
+  transition: all 0.25s ease-out;
+}
+/* on hover change the box shadow property to show two overlapping borders */
+.closure__tools button:hover {
+  box-shadow: 0 0 0 2px var(--color-accent), 0 0 0 5px var(--color-bg),
+    0 0 0 8px var(--color-accent);
+}
+/* when active, scale the button ever so slightly */
+.closure__tools button:active {
+  transform: scale(1.1);
+}
