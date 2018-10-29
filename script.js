@@ -3,6 +3,7 @@
  * job description (change the third title with a string at random)
  * project (include a project from a selected few)
  * social icons (paint the background when hovering on the icons)
+ * canvas (allow visitors to draw on an enlarged canvas element, by means of a colorful brush)
 */
 
 /* utility functions
@@ -512,3 +513,106 @@ function paint(event) {
 // trigger the function whenever hovering on one of the selected anchor links
 socialLinks.forEach(socialLink => socialLink.addEventListener('mouseenter', paint));
 socialLinks.forEach(socialLink => socialLink.addEventListener('focus', paint));
+
+// CANVAS SETUP
+// target the canvas element
+const canvas = document.querySelector('canvas');
+// retrieve the context
+const context = canvas.getContext('2d');
+
+// create a function to change the original size of the canvas
+function fitCanvas() {
+  canvas.width = (window.innerWidth >= 700) ? 700 : window.innerWidth * 0.8;
+  canvas.height = canvas.width * 0.6;
+}
+// immediately call the function and attach it to a resize event on the window
+fitCanvas();
+window.addEventListener('resize', fitCanvas);
+
+// create a function to clear the canvas
+function clearCanvas() {
+  context.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+// listen for a click event on the button, at which point clear the cavas
+const buttonClear = document.querySelector('.closure__tools button');
+buttonClear.addEventListener('click', clearCanvas);
+
+
+// CANVAS DRAWING
+let isDrawing = false;
+let lastX = 0;
+let lastY = 0;
+let hueCanvas = 0;
+let lineWidth = 20;
+let saturationCanvas = 50;
+
+function draw(e) {
+  if (isDrawing) {
+    context.strokeStyle = `hsla(${hueCanvas}, ${saturationCanvas}%, 60%)`;
+    context.lineWidth = lineWidth;
+    context.lineJoin = 'round';
+    context.lineCap = 'round';
+
+    context.beginPath();
+    context.moveTo(lastX, lastY);
+    let currentX;
+    let currentY;
+    if (e.touches) {
+      currentX = e.touches[0].pageX - canvas.offsetLeft;
+      currentY = e.touches[0].pageY - canvas.offsetTop;
+    } else {
+      currentX = e.pageX - canvas.offsetLeft;
+      currentY = e.pageY - canvas.offsetTop;
+    }
+    context.lineTo(currentX, currentY);
+
+    context.stroke();
+
+    [lastX, lastY] = [currentX, currentY];
+
+
+    saturationCanvas -= 0.3;
+    lineWidth -= 0.8;
+    if (lineWidth <= 5) {
+      canvas.removeEventListener('mousemove', draw);
+      canvas.removeEventListener('touchmove', draw);
+    }
+  }
+}
+
+function prepareDrawing(e) {
+  let currentX;
+  let currentY;
+  if (e.touches) {
+    [currentX, currentY] = [e.touches[0].pageX - canvas.offsetLeft, e.touches[0].pageY - canvas.offsetTop];
+    canvas.addEventListener('touchmove', draw);
+  } else {
+    [currentX, currentY] = [e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop];
+    canvas.addEventListener('mousemove', draw);
+  }
+  [lastX, lastY] = [currentX, currentY];
+  isDrawing = true;
+  lineWidth = 20;
+  saturationCanvas = 50;
+}
+
+
+// on mouseup set the boolean back to its original position
+canvas.addEventListener('mouseup', () => isDrawing = false);
+// on mouseleave also set the boolean back
+canvas.addEventListener('mouseleave', () => isDrawing = false);
+canvas.addEventListener('touchend', () => isDrawing = false);
+// on mousedown call a function to set the boolean to true and add an object to the coordinates array
+canvas.addEventListener('mousedown', prepareDrawing);
+canvas.addEventListener('touchstart', prepareDrawing);
+// on mousemove call a function to check if the boolean is true and then (and only then) track the cursor's movements
+
+function changeHue(e) {
+  const val = parseInt(e.target.getAttribute('data-hue'), 10);
+  hueCanvas = val;
+}
+
+
+const buttonColors = document.querySelectorAll('.closure__colors button');
+buttonColors.forEach(buttonColor => buttonColor.addEventListener('click', changeHue));
