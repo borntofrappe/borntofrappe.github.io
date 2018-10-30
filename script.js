@@ -597,7 +597,6 @@ function prepareDrawing(e) {
   saturationCanvas = 50;
 }
 
-
 // on mouseup set the boolean back to its original position
 canvas.addEventListener('mouseup', () => isDrawing = false);
 // on mouseleave also set the boolean back
@@ -608,11 +607,20 @@ canvas.addEventListener('mousedown', prepareDrawing);
 canvas.addEventListener('touchstart', prepareDrawing);
 // on mousemove call a function to check if the boolean is true and then (and only then) track the cursor's movements
 
-function changeHue(e) {
-  const val = parseInt(e.target.getAttribute('data-hue'), 10);
-  hueCanvas = val;
-}
-
-
+// select all button elements responsible for the canvas's color
 const buttonColors = document.querySelectorAll('.closure__colors button');
+
+// create a function to change the color used in the canvas
+// add a class of .selected to the pressed target and only that element (this to add the two drops of paint)
+function changeHue(e) {
+  // retrieve the hue from the data-hue attribute of the pressed button
+  const dataHue = parseInt(e.target.getAttribute('data-hue'), 10);
+  // change the color value to the selected one
+  hueCanvas = dataHue;
+
+  // add a class of .selected to the selected button, and only that one
+  buttonColors.forEach(buttonColor => buttonColor.classList.remove('selected'));
+  e.target.classList.add('selected');
+}
+// attach the changeHue function to the color responsibles for the color of the canvas
 buttonColors.forEach(buttonColor => buttonColor.addEventListener('click', changeHue));

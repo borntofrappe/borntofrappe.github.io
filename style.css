@@ -419,7 +419,7 @@ this to detail the sections to which the intermittent containers' are related
   border: none;
   margin: 1rem 1.25rem;
   border-radius: 50%;
-  opacity: 0.7;
+  opacity: 0.8;
   /* position relative to include a couple of drops of paint with pseudo elements */
   position: relative;
   /* transition for the hover and active states */
@@ -453,30 +453,36 @@ this to detail the sections to which the intermittent containers' are related
 .closure__colors button:nth-of-type(6) {
   background: hsl(300, 50%, 60%);
 }
-/* include two drops of paint with pseudo elements */
-.closure__colors button:before {
+/*
+include two drops of paint with pseudo elements
+attach the pseudo elements to a class, as to add the drops of paint only to the selected button
+*/
+.closure__colors button.selected:before,
+.closure__colors button.selected:after {
   position: absolute;
   content: "";
+  border-radius: 50%;
+  background: inherit;
+}
+.closure__colors button.selected:before {
   left: 80%;
   top: 100%;
   width: 6px;
   height: 6px;
-  border-radius: 50%;
-  background: inherit;
 }
-.closure__colors button:after {
-  position: absolute;
-  content: "";
+.closure__colors button.selected:after {
   left: 100%;
   top: 70%;
   width: 10px;
   height: 10px;
-  border-radius: 50%;
-  background: inherit;
 }
-/* include a noticeable border around the canvas (the width and height are set in the JS script) */
+/*
+include a noticeable border around the canvas (the width and height are set in the JS script)
+add a solid background to avoid having the canvas as a transparent frame
+*/
 .closure canvas {
-  border: 1rem solid var(--color-accent);
+  border: 0.5rem solid var(--color-accent);
+  background: var(--color-bg);
 }
 /*
 style the button to have a solid shadow as a border
@@ -490,7 +496,7 @@ this to later transition the box-shadow property to show two overlapping borders
   padding: 0.25rem 0.5rem;
   margin: 1rem 0;
   color: var(--color-accent);
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   font-weight: bold;
   letter-spacing: 0.1rem;
   font-family: inherit;
