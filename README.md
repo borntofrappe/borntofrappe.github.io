@@ -17,7 +17,7 @@ However, this last re-sizing was being applied on the SVG elements as they were 
 ```html
 <svg>
   <use href="#previously-declared-icon"/>
-</svg
+</svg>
 ```
 
 Apparently and on Firefox, changing the size of this element doesn't affect the previous 100px by 100px explicit measures.
@@ -32,4 +32,4 @@ Solution: remove the explicit measure, have the SVG being styled solely on the b
 
 - [ ] consider re-designing the icon for styled-components. Consider new icons for the upcoming back end projects.
 
-- [ ] in the bottom of the page detail a simple drawing application through the canvas element.
+- [x] in the bottom of the page detail a simple drawing application through the canvas element.

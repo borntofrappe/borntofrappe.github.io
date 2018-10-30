@@ -412,6 +412,14 @@ this to detail the sections to which the intermittent containers' are related
   align-items: center;
   justify-content: center;
 }
+/*
+include a noticeable border around the canvas (the width and height are set in the JS script)
+add a solid background to avoid having the canvas as a transparent frame
+*/
+.closure canvas {
+  border: 0.5rem solid var(--color-accent);
+  background: var(--color-bg);
+}
 /* style the buttons as circles */
 .closure__colors button {
   width: 42px;
@@ -477,14 +485,6 @@ attach the pseudo elements to a class, as to add the drops of paint only to the 
   height: 10px;
 }
 /*
-include a noticeable border around the canvas (the width and height are set in the JS script)
-add a solid background to avoid having the canvas as a transparent frame
-*/
-.closure canvas {
-  border: 0.5rem solid var(--color-accent);
-  background: var(--color-bg);
-}
-/*
 style the button to have a solid shadow as a border
 this to later transition the box-shadow property to show two overlapping borders
 */
@@ -494,7 +494,6 @@ this to later transition the box-shadow property to show two overlapping borders
   border: none;
   box-shadow: 0 0 0 1px var(--color-accent);
   padding: 0.25rem 0.5rem;
-  margin: 1rem 0;
   color: var(--color-accent);
   font-size: 0.9rem;
   font-weight: bold;

@@ -1,9 +1,9 @@
 /** SCRIPT LOGIC
  * accent color (change brightness and saturation depending on the time of day)
  * job description (change the third title with a string at random)
- * project (include a project from a selected few)
- * social icons (paint the background when hovering on the icons)
- * canvas (allow visitors to draw on an enlarged canvas element, by means of a colorful brush)
+ * project sectopm (include a project from a selected few)
+ * social section (paint the background when hovering on the icons)
+ * closure section (allow visitors to draw on an enlarged canvas element, by means of a colorful brush)
 */
 
 /* utility functions
@@ -53,7 +53,7 @@ const jobDescription = document.querySelector('i');
 // change the text of the <i> element from one of the expressions at random
 jobDescription.textContent = randomItem(job);
 
-// PROJECT
+// PROJECT SECTION
 // describe the projects in an array
 const projects = [
   /* each object including
@@ -436,7 +436,7 @@ const projectButton = document.querySelector('.project--controls button');
 // on click call the function to add a new project
 projectButton.addEventListener('click', () => addProject(randomItem(projects)));
 
-// SOCIAL ICONS
+// SOCIAL SECTION
 // describe the social links in an array
 const social = [
   /* each object including
@@ -514,7 +514,7 @@ function paint(event) {
 socialLinks.forEach(socialLink => socialLink.addEventListener('mouseenter', paint));
 socialLinks.forEach(socialLink => socialLink.addEventListener('focus', paint));
 
-// CANVAS SETUP
+// CLOSURE SECTION
 // target the canvas element
 const canvas = document.querySelector('canvas');
 // retrieve the context
@@ -534,30 +534,43 @@ function clearCanvas() {
   context.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-// listen for a click event on the button, at which point clear the cavas
+// listen for a click event on the tools' button, at which point clear the cavas
 const buttonClear = document.querySelector('.closure__tools button');
 buttonClear.addEventListener('click', clearCanvas);
 
-
-// CANVAS DRAWING
+/* create variables for the canvas drawing
+- isDrawing: boolean to draw only when the cursor is down in the canvas
+- lastX and lastY, to draw from the last recorded coordinates
+- hueCanvas, saturationCanvas, lineWidth, to modify these values for the canvas stroke
+*/
 let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
 let hueCanvas = 0;
-let lineWidth = 20;
 let saturationCanvas = 50;
+let lineWidth = 20;
+/*
+create a function to draw path elements from the last recorded coordinates to the new coordinates
+coordinates updated to continue drawing as the mouse/touch event continues
 
+function called in response to the touchmove and mousemove events
+*/
 function draw(e) {
   if (isDrawing) {
+    // path settings
     context.strokeStyle = `hsla(${hueCanvas}, ${saturationCanvas}%, 60%)`;
     context.lineWidth = lineWidth;
     context.lineJoin = 'round';
     context.lineCap = 'round';
 
+    /* draw the path from the last recorded coordinates to the new values
+    new values retrieved from the event */
     context.beginPath();
     context.moveTo(lastX, lastY);
     let currentX;
     let currentY;
+    /* currentX and currentY are retrieved from a touchmove or mousemove event
+    in the first instance, the coordinates are found in the touches array */
     if (e.touches) {
       currentX = e.touches[0].pageX - canvas.offsetLeft;
       currentY = e.touches[0].pageY - canvas.offsetTop;
@@ -566,12 +579,13 @@ function draw(e) {
       currentY = e.pageY - canvas.offsetTop;
     }
     context.lineTo(currentX, currentY);
-
     context.stroke();
 
+    // update coordinates to keep drawing
     [lastX, lastY] = [currentX, currentY];
 
-
+    /* for every event being fired lower the saturation and the line width
+    remove event listeners, stopping to draw when reaching a certain threshold */
     saturationCanvas -= 0.3;
     lineWidth -= 0.8;
     if (lineWidth <= 5) {
@@ -580,7 +594,11 @@ function draw(e) {
     }
   }
 }
-
+/*
+create a function called in response to the touchstart and mousedown events
+to update the last recorded coordinates and set the boolean to true
+the boolean then allows to draw on the canvas following the touchmove and mousemove events
+*/
 function prepareDrawing(e) {
   let currentX;
   let currentY;
@@ -592,24 +610,25 @@ function prepareDrawing(e) {
     canvas.addEventListener('mousemove', draw);
   }
   [lastX, lastY] = [currentX, currentY];
+
+  // set the boolean to true, enabling the functionality described in the draw function
   isDrawing = true;
-  lineWidth = 20;
+  // reset the values for the path
   saturationCanvas = 50;
+  lineWidth = 20;
 }
 
-// on mouseup set the boolean back to its original position
-canvas.addEventListener('mouseup', () => isDrawing = false);
-// on mouseleave also set the boolean back
-canvas.addEventListener('mouseleave', () => isDrawing = false);
+// on touchend, mouseup, mouseleave set the boolean back to false, preventing the draw function from runnning properly
 canvas.addEventListener('touchend', () => isDrawing = false);
-// on mousedown call a function to set the boolean to true and add an object to the coordinates array
+canvas.addEventListener('mouseup', () => isDrawing = false);
+canvas.addEventListener('mouseleave', () => isDrawing = false);
+
+// on touchstart and mousedown call the function used to set the boolean to true (and set up the stroke for the canvas)
 canvas.addEventListener('mousedown', prepareDrawing);
 canvas.addEventListener('touchstart', prepareDrawing);
-// on mousemove call a function to check if the boolean is true and then (and only then) track the cursor's movements
 
 // select all button elements responsible for the canvas's color
 const buttonColors = document.querySelectorAll('.closure__colors button');
-
 // create a function to change the color used in the canvas
 // add a class of .selected to the pressed target and only that element (this to add the two drops of paint)
 function changeHue(e) {
@@ -617,7 +636,6 @@ function changeHue(e) {
   const dataHue = parseInt(e.target.getAttribute('data-hue'), 10);
   // change the color value to the selected one
   hueCanvas = dataHue;
-
   // add a class of .selected to the selected button, and only that one
   buttonColors.forEach(buttonColor => buttonColor.classList.remove('selected'));
   e.target.classList.add('selected');
