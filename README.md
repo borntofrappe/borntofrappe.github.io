@@ -4,6 +4,12 @@
 
 ## Issues
 
+> updated 01/11/2018
+
+I am currently in the process of collecting feedback from the audits tab. It is a rather overwhelming feature baked in Chrome, which gives a scary-looking metric on multiple grounds. I am specifically trying to improve my website on the counts of being accessible and performant. The progressive web app component is not that relevant, for the time being.
+
+One big issue is serving too big of an image, for my welcome section. While it is now optimized, I still need to consider additional elements in the image HTML element and CSS properties. [This resource might help](https://cloudfour.com/thinks/responsive-images-101-definitions/).
+
 > updated 29/10/2018
 
 Recently, I discovered an issue with my personal website on firefox. Something that had to do with the SVG icons used for the technology stack and something stemming from the following:
@@ -29,6 +35,8 @@ Solution: remove the explicit measure, have the SVG being styled solely on the b
 > Short to mid-term goals
 
 - [ ] add a simple animation atop the page, in the form of an airplane passing by every so often (perhaps only for smaller viewports where there is quite a bit of white space atop the application).
+
+- [ ] review the feedback from the audits tab.
 
 - [x] consider re-designing the icon for styled-components. Consider new icons for the upcoming back end projects.
 
