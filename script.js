@@ -556,6 +556,7 @@ coordinates updated to continue drawing as the mouse/touch event continues
 function called in response to the touchmove and mousemove events
 */
 function draw(e) {
+  e.preventDefault();
   if (isDrawing) {
     // path settings
     context.strokeStyle = `hsla(${hueCanvas}, ${saturationCanvas}%, 60%)`;
@@ -600,6 +601,7 @@ to update the last recorded coordinates and set the boolean to true
 the boolean then allows to draw on the canvas following the touchmove and mousemove events
 */
 function prepareDrawing(e) {
+  e.preventDefault();
   let currentX;
   let currentY;
   if (e.touches) {
