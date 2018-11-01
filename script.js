@@ -332,8 +332,8 @@ const projects = [
     url: 'https://codepen.io/borntofrappe/full/dqQjwj'
   },
   {
-    title: 'Treemap Diagram',
-    description: 'Highlight the highest grossing movies by genre.',
+    title: 'Highest Grossing Movies',
+    description: 'Highlight movies according to sales and genre.',
     stack: [
       'stylus',
       'd3'
@@ -341,8 +341,8 @@ const projects = [
     url: 'https://codepen.io/borntofrappe/full/RYbaOo'
   },
   {
-    title: 'Choropleth Map',
-    description: 'Detail educational attainment in the US, and for every single county.',
+    title: 'US Educational Attainment',
+    description: 'Detail in a choropleth map educational metrics for every single county of th US.',
     stack: [
       'stylus',
       'd3'
@@ -350,8 +350,8 @@ const projects = [
     url: 'https://codepen.io/borntofrappe/full/RBdrPG'
   },
   {
-    title: 'Heat map',
-    description: 'Plot the evolution of the global temperature across the centuries.',
+    title: 'Global Land Temperatures',
+    description: 'Plot the evolution of the average temperature across the centuries.',
     stack: [
       'css',
       'd3'
@@ -359,8 +359,8 @@ const projects = [
     url: 'https://codepen.io/borntofrappe/full/qKeGLM'
   },
   {
-    title: 'Bar Chart',
-    description: 'Plot the gross domestic product for the US, and since 1947.',
+    title: 'US Gross Domestic product',
+    description: 'Plot GDP for the United States of America, and since 1947.',
     stack: [
       'css',
       'd3'
@@ -368,8 +368,8 @@ const projects = [
     url: 'https://codepen.io/borntofrappe/full/mKGZaO'
   },
   {
-    title: 'Scatter Plot map',
-    description: 'Visualize cycling records on the Alpe Duez, considering doping allegations.',
+    title: 'Alpe Duez Records',
+    description: 'Visualize cycling records considering doping allegations.',
     stack: [
       'css',
       'd3'
