@@ -30,6 +30,6 @@ Solution: remove the explicit measure, have the SVG being styled solely on the b
 
 - [ ] add a simple animation atop the page, in the form of an airplane passing by every so often (perhaps only for smaller viewports where there is quite a bit of white space atop the application).
 
-- [ ] consider re-designing the icon for styled-components. Consider new icons for the upcoming back end projects.
+- [x] consider re-designing the icon for styled-components. Consider new icons for the upcoming back end projects.
 
 - [x] in the bottom of the page detail a simple drawing application through the canvas element.
