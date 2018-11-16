@@ -386,6 +386,15 @@ const projects = [
       'styled-components'
     ],
     url: 'https://codepen.io/borntofrappe/full/ZqwVmm'
+  },
+  {
+    title: 'Fuel and Taxes Infograph',
+    description: 'Visualize the evolution of prices for gasoline and diesel, given the recent changes to French legislation.',
+    stack: [
+      'scss',
+      'd3'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/YRGGWY'
   }
 ];
 // create a function creating a new value for the border radius property
