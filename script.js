@@ -391,10 +391,20 @@ const projects = [
     title: 'Fuel and Taxes Infograph',
     description: 'Visualize the evolution of prices for gasoline and diesel, given the recent changes to French legislation.',
     stack: [
-      'scss',
+      'sass',
       'd3'
     ],
     url: 'https://codepen.io/borntofrappe/full/YRGGWY'
+  },
+  {
+    title: 'Who\'s that Pokemon?',
+    description: 'Play a simple game inspired by the original anime series.',
+    stack: [
+      'react',
+      'styled-components',
+      // react-spring
+    ],
+    url: 'https://codepen.io/borntofrappe/full/GwYLRw'
   }
 ];
 // create a function creating a new value for the border radius property
