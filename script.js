@@ -405,6 +405,34 @@ const projects = [
       // react-spring
     ],
     url: 'https://codepen.io/borntofrappe/full/GwYLRw'
+  },
+  {
+    title: 'React SVGatch',
+    description: 'Catch a glimpse of the current time through a stylish analog watch.',
+    stack: [
+      'react',
+      'svg',
+    ],
+    url: 'https://codepen.io/borntofrappe/full/ebRVJd'
+  },
+  {
+    title: 'React Timer',
+    description: 'Count down to a specific time with a practical and enticing timer.',
+    stack: [
+      'react',
+      'styled-components',
+      // react spring
+    ],
+    url: 'https://codepen.io/borntofrappe/full/dwVZRQ'
+  },
+  {
+    title: 'freeCodeCamp Podcast App',
+    description: 'Listen to the freeCodeCamp podcast in this unofficial application.',
+    stack: [
+      'react',
+      'styled-components',
+    ],
+    url: 'https://codepen.io/borntofrappe/full/yGbpMm'
   }
 ];
 // create a function creating a new value for the border radius property
