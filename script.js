@@ -433,6 +433,99 @@ const projects = [
       'styled-components',
     ],
     url: 'https://codepen.io/borntofrappe/full/yGbpMm'
+  },
+  {
+    title: 'Infinity Maze',
+    description: 'Explore a completely unbiased labyrinth in an endless maze runner.',
+    stack: [
+      'svelte',
+      'js',
+      'svg',
+    ],
+    url: 'https://codepen.io/borntofrappe/full/pooeyww'
+  },
+  {
+    title: 'Key Value Pairs',
+    description: 'Perform CRUD operations on an hypothetical inventory and highlight the metrics through data visualizations.',
+    stack: [
+      'svelte',
+      'd3',
+    ],
+    url: 'https://codepen.io/borntofrappe/full/rNBEYWM'
+  },
+  {
+    title: 'Day & Night Toggle',
+    description: 'Toggle the state of a checkbox to highlight two clear, distinct times of the day.',
+    stack: [
+      'svg',
+      'css',
+    ],
+    url: 'https://codepen.io/borntofrappe/full/aboPapm'
+  },
+  {
+    title: 'A Matter of Gravity',
+    description: 'Use gravity to position a ball on top of a goalpost.',
+    stack: [
+      'matter',
+      'css',
+    ],
+    url: 'https://codepen.io/borntofrappe/full/mddEvEW'
+  },
+  {
+    title: 'Searching Rod',
+    description: 'Fetch a few fish names with a retro look and an entertaining search field.',
+    stack: [
+      'js',
+      'svg',
+      'css'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/ZdXMwM'
+  },
+  {
+    title: 'Smart Watch',
+    description: 'Play with a few apps on an a mobile interface.',
+    stack: [
+      'svelte',
+      'svg',
+    ],
+    url: 'https://codepen.io/borntofrappe/full/bGGWMBx'
+  },
+  {
+    title: 'Concentration',
+    description: 'Match cards in pairs.',
+    stack: [
+      'svelte',
+      'css'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/yLLVNME'
+  },
+  {
+    title: 'Connect the Dots',
+    description: 'Draw a few lines to detail a familiar shape.',
+    stack: [
+      'svg',
+      'html',
+      'js'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/LYPWLMv'
+  },
+  {
+    title: 'Double Slider Form',
+    description: 'Slide between a sign in and and a sign up form with style.',
+    stack: [
+      'react',
+      'css'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/OGyJbm'
+  },
+  {
+    title: 'Light & Dark Theme',
+    description: 'Style the UI of a mobile device with two themes.',
+    stack: [
+      'svg',
+      'css'
+    ],
+    url: 'https://codepen.io/borntofrappe/full/WBWxZw'
   }
 ];
 // create a function creating a new value for the border radius property
