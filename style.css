@@ -1,118 +1,136 @@
 /* import font(s) */
 @import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,900");
 
+#notice {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background: hotpink;
+    color: hsl(0, 0%, 0%);
+    padding: 0.5rem;
+    border-bottom: 0.25rem solid currentColor;
+    box-shadow: 0 1px 15px -2px hsla(0, 0%, 0%, 0.2);
+    font-family: monospace;
+    font-size: 0.85rem;
+}
+
 /* detail root variables */
 :root {
-  --font: "Maven Pro", sans-serif;
-  --color-text: #333;
-  --color-accent: #ff6247;
-  --color-accent-l: #ebbab2;
-  --color-bg: #fff;
+    --font: "Maven Pro", sans-serif;
+    --color-text: #333;
+    --color-accent: #ff6247;
+    --color-accent-l: #ebbab2;
+    --color-bg: #fff;
 }
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 /* describe fluid typography, increasing the copy's size from 400px wide viewports to 1200px wide viewports */
 html {
-  font-size: calc(18px + (22 - 18) * (100vw - 400px) / (1200 - 400));
+    font-size: calc(18px + (22 - 18) * (100vw - 400px) / (1200 - 400));
 }
 body {
-  min-height: 100vh;
-  width: 100%;
-  font-family: var(--font);
-  color: var(--color-text);
-  /* atop a solid background include a texture for the entire page */
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="276.026" viewBox="0 0 79.375 73.032"><g transform="matrix(1.11434 0 0 1.11434 -2.528 -258.613)" opacity="0.3" fill="%23ff6247"><circle r=".301" cy="273.18" cx="7.049" paint-order="stroke fill markers"/><circle cx="5.446" cy="274.516" r=".1" paint-order="stroke fill markers"/><circle r=".2" cy="272.438" cx="5.646" paint-order="stroke fill markers"/><circle cx="6.13" cy="273.657" r=".234" paint-order="stroke fill markers"/><circle r=".249" cy="268.256" cx="7.464" paint-order="stroke fill markers"/><circle cx="4.806" cy="275.06" r=".181" paint-order="stroke fill markers"/><circle r=".104" cy="268.338" cx="6.457" paint-order="stroke fill markers"/><circle cx="8.867" cy="259.594" r=".314" paint-order="stroke fill markers"/><circle cx="11.925" cy="275.008" r=".183" paint-order="stroke fill markers"/><circle r=".235" cy="267.394" cx="16.453" paint-order="stroke fill markers"/><circle cx="20.587" cy="270.435" r=".206" paint-order="stroke fill markers"/><circle r=".233" cy="274.045" cx="7.085" paint-order="stroke fill markers"/><circle cx="11.138" cy="271.38" r=".184" paint-order="stroke fill markers"/><circle cx="4.923" cy="268.223" r=".282" paint-order="stroke fill markers"/><circle cx="24.722" cy="264.655" r=".215" paint-order="stroke fill markers"/><circle r=".107" cy="267.332" cx="20.165" paint-order="stroke fill markers"/><circle r=".232" cy="273.903" cx="8.802" paint-order="stroke fill markers"/><circle cx="19.847" cy="276.908" r=".219" paint-order="stroke fill markers"/><circle r=".092" cy="268.058" cx="13.947" paint-order="stroke fill markers"/><circle cx="16.514" cy="267.507" r=".327" paint-order="stroke fill markers"/><circle cx="17.089" cy="271.699" r=".208" paint-order="stroke fill markers"/><circle cx="46.644" cy="263.526" r=".327" paint-order="stroke fill markers"/><circle r=".245" cy="262.142" cx="15.403" paint-order="stroke fill markers"/><circle cx="14.715" cy="276.248" r=".185" paint-order="stroke fill markers"/><circle cx="18.599" cy="263.47" r=".329" paint-order="stroke fill markers"/><circle r=".242" cy="270.712" cx="13.085" paint-order="stroke fill markers"/><circle cx="27.006" cy="261.574" r=".199" paint-order="stroke fill markers"/><circle cx="17.309" cy="269.906" r=".289" paint-order="stroke fill markers"/><circle r=".093" cy="258.084" cx="17.442" paint-order="stroke fill markers"/><circle cx="25.432" cy="260.975" r=".329" paint-order="stroke fill markers"/><circle r=".254" cy="258.975" cx="39.695" paint-order="stroke fill markers"/><circle cx="37.39" cy="268.312" r=".201" paint-order="stroke fill markers"/><circle cx="11.94" cy="261.873" r=".201" paint-order="stroke fill markers"/><circle r=".102" cy="269.159" cx="25.702" paint-order="stroke fill markers"/><circle cx="29.266" cy="259.109" r=".322" paint-order="stroke fill markers"/><circle r=".092" cy="250.212" cx="32.996" paint-order="stroke fill markers"/><circle cx="25.989" cy="246.984" r=".306" paint-order="stroke fill markers"/><circle r=".221" cy="242.531" cx="25.795" paint-order="stroke fill markers"/><circle cx="44.096" cy="247.352" r=".188" paint-order="stroke fill markers"/><circle cx="37.742" cy="236.217" r=".286" paint-order="stroke fill markers"/><circle r=".214" cy="259.63" cx="20.138" paint-order="stroke fill markers"/><circle r=".1" cy="274.178" cx="19.856" paint-order="stroke fill markers"/><circle cx="7.323" cy="262.388" r=".326" paint-order="stroke fill markers"/><circle r=".232" cy="251.541" cx="15.121" paint-order="stroke fill markers"/><circle cx="6.368" cy="266.429" r=".219" paint-order="stroke fill markers"/><circle r=".212" cy="263.354" cx="2.655" paint-order="stroke fill markers"/><circle cx="6.517" cy="262.22" r=".209" paint-order="stroke fill markers"/><circle r=".106" cy="261.424" cx="24.777" paint-order="stroke fill markers"/><circle cx="15.545" cy="255.163" r=".291" paint-order="stroke fill markers"/><circle cx="9.562" cy="257.877" r=".217" paint-order="stroke fill markers"/><circle cx="19.48" cy="257.842" r=".276" paint-order="stroke fill markers"/><circle r=".256" cy="252.167" cx="8.076" paint-order="stroke fill markers"/><circle cx="35.091" cy="247.639" r=".205" paint-order="stroke fill markers"/><circle r=".094" cy="250.418" cx="18.437" paint-order="stroke fill markers"/><circle cx="34.943" cy="248.235" r=".278" paint-order="stroke fill markers"/><circle r=".24" cy="248.684" cx="16.11" paint-order="stroke fill markers"/><circle cx="29.923" cy="240.663" r=".219" paint-order="stroke fill markers"/><circle cx="17.204" cy="243.923" r=".294" paint-order="stroke fill markers"/><circle cx="39.647" cy="246.265" r=".213" paint-order="stroke fill markers"/><circle cx="27.491" cy="247.145" r=".287" paint-order="stroke fill markers"/><circle r=".099" cy="251.228" cx="29.712" paint-order="stroke fill markers"/><circle cx="39.176" cy="242.038" r=".322" paint-order="stroke fill markers"/><circle r=".247" cy="232.323" cx="36.693" paint-order="stroke fill markers"/><circle cx="50.581" cy="239.194" r=".186" paint-order="stroke fill markers"/><circle r=".094" cy="243.076" cx="26.019" paint-order="stroke fill markers"/><circle cx="43.035" cy="247.459" r=".279" paint-order="stroke fill markers"/><circle r=".225" cy="234.035" cx="40.168" paint-order="stroke fill markers"/><circle r=".102" cy="237.962" cx="36.129" paint-order="stroke fill markers"/><circle cx="37.27" cy="250.012" r=".296" paint-order="stroke fill markers"/><circle cx="54.794" cy="248.805" r=".198" paint-order="stroke fill markers"/><circle r=".093" cy="264.405" cx="50.589" paint-order="stroke fill markers"/><circle cx="50.983" cy="250.249" r=".305" paint-order="stroke fill markers"/><circle r=".249" cy="264.283" cx="58.536" paint-order="stroke fill markers"/><circle cx="69.626" cy="263.147" r=".201" paint-order="stroke fill markers"/><circle r=".222" cy="265.167" cx="66.815" paint-order="stroke fill markers"/><circle cx="56.414" cy="257.509" r=".323" paint-order="stroke fill markers"/><circle r=".226" cy="262.986" cx="62.269" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="263.317" cy="-61.344" r=".203" paint-order="stroke fill markers"/><circle r=".101" cy="263.646" cx="65.327" paint-order="stroke fill markers"/><circle cx="69" cy="253.598" r=".325" paint-order="stroke fill markers"/><circle r=".256" cy="253.649" cx="67.374" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".095" cy="-53.613" cx="260.74" paint-order="stroke fill markers"/><circle cx="67.662" cy="251.51" r=".303" paint-order="stroke fill markers"/><circle r=".225" cy="251.218" cx="65.763" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="273.976" cy="-56.541" r=".22" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="265.348" cy="-56.688" r=".211" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="272.859" cy="-48.469" r=".292" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".222" cy="-57.787" cx="270.71" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".104" cy="-66.005" cx="273.105" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="275.666" cy="-44.486" r=".303" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".225" cy="-49.562" cx="261.411" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".094" cy="-41.791" cx="260.938" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".235" cy="-59.677" cx="283.282" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".093" cy="-49.316" cx="273.157" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="277.484" cy="-45.483" r=".329" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".249" cy="-58.882" cx="274.178" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="277.366" cy="-57.305" r=".21" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".099" cy="-52.042" cx="268.14" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="281.8" cy="-35.184" r=".275" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".234" cy="-45.32" cx="271.127" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="274.871" cy="-28.677" r=".183" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".106" cy="-41.678" cx="259.388" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="259.005" cy="-47.748" r=".311" paint-order="stroke fill markers"/><circle r=".236" cy="283.596" cx="57.664" paint-order="stroke fill markers"/><circle cx="68.162" cy="293.362" r=".202" paint-order="stroke fill markers"/><circle r=".094" cy="289.939" cx="59.766" paint-order="stroke fill markers"/><circle cx="65.865" cy="270.072" r=".201" paint-order="stroke fill markers"/><circle cx="63.317" cy="285.199" r=".306" paint-order="stroke fill markers"/><circle r=".215" cy="282.311" cx="48.709" paint-order="stroke fill markers"/><circle cx="50.151" cy="274.42" r=".214" paint-order="stroke fill markers"/><circle r=".1" cy="281.982" cx="69.413" paint-order="stroke fill markers"/><circle cx="66.303" cy="285.184" r=".305" paint-order="stroke fill markers"/><circle r=".239" cy="284.822" cx="53.401" paint-order="stroke fill markers"/><circle cx="52.263" cy="269.292" r=".286" paint-order="stroke fill markers"/><circle r=".256" cy="282.021" cx="45.974" paint-order="stroke fill markers"/><circle cx="25.359" cy="291.65" r=".194" paint-order="stroke fill markers"/><circle cx="24.574" cy="278.432" r=".321" paint-order="stroke fill markers"/><circle r=".253" cy="273.897" cx="24.674" paint-order="stroke fill markers"/><circle cx="32.553" cy="277.035" r=".201" paint-order="stroke fill markers"/><circle r=".101" cy="277.855" cx="20.23" paint-order="stroke fill markers"/><circle r=".253" cy="276.001" cx="14.679" paint-order="stroke fill markers"/><circle cx="42.228" cy="264.625" r=".201" paint-order="stroke fill markers"/><circle r=".092" cy="274.496" cx="19.571" paint-order="stroke fill markers"/><circle cx="13.531" cy="292.085" r=".309" paint-order="stroke fill markers"/><circle r=".243" cy="281.981" cx="5.615" paint-order="stroke fill markers"/><circle cx="13.761" cy="295.05" r=".209" paint-order="stroke fill markers"/><circle cx="4.992" cy="294.558" r=".321" paint-order="stroke fill markers"/><circle r=".212" cy="276.901" cx="29.76" paint-order="stroke fill markers"/><circle cx="14.075" cy="287.05" r=".182" paint-order="stroke fill markers"/><circle cx="12.474" cy="280.288" r=".278" paint-order="stroke fill markers"/><circle r=".253" cy="284.336" cx="22.166" paint-order="stroke fill markers"/><circle r=".109" cy="297.505" cx="39.958" paint-order="stroke fill markers"/><circle cx="32.112" cy="281.563" r=".321" paint-order="stroke fill markers"/><circle r=".245" cy="284.618" cx="59.038" paint-order="stroke fill markers"/><circle r=".098" cy="282.203" cx="54.935" paint-order="stroke fill markers"/><circle cx="46.901" cy="286.209" r=".3" paint-order="stroke fill markers"/><circle cx="55.377" cy="286.739" r=".209" paint-order="stroke fill markers"/><circle cx="61.284" cy="285.321" r=".191" paint-order="stroke fill markers"/><circle r=".099" cy="296.775" cx="65.591" paint-order="stroke fill markers"/><circle r=".257" cy="277.663" cx="59.112" paint-order="stroke fill markers"/><circle cx="56.866" cy="295.339" r=".204" paint-order="stroke fill markers"/><circle r=".098" cy="280.607" cx="62.407" paint-order="stroke fill markers"/><circle cx="53.641" cy="295.536" r=".297" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".24" cy="-30.165" cx="266.971" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="271.799" cy="-25.346" r=".202" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".1" cy="-25.497" cx="271.655" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="264.666" cy="-30.459" r=".208" paint-order="stroke fill markers"/><circle cx="69.869" cy="280.285" r=".286" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="266.577" cy="-32.839" r=".204" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".095" cy="-24.653" cx="270.617" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".255" cy="-42.501" cx="279.523" paint-order="stroke fill markers"/><circle r=".1" cy="271.319" cx="68.777" paint-order="stroke fill markers"/><circle cx="73.207" cy="267.903" r=".292" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".243" cy="-28.761" cx="264.927" paint-order="stroke fill markers"/><circle cx="73.154" cy="270.079" r=".209" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".093" cy="-41.644" cx="261.013" paint-order="stroke fill markers"/><circle r=".227" cy="278.743" cx="43.625" paint-order="stroke fill markers"/><circle cx="60.105" cy="275.209" r=".188" paint-order="stroke fill markers"/><circle r=".215" cy="248.523" cx="47.572" paint-order="stroke fill markers"/><circle cx="59.506" cy="262.034" r=".217" paint-order="stroke fill markers"/><circle r=".108" cy="260.605" cx="38.304" paint-order="stroke fill markers"/><circle cx="64.205" cy="262.065" r=".33" paint-order="stroke fill markers"/><circle r=".255" cy="260.691" cx="54.103" paint-order="stroke fill markers"/><circle cx="32.615" cy="249.179" r=".204" paint-order="stroke fill markers"/><circle cx="38.766" cy="244.392" r=".31" paint-order="stroke fill markers"/><circle r=".221" cy="238.745" cx="47.669" paint-order="stroke fill markers"/><circle cx="37.832" cy="253.359" r=".183" paint-order="stroke fill markers"/><circle r=".246" cy="243.503" cx="53.904" paint-order="stroke fill markers"/><circle cx="58.058" cy="238.233" r=".203" paint-order="stroke fill markers"/><circle cx="47.921" cy="239.428" r=".275" paint-order="stroke fill markers"/><circle r=".255" cy="241.476" cx="52.914" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="260.657" cy="-65.062" r=".198" paint-order="stroke fill markers"/><circle r=".221" cy="260.713" cx="69.304" paint-order="stroke fill markers"/><circle cx="64.577" cy="250.071" r=".197" paint-order="stroke fill markers"/><circle r=".092" cy="236.733" cx="67.097" paint-order="stroke fill markers"/><circle cx="62.884" cy="237.435" r=".318" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".242" cy="-65.607" cx="264.793" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="265.852" cy="-48.257" r=".204" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".103" cy="-51.214" cx="264.798" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="276.795" cy="-57.252" r=".328" paint-order="stroke fill markers"/><circle r=".253" cy="249.85" cx="5.844" paint-order="stroke fill markers"/><circle r=".234" cy="241.186" cx="21.274" paint-order="stroke fill markers"/><circle r=".091" cy="234.256" cx="34.868" paint-order="stroke fill markers"/><circle cx="36.278" cy="249.485" r=".298" paint-order="stroke fill markers"/><circle r=".242" cy="240.066" cx="17.642" paint-order="stroke fill markers"/><circle cx="31.618" cy="235.552" r=".205" paint-order="stroke fill markers"/><circle cx="19.298" cy="237.002" r=".306" paint-order="stroke fill markers"/><circle r=".222" cy="241.201" cx="35.9" paint-order="stroke fill markers"/><circle r=".098" cy="243.617" cx="43.954" paint-order="stroke fill markers"/><circle cx="28.175" cy="238.373" r=".319" paint-order="stroke fill markers"/><circle r=".223" cy="251.535" cx="55.104" paint-order="stroke fill markers"/><circle r=".103" cy="247.399" cx="60.619" paint-order="stroke fill markers"/><circle cx="71.558" cy="242.171" r=".202" paint-order="stroke fill markers"/><circle r=".096" cy="236.037" cx="71.494" paint-order="stroke fill markers"/><circle cx="59.571" cy="247.374" r=".299" paint-order="stroke fill markers"/><circle r=".239" cy="235.995" cx="59.728" paint-order="stroke fill markers"/><circle cx="64.544" cy="234.882" r=".22" paint-order="stroke fill markers"/><circle r=".097" cy="245.464" cx="67.772" paint-order="stroke fill markers"/><circle cx="69.914" cy="244.321" r=".313" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".239" cy="-57.146" cx="276.51" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".096" cy="-55.794" cx="259.784" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".235" cy="-68.132" cx="260.503" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".103" cy="-59.081" cx="273.186" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="270.388" cy="-65.796" r=".326" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".215" cy="-54.631" cx="285.76" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="266.074" cy="-50.04" r=".209" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".11" cy="-50.34" cx="275.907" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="282.861" cy="-57.714" r=".291" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".238" cy="-35.984" cx="268.978" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="274.344" cy="-45.557" r=".207" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".092" cy="-34.901" cx="269.487" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".229" cy="-19.108" cx="277.501" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="276.967" cy="-28.654" r=".214" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".098" cy="-23.042" cx="273.314" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".215" cy="-20.126" cx="264.703" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="271.883" cy="-34.711" r=".214" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".219" cy="-26.422" cx="268.225" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="275.03" cy="-30.759" r=".185" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".104" cy="-17.981" cx="263.63" paint-order="stroke fill markers"/><circle cx="72.33" cy="288.549" r=".284" paint-order="stroke fill markers"/><circle r=".231" cy="247.324" cx="2.499" paint-order="stroke fill markers"/><circle r=".104" cy="232.782" cx="13.736" paint-order="stroke fill markers"/><circle cx="14.898" cy="236.911" r=".209" paint-order="stroke fill markers"/><circle r=".218" cy="242.383" cx="8.804" paint-order="stroke fill markers"/><circle cx="18.288" cy="238.279" r=".184" paint-order="stroke fill markers"/><circle r=".106" cy="246.947" cx="17.505" paint-order="stroke fill markers"/><circle cx="19.684" cy="248.236" r=".273" paint-order="stroke fill markers"/><circle r=".09" cy="253.336" cx="10.912" paint-order="stroke fill markers"/><circle r=".095" cy="242.762" cx="13.266" paint-order="stroke fill markers"/><circle cx="16.177" cy="243.554" r=".206" paint-order="stroke fill markers"/><circle r=".107" cy="244.084" cx="8.934" paint-order="stroke fill markers"/><circle r=".093" cy="238.022" cx="6.761" paint-order="stroke fill markers"/><circle cx="16.912" cy="238.99" r=".292" paint-order="stroke fill markers"/></g></svg>'),
-    var(--color-bg);
-  /* 400px (and repeat) refer to the svg texture, while 100% (and no-repeat) to the solid background */
-  background-size: 400px, 100%;
-  background-repeat: repeat, no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    font-family: var(--font);
+    color: var(--color-text);
+    /* atop a solid background include a texture for the entire page */
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="276.026" viewBox="0 0 79.375 73.032"><g transform="matrix(1.11434 0 0 1.11434 -2.528 -258.613)" opacity="0.3" fill="%23ff6247"><circle r=".301" cy="273.18" cx="7.049" paint-order="stroke fill markers"/><circle cx="5.446" cy="274.516" r=".1" paint-order="stroke fill markers"/><circle r=".2" cy="272.438" cx="5.646" paint-order="stroke fill markers"/><circle cx="6.13" cy="273.657" r=".234" paint-order="stroke fill markers"/><circle r=".249" cy="268.256" cx="7.464" paint-order="stroke fill markers"/><circle cx="4.806" cy="275.06" r=".181" paint-order="stroke fill markers"/><circle r=".104" cy="268.338" cx="6.457" paint-order="stroke fill markers"/><circle cx="8.867" cy="259.594" r=".314" paint-order="stroke fill markers"/><circle cx="11.925" cy="275.008" r=".183" paint-order="stroke fill markers"/><circle r=".235" cy="267.394" cx="16.453" paint-order="stroke fill markers"/><circle cx="20.587" cy="270.435" r=".206" paint-order="stroke fill markers"/><circle r=".233" cy="274.045" cx="7.085" paint-order="stroke fill markers"/><circle cx="11.138" cy="271.38" r=".184" paint-order="stroke fill markers"/><circle cx="4.923" cy="268.223" r=".282" paint-order="stroke fill markers"/><circle cx="24.722" cy="264.655" r=".215" paint-order="stroke fill markers"/><circle r=".107" cy="267.332" cx="20.165" paint-order="stroke fill markers"/><circle r=".232" cy="273.903" cx="8.802" paint-order="stroke fill markers"/><circle cx="19.847" cy="276.908" r=".219" paint-order="stroke fill markers"/><circle r=".092" cy="268.058" cx="13.947" paint-order="stroke fill markers"/><circle cx="16.514" cy="267.507" r=".327" paint-order="stroke fill markers"/><circle cx="17.089" cy="271.699" r=".208" paint-order="stroke fill markers"/><circle cx="46.644" cy="263.526" r=".327" paint-order="stroke fill markers"/><circle r=".245" cy="262.142" cx="15.403" paint-order="stroke fill markers"/><circle cx="14.715" cy="276.248" r=".185" paint-order="stroke fill markers"/><circle cx="18.599" cy="263.47" r=".329" paint-order="stroke fill markers"/><circle r=".242" cy="270.712" cx="13.085" paint-order="stroke fill markers"/><circle cx="27.006" cy="261.574" r=".199" paint-order="stroke fill markers"/><circle cx="17.309" cy="269.906" r=".289" paint-order="stroke fill markers"/><circle r=".093" cy="258.084" cx="17.442" paint-order="stroke fill markers"/><circle cx="25.432" cy="260.975" r=".329" paint-order="stroke fill markers"/><circle r=".254" cy="258.975" cx="39.695" paint-order="stroke fill markers"/><circle cx="37.39" cy="268.312" r=".201" paint-order="stroke fill markers"/><circle cx="11.94" cy="261.873" r=".201" paint-order="stroke fill markers"/><circle r=".102" cy="269.159" cx="25.702" paint-order="stroke fill markers"/><circle cx="29.266" cy="259.109" r=".322" paint-order="stroke fill markers"/><circle r=".092" cy="250.212" cx="32.996" paint-order="stroke fill markers"/><circle cx="25.989" cy="246.984" r=".306" paint-order="stroke fill markers"/><circle r=".221" cy="242.531" cx="25.795" paint-order="stroke fill markers"/><circle cx="44.096" cy="247.352" r=".188" paint-order="stroke fill markers"/><circle cx="37.742" cy="236.217" r=".286" paint-order="stroke fill markers"/><circle r=".214" cy="259.63" cx="20.138" paint-order="stroke fill markers"/><circle r=".1" cy="274.178" cx="19.856" paint-order="stroke fill markers"/><circle cx="7.323" cy="262.388" r=".326" paint-order="stroke fill markers"/><circle r=".232" cy="251.541" cx="15.121" paint-order="stroke fill markers"/><circle cx="6.368" cy="266.429" r=".219" paint-order="stroke fill markers"/><circle r=".212" cy="263.354" cx="2.655" paint-order="stroke fill markers"/><circle cx="6.517" cy="262.22" r=".209" paint-order="stroke fill markers"/><circle r=".106" cy="261.424" cx="24.777" paint-order="stroke fill markers"/><circle cx="15.545" cy="255.163" r=".291" paint-order="stroke fill markers"/><circle cx="9.562" cy="257.877" r=".217" paint-order="stroke fill markers"/><circle cx="19.48" cy="257.842" r=".276" paint-order="stroke fill markers"/><circle r=".256" cy="252.167" cx="8.076" paint-order="stroke fill markers"/><circle cx="35.091" cy="247.639" r=".205" paint-order="stroke fill markers"/><circle r=".094" cy="250.418" cx="18.437" paint-order="stroke fill markers"/><circle cx="34.943" cy="248.235" r=".278" paint-order="stroke fill markers"/><circle r=".24" cy="248.684" cx="16.11" paint-order="stroke fill markers"/><circle cx="29.923" cy="240.663" r=".219" paint-order="stroke fill markers"/><circle cx="17.204" cy="243.923" r=".294" paint-order="stroke fill markers"/><circle cx="39.647" cy="246.265" r=".213" paint-order="stroke fill markers"/><circle cx="27.491" cy="247.145" r=".287" paint-order="stroke fill markers"/><circle r=".099" cy="251.228" cx="29.712" paint-order="stroke fill markers"/><circle cx="39.176" cy="242.038" r=".322" paint-order="stroke fill markers"/><circle r=".247" cy="232.323" cx="36.693" paint-order="stroke fill markers"/><circle cx="50.581" cy="239.194" r=".186" paint-order="stroke fill markers"/><circle r=".094" cy="243.076" cx="26.019" paint-order="stroke fill markers"/><circle cx="43.035" cy="247.459" r=".279" paint-order="stroke fill markers"/><circle r=".225" cy="234.035" cx="40.168" paint-order="stroke fill markers"/><circle r=".102" cy="237.962" cx="36.129" paint-order="stroke fill markers"/><circle cx="37.27" cy="250.012" r=".296" paint-order="stroke fill markers"/><circle cx="54.794" cy="248.805" r=".198" paint-order="stroke fill markers"/><circle r=".093" cy="264.405" cx="50.589" paint-order="stroke fill markers"/><circle cx="50.983" cy="250.249" r=".305" paint-order="stroke fill markers"/><circle r=".249" cy="264.283" cx="58.536" paint-order="stroke fill markers"/><circle cx="69.626" cy="263.147" r=".201" paint-order="stroke fill markers"/><circle r=".222" cy="265.167" cx="66.815" paint-order="stroke fill markers"/><circle cx="56.414" cy="257.509" r=".323" paint-order="stroke fill markers"/><circle r=".226" cy="262.986" cx="62.269" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="263.317" cy="-61.344" r=".203" paint-order="stroke fill markers"/><circle r=".101" cy="263.646" cx="65.327" paint-order="stroke fill markers"/><circle cx="69" cy="253.598" r=".325" paint-order="stroke fill markers"/><circle r=".256" cy="253.649" cx="67.374" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".095" cy="-53.613" cx="260.74" paint-order="stroke fill markers"/><circle cx="67.662" cy="251.51" r=".303" paint-order="stroke fill markers"/><circle r=".225" cy="251.218" cx="65.763" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="273.976" cy="-56.541" r=".22" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="265.348" cy="-56.688" r=".211" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="272.859" cy="-48.469" r=".292" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".222" cy="-57.787" cx="270.71" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".104" cy="-66.005" cx="273.105" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="275.666" cy="-44.486" r=".303" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".225" cy="-49.562" cx="261.411" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".094" cy="-41.791" cx="260.938" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".235" cy="-59.677" cx="283.282" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".093" cy="-49.316" cx="273.157" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="277.484" cy="-45.483" r=".329" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".249" cy="-58.882" cx="274.178" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="277.366" cy="-57.305" r=".21" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".099" cy="-52.042" cx="268.14" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="281.8" cy="-35.184" r=".275" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".234" cy="-45.32" cx="271.127" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="274.871" cy="-28.677" r=".183" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".106" cy="-41.678" cx="259.388" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="259.005" cy="-47.748" r=".311" paint-order="stroke fill markers"/><circle r=".236" cy="283.596" cx="57.664" paint-order="stroke fill markers"/><circle cx="68.162" cy="293.362" r=".202" paint-order="stroke fill markers"/><circle r=".094" cy="289.939" cx="59.766" paint-order="stroke fill markers"/><circle cx="65.865" cy="270.072" r=".201" paint-order="stroke fill markers"/><circle cx="63.317" cy="285.199" r=".306" paint-order="stroke fill markers"/><circle r=".215" cy="282.311" cx="48.709" paint-order="stroke fill markers"/><circle cx="50.151" cy="274.42" r=".214" paint-order="stroke fill markers"/><circle r=".1" cy="281.982" cx="69.413" paint-order="stroke fill markers"/><circle cx="66.303" cy="285.184" r=".305" paint-order="stroke fill markers"/><circle r=".239" cy="284.822" cx="53.401" paint-order="stroke fill markers"/><circle cx="52.263" cy="269.292" r=".286" paint-order="stroke fill markers"/><circle r=".256" cy="282.021" cx="45.974" paint-order="stroke fill markers"/><circle cx="25.359" cy="291.65" r=".194" paint-order="stroke fill markers"/><circle cx="24.574" cy="278.432" r=".321" paint-order="stroke fill markers"/><circle r=".253" cy="273.897" cx="24.674" paint-order="stroke fill markers"/><circle cx="32.553" cy="277.035" r=".201" paint-order="stroke fill markers"/><circle r=".101" cy="277.855" cx="20.23" paint-order="stroke fill markers"/><circle r=".253" cy="276.001" cx="14.679" paint-order="stroke fill markers"/><circle cx="42.228" cy="264.625" r=".201" paint-order="stroke fill markers"/><circle r=".092" cy="274.496" cx="19.571" paint-order="stroke fill markers"/><circle cx="13.531" cy="292.085" r=".309" paint-order="stroke fill markers"/><circle r=".243" cy="281.981" cx="5.615" paint-order="stroke fill markers"/><circle cx="13.761" cy="295.05" r=".209" paint-order="stroke fill markers"/><circle cx="4.992" cy="294.558" r=".321" paint-order="stroke fill markers"/><circle r=".212" cy="276.901" cx="29.76" paint-order="stroke fill markers"/><circle cx="14.075" cy="287.05" r=".182" paint-order="stroke fill markers"/><circle cx="12.474" cy="280.288" r=".278" paint-order="stroke fill markers"/><circle r=".253" cy="284.336" cx="22.166" paint-order="stroke fill markers"/><circle r=".109" cy="297.505" cx="39.958" paint-order="stroke fill markers"/><circle cx="32.112" cy="281.563" r=".321" paint-order="stroke fill markers"/><circle r=".245" cy="284.618" cx="59.038" paint-order="stroke fill markers"/><circle r=".098" cy="282.203" cx="54.935" paint-order="stroke fill markers"/><circle cx="46.901" cy="286.209" r=".3" paint-order="stroke fill markers"/><circle cx="55.377" cy="286.739" r=".209" paint-order="stroke fill markers"/><circle cx="61.284" cy="285.321" r=".191" paint-order="stroke fill markers"/><circle r=".099" cy="296.775" cx="65.591" paint-order="stroke fill markers"/><circle r=".257" cy="277.663" cx="59.112" paint-order="stroke fill markers"/><circle cx="56.866" cy="295.339" r=".204" paint-order="stroke fill markers"/><circle r=".098" cy="280.607" cx="62.407" paint-order="stroke fill markers"/><circle cx="53.641" cy="295.536" r=".297" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".24" cy="-30.165" cx="266.971" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="271.799" cy="-25.346" r=".202" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".1" cy="-25.497" cx="271.655" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="264.666" cy="-30.459" r=".208" paint-order="stroke fill markers"/><circle cx="69.869" cy="280.285" r=".286" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="266.577" cy="-32.839" r=".204" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".095" cy="-24.653" cx="270.617" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".255" cy="-42.501" cx="279.523" paint-order="stroke fill markers"/><circle r=".1" cy="271.319" cx="68.777" paint-order="stroke fill markers"/><circle cx="73.207" cy="267.903" r=".292" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".243" cy="-28.761" cx="264.927" paint-order="stroke fill markers"/><circle cx="73.154" cy="270.079" r=".209" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".093" cy="-41.644" cx="261.013" paint-order="stroke fill markers"/><circle r=".227" cy="278.743" cx="43.625" paint-order="stroke fill markers"/><circle cx="60.105" cy="275.209" r=".188" paint-order="stroke fill markers"/><circle r=".215" cy="248.523" cx="47.572" paint-order="stroke fill markers"/><circle cx="59.506" cy="262.034" r=".217" paint-order="stroke fill markers"/><circle r=".108" cy="260.605" cx="38.304" paint-order="stroke fill markers"/><circle cx="64.205" cy="262.065" r=".33" paint-order="stroke fill markers"/><circle r=".255" cy="260.691" cx="54.103" paint-order="stroke fill markers"/><circle cx="32.615" cy="249.179" r=".204" paint-order="stroke fill markers"/><circle cx="38.766" cy="244.392" r=".31" paint-order="stroke fill markers"/><circle r=".221" cy="238.745" cx="47.669" paint-order="stroke fill markers"/><circle cx="37.832" cy="253.359" r=".183" paint-order="stroke fill markers"/><circle r=".246" cy="243.503" cx="53.904" paint-order="stroke fill markers"/><circle cx="58.058" cy="238.233" r=".203" paint-order="stroke fill markers"/><circle cx="47.921" cy="239.428" r=".275" paint-order="stroke fill markers"/><circle r=".255" cy="241.476" cx="52.914" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="260.657" cy="-65.062" r=".198" paint-order="stroke fill markers"/><circle r=".221" cy="260.713" cx="69.304" paint-order="stroke fill markers"/><circle cx="64.577" cy="250.071" r=".197" paint-order="stroke fill markers"/><circle r=".092" cy="236.733" cx="67.097" paint-order="stroke fill markers"/><circle cx="62.884" cy="237.435" r=".318" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".242" cy="-65.607" cx="264.793" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="265.852" cy="-48.257" r=".204" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".103" cy="-51.214" cx="264.798" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="276.795" cy="-57.252" r=".328" paint-order="stroke fill markers"/><circle r=".253" cy="249.85" cx="5.844" paint-order="stroke fill markers"/><circle r=".234" cy="241.186" cx="21.274" paint-order="stroke fill markers"/><circle r=".091" cy="234.256" cx="34.868" paint-order="stroke fill markers"/><circle cx="36.278" cy="249.485" r=".298" paint-order="stroke fill markers"/><circle r=".242" cy="240.066" cx="17.642" paint-order="stroke fill markers"/><circle cx="31.618" cy="235.552" r=".205" paint-order="stroke fill markers"/><circle cx="19.298" cy="237.002" r=".306" paint-order="stroke fill markers"/><circle r=".222" cy="241.201" cx="35.9" paint-order="stroke fill markers"/><circle r=".098" cy="243.617" cx="43.954" paint-order="stroke fill markers"/><circle cx="28.175" cy="238.373" r=".319" paint-order="stroke fill markers"/><circle r=".223" cy="251.535" cx="55.104" paint-order="stroke fill markers"/><circle r=".103" cy="247.399" cx="60.619" paint-order="stroke fill markers"/><circle cx="71.558" cy="242.171" r=".202" paint-order="stroke fill markers"/><circle r=".096" cy="236.037" cx="71.494" paint-order="stroke fill markers"/><circle cx="59.571" cy="247.374" r=".299" paint-order="stroke fill markers"/><circle r=".239" cy="235.995" cx="59.728" paint-order="stroke fill markers"/><circle cx="64.544" cy="234.882" r=".22" paint-order="stroke fill markers"/><circle r=".097" cy="245.464" cx="67.772" paint-order="stroke fill markers"/><circle cx="69.914" cy="244.321" r=".313" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".239" cy="-57.146" cx="276.51" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".096" cy="-55.794" cx="259.784" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".235" cy="-68.132" cx="260.503" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".103" cy="-59.081" cx="273.186" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="270.388" cy="-65.796" r=".326" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".215" cy="-54.631" cx="285.76" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="266.074" cy="-50.04" r=".209" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".11" cy="-50.34" cx="275.907" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="282.861" cy="-57.714" r=".291" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".238" cy="-35.984" cx="268.978" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="274.344" cy="-45.557" r=".207" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".092" cy="-34.901" cx="269.487" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".229" cy="-19.108" cx="277.501" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="276.967" cy="-28.654" r=".214" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".098" cy="-23.042" cx="273.314" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".215" cy="-20.126" cx="264.703" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="271.883" cy="-34.711" r=".214" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".219" cy="-26.422" cx="268.225" paint-order="stroke fill markers"/><circle transform="rotate(90)" cx="275.03" cy="-30.759" r=".185" paint-order="stroke fill markers"/><circle transform="rotate(90)" r=".104" cy="-17.981" cx="263.63" paint-order="stroke fill markers"/><circle cx="72.33" cy="288.549" r=".284" paint-order="stroke fill markers"/><circle r=".231" cy="247.324" cx="2.499" paint-order="stroke fill markers"/><circle r=".104" cy="232.782" cx="13.736" paint-order="stroke fill markers"/><circle cx="14.898" cy="236.911" r=".209" paint-order="stroke fill markers"/><circle r=".218" cy="242.383" cx="8.804" paint-order="stroke fill markers"/><circle cx="18.288" cy="238.279" r=".184" paint-order="stroke fill markers"/><circle r=".106" cy="246.947" cx="17.505" paint-order="stroke fill markers"/><circle cx="19.684" cy="248.236" r=".273" paint-order="stroke fill markers"/><circle r=".09" cy="253.336" cx="10.912" paint-order="stroke fill markers"/><circle r=".095" cy="242.762" cx="13.266" paint-order="stroke fill markers"/><circle cx="16.177" cy="243.554" r=".206" paint-order="stroke fill markers"/><circle r=".107" cy="244.084" cx="8.934" paint-order="stroke fill markers"/><circle r=".093" cy="238.022" cx="6.761" paint-order="stroke fill markers"/><circle cx="16.912" cy="238.99" r=".292" paint-order="stroke fill markers"/></g></svg>'),
+        var(--color-bg);
+    /* 400px (and repeat) refer to the svg texture, while 100% (and no-repeat) to the solid background */
+    background-size: 400px, 100%;
+    background-repeat: repeat, no-repeat;
 }
 
 /* GLOBAL */
 /* adjust the font-size for the selected headings, to feature them more prominently in the page */
 h1 {
-  font-size: calc(42px + (72 - 42) * (100vw - 400px) / (1200 - 400));
-  font-weight: 900;
-  letter-spacing: 0.1rem;
-  color: var(--color-accent);
+    font-size: calc(42px + (72 - 42) * (100vw - 400px) / (1200 - 400));
+    font-weight: 900;
+    letter-spacing: 0.1rem;
+    color: var(--color-accent);
 }
 h3 {
-  font-size: calc(26px + (36 - 26) * (100vw - 400px) / (1200 - 400));
-  font-weight: 500;
+    font-size: calc(26px + (36 - 26) * (100vw - 400px) / (1200 - 400));
+    font-weight: 500;
 }
 strong {
-  color: var(--color-accent);
+    color: var(--color-accent);
 }
 svg {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 /* MAIN */
 /* stretch the main area to span at least the entire vertical viewport */
 main {
-  min-height: 100vh;
-  padding: 5vh 5vw;
-  /* display the figure and text-based elements in a centered row */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    min-height: 100vh;
+    padding: 5vh 5vw;
+    /* display the figure and text-based elements in a centered row */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 figure {
-  /* cap the width of the image */
-  max-width: 220px;
-  margin: 1rem 2.5rem;
-  width: 60vw;
-  /* through a pseudo element add a small drop shadow, expanded on hover */
-  position: relative;
+    /* cap the width of the image */
+    max-width: 220px;
+    margin: 1rem 2.5rem;
+    width: 60vw;
+    /* through a pseudo element add a small drop shadow, expanded on hover */
+    position: relative;
 }
 figure:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  width: 100%;
-  height: 100%;
-  background: var(--color-accent-l);
-  border-radius: 50%;
-  /* run the pulse animation once, as the page loads */
-  animation: pulse 1.5s 1s 1 ease-out;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100%;
+    height: 100%;
+    background: var(--color-accent-l);
+    border-radius: 50%;
+    /* run the pulse animation once, as the page loads */
+    animation: pulse 1.5s 1s 1 ease-out;
 }
 /* on hover add a simple animation which expands the halo and renders it transparent */
 figure:hover:before {
-  animation: pulse 1.5s infinite ease-out;
+    animation: pulse 1.5s infinite ease-out;
 }
 @keyframes pulse {
-  100% {
-    transform: translate(-50%, -50%) scale(2);
-    opacity: 0;
-  }
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
 }
 
 img {
-  /* clip the image with a simple shape */
-  clip-path: circle();
-  width: 100%;
-  height: 100%;
+    /* clip the image with a simple shape */
+    clip-path: circle();
+    width: 100%;
+    height: 100%;
 }
 /* , display each text-based elements atop one another */
 header {
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-  /* limit the length of the text-based elements' sentences */
-  max-width: 500px;
-  width: 80vw;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    /* limit the length of the text-based elements' sentences */
+    max-width: 500px;
+    width: 80vw;
 }
 header h3 {
-  margin: 1.5rem 0;
+    margin: 1.5rem 0;
 }
 header p {
-  text-transform: uppercase;
-  line-height: 2;
+    text-transform: uppercase;
+    line-height: 2;
 }
 /* on smaller viewports
 - display the figure and text-based elements in a column
@@ -120,46 +138,46 @@ header p {
 - reduce the h1 heading's letter-spacing
 */
 @media (max-width: 700px) {
-  main {
-    flex-direction: column;
-  }
-  h1 {
-    text-align: center;
-    letter-spacing: -0.03rem;
-  }
+    main {
+        flex-direction: column;
+    }
+    h1 {
+        text-align: center;
+        letter-spacing: -0.03rem;
+    }
 }
 /* SECTION.TRANSITION */
 .transition {
-  min-height: 70vh;
-  padding: 5vh 5vw;
-  /* detail the intermittent container to be smaller than the most prominent sections */
-  display: flex;
-  /* display the text-based elements one atop the other, and centered */
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  /* include a simple border atop and below, delimiting the area */
-  border-top: 0.4rem solid var(--color-text);
-  border-bottom: 0.4rem solid var(--color-text);
-  /* position relative to absolute position the pseudo elements */
-  position: relative;
-  /* include the texture for the intermittent containers */
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="235.244" height="235.336" viewBox="0 0 62.242 62.266"><g stroke="%23ff6247" stroke-width=".265" stroke-opacity=".1" fill="none" stroke-linecap="round"><g transform="matrix(.96164 -.26863 .26926 .95938 -1.317 13.17)"><path d="M7.21.15a2.244 2.244 0 0 1 2.188.916A2.244 2.244 0 0 1 9.875.93a2.244 2.244 0 0 1 2.577 1.854 2.244 2.244 0 0 1-.386 1.66 2.244 2.244 0 0 1 .318.836 2.244 2.244 0 0 1-1.854 2.577 2.244 2.244 0 0 1-1.261-.16 2.244 2.244 0 0 1-1.427.863 2.244 2.244 0 0 1-1.852-.54 2.244 2.244 0 0 1-1.512.983A2.244 2.244 0 0 1 2.006 7.55 2.244 2.244 0 0 1 .13 5.694a2.244 2.244 0 0 1 1.853-2.576 2.244 2.244 0 0 1 .574-.018A2.244 2.244 0 0 1 4.435.973a2.244 2.244 0 0 1 1.263.16A2.244 2.244 0 0 1 7.21.15z" paint-order="stroke fill markers"/><circle transform="rotate(-12.453)" r=".722" cy="12.74" cx="-.166" paint-order="stroke fill markers"/><circle transform="rotate(-12.453)" r=".903" cy="11.369" cx="2.787" paint-order="stroke fill markers"/><g transform="matrix(.50452 .0147 -.0147 .50452 -13.96 -38.504)" stroke-width=".526"><path d="M45.266 113.487a4.446 4.446 0 0 1 4.388 1.688 4.446 4.446 0 0 1 .937-.296 4.446 4.446 0 0 1 5.209 3.522 4.446 4.446 0 0 1-.668 3.31 4.446 4.446 0 0 1 .677 1.638 4.446 4.446 0 0 1-3.522 5.209 4.446 4.446 0 0 1-2.507-.243 4.446 4.446 0 0 1-2.775 1.79 4.446 4.446 0 0 1-3.7-.962 4.446 4.446 0 0 1-2.938 2.035 4.446 4.446 0 0 1-4.978-2.738 4.446 4.446 0 0 1-3.823-3.564 4.446 4.446 0 0 1 3.522-5.209 4.446 4.446 0 0 1 1.135-.069 4.446 4.446 0 0 1 3.597-4.321 4.446 4.446 0 0 1 2.51.244 4.446 4.446 0 0 1 2.936-2.034z" paint-order="stroke fill markers"/><circle cx="1.997" cy="142.972" r="1.431" transform="rotate(-14.122)" paint-order="stroke fill markers"/><circle cx="7.846" cy="140.257" r="1.789" transform="rotate(-14.122)" paint-order="stroke fill markers"/></g><g transform="matrix(.50452 .0147 -.0147 .50452 -13.96 -19.235)" stroke-width=".526"><path d="M45.266 113.487a4.446 4.446 0 0 1 4.388 1.688 4.446 4.446 0 0 1 .937-.296 4.446 4.446 0 0 1 5.209 3.522 4.446 4.446 0 0 1-.668 3.31 4.446 4.446 0 0 1 .677 1.638 4.446 4.446 0 0 1-3.522 5.209 4.446 4.446 0 0 1-2.507-.243 4.446 4.446 0 0 1-2.775 1.79 4.446 4.446 0 0 1-3.7-.962 4.446 4.446 0 0 1-2.938 2.035 4.446 4.446 0 0 1-4.978-2.738 4.446 4.446 0 0 1-3.823-3.564 4.446 4.446 0 0 1 3.522-5.209 4.446 4.446 0 0 1 1.135-.069 4.446 4.446 0 0 1 3.597-4.321 4.446 4.446 0 0 1 2.51.244 4.446 4.446 0 0 1 2.936-2.034z" paint-order="stroke fill markers"/><circle transform="rotate(-14.122)" r="1.431" cy="142.972" cx="1.997" paint-order="stroke fill markers"/><circle transform="rotate(-14.122)" r="1.789" cy="140.257" cx="7.846" paint-order="stroke fill markers"/></g></g><g transform="matrix(.96164 -.26863 .26926 .95938 -.956 13.068)"><path d="M27.377.15a2.244 2.244 0 0 1 2.19.916 2.244 2.244 0 0 1 .476-.136 2.244 2.244 0 0 1 2.577 1.854 2.244 2.244 0 0 1-.386 1.66 2.244 2.244 0 0 1 .318.836 2.244 2.244 0 0 1-1.854 2.577 2.244 2.244 0 0 1-1.261-.16 2.244 2.244 0 0 1-1.427.863 2.244 2.244 0 0 1-1.852-.54 2.244 2.244 0 0 1-1.512.983 2.244 2.244 0 0 1-2.472-1.454 2.244 2.244 0 0 1-1.876-1.855 2.244 2.244 0 0 1 1.853-2.576 2.244 2.244 0 0 1 .574-.018A2.244 2.244 0 0 1 24.603.973a2.244 2.244 0 0 1 1.263.16A2.244 2.244 0 0 1 27.377.15z" paint-order="stroke fill markers"/><circle cx="19.528" cy="17.089" r=".722" transform="rotate(-12.453)" paint-order="stroke fill markers"/><circle cx="22.48" cy="15.718" r=".903" transform="rotate(-12.453)" paint-order="stroke fill markers"/><g transform="matrix(.50452 .0147 -.0147 .50452 6.208 -38.504)" stroke-width=".526"><path d="M45.266 113.487a4.446 4.446 0 0 1 4.388 1.688 4.446 4.446 0 0 1 .937-.296 4.446 4.446 0 0 1 5.209 3.522 4.446 4.446 0 0 1-.668 3.31 4.446 4.446 0 0 1 .677 1.638 4.446 4.446 0 0 1-3.522 5.209 4.446 4.446 0 0 1-2.507-.243 4.446 4.446 0 0 1-2.775 1.79 4.446 4.446 0 0 1-3.7-.962 4.446 4.446 0 0 1-2.938 2.035 4.446 4.446 0 0 1-4.978-2.738 4.446 4.446 0 0 1-3.823-3.564 4.446 4.446 0 0 1 3.522-5.209 4.446 4.446 0 0 1 1.135-.069 4.446 4.446 0 0 1 3.597-4.321 4.446 4.446 0 0 1 2.51.244 4.446 4.446 0 0 1 2.936-2.034z" paint-order="stroke fill markers"/><circle transform="rotate(-14.122)" r="1.431" cy="142.972" cx="1.997" paint-order="stroke fill markers"/><circle transform="rotate(-14.122)" r="1.789" cy="140.257" cx="7.846" paint-order="stroke fill markers"/></g><g transform="matrix(.50452 .0147 -.0147 .50452 6.208 -19.235)" stroke-width=".526"><path d="M45.266 113.487a4.446 4.446 0 0 1 4.388 1.688 4.446 4.446 0 0 1 .937-.296 4.446 4.446 0 0 1 5.209 3.522 4.446 4.446 0 0 1-.668 3.31 4.446 4.446 0 0 1 .677 1.638 4.446 4.446 0 0 1-3.522 5.209 4.446 4.446 0 0 1-2.507-.243 4.446 4.446 0 0 1-2.775 1.79 4.446 4.446 0 0 1-3.7-.962 4.446 4.446 0 0 1-2.938 2.035 4.446 4.446 0 0 1-4.978-2.738 4.446 4.446 0 0 1-3.823-3.564 4.446 4.446 0 0 1 3.522-5.209 4.446 4.446 0 0 1 1.135-.069 4.446 4.446 0 0 1 3.597-4.321 4.446 4.446 0 0 1 2.51.244 4.446 4.446 0 0 1 2.936-2.034z" paint-order="stroke fill markers"/><circle cx="1.997" cy="142.972" r="1.431" transform="rotate(-14.122)" paint-order="stroke fill markers"/><circle cx="7.846" cy="140.257" r="1.789" transform="rotate(-14.122)" paint-order="stroke fill markers"/></g></g><g transform="matrix(.96164 -.26863 .26926 .95938 -.595 12.967)"><path d="M47.545.15a2.244 2.244 0 0 1 2.19.916A2.244 2.244 0 0 1 50.21.93a2.244 2.244 0 0 1 2.577 1.854 2.244 2.244 0 0 1-.386 1.66 2.244 2.244 0 0 1 .318.836 2.244 2.244 0 0 1-1.854 2.577 2.244 2.244 0 0 1-1.261-.16 2.244 2.244 0 0 1-1.427.863 2.244 2.244 0 0 1-1.852-.54 2.244 2.244 0 0 1-1.512.983 2.244 2.244 0 0 1-2.472-1.454 2.244 2.244 0 0 1-1.876-1.855 2.244 2.244 0 0 1 1.853-2.576 2.244 2.244 0 0 1 .574-.018A2.244 2.244 0 0 1 44.771.973a2.244 2.244 0 0 1 1.263.16A2.244 2.244 0 0 1 47.545.15z" paint-order="stroke fill markers"/><circle transform="rotate(-12.453)" r=".722" cy="21.438" cx="39.221" paint-order="stroke fill markers"/><circle transform="rotate(-12.453)" r=".903" cy="20.067" cx="42.174" paint-order="stroke fill markers"/><g transform="matrix(.50452 .0147 -.0147 .50452 26.376 -38.504)" stroke-width=".526"><path d="M45.266 113.487a4.446 4.446 0 0 1 4.388 1.688 4.446 4.446 0 0 1 .937-.296 4.446 4.446 0 0 1 5.209 3.522 4.446 4.446 0 0 1-.668 3.31 4.446 4.446 0 0 1 .677 1.638 4.446 4.446 0 0 1-3.522 5.209 4.446 4.446 0 0 1-2.507-.243 4.446 4.446 0 0 1-2.775 1.79 4.446 4.446 0 0 1-3.7-.962 4.446 4.446 0 0 1-2.938 2.035 4.446 4.446 0 0 1-4.978-2.738 4.446 4.446 0 0 1-3.823-3.564 4.446 4.446 0 0 1 3.522-5.209 4.446 4.446 0 0 1 1.135-.069 4.446 4.446 0 0 1 3.597-4.321 4.446 4.446 0 0 1 2.51.244 4.446 4.446 0 0 1 2.936-2.034z" paint-order="stroke fill markers"/><circle cx="1.997" cy="142.972" r="1.431" transform="rotate(-14.122)" paint-order="stroke fill markers"/><circle cx="7.846" cy="140.257" r="1.789" transform="rotate(-14.122)" paint-order="stroke fill markers"/></g><g transform="matrix(.50452 .0147 -.0147 .50452 26.376 -19.235)" stroke-width=".526"><path d="M45.266 113.487a4.446 4.446 0 0 1 4.388 1.688 4.446 4.446 0 0 1 .937-.296 4.446 4.446 0 0 1 5.209 3.522 4.446 4.446 0 0 1-.668 3.31 4.446 4.446 0 0 1 .677 1.638 4.446 4.446 0 0 1-3.522 5.209 4.446 4.446 0 0 1-2.507-.243 4.446 4.446 0 0 1-2.775 1.79 4.446 4.446 0 0 1-3.7-.962 4.446 4.446 0 0 1-2.938 2.035 4.446 4.446 0 0 1-4.978-2.738 4.446 4.446 0 0 1-3.823-3.564 4.446 4.446 0 0 1 3.522-5.209 4.446 4.446 0 0 1 1.135-.069 4.446 4.446 0 0 1 3.597-4.321 4.446 4.446 0 0 1 2.51.244 4.446 4.446 0 0 1 2.936-2.034z" paint-order="stroke fill markers"/><circle transform="rotate(-14.122)" r="1.431" cy="142.972" cx="1.997" paint-order="stroke fill markers"/><circle transform="rotate(-14.122)" r="1.789" cy="140.257" cx="7.846" paint-order="stroke fill markers"/></g></g></g></svg>'),
-    var(--color-bg);
-  background-size: 600px, 100%;
-  background-repeat: repeat, no-repeat;
-  background-position-y: -150px, 0;
-  background-position-x: -300px, 0;
+    min-height: 70vh;
+    padding: 5vh 5vw;
+    /* detail the intermittent container to be smaller than the most prominent sections */
+    display: flex;
+    /* display the text-based elements one atop the other, and centered */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    /* include a simple border atop and below, delimiting the area */
+    border-top: 0.4rem solid var(--color-text);
+    border-bottom: 0.4rem solid var(--color-text);
+    /* position relative to absolute position the pseudo elements */
+    position: relative;
+    /* include the texture for the intermittent containers */
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="235.244" height="235.336" viewBox="0 0 62.242 62.266"><g stroke="%23ff6247" stroke-width=".265" stroke-opacity=".1" fill="none" stroke-linecap="round"><g transform="matrix(.96164 -.26863 .26926 .95938 -1.317 13.17)"><path d="M7.21.15a2.244 2.244 0 0 1 2.188.916A2.244 2.244 0 0 1 9.875.93a2.244 2.244 0 0 1 2.577 1.854 2.244 2.244 0 0 1-.386 1.66 2.244 2.244 0 0 1 .318.836 2.244 2.244 0 0 1-1.854 2.577 2.244 2.244 0 0 1-1.261-.16 2.244 2.244 0 0 1-1.427.863 2.244 2.244 0 0 1-1.852-.54 2.244 2.244 0 0 1-1.512.983A2.244 2.244 0 0 1 2.006 7.55 2.244 2.244 0 0 1 .13 5.694a2.244 2.244 0 0 1 1.853-2.576 2.244 2.244 0 0 1 .574-.018A2.244 2.244 0 0 1 4.435.973a2.244 2.244 0 0 1 1.263.16A2.244 2.244 0 0 1 7.21.15z" paint-order="stroke fill markers"/><circle transform="rotate(-12.453)" r=".722" cy="12.74" cx="-.166" paint-order="stroke fill markers"/><circle transform="rotate(-12.453)" r=".903" cy="11.369" cx="2.787" paint-order="stroke fill markers"/><g transform="matrix(.50452 .0147 -.0147 .50452 -13.96 -38.504)" stroke-width=".526"><path d="M45.266 113.487a4.446 4.446 0 0 1 4.388 1.688 4.446 4.446 0 0 1 .937-.296 4.446 4.446 0 0 1 5.209 3.522 4.446 4.446 0 0 1-.668 3.31 4.446 4.446 0 0 1 .677 1.638 4.446 4.446 0 0 1-3.522 5.209 4.446 4.446 0 0 1-2.507-.243 4.446 4.446 0 0 1-2.775 1.79 4.446 4.446 0 0 1-3.7-.962 4.446 4.446 0 0 1-2.938 2.035 4.446 4.446 0 0 1-4.978-2.738 4.446 4.446 0 0 1-3.823-3.564 4.446 4.446 0 0 1 3.522-5.209 4.446 4.446 0 0 1 1.135-.069 4.446 4.446 0 0 1 3.597-4.321 4.446 4.446 0 0 1 2.51.244 4.446 4.446 0 0 1 2.936-2.034z" paint-order="stroke fill markers"/><circle cx="1.997" cy="142.972" r="1.431" transform="rotate(-14.122)" paint-order="stroke fill markers"/><circle cx="7.846" cy="140.257" r="1.789" transform="rotate(-14.122)" paint-order="stroke fill markers"/></g><g transform="matrix(.50452 .0147 -.0147 .50452 -13.96 -19.235)" stroke-width=".526"><path d="M45.266 113.487a4.446 4.446 0 0 1 4.388 1.688 4.446 4.446 0 0 1 .937-.296 4.446 4.446 0 0 1 5.209 3.522 4.446 4.446 0 0 1-.668 3.31 4.446 4.446 0 0 1 .677 1.638 4.446 4.446 0 0 1-3.522 5.209 4.446 4.446 0 0 1-2.507-.243 4.446 4.446 0 0 1-2.775 1.79 4.446 4.446 0 0 1-3.7-.962 4.446 4.446 0 0 1-2.938 2.035 4.446 4.446 0 0 1-4.978-2.738 4.446 4.446 0 0 1-3.823-3.564 4.446 4.446 0 0 1 3.522-5.209 4.446 4.446 0 0 1 1.135-.069 4.446 4.446 0 0 1 3.597-4.321 4.446 4.446 0 0 1 2.51.244 4.446 4.446 0 0 1 2.936-2.034z" paint-order="stroke fill markers"/><circle transform="rotate(-14.122)" r="1.431" cy="142.972" cx="1.997" paint-order="stroke fill markers"/><circle transform="rotate(-14.122)" r="1.789" cy="140.257" cx="7.846" paint-order="stroke fill markers"/></g></g><g transform="matrix(.96164 -.26863 .26926 .95938 -.956 13.068)"><path d="M27.377.15a2.244 2.244 0 0 1 2.19.916 2.244 2.244 0 0 1 .476-.136 2.244 2.244 0 0 1 2.577 1.854 2.244 2.244 0 0 1-.386 1.66 2.244 2.244 0 0 1 .318.836 2.244 2.244 0 0 1-1.854 2.577 2.244 2.244 0 0 1-1.261-.16 2.244 2.244 0 0 1-1.427.863 2.244 2.244 0 0 1-1.852-.54 2.244 2.244 0 0 1-1.512.983 2.244 2.244 0 0 1-2.472-1.454 2.244 2.244 0 0 1-1.876-1.855 2.244 2.244 0 0 1 1.853-2.576 2.244 2.244 0 0 1 .574-.018A2.244 2.244 0 0 1 24.603.973a2.244 2.244 0 0 1 1.263.16A2.244 2.244 0 0 1 27.377.15z" paint-order="stroke fill markers"/><circle cx="19.528" cy="17.089" r=".722" transform="rotate(-12.453)" paint-order="stroke fill markers"/><circle cx="22.48" cy="15.718" r=".903" transform="rotate(-12.453)" paint-order="stroke fill markers"/><g transform="matrix(.50452 .0147 -.0147 .50452 6.208 -38.504)" stroke-width=".526"><path d="M45.266 113.487a4.446 4.446 0 0 1 4.388 1.688 4.446 4.446 0 0 1 .937-.296 4.446 4.446 0 0 1 5.209 3.522 4.446 4.446 0 0 1-.668 3.31 4.446 4.446 0 0 1 .677 1.638 4.446 4.446 0 0 1-3.522 5.209 4.446 4.446 0 0 1-2.507-.243 4.446 4.446 0 0 1-2.775 1.79 4.446 4.446 0 0 1-3.7-.962 4.446 4.446 0 0 1-2.938 2.035 4.446 4.446 0 0 1-4.978-2.738 4.446 4.446 0 0 1-3.823-3.564 4.446 4.446 0 0 1 3.522-5.209 4.446 4.446 0 0 1 1.135-.069 4.446 4.446 0 0 1 3.597-4.321 4.446 4.446 0 0 1 2.51.244 4.446 4.446 0 0 1 2.936-2.034z" paint-order="stroke fill markers"/><circle transform="rotate(-14.122)" r="1.431" cy="142.972" cx="1.997" paint-order="stroke fill markers"/><circle transform="rotate(-14.122)" r="1.789" cy="140.257" cx="7.846" paint-order="stroke fill markers"/></g><g transform="matrix(.50452 .0147 -.0147 .50452 6.208 -19.235)" stroke-width=".526"><path d="M45.266 113.487a4.446 4.446 0 0 1 4.388 1.688 4.446 4.446 0 0 1 .937-.296 4.446 4.446 0 0 1 5.209 3.522 4.446 4.446 0 0 1-.668 3.31 4.446 4.446 0 0 1 .677 1.638 4.446 4.446 0 0 1-3.522 5.209 4.446 4.446 0 0 1-2.507-.243 4.446 4.446 0 0 1-2.775 1.79 4.446 4.446 0 0 1-3.7-.962 4.446 4.446 0 0 1-2.938 2.035 4.446 4.446 0 0 1-4.978-2.738 4.446 4.446 0 0 1-3.823-3.564 4.446 4.446 0 0 1 3.522-5.209 4.446 4.446 0 0 1 1.135-.069 4.446 4.446 0 0 1 3.597-4.321 4.446 4.446 0 0 1 2.51.244 4.446 4.446 0 0 1 2.936-2.034z" paint-order="stroke fill markers"/><circle cx="1.997" cy="142.972" r="1.431" transform="rotate(-14.122)" paint-order="stroke fill markers"/><circle cx="7.846" cy="140.257" r="1.789" transform="rotate(-14.122)" paint-order="stroke fill markers"/></g></g><g transform="matrix(.96164 -.26863 .26926 .95938 -.595 12.967)"><path d="M47.545.15a2.244 2.244 0 0 1 2.19.916A2.244 2.244 0 0 1 50.21.93a2.244 2.244 0 0 1 2.577 1.854 2.244 2.244 0 0 1-.386 1.66 2.244 2.244 0 0 1 .318.836 2.244 2.244 0 0 1-1.854 2.577 2.244 2.244 0 0 1-1.261-.16 2.244 2.244 0 0 1-1.427.863 2.244 2.244 0 0 1-1.852-.54 2.244 2.244 0 0 1-1.512.983 2.244 2.244 0 0 1-2.472-1.454 2.244 2.244 0 0 1-1.876-1.855 2.244 2.244 0 0 1 1.853-2.576 2.244 2.244 0 0 1 .574-.018A2.244 2.244 0 0 1 44.771.973a2.244 2.244 0 0 1 1.263.16A2.244 2.244 0 0 1 47.545.15z" paint-order="stroke fill markers"/><circle transform="rotate(-12.453)" r=".722" cy="21.438" cx="39.221" paint-order="stroke fill markers"/><circle transform="rotate(-12.453)" r=".903" cy="20.067" cx="42.174" paint-order="stroke fill markers"/><g transform="matrix(.50452 .0147 -.0147 .50452 26.376 -38.504)" stroke-width=".526"><path d="M45.266 113.487a4.446 4.446 0 0 1 4.388 1.688 4.446 4.446 0 0 1 .937-.296 4.446 4.446 0 0 1 5.209 3.522 4.446 4.446 0 0 1-.668 3.31 4.446 4.446 0 0 1 .677 1.638 4.446 4.446 0 0 1-3.522 5.209 4.446 4.446 0 0 1-2.507-.243 4.446 4.446 0 0 1-2.775 1.79 4.446 4.446 0 0 1-3.7-.962 4.446 4.446 0 0 1-2.938 2.035 4.446 4.446 0 0 1-4.978-2.738 4.446 4.446 0 0 1-3.823-3.564 4.446 4.446 0 0 1 3.522-5.209 4.446 4.446 0 0 1 1.135-.069 4.446 4.446 0 0 1 3.597-4.321 4.446 4.446 0 0 1 2.51.244 4.446 4.446 0 0 1 2.936-2.034z" paint-order="stroke fill markers"/><circle cx="1.997" cy="142.972" r="1.431" transform="rotate(-14.122)" paint-order="stroke fill markers"/><circle cx="7.846" cy="140.257" r="1.789" transform="rotate(-14.122)" paint-order="stroke fill markers"/></g><g transform="matrix(.50452 .0147 -.0147 .50452 26.376 -19.235)" stroke-width=".526"><path d="M45.266 113.487a4.446 4.446 0 0 1 4.388 1.688 4.446 4.446 0 0 1 .937-.296 4.446 4.446 0 0 1 5.209 3.522 4.446 4.446 0 0 1-.668 3.31 4.446 4.446 0 0 1 .677 1.638 4.446 4.446 0 0 1-3.522 5.209 4.446 4.446 0 0 1-2.507-.243 4.446 4.446 0 0 1-2.775 1.79 4.446 4.446 0 0 1-3.7-.962 4.446 4.446 0 0 1-2.938 2.035 4.446 4.446 0 0 1-4.978-2.738 4.446 4.446 0 0 1-3.823-3.564 4.446 4.446 0 0 1 3.522-5.209 4.446 4.446 0 0 1 1.135-.069 4.446 4.446 0 0 1 3.597-4.321 4.446 4.446 0 0 1 2.51.244 4.446 4.446 0 0 1 2.936-2.034z" paint-order="stroke fill markers"/><circle transform="rotate(-14.122)" r="1.431" cy="142.972" cx="1.997" paint-order="stroke fill markers"/><circle transform="rotate(-14.122)" r="1.789" cy="140.257" cx="7.846" paint-order="stroke fill markers"/></g></g></g></svg>'),
+        var(--color-bg);
+    background-size: 600px, 100%;
+    background-repeat: repeat, no-repeat;
+    background-position-y: -150px, 0;
+    background-position-x: -300px, 0;
 }
 /* remove whitespace for the last intermittent container, as it closes the page */
 .transition:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 /* for the same container remove also the final pseudo element */
 .transition:last-child:after {
-  border: none;
+    border: none;
 }
 /*
 through pseudo elements detail two arrows, pointing outwards
@@ -167,213 +185,213 @@ this to detail the sections to which the intermittent containers' are related
 */
 .transition:before,
 .transition:after {
-  position: absolute;
-  content: "";
-  left: 50%;
-  transform: translate(-50%, 0);
-  border-right: 0.75rem solid transparent;
-  border-left: 0.75rem solid transparent;
+    position: absolute;
+    content: "";
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-right: 0.75rem solid transparent;
+    border-left: 0.75rem solid transparent;
 }
 .transition:before {
-  border-top: 0.75rem solid transparent;
-  border-bottom: 0.75rem solid var(--color-text);
-  /* 100% + 0.4rem to account for the borders of the section.transition */
-  bottom: calc(100% + 0.4rem);
+    border-top: 0.75rem solid transparent;
+    border-bottom: 0.75rem solid var(--color-text);
+    /* 100% + 0.4rem to account for the borders of the section.transition */
+    bottom: calc(100% + 0.4rem);
 }
 .transition:after {
-  border-top: 0.75rem solid var(--color-text);
-  border-bottom: 0.75rem solid transparent;
-  top: calc(100% + 0.4rem);
+    border-top: 0.75rem solid var(--color-text);
+    border-bottom: 0.75rem solid transparent;
+    top: calc(100% + 0.4rem);
 }
 /* increase the whitespace around the heading elements */
 .transition h2 {
-  margin: 1rem;
-  font-weight: 300;
+    margin: 1rem;
+    font-weight: 300;
 }
 .transition h2:last-child {
-  margin-top: 3rem;
+    margin-top: 3rem;
 }
 
 /** SECTION.PROJECT */
 /* display the icon and the article for the project in a row  */
 .project {
-  min-height: 90vh;
-  padding: 5vh 5vw;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+    min-height: 90vh;
+    padding: 5vh 5vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 .project__icon {
-  width: 200px;
-  height: 200px;
-  background: var(--color-accent);
-  box-shadow: 0 1px 4px var(--color-accent);
-  border-radius: 60% 70% 90% 75% / 90% 70% 62% 80%;
-  margin: 1rem;
-  transition: border-radius 0.2s ease-out;
+    width: 200px;
+    height: 200px;
+    background: var(--color-accent);
+    box-shadow: 0 1px 4px var(--color-accent);
+    border-radius: 60% 70% 90% 75% / 90% 70% 62% 80%;
+    margin: 1rem;
+    transition: border-radius 0.2s ease-out;
 }
 /* display article describing the project and the div nesting the controls one atop the other */
 .project__project {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-around;
-  line-height: 2;
-  width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    line-height: 2;
+    width: 600px;
 }
 /* display the icons for the technology stack in a wrapping row */
 .project--info ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 1rem 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem 0;
 }
 .project--info ul li {
-  margin: 0.5rem;
+    margin: 0.5rem;
 }
 .project--info ul li svg {
-  width: 78px;
-  height: 78px;
+    width: 78px;
+    height: 78px;
 }
 /* display the anchor link element and button side by side */
 .project--controls {
-  display: flex;
-  justify-content: space-around;
-  /* width stretching the div to the width of the parent container */
-  width: 100%;
+    display: flex;
+    justify-content: space-around;
+    /* width stretching the div to the width of the parent container */
+    width: 100%;
 }
 /* vertically center the content of the anchor link and button elements */
 .project--controls a,
 .project--controls button {
-  display: flex;
-  align-items: center;
-  opacity: 0.7;
-  font-size: 0.9rem;
-  font-weight: bold;
-  /* transition for the hover and active states */
-  transition: all 0.2s ease-out;
+    display: flex;
+    align-items: center;
+    opacity: 0.7;
+    font-size: 0.9rem;
+    font-weight: bold;
+    /* transition for the hover and active states */
+    transition: all 0.2s ease-out;
 }
 /* reset the style of the anchor link and button elements */
 .project--controls a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 .project--controls button {
-  background: none;
-  border: none;
-  font-family: inherit;
-  cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
 }
 /* on hover increase the opacity */
 .project--controls a:hover,
 .project--controls button:hover {
-  opacity: 1;
+    opacity: 1;
 }
 /* on focus increase the opacity */
 .project--controls a:focus,
 .project--controls button:focus {
-  opacity: 1;
+    opacity: 1;
 }
 /* when active increase the opacity and scale up the element */
 .project--controls a:active,
 .project--controls button:active {
-  opacity: 1;
-  transform: scale(1.1);
+    opacity: 1;
+    transform: scale(1.1);
 }
 /* for the svg inherit the color set on the text-based elements */
 .project--controls svg {
-  fill: currentColor;
-  width: 42px;
-  height: 42px;
-  margin: 0.5rem;
+    fill: currentColor;
+    width: 42px;
+    height: 42px;
+    margin: 0.5rem;
 }
 /* on smaller viewports
 - display the icon and the div nesting the project atop one another
 - reduce the size of the icon
 */
 @media (max-width: 700px) {
-  .project {
-    flex-direction: column;
-  }
-  .project__project {
-    width: auto;
-    max-width: 600px;
-  }
-  .project__icon {
-    width: 92px;
-    height: 92px;
-  }
+    .project {
+        flex-direction: column;
+    }
+    .project__project {
+        width: auto;
+        max-width: 600px;
+    }
+    .project__icon {
+        width: 92px;
+        height: 92px;
+    }
 }
 
 /** SECTION.SOCIAL */
 /* display the anchor link elements and the connected message atop one another */
 .social {
-  min-height: 90vh;
-  padding: 5vh 5vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  /* overflow hidden to cut out the background of the expanding pseudo element */
-  overflow: hidden;
+    min-height: 90vh;
+    padding: 5vh 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    /* overflow hidden to cut out the background of the expanding pseudo element */
+    overflow: hidden;
 }
 /* display the social icons side by side, in a wrapping row */
 .social__links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .social__links a {
-  margin: 1rem;
-  border-radius: 50%;
-  /* position relative to absolute position the pseudo elements */
-  position: relative;
+    margin: 1rem;
+    border-radius: 50%;
+    /* position relative to absolute position the pseudo elements */
+    position: relative;
 }
 /* detail colors, to have the pseudo element expand with a matching hue */
 .social__links a:nth-of-type(1) {
-  color: #3fb0fe;
+    color: #3fb0fe;
 }
 .social__links a:nth-of-type(2) {
-  color: #109121;
+    color: #109121;
 }
 .social__links a:nth-of-type(3) {
-  color: #545454;
+    color: #545454;
 }
 .social__links a:nth-of-type(4) {
-  color: #242424;
+    color: #242424;
 }
 .social__links a:nth-of-type(5) {
-  color: #923df2;
+    color: #923df2;
 }
 /* include an expanding background through a pseudo element */
 .social__links a:before {
-  position: absolute;
-  content: "";
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  transform: translate(-50%, -50%);
-  background: currentColor;
-  border-radius: 50%;
-  z-index: -10;
-  opacity: 0.5;
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
+    background: currentColor;
+    border-radius: 50%;
+    z-index: -10;
+    opacity: 0.5;
 }
 /* the expanding background is applied through JavaScript, adding/removing a selected class */
 .social__links a.hovered:before {
-  /* transition included on hover to smoothen the expansion and not the contraction */
-  transition: all 1.2s ease-out;
-  width: 200vmax;
-  height: 200vmax;
-  opacity: 0.2;
+    /* transition included on hover to smoothen the expansion and not the contraction */
+    transition: all 1.2s ease-out;
+    width: 200vmax;
+    height: 200vmax;
+    opacity: 0.2;
 }
 .social__links a svg {
-  width: 125px;
-  height: 125px;
+    width: 125px;
+    height: 125px;
 }
 .social .social__copy {
-  text-align: center;
-  line-height: 2;
+    text-align: center;
+    line-height: 2;
 }
 
 /* on smaller viewports
@@ -381,111 +399,111 @@ this to detail the sections to which the intermittent containers' are related
 - reduce the duration of the epxansion-transition
 */
 @media (max-width: 700px) {
-  .social__links a svg {
-    width: 90px;
-    height: 90px;
-  }
-  .social__links a.hovered:before {
-    transition-duration: 0.6s;
-  }
+    .social__links a svg {
+        width: 90px;
+        height: 90px;
+    }
+    .social__links a.hovered:before {
+        transition-duration: 0.6s;
+    }
 }
 
 /* define the animation added through javascript for the message matching the hovered anchor links */
 @keyframes hovered {
-  0% {
-    opacity: 0;
-    transform: translateY(-2rem);
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(-2rem);
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* define the animation added through javascript for the projects' elements */
 @keyframes showProject {
-  0% {
-    opacity: 0;
-    transform: translateY(-2rem);
-  }
-  50% {
-    opacity: 50%;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(-2rem);
+    }
+    50% {
+        opacity: 50%;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 /** SECTION.CLOSURE */
 /* display the canvas and containers with the buttons one atop the other */
 .closure {
-  min-height: 90vh;
-  padding: 5vh 5vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+    min-height: 90vh;
+    padding: 5vh 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 /* display the color buttons side by side in a wrapping row */
 .closure__colors {
-  margin: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+    margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 /*
 include a noticeable border around the canvas (the width and height are set in the JS script)
 add a solid background to avoid having the canvas as a transparent frame
 */
 .closure canvas {
-  border: 0.5rem solid var(--color-accent);
-  background: var(--color-bg);
+    border: 0.5rem solid var(--color-accent);
+    background: var(--color-bg);
 }
 /* style the buttons as circles */
 .closure__colors button {
-  width: 42px;
-  height: 42px;
-  border: none;
-  margin: 1rem 1.25rem;
-  border-radius: 50%;
-  opacity: 0.8;
-  /* position relative to include a couple of drops of paint with pseudo elements */
-  position: relative;
-  /* transition for the hover and active states */
-  transition: all 0.2s ease-out;
+    width: 42px;
+    height: 42px;
+    border: none;
+    margin: 1rem 1.25rem;
+    border-radius: 50%;
+    opacity: 0.8;
+    /* position relative to include a couple of drops of paint with pseudo elements */
+    position: relative;
+    /* transition for the hover and active states */
+    transition: all 0.2s ease-out;
 }
 /* on hover set the element as fully opaque */
 .closure__colors button:hover,
 .closure__colors button:focus {
-  opacity: 1;
+    opacity: 1;
 }
 /* when active, scale them ever so slightly */
 .closure__colors button:active {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 /* detail the color matching the data-hue attribute */
 .closure__colors button:nth-of-type(1) {
-  background: hsl(0, 50%, 60%);
+    background: hsl(0, 50%, 60%);
 }
 .closure__colors button:nth-of-type(2) {
-  background: hsl(60, 50%, 60%);
+    background: hsl(60, 50%, 60%);
 }
 .closure__colors button:nth-of-type(3) {
-  background: hsl(120, 50%, 60%);
+    background: hsl(120, 50%, 60%);
 }
 .closure__colors button:nth-of-type(4) {
-  background: hsl(180, 50%, 60%);
+    background: hsl(180, 50%, 60%);
 }
 .closure__colors button:nth-of-type(5) {
-  background: hsl(240, 50%, 60%);
+    background: hsl(240, 50%, 60%);
 }
 .closure__colors button:nth-of-type(6) {
-  background: hsl(300, 50%, 60%);
+    background: hsl(300, 50%, 60%);
 }
 /*
 include two drops of paint with pseudo elements
@@ -493,48 +511,47 @@ attach the pseudo elements to a class, as to add the drops of paint only to the 
 */
 .closure__colors button.selected:before,
 .closure__colors button.selected:after {
-  position: absolute;
-  content: "";
-  border-radius: 50%;
-  background: inherit;
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    background: inherit;
 }
 .closure__colors button.selected:before {
-  left: 80%;
-  top: 100%;
-  width: 6px;
-  height: 6px;
+    left: 80%;
+    top: 100%;
+    width: 6px;
+    height: 6px;
 }
 .closure__colors button.selected:after {
-  left: 100%;
-  top: 70%;
-  width: 10px;
-  height: 10px;
+    left: 100%;
+    top: 70%;
+    width: 10px;
+    height: 10px;
 }
 /*
 style the button to have a solid shadow as a border
 this to later transition the box-shadow property to show two overlapping borders
 */
 .closure__tools button {
-  background: none;
-  border-radius: 4px;
-  border: none;
-  box-shadow: 0 0 0 1px var(--color-accent);
-  padding: 0.25rem 0.5rem;
-  color: var(--color-accent);
-  font-size: 0.9rem;
-  font-weight: bold;
-  letter-spacing: 0.1rem;
-  font-family: inherit;
-  text-transform: uppercase;
-  /* transition for the hover and active states */
-  transition: all 0.25s ease-out;
+    background: none;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 0 0 1px var(--color-accent);
+    padding: 0.25rem 0.5rem;
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    font-family: inherit;
+    text-transform: uppercase;
+    /* transition for the hover and active states */
+    transition: all 0.25s ease-out;
 }
 /* on hover change the box shadow property to show two overlapping borders */
 .closure__tools button:hover {
-  box-shadow: 0 0 0 2px var(--color-accent), 0 0 0 5px var(--color-bg),
-    0 0 0 8px var(--color-accent);
+    box-shadow: 0 0 0 2px var(--color-accent), 0 0 0 5px var(--color-bg), 0 0 0 8px var(--color-accent);
 }
 /* when active, scale the button ever so slightly */
 .closure__tools button:active {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
