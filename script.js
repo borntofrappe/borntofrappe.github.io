@@ -31,8 +31,8 @@ const normalizedTOD = (adjustedTOD / 23).toFixed(2);
 // saturation [40-100]
 // lightness [40-60]
 // considering the range the other way around (0 -> 1, 1 -> 0)
-const saturation = (40 + ((100 - 40)) * (1 - normalizedTOD));
-const lightness = (40 + ((60 - 40)) * (1 - normalizedTOD));
+const saturation = (50 + ((90 - 50)) * (1 - normalizedTOD));
+const lightness = (50 + ((60 - 50)) * (1 - normalizedTOD));
 
 // select the root element and update the --color-accent property with the described hsl color
 document.documentElement.style.setProperty('--color-accent', `hsl(${hue}, ${saturation}%, ${lightness}%)`);
@@ -40,11 +40,9 @@ document.documentElement.style.setProperty('--color-accent', `hsl(${hue}, ${satu
 // JOB DESCRIPTION
 // detail a series of catchy expression
 const job = [
-  'who knows what next',
-  'something else tomorrow',
-  'depends who\'s asking',
-  'still figuring it out',
-  'by day',
+  'passionate runner',
+  'enthusiastic gamer',
+  'wannabe author',
   'possibly more'
 ];
 // target the <i> element wrapping the job description
