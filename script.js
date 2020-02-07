@@ -15,7 +15,7 @@ const randomInteger = (min = 0, max = 100) => Math.floor(Math.random() * (max - 
 
 // ACCENT COLOR
 // compute the color accent from the selected hue
-const hue = 340;
+const hue = Math.random() > 0.5 ? 140 : 340;
 // create an instance of the date object
 const date = new Date();
 // retrieve the hours
@@ -525,6 +525,43 @@ const projects = [
       'css'
     ],
     url: 'https://codepen.io/borntofrappe/full/WBWxZw'
+  },
+  {
+    title: 'Project Euler 100',
+    description: 'Practice with JavaScript to complete the first hundred problems in the infamous project.',
+    stack: [
+      'js',
+    ],
+    url: 'https://github.com/borntofrappe/project-euler'
+  },
+  {
+    title: 'Morse Code Alphabet',
+    description: 'Display and animate the letters of the alphabet in morse code.',
+    stack: [
+      'html',
+      'css',
+      'js',
+    ],
+    url: 'https://codepen.io/borntofrappe/full/bGNNRQb'
+  },
+  {
+    title: 'Game of Life',
+    description: 'Recreate the basic structure of Conway\'s game of life.',
+    stack: [
+      'css',
+      'react',
+    ],
+    url: 'https://codepen.io/borntofrappe/full/xxbKgMQ'
+  },
+  {
+    title: 'Generative Data Viz',
+    description: 'Visualize a set of metrics modifying the features of a custom illustration.',
+    stack: [
+      'svg',
+      'd3',
+      'react',
+    ],
+    url: 'https://codepen.io/borntofrappe/full/qBBLNOm'
   }
 ];
 
