@@ -1,3 +1,5 @@
-# Update Notice - 10th November 2019
+# FAQ
 
-I am in the process of essentially re-writing my entire website. Hopefully, more on this soon.
+## What's this?
+
+A personal website showcasing a series of projects.

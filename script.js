@@ -1,9 +1,8 @@
 /** SCRIPT LOGIC
  * accent color (change brightness and saturation depending on the time of day)
  * job description (change the third title with a string at random)
- * project sectopm (include a project from a selected few)
+ * project section (include a project from a selected few)
  * social section (paint the background when hovering on the icons)
- * closure section (allow visitors to draw on an enlarged canvas element, by means of a colorful brush)
 */
 
 /* utility functions
@@ -16,7 +15,7 @@ const randomInteger = (min = 0, max = 100) => Math.floor(Math.random() * (max - 
 
 // ACCENT COLOR
 // compute the color accent from the selected hue
-const hue = 9;
+const hue = 340;
 // create an instance of the date object
 const date = new Date();
 // retrieve the hours
@@ -528,16 +527,6 @@ const projects = [
     url: 'https://codepen.io/borntofrappe/full/WBWxZw'
   }
 ];
-// create a function creating a new value for the border radius property
-const borderRadius = () => {
-  // store 8 random percentages in an array
-  const randomNumbers = [];
-  for (let i = 0; i < 8; i += 1) {
-    randomNumbers.push(`${randomInteger()}%`);
-  }
-  // return a string which includes a forward slash after the 4th item
-  return [...randomNumbers.slice(0, 4), '/', ...randomNumbers.slice(4)].join(' ');
-};
 
 // create a function fabricating the markup for each project
 const projectMarkup = project => `
@@ -556,9 +545,6 @@ ${project.stack.map(stack => `
 
 // create a function to populate the project section
 const addProject = (project) => {
-  // change the border-radius property of the project icon
-  const projectIcon = document.querySelector('.project__icon');
-  projectIcon.style.borderRadius = borderRadius();
   // target the article
   const projectInfo = document.querySelector('.project--info');
   // add the selected project
@@ -654,133 +640,3 @@ function paint(event) {
 socialLinks.forEach(socialLink => socialLink.addEventListener('mouseenter', paint));
 socialLinks.forEach(socialLink => socialLink.addEventListener('focus', paint));
 
-// CLOSURE SECTION
-// target the canvas element
-const canvas = document.querySelector('canvas');
-// retrieve the context
-const context = canvas.getContext('2d');
-
-// create a function to change the original size of the canvas
-function fitCanvas() {
-  canvas.width = (window.innerWidth >= 700) ? 700 : window.innerWidth * 0.8;
-  canvas.height = canvas.width * 0.6;
-}
-// immediately call the function and attach it to a resize event on the window
-fitCanvas();
-window.addEventListener('resize', fitCanvas);
-
-// create a function to clear the canvas
-function clearCanvas() {
-  context.clearRect(0, 0, canvas.width, canvas.height);
-}
-
-// listen for a click event on the tools' button, at which point clear the cavas
-const buttonClear = document.querySelector('.closure__tools button');
-buttonClear.addEventListener('click', clearCanvas);
-
-/* create variables for the canvas drawing
-- isDrawing: boolean to draw only when the cursor is down in the canvas
-- lastX and lastY, to draw from the last recorded coordinates
-- hueCanvas, saturationCanvas, lineWidth, to modify these values for the canvas stroke
-*/
-let isDrawing = false;
-let lastX = 0;
-let lastY = 0;
-let hueCanvas = 0;
-let saturationCanvas = 50;
-let lineWidth = 20;
-/*
-create a function to draw path elements from the last recorded coordinates to the new coordinates
-coordinates updated to continue drawing as the mouse/touch event continues
-
-function called in response to the touchmove and mousemove events
-*/
-function draw(e) {
-  e.preventDefault();
-  if (isDrawing) {
-    // path settings
-    context.strokeStyle = `hsla(${hueCanvas}, ${saturationCanvas}%, 60%)`;
-    context.lineWidth = lineWidth;
-    context.lineJoin = 'round';
-    context.lineCap = 'round';
-
-    /* draw the path from the last recorded coordinates to the new values
-    new values retrieved from the event */
-    context.beginPath();
-    context.moveTo(lastX, lastY);
-    let currentX;
-    let currentY;
-    /* currentX and currentY are retrieved from a touchmove or mousemove event
-    in the first instance, the coordinates are found in the touches array */
-    if (e.touches) {
-      currentX = e.touches[0].pageX - canvas.offsetLeft;
-      currentY = e.touches[0].pageY - canvas.offsetTop;
-    } else {
-      currentX = e.pageX - canvas.offsetLeft;
-      currentY = e.pageY - canvas.offsetTop;
-    }
-    context.lineTo(currentX, currentY);
-    context.stroke();
-
-    // update coordinates to keep drawing
-    [lastX, lastY] = [currentX, currentY];
-
-    /* for every event being fired lower the saturation and the line width
-    remove event listeners, stopping to draw when reaching a certain threshold */
-    saturationCanvas -= 0.3;
-    lineWidth -= 0.8;
-    if (lineWidth <= 5) {
-      canvas.removeEventListener('mousemove', draw);
-      canvas.removeEventListener('touchmove', draw);
-    }
-  }
-}
-/*
-create a function called in response to the touchstart and mousedown events
-to update the last recorded coordinates and set the boolean to true
-the boolean then allows to draw on the canvas following the touchmove and mousemove events
-*/
-function prepareDrawing(e) {
-  e.preventDefault();
-  let currentX;
-  let currentY;
-  if (e.touches) {
-    [currentX, currentY] = [e.touches[0].pageX - canvas.offsetLeft, e.touches[0].pageY - canvas.offsetTop];
-    canvas.addEventListener('touchmove', draw);
-  } else {
-    [currentX, currentY] = [e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop];
-    canvas.addEventListener('mousemove', draw);
-  }
-  [lastX, lastY] = [currentX, currentY];
-
-  // set the boolean to true, enabling the functionality described in the draw function
-  isDrawing = true;
-  // reset the values for the path
-  saturationCanvas = 50;
-  lineWidth = 20;
-}
-
-// on touchend, mouseup, mouseleave set the boolean back to false, preventing the draw function from runnning properly
-canvas.addEventListener('touchend', () => isDrawing = false);
-canvas.addEventListener('mouseup', () => isDrawing = false);
-canvas.addEventListener('mouseleave', () => isDrawing = false);
-
-// on touchstart and mousedown call the function used to set the boolean to true (and set up the stroke for the canvas)
-canvas.addEventListener('mousedown', prepareDrawing);
-canvas.addEventListener('touchstart', prepareDrawing);
-
-// select all button elements responsible for the canvas's color
-const buttonColors = document.querySelectorAll('.closure__colors button');
-// create a function to change the color used in the canvas
-// add a class of .selected to the pressed target and only that element (this to add the two drops of paint)
-function changeHue(e) {
-  // retrieve the hue from the data-hue attribute of the pressed button
-  const dataHue = parseInt(e.target.getAttribute('data-hue'), 10);
-  // change the color value to the selected one
-  hueCanvas = dataHue;
-  // add a class of .selected to the selected button, and only that one
-  buttonColors.forEach(buttonColor => buttonColor.classList.remove('selected'));
-  e.target.classList.add('selected');
-}
-// attach the changeHue function to the color responsibles for the color of the canvas
-buttonColors.forEach(buttonColor => buttonColor.addEventListener('click', changeHue));
