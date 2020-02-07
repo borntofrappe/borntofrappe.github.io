@@ -111,6 +111,7 @@ img {
   width: 100%;
   height: 100%;
   display: block;
+  border-radius: inherit;
 }
 /* , display each text-based elements atop one another */
 header {
