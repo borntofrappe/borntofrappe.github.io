@@ -29,7 +29,7 @@
     {
       name: "borntofrappe",
       icon: "rocket",
-      href: "/",
+      href: "#",
       description: "I'm working on a larger website, and hopefully I'll add it to this rotation soon enough.",
     },
   ];

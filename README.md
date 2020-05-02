@@ -4,9 +4,12 @@
 
 A hub for a front-end web developer. Currently, it redirects toward the places in which I spend most of my time and energy:
 
-- codepen,
+- codepen
+
 - freecodecamp
+
 - github
+
 - twitter
 
 ## That's it?
