@@ -1,5 +1,9 @@
 <script>
+  import { fade, fly } from 'svelte/transition';
   import getIcon from "./icons.js";
+
+  let isAnimated = false;
+  let hint = "";
 
   export let planets;
 
@@ -8,8 +12,8 @@
 
   const { length } = planets;
 
-  const round = length + 1;
-  const rounds = length + 1;
+  const round = length + 2;
+  const rounds = length + 2;
   const particles = Array(rounds)
     .fill("")
     .map((v, indexRounds) => {
@@ -40,6 +44,7 @@
       <path id="path" d="M 0 -32 a 32 32 0 0 1 0 64 32 32 0 0 1 0 -64" />
       <path id="path-c" d="M 0 40 a 40 40 0 0 1 0 -80 40 40 0 0 1 0 80" />
       <path id="path-cc" d="M 0 47 a 47 47 0 0 0 0 -94 47 47 0 0 0 0 94" />
+      <path id="path-hint" d="M -70 0 a 70 70 0 0 0 140 0" />
 
       <!-- mask to show the text only as it exceeds the path element encircling the icons -->
       <mask id="mask-text">
@@ -62,7 +67,7 @@
     </defs>
 
     <!-- group describing the particles as a backdrop -->
-    <g mask="url(#mask-icons)">
+    <g mask="url(#mask-icons)" opacity="0.3">
       <g class="loaded">
         {#each particles as { translate, scale, rotation}} {#each rotation as rotate}
         <g transform="rotate({rotate}) translate(0 {translate}) rotate(-{rotate})">
@@ -75,41 +80,53 @@
     <g class="loading">
       <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
         <circle r="46" />
-        <g id="logo">
+        <g>
           <path id="accent" d="M -10 -15 q 0 -8 -8 -10" stroke-dasharray="14.01 18.5" stroke-dashoffset="-4.5" />
           <path id="b" d="M -10 -15 h 15 a 8 8 0 0 1 0 16 h -4 h 4 a 10 10 0 0 1 0 20 h -15 v -36" stroke-dasharray="114.2 146.28" stroke-dashoffset="-9.145" />
         </g>
       </g>
     </g>
 
+    {#if isAnimated && hint}
+      <g in:fly="{{delay: 350}}" out:fade>
+        <text fill="currentColor" font-family="monospace" font-weight="400" letter-spacing="1" text-anchor="middle" font-size="14">
+          <textPath href="#path-hint" startOffset="50%" text-anchor="middle">
+            {hint}
+          </textPath>
+        </text>
+      </g>
+    {/if}
+
     <!-- group wrapping the different icons
     by translating the icons away from the center and scaling this group, you show them as if moving from the center
     -->
-    <g class="loaded">
+    <g class="loaded" on:animationend={() => { isAnimated = true; }}>
       <!-- wrap each icon in an anchor link to make the shape click-able and focus-able -->
       {#each planets as {name, icon, href, description}, i}
       <g transform="rotate({360 / planets.length * i}) translate(0 -{Math.floor(size / 3)}) rotate({360 / planets.length * i * -1})">
-        <a {href} aria-labelledby="title-{name}" aria-describedby="description-{name}">
+        <a {href} aria-labelledby="title-{name}" aria-describedby="description-{name}" on:mouseenter="{() => { hint = description; }}" on:focus="{() => { hint = description; }}" on:mouseleave="{() => { hint = ''; }}" on:blur="{() => { hint = ''; }}">
           <title id="title-{name}">{name}</title>
           <description id="description-{name}">{description}</description>
           <g transform="translate(-{size / 6} -{size / 6})">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="-{iconSize / 2} -{iconSize / 2} {iconSize} {iconSize}" width="{size / 3}" height="{size / 3}">
               <g transform="scale(0.9)">
-                <use href="#path" stroke="currentColor" stroke-width="6" fill="none" />
-                <!-- rotate the text around the center -->
-                <g transform="rotate({360 / planets.length * i})" mask="url(#mask-text)">
-                  <g class="text">
-                    <text fill="currentColor" font-family="monospace" font-weight="bold" letter-spacing="1" text-anchor="middle" font-size="12">
-                      <textPath href="#{360 / planets.length * i > 90 && 360 / planets.length * i < 270 ? 'path-cc' : 'path-c'}" startOffset="50%">
-                        {name}
-                      </textPath>
-                    </text>
+                <g style="pointer-events: none;">
+                  <use href="#path" stroke="currentColor" stroke-width="6" fill="none" />
+                  <!-- rotate the text around the center -->
+                  <g transform="rotate({360 / planets.length * i})" mask="url(#mask-text)">
+                    <g class="text">
+                      <text fill="currentColor" font-family="monospace" font-weight="bold" letter-spacing="1" text-anchor="middle" font-size="12">
+                        <textPath href="#{360 / planets.length * i > 90 && 360 / planets.length * i < 270 ? 'path-cc' : 'path-c'}" startOffset="50%">
+                          {name}
+                        </textPath>
+                      </text>
+                    </g>
                   </g>
-                </g>
 
-                <!-- re-scale the icon inside the wrapping path element -->
-                <g transform="translate(-{iconSize / 6} -{iconSize / 6})">
-                  {@html getIcon(icon, iconSize / 3)}
+                  <!-- re-scale the icon inside the wrapping path element -->
+                  <g transform="translate(-{iconSize / 6} -{iconSize / 6})">
+                    {@html getIcon(icon, iconSize / 3)}
+                  </g>
                 </g>
 
                 <!-- overlapping circle to expand the click area -->

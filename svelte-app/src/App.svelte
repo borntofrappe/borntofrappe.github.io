@@ -6,31 +6,31 @@
       name: "codepen",
       icon: "codepen",
       href: "https://codepen.io/borntofrappe",
-      description: "Explore the many demos I created to learn and master several web technologies.",
+      description: "Marvel at the many demos",
     },
     {
       name: "freecodecamp",
       icon: "freecodecamp",
       href: "https://www.freecodecamp.org/borntofrappe",
-      description: "Admire the certifications I earned while starting as a web developer.",
+      description: "Admire certifications",
     },
     {
       name: "twitter",
       icon: "twitter",
       href: "https://twitter.com/borntofrappe",
-      description: "Be sure to follow me @borntofrappe",
+      description: "Be sure to follow me",
     },
     {
       name: "github",
       icon: "github",
       href: "https://github.com/borntofrappe",
-      description: "Double check my history, fork and improve my code.",
+      description: "Review, fork and improve",
     },
     {
       name: "borntofrappe",
       icon: "rocket",
-      href: "#",
-      description: "I'm working on a larger website, and hopefully I'll add it to this rotation soon enough.",
+      href: "https://github.com/borntofrappe/borntofrappe.github.io",
+      description: "Just getting started",
     },
   ];
 </script>
