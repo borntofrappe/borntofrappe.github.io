@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100" width="32" height="32"><g fill="#000E29" stroke="none"><g id="s"><circle id="d" cx="40" r="10" /><use href="#d" transform="rotate(45)" /><use href="#d" transform="rotate(90)" /><use href="#d" transform="rotate(135)" /></g><use href="#s" transform="rotate(180)"/></g></svg>
