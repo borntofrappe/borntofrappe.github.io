@@ -1,18 +1,18 @@
 # borntofrappe.github.io
 
-Through Github Pages, `index.html` is meant to introduce a few links connected to my online presence. A hub, of all places.
+Through Github Pages, `index.html` is meant to introduce a few links connected to my developer self. A hub, of all places, for all things borntofrappe.
 
 ## icon.svg
 
 > a shamefully long story for a very simple icon
 
-I enjoy writing SVG icons perhaps a tad too much. The website I'm building with 11ty actually started with SVG icons, drawing the outline for the HTML, CSS and JavaScript stack, but this story is about a different visual. An icon for this website, served next to the document title to any browser supporting the `.svg` format.
+I enjoy writing SVG icons, almost to a fault. The website I'm building with 11ty actually started with SVG icons, drawing the outline for the HTML, CSS and JavaScript stack, but this story is about a different visual. An icon for this very website, and the icon served next to the document title to any browser supporting the `.svg` format.
 
 > do not fret, for a `.png` variant will be readily available
 
 ### Inspiration
 
-For the icon I wanted to create a series of dots, radiating from the center in a nice, regular pattern.
+As a starting point, I wanted to create a series of dots, radiating from the center in a nice, regular pattern.
 
 ```txt
    o
@@ -22,7 +22,7 @@ o     o
    o
 ```
 
-The visual is incredibly simple, but it's also meant to match the goal of the website. The website works as a hub, providing a link to external resources; in this light, the dots are a visual for the new destination. In terms of design, the website is also meant to include an incredibly neat visualization using the Canvas API and a series of particles, but the connection will be evident only as I implement the feature with JavaScript.
+The visual is incredibly simple, but it's also meant to match the goal of the website. The website works as a hub, providing a link to external resources, and in this light, the dots are a visual for the new, exiting destinations. In terms of design, the website is also meant to include an incredibly neat visualization using the Canvas API and a series of particles, but the connection will be evident only as I implement the feature with JavaScript.
 
 ### v1 - translate and rotate
 
@@ -39,9 +39,9 @@ It all starts with a nice `<svg>` element, modifying the coordinate system throu
 </svg>
 ```
 
-The `viewBox` attribute is useful for more than just modifying the origin of the coordinate system, but far beyond the scope of this article.
+The `viewBox` attribute is useful for more than just modifying the origin of the coordinate system, but the topic is far beyond the scope of this article.
 
-In between the opening and closing tags like to add a group element, `<g>`, to set a few properties for every shape which follows. For instance, `fill` to color the dots, or `stroke` to remove the imperceptible, default outline.
+In between the opening and closing tags, I like to add a group element, `<g>`. It works as a helpful container, and it is useful to set a few properties for every shape which follows. For instance, `fill` to color the dots, and `stroke` to remove the imperceptible, default outline.
 
 ```html
 <g fill="hsl(220, 100%, 8%)" stroke="none">
@@ -80,7 +80,6 @@ One dot down, seven to go. It would be easy to draw at least three more dots, fo
 ```
 
 However, and for the points in between, the `x` and `y` coordinate would actually require a touch a trigonometry. What's the cosine of `45` degrees again?
-
 Luckily, and before somebody reminds me that `Math.cos()` needs an angle in radians and not degrees, the `transform` attribute comes to the resque with the `rotate` function. The life-saving idea is to apply a rotation before the translation.
 
 ```txt
@@ -105,7 +104,7 @@ Which means drawing the dots around the center is matter of repeating the same e
 
 ### v2 - use
 
-I'm positive somebody was yelling at me `transform`!, `transform`! as I pretended to consider trigonometric function. I'm also positive that same person is yelling `<use>`!, `<use>` while reading the previous snippet.
+I'm positive somebody was yelling `transform`!, `transform`! as I pretended to consider trigonometric functions. I'm also positive that same person was yelling `<use>`!, `<use>` while reading the previous snippet.
 
 For everybody else, the `<use>` element provides a nice, quick way to repeat another SVG element. This by referencing the `id` attribute of the desired shape.
 
@@ -115,7 +114,7 @@ For everybody else, the `<use>` element provides a nice, quick way to repeat ano
 <use href="#dot" />
 ```
 
-I would think the `transform` attribute of the `<use>` element would be applied _after_ the attribute of the `<circle>` element, but luckily it works the other way around. The dot is first rotated <!-- 45, 90, 135, 180, 225, 270, 315 -->, and then translated in the desired slot.
+I would think the `transform` attribute of the `<use>` element would be applied _after_ the attribute of the `<circle>` element, but luckily, it works the other way around. The dot is first rotated <!-- 45, 90, 135, 180, 225, 270, 315 -->, and then translated in the desired slot.
 
 Which means, the code is updated as follows.
 
@@ -132,7 +131,7 @@ Which means, the code is updated as follows.
 
 ### v3 - scale
 
-This is possibly idiotic, but bear with me for a minute. The `<use>` element might reference drawing elements, like `<circle>`, but also group elements, `<g>`.
+But bear with me for a minute. The `<use>` element might reference drawing elements, like `<circle>`, but also group elements, `<g>`.
 
 With this realization, it is enough to draw four neighboring dots, and then repeat the same structure on the opposite side.
 
@@ -146,7 +145,7 @@ With this realization, it is enough to draw four neighboring dots, and then repe
 <use href="#dots" transform="scale(-1 -1)" />
 ```
 
-The `transform` attribute is applied from the center of the canvas, which means the
+The `transform` attribute is applied from the center of the canvas, which means the dots are flipped to draw the second half of the desired visual.
 
 And yes, I do realize the same effect is achieved with a half rotation, but the title for the paragraph would have been quite less intriguing (rotate once more?).
 
@@ -157,7 +156,7 @@ And yes, I do realize the same effect is achieved with a half rotation, but the 
 
 ### v4 - keystrokes
 
-I said I prefer the `transform` attribute, but `cx` saves a few keys, while achieving the same result.
+I said I prefer the `transform` attribute, but `cx` saves a few keys while achieving the same result.
 
 ```html
 <!-- <circle id="dot" transform="translate(40 0)" r="10" /> -->
@@ -171,7 +170,7 @@ The label for the `id` attribute leaves also room for improvement.
 <circle id="d" cx="40" r="10" />
 ```
 
-And what was I thinking about using `hsl` for the color. Hexadecimal values are clearly an improvement.
+And what was I thinking about using `hsl` for the color? Hexadecimal values are clearly an improvement.
 
 ```html
 <!-- <g fill="hsl(220, 100%, 8%)" stroke="none"> -->
