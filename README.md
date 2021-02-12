@@ -2,7 +2,7 @@
 
 Through Github Pages, `index.html` is meant to introduce a few links connected to my developer self. A hub, of all places, for all things borntofrappe.
 
-## icon.svg
+## icon
 
 > a shamefully long story for a very simple icon
 
