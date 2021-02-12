@@ -1,16 +1,31 @@
-const canvas = document.querySelector('canvas');
+const keys = ["rocket", 'blog', 'codepen', 'freecodecamp', 'github', 'twitter']
+const initialKey = keys[0];
+
+document.body.innerHTML = `<main>
+  <canvas width="400" height="400"></canvas>
+
+  <section>
+    ${keys.map(key => `
+    <a href="#" class="${key === initialKey ? 'active' : ''}">
+      ${key}
+    </a>`).join('')}
+  </section>
+</main>`
+
+const canvas = document.querySelector('main canvas');
 let { width: size } = canvas.getBoundingClientRect();
 canvas.width = size;
 canvas.height = size;
-
 const context = canvas.getContext('2d');
 
-const VLib = new VectorLib();
+const links = document.querySelectorAll('main section a');
 
-const particleSystem = new ParticleSystem('codepen', size);
-particleSystem.show(context);
 
 let mouse = null;
+const VLib = new VectorLib();
+
+const particleSystem = new ParticleSystem(initialKey, size);
+particleSystem.show(context);
 
 function animate() {
   context.clearRect(0, 0, size, size);
@@ -42,8 +57,12 @@ window.addEventListener('keypress', function(e) {
   for (const key of Object.keys(particleSystem.strings)) {
     if (key[0] === k && key !== particleSystem.key) {
       particleSystem.updateParticles(key);
+
+      links.forEach(link => link.textContent.trim() === key ? link.classList.add('active') : link.classList.remove('active'));
+      break;
     }
   }
+
 });
 
 window.addEventListener('resize', function() {
@@ -55,3 +74,9 @@ window.addEventListener('resize', function() {
   particleSystem.resize(size)
   particleSystem.show(context);
 })
+
+links.forEach(link => link.addEventListener('mouseenter', function() {
+  const key = this.textContent.trim();
+  particleSystem.updateParticles(key);
+  links.forEach(link => link.textContent.trim() === key ? link.classList.add('active') : link.classList.remove('active'));
+}))

@@ -189,7 +189,7 @@ class ParticleSystem {
       }
     }
 
-    for (let i = 1; i < targets.length; i += 1) {
+    for (let i = 0; i < targets.length; i += 1) {
       if (i < this.particles.length) {
         this.particles[i].updateTarget(targets[i]);
       } else {
