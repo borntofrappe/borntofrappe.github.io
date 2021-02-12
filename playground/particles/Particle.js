@@ -20,7 +20,7 @@ class Particle {
 
     const dirTarget = VLib.subtract(this.target, this.position);
     const distanceTarget = dirTarget.getMagnitude();
-    this.velocity.limit(distanceTarget ** 0.35);
+    this.velocity.limit(distanceTarget ** 0.3);
     this.acceleration.multiply(0);
   }
 
@@ -31,7 +31,7 @@ class Particle {
   applyBehaviours(mouse) {
     const dirTarget = VLib.subtract(this.target, this.position);
     const distanceTarget = dirTarget.getMagnitude();
-    if (distanceTarget > 5) {
+    if (distanceTarget > this.r) {
       this.applyForce(this.steer(dirTarget, distanceTarget));
       this.applyForce(this.getFriction());
     }
@@ -39,7 +39,7 @@ class Particle {
     if (mouse) {
       const dirMouse = VLib.subtract(mouse, this.position);
       const disMouse = dirMouse.getMagnitude();
-      if (disMouse < 20) {
+      if (disMouse < this.r * 6) {
         this.applyForce(this.repelMouse(dirMouse, disMouse));
       }
     }
@@ -62,10 +62,18 @@ class Particle {
   getFriction() {
     const force = VLib.copy(this.velocity);
     force.multiply(-1);
+    force.multiply(0.75);
     return force;
   }
 
   updateTarget(target) {
     this.target = target;
+  }
+
+  resize(size) {
+    const r = this.r;
+    this.position.multiply(size / r);
+    this.target.multiply(size / r);
+    this.r = size;
   }
 }

@@ -1,11 +1,135 @@
 class ParticleSystem {
-  constructor(string, size) {
-    const gridOffset = 40;
+  constructor(key, size) {
+    const strings = {
+      rocket: `xxxxxxxxxxxxxxxxxxxx
+    xxxxxxxxxxxxooooooxx
+    xxxxxxxxxxooooooooox
+    xxxxxxxxxoooxxxxxoox
+    xxxxxxxoooxxxxxxxoox
+    xooooooooxxxxxxxxoox
+    xooxxoooxxoooxxxxoox
+    xxoxxooxxooxooxxxoox
+    xxooooxxxoxxxoxxooxx
+    xxxoooxxxoxxooxxooxx
+    xxxxoooxxooooxxooxxx
+    xxxoooooxxxxxxooxxxx
+    xxxooxoooxxxxoooxxxx
+    xxxoxxxoooxxoooxxxxx
+    xxxoxxxxoooooooxxxxx
+    xxxooxxoooooxxoxxxxx
+    xxxooooooxooxxoxxxxx
+    xxxxxxxxxxxooooxxxxx
+    xxxxxxxxxxxxxooxxxxx
+    xxxxxxxxxxxxxxxxxxxx`,
+      codepen: `xxxxxxxxxxxxxxxxxxxx
+    xxxxxxxxxooxxxxxxxxx
+    xxxxxxxooooooxxxxxxx
+    xxxxxoooxooxoooxxxxx
+    xxxoooxxxooxxxoooxxx
+    xooooxxxxooxxxxoooox
+    oooxxxxxxooxxxxxxooo
+    ooooxxxxxooxxxxxxooo
+    oooooxxxooooxxxooooo
+    ooxxoooooxxoooooxxoo
+    ooxxoooooxxoooooxxoo
+    oooooxxxooooxxxooooo
+    oooxxxxxxooxxxxxxooo
+    xoooxxxxxooxxxxxooox
+    xxoooxxxxooxxxxoooxx
+    xxxxoooxxooxxoooxxxx
+    xxxxxxooooooooxxxxxx
+    xxxxxxxooooooxxxxxxx
+    xxxxxxxxxooxxxxxxxxx
+    xxxxxxxxxxxxxxxxxxxx`,
+      blog: `xxxxxxxxxxxxxxxxxxxx
+    xxxxxxxxxxxxxxxxxxxx
+    xoooooooooooooxxxxxx
+    ooxxooxxxxxxxooxxxxx
+    oxxxxooxxxxxxoooxxxx
+    oooooooxxxxxxxooxxxx
+    oooooooxooooxxooxxxx
+    xxxxxooxxxxxxxooxxxx
+    xxxxxooxooxxxxooxxxx
+    xxxxxooxxxxxxxooxxxx
+    xxxxxooxoooxxxooxxxx
+    xxxxxooxxxxxxxooxxxx
+    xxxxxooxoxxxxxooxxxx
+    xxxxxooxxxoooooooooo
+    xxxxxooxxxoooooooooo
+    xxxxxooxxxoxxxxxxxoo
+    xxxxxooooooxxxxxxooo
+    xxxxxxooooooooooooox
+    xxxxxxxxxxxxxxxxxxxx
+    xxxxxxxxxxxxxxxxxxxx`,
+      freecodecamp: `xxxxxxxxxxxxxxxxxxxx
+    xxxxxxxxxxxxxxxxxxxx
+    xxxooxxxxxxxxxxooxxx
+    xxooxxxooxxxxxxxooxx
+    xooxxxxxooxxxxxxxoox
+    xooxxxxxooxxxxxxxoox
+    xooxxxxxoooxxxxxxoox
+    ooxxxxxooooxoxxxxxoo
+    ooxxxxoooxoxooxxxxoo
+    ooxxxxooxxoxoooxxxoo
+    ooxxxooxxxoooooxxxoo
+    ooxxxooxxxooxooxxxoo
+    ooxxxooxxxxxxooxxxoo
+    ooxxxooxxxxxxooxxxoo
+    xooxxxooxxxxooxxxoox
+    xoooxxxooooooxxxooox
+    xxooxxxxooooxxxxooxx
+    xxxooxxxxxxxxxxooxxx
+    xxxxxxxxxxxxxxxxxxxx
+    xxxxxxxxxxxxxxxxxxxx`,
+      github: `xxxxxxxxxxxxxxxxxxxx
+    xxxoooxxxooxxxoooxxx
+    xxooxooooooooooxooxx
+    xxooxxxxxxxxxxxxooxx
+    xxxooxxxxxxxxxxooxxx
+    xxxooxxxxxxxxxxooxxx
+    xxooxxxxxxxxxxxxooxx
+    xxooxxxxxxxxxxxxooxx
+    xxooxxxxxxxxxxxxooxx
+    xxooxxxxxxxxxxxxooxx
+    xxxooxxxxxxxxxxooxxx
+    xxxxoooooooooooooxxx
+    xxxxxoooooooooooxxxx
+    xxxxxoxxxxxxxxooxxxx
+    xxxxooxoxooxoxooxxxx
+    xxxxoxxoxooxoxxoxxxx
+    xxxxoxooxooxooxoxxxx
+    xxxooooooooooooooxxx
+    xxoooxxooxxooxxoooxx
+    xxxxxxxxxxxxxxxxxxxx`,
+      twitter: `xxxxxxxxxxxxxxxxxxxx
+    xxxxxxxxxxxooooxxxxx
+    xxxxxxxxxxooooooxxxx
+    xoxxxxxxxooxxxxooxxx
+    xoooxxxxxooxxxxxoooo
+    xooooxxxxooxxxxxxoox
+    xooxoooooooxxxxxooxx
+    oxooxxooooxxxxxxooxx
+    oooooxxxxxxxxxxxooxx
+    ooooooxxxxxxxxxxooxx
+    xooxxxxxxxxxxxxxooxx
+    oooooxxxxxxxxxxxooxx
+    xoooxxxxxxxxxxxooxxx
+    xxoooxxxxxxxxxooxxxx
+    xxxooooxxxxxxoooxxxx
+    xoooooxxxxxxoooxxxxx
+    xxoooxxxxxxoooxxxxxx
+    xxxooooooooooxxxxxxx
+    xxxxxooooooxxxxxxxxx
+    xxxxxxxxxxxxxxxxxxxx`,
+    };
+
+    const string = strings[key];
+    const gridOffset = size * 0.15;
     const gridSize = size - gridOffset * 2;
     const gridDimensions = string.indexOf('\n');
     const cellSize = Math.floor(gridSize / gridDimensions);
-    const particleRadius = Math.floor(cellSize / 2);
-    const singleLineString = string.replace(/\n/g, '');
+    const particleRadius = Math.floor(cellSize / 2) * 0.9;
+    const singleLineString = string.replace(/\s/g, '');
 
     const particles = [];
     for (let i = 0; i < singleLineString.length; i += 1) {
@@ -26,6 +150,8 @@ class ParticleSystem {
       }
     }
 
+    this.strings = strings;
+    this.key = key;
     this.gridOffset = gridOffset;
     this.gridDimensions = gridDimensions;
     this.cellSize = cellSize;
@@ -46,8 +172,10 @@ class ParticleSystem {
     }
   }
 
-  updateParticles(string) {
-    const singleLineString = string.replace(/\n/g, '');
+  updateParticles(key) {
+    const string = this.strings[key];
+    this.key = key;
+    const singleLineString = string.replace(/\s/g, '');
     const targets = [];
 
     for (let i = 0; i < singleLineString.length; i += 1) {
@@ -80,5 +208,23 @@ class ParticleSystem {
         this.particles.pop();
       }
     }
+  }
+
+  resize(size) {
+    const gridOffset = size * 0.15;
+    const gridSize = size - gridOffset * 2;
+    const gridDimensions = this.gridDimensions;
+    const cellSize = Math.floor(gridSize / gridDimensions);
+    const particleRadius = Math.floor(cellSize / 2) * 0.9;
+
+    for (const particle of this.particles) {
+      particle.resize(particleRadius);
+    }
+
+    this.gridOffset = gridOffset;
+    this.gridSize = gridSize;
+    this.cellSize = cellSize;
+    this.particleRadius = particleRadius;
+
   }
 }
