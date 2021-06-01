@@ -60,7 +60,7 @@ body::after {
 }
 
 main {
-  padding: 1rem;
+  padding: 1.5rem 1rem;
 }
 
 main > * + * {
@@ -156,10 +156,10 @@ details p {
 details p::after {
   content: '';
   position: absolute;
-  bottom: 0%;
-  left: 100%;
+  top: 100%;
+  left: 0%;
   transform: scale(2, 2);
-  transform-origin: 0% 100%;
+  transform-origin: 0% 0%;
   width: 48px;
   height: 16px;
   background: url('spritesheet.png');
@@ -174,7 +174,7 @@ details p::after {
   details p::after {
     width: 16px;
     background-position-x: 0;
-    animation: hop steps(3) 0.42s paused infinite;
+    animation: hop steps(3) 0.375s paused infinite;
   }
   details[open] p::after {
     animation-play-state: running;
