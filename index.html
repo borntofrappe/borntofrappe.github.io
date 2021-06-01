@@ -7,6 +7,17 @@
     <title>Gabriele Corti</title>
     <link rel="icon" href="icon.png" />
     <link rel="stylesheet" href="style.css" />
+
+    <script>
+      try {
+        document.documentElement.style.setProperty(
+          '--min-height',
+          `${innerHeight}px`
+        );
+      } catch (e) {
+        throw new Error(e);
+      }
+    </script>
   </head>
   <body>
     <main>
@@ -24,5 +35,14 @@
         <p>A nice excuse to experiment with crisp pixel art :)</p>
       </details>
     </main>
+
+    <script>
+      window.addEventListener('resize', () =>
+        document.documentElement.style.setProperty(
+          '--min-height',
+          `${innerHeight}px`
+        )
+      );
+    </script>
   </body>
 </html>

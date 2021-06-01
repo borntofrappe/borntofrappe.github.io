@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Geo:ital@0;1&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geo&family=Press+Start+2P&display=swap');
 
 * {
   box-sizing: border-box;
@@ -7,7 +7,7 @@
 }
 
 body {
-  min-height: 100vh;
+  min-height: var(--min-height, 100vh);
   font-family: 'Geo', sans-serif;
   color: hsl(300, 16%, 23%);
   background: hsl(43, 73%, 92%);
@@ -116,6 +116,7 @@ a:focus {
 
 details {
   margin-top: 1.5em;
+  display: inline-block;
 }
 
 details summary {
@@ -126,26 +127,19 @@ details summary::before {
   content: '';
   position: absolute;
   left: 0%;
-  top: 50%;
+  top: 0%;
   width: 0.75em;
   height: 1em;
   background: currentColor;
-  transform: translate(0rem, -50%);
   clip-path: polygon(0% 0%, 25% 0%, 100% 50%, 25% 100%, 0% 100%);
 }
 
 details[open] summary::before {
-  transform: translate(0rem, -50%) rotate(90deg);
+  transform: rotate(90deg);
 }
 
 details > * + * {
   margin-top: 0.5em;
-}
-
-details summary,
-details p {
-  line-height: 1.5;
-  width: max-content;
 }
 
 details p {
