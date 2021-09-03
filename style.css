@@ -32,17 +32,82 @@ body {
   text-rendering: optimizeSpeed;
   font-family: VT323, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
     monospace;
-  min-height: 100vh;
+  min-height: 101vh;
   display: flex;
   flex-direction: column;
-  font-size: 1.2rem;
+  font-size: 1.75rem;
+  background-image: url("images/background.png");
+}
+
+body::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #a0b4a0;
+}
+
+body::-webkit-scrollbar-thumb {
+  border: 0.2rem solid #a0b4a0;
+  border-radius: 0.5rem;
+  background: #122412;
+}
+
+main {
+  padding: 8px 16px;
 }
 
 h1 {
   font-weight: initial;
-  font-size: 2.75rem;
+  font-size: 3.2rem;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: #2d402d;
+  color: #96aa96;
 }
 
 footer {
   margin-top: auto;
+  min-height: 160px;
+  min-height: calc(96px + 64px);
+  background-image: url("images/footer.png");
+  background-repeat: repeat-x;
+  background-position-y: 100%;
+}
+
+footer::before {
+  margin-left: 8px;
+  content: "";
+  display: block;
+  background-image: url("images/character.png");
+  height: 64px;
+  width: 64px;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  footer::before {
+    animation: step 1.25s steps(4) infinite;
+  }
+}
+
+@keyframes step {
+  to {
+    background-position-x: 256px;
+  }
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
 }
