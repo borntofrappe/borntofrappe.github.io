@@ -1,0 +1,48 @@
+@font-face {
+  font-family: VT323;
+  src: url("fonts/vt323-regular-webfont.woff2") format("woff2"),
+    url("fonts/vt323-regular-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+p,
+ul,
+ol {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+body {
+  color: #122412;
+  background: #a0b4a0;
+  text-rendering: optimizeSpeed;
+  font-family: VT323, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    monospace;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+}
+
+h1 {
+  font-weight: initial;
+  font-size: 2.75rem;
+}
+
+footer {
+  margin-top: auto;
+}
