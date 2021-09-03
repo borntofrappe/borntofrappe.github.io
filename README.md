@@ -1,5 +1,3 @@
-> hello world
->
-> a hopping, pixelated world
->
-> 1st of June 2021
+# Hello World
+
+A page to tinker with Github pages and a pixelated look.
