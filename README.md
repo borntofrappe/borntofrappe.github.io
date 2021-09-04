@@ -9,3 +9,11 @@ In the `demo` folder I created a small playground with Lua and Love2D, so to sho
 The demo includes a few Love2D specifc features, but understanding their purpose is more important than learning how the functions work. The quads help to section the spritesheet into its multiple components: player, horizon line, field and background tile. The sprite batch helps to efficiently draw a series of visuals, especially those visuals which do not change over time like the tiles in the background and the repeated horizon line. The stencil helps to hide the field as it moves above the horizon line.
 
 In the website, the player and field could be updated with an animation, on a loop, but also following a specific action. Consider once more a key press, or again the scroll of the window. In this last instance you would fix the visual in the bottom portion and limit the content to the area above.
+
+## images
+
+The `images` folder includes the spritesheet with a few modifications:
+
+- the image does not include the tile repeated in the background, as I preferred to include the texture with a data URI insted
+
+- the character, horizon line and field are layered one above the other, so to share a common width of 64 pixels. This structure helps to have the pseudo elements section the spritesheet at a specific `y` coordinate, set a fixed height and yet repeat the visual horizontally
