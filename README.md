@@ -17,3 +17,30 @@ The `images` folder includes the spritesheet with a few modifications:
 - the image does not include the tile repeated in the background, as I preferred to include the texture with a data URI insted
 
 - the character, horizon line and field are layered one above the other, so to share a common width of 64 pixels. This structure helps to have the pseudo elements section the spritesheet at a specific `y` coordinate, set a fixed height and yet repeat the visual horizontally
+
+## fonts
+
+The website uses a subset version of [VT323](https://fonts.google.com/specimen/VT323), considering lowercase, uppercase letters in the English alphabet, plus numbers and punctuation. The `fonts` folder includes the `.woff` and `.woff2` formats, which are then referenced in the stylesheet through the `@font-face` rule.
+
+```css
+@font-face {
+  font-family: VT323;
+  src: url("fonts/vt323-regular-webfont.woff2") format("woff2"), url("fonts/vt323-regular-webfont.woff")
+      format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+```
+
+`index.html` preloads the font to ensure the files are readily available.
+
+```html
+<link
+  rel="preload"
+  href="fonts/vt323-regular-webfont.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<!-- same for .woff -->
+```
