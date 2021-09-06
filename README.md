@@ -20,12 +20,14 @@ The `images` folder includes the spritesheet with a few modifications:
 
 ## fonts
 
-The website uses a subset version of [VT323](https://fonts.google.com/specimen/VT323), considering lowercase, uppercase letters in the English alphabet, plus numbers and punctuation. The `fonts` folder includes the `.woff` and `.woff2` formats, which are then referenced in the stylesheet through the `@font-face` rule.
+The website leans on a font first introduced in [CS50's Introduction to Game Development](https://www.youtube.com/playlist?list=PLhQjrBD2T383Vx9-4vJYFsJbvZ_D17Qzh), and specifically a subset version devoted to lowercase, uppercase letters, numbers and a few punctuation characters. For the limited scope of the website, the limited range is not an issue.
+
+The `fonts` folder includes the `.woff` and `.woff2` formats, which are then referenced in the stylesheet through the `@font-face` rule.
 
 ```css
 @font-face {
   font-family: VT323;
-  src: url("fonts/vt323-regular-webfont.woff2") format("woff2"), url("fonts/vt323-regular-webfont.woff")
+  src: url("fonts/webfont.woff2") format("woff2"), url("fonts/webfont.woff")
       format("woff");
   font-weight: 400;
   font-style: normal;
@@ -37,7 +39,7 @@ The website uses a subset version of [VT323](https://fonts.google.com/specimen/V
 ```html
 <link
   rel="preload"
-  href="fonts/vt323-regular-webfont.woff2"
+  href="fonts/webfont.woff2"
   as="font"
   type="font/woff2"
   crossorigin

@@ -1,7 +1,7 @@
 @font-face {
   font-family: VT323;
-  src: url("fonts/vt323-regular-webfont.woff2") format("woff2"),
-    url("fonts/vt323-regular-webfont.woff") format("woff");
+  src: url("fonts/webfont.woff2") format("woff2"),
+    url("fonts/webfont.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -35,7 +35,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-size: 1.7rem;
+  font-size: 1.3rem;
+  word-spacing: -0.15em;
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TRS0VQTuIOGSoThaKijhKFYtgobQVWnUwufQLmjQkKS6OgmvBwY/FqoOLs64OroIg+AHi5uak6CIl/i8ptIjx4Lgf7+497t4BQqPCVLMrCqiaZaTiMTGbWxV7XtEHPwYRRUBipp5IL2bgOb7u4ePrXYRneZ/7c/QreZMBPpF4jumGRbxBPLNp6Zz3iUOsJCnE58QTBl2Q+JHrsstvnIsOCzwzZGRS88QhYrHYwXIHs5KhEk8ThxVVo3wh67LCeYuzWqmx1j35C4N5bSXNdZqjiGMJCSQhQkYNZVRgIUKrRoqJFO3HPPwjjj9JLplcZTByLKAKFZLjB/+D392ahalJNykYA7pfbPtjDOjZBZp12/4+tu3mCeB/Bq60tr/aAGY/Sa+3tfARMLANXFy3NXkPuNwBhp90yZAcyU9TKBSA9zP6phwwdAsE1tzeWvs4fQAy1NXyDXBwCIwXKXvd4929nb39e6bV3w9osXKjZy7FgQAAAAZiS0dEABIAJAASL57g6QAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAAd0SU1FB+UJAxMIJQhFrmgAAAA2SURBVAjXBcHBDcAwDMQw1defsz+QHTKilZZ89tmfV1KhV1NeAfDKzFCpAJAKKm+vZmZQScIPaoEYCqgtEKMAAAAASUVORK5CYII=);
 }
 
@@ -75,11 +76,15 @@ h2 {
 }
 
 h1 {
-  font-size: 3.2rem;
+  font-size: 2.36rem;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 1.74rem;
+}
+
+p {
+  line-height: 1.25;
 }
 
 a {
@@ -87,7 +92,7 @@ a {
 }
 
 article > * + * {
-  margin-top: 0.25em;
+  margin-top: 0.5em;
 }
 
 ul li {
