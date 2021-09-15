@@ -46,5 +46,3 @@ The `fonts` folder includes the `.woff` and `.woff2` formats, which are then ref
 />
 <!-- same for .woff -->
 ```
-
-## Media queries
