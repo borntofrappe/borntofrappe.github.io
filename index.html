@@ -75,7 +75,7 @@
         <article>
           <h2>
             <a
-              href="https://github.com/borntofrappe/game-development/tree/master/Practice/Berzerk"
+              href="https://github.com/borntofrappe/game-development/tree/master/Practice/Berzerk#readme"
               >Berzerk</a
             >
           </h2>
@@ -95,7 +95,7 @@
         <article>
           <h2>
             <a
-              href="https://github.com/borntofrappe/game-development/tree/master/Practice/Excavation"
+              href="https://github.com/borntofrappe/game-development/tree/master/Practice/Excavation#readme"
               >Excavation</a
             >
           </h2>
@@ -115,7 +115,7 @@
         <article>
           <h2>
             <a
-              href="https://github.com/borntofrappe/game-development/tree/master/Practice/Target%20Practice"
+              href="https://github.com/borntofrappe/game-development/tree/master/Practice/Target%20Practice#readme"
               >Target Practice</a
             >
           </h2>
@@ -135,7 +135,7 @@
         <article>
           <h2>
             <a
-              href="https://github.com/borntofrappe/game-development/tree/master/Practice/Lunar%20Lander"
+              href="https://github.com/borntofrappe/game-development/tree/master/Practice/Lunar%20Lander#readme"
               >Lunar Lander</a
             >
           </h2>
@@ -169,5 +169,35 @@
         >Built on September 3rd 2021, with a few pixels and lots of love.</span
       >
     </footer>
+
+    <script>
+      if (IntersectionObserver) {
+        const node = document.querySelector("footer");
+
+        const prefersReducedMotion = matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        );
+
+        const observer = new IntersectionObserver((entries) => {
+          if (entries[0].isIntersecting) {
+            node.classList.add("observed");
+          } else {
+            node.classList.remove("observed");
+          }
+        });
+
+        if (!prefersReducedMotion.matches) {
+          observer.observe(node);
+        }
+
+        prefersReducedMotion.addEventListener("change", ({ matches }) => {
+          if (matches) {
+            observer.unobserve(node);
+          } else {
+            observer.observe(node);
+          }
+        });
+      }
+    </script>
   </body>
 </html>

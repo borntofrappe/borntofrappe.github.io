@@ -1,5 +1,5 @@
 @font-face {
-  font-family: VT323;
+  font-family: "04b03 Regular";
   src: url("fonts/webfont.woff2") format("woff2"),
     url("fonts/webfont.woff") format("woff");
   font-weight: 400;
@@ -30,8 +30,8 @@ body {
   color: #122412;
   background: #a0b4a0;
   text-rendering: optimizeSpeed;
-  font-family: VT323, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
-    monospace;
+  font-family: "04b03 Regular", Menlo, Consolas, Monaco, Liberation Mono,
+    Lucida Console, monospace;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -60,7 +60,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 main {
-  padding: 8px 12px;
+  padding: 12px 12px;
   max-width: 48rem;
   margin: 0 auto;
 }
@@ -167,11 +167,11 @@ footer::after {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  footer {
+  footer.observed {
     animation: step-character 0.8s steps(4) infinite;
   }
 
-  footer::after {
+  footer.observed::after {
     /* 4.4s = 0.8s  / 4 * 22 */
     animation: step-field 4.4s steps(22) infinite;
   }

@@ -1,6 +1,6 @@
 # Hello World
 
-A page to tinker with Github pages and a pixelated look.
+A page to tinker with Github pages and a pixelated spritesheet.
 
 ## demo
 
@@ -46,3 +46,5 @@ The `fonts` folder includes the `.woff` and `.woff2` formats, which are then ref
 />
 <!-- same for .woff -->
 ```
+
+## Media queries
