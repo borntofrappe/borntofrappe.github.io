@@ -50,11 +50,11 @@ For the animation you would change the `background-position-y` property with the
 
 ```css
 #sprites::after {
-  animation: step-character 0.8s steps(4) infinite;
+	animation: step-character 0.8s steps(4) infinite;
 }
 
 #sprites {
-  animation: step-field 4.4s steps(22) infinite;
+	animation: step-field 4.4s steps(22) infinite;
 }
 ```
 
@@ -65,7 +65,7 @@ Since you want to animate the sprites on scroll, however, prevent the looping an
 ```css
 #sprites,
 #sprites::after {
-  animation-play-state: paused;
+	animation-play-state: paused;
 }
 ```
 
@@ -74,7 +74,7 @@ Re-introduce the animation with a specific class.
 ```css
 #sprites.step,
 #sprites.step::after {
-  animation-play-state: running;
+	animation-play-state: running;
 }
 ```
 
@@ -103,13 +103,7 @@ How to include the custom, pixelated font chosen for the project.
 Preload the font files.
 
 ```html
-<link
-  rel="preload"
-  href="fonts/webfont.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin
-/>
+<link rel="preload" href="fonts/webfont.woff2" as="font" type="font/woff2" crossorigin />
 <!-- repeat for woff -->
 ```
 
@@ -117,11 +111,11 @@ Reference in the `<style>` tag with the `@font-face` rule.
 
 ```css
 @font-face {
-  font-family: "PixelatedFont";
-  src: url("webfont.woff2") format("woff2"), url("webfont.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'PixelatedFont';
+	src: url('webfont.woff2') format('woff2'), url('webfont.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
 ```
 
@@ -129,19 +123,6 @@ Use.
 
 ```css
 body {
-  font-family: "PixelatedFont", Menlo, Consolas, Monaco, Liberation Mono, Lucida
-      Console, monospace;
+	font-family: 'PixelatedFont', Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 }
 ```
-
-<!--
-
-### spritesheet-html-css
-
-A small playground repeating the exercise with [lua and love2d](#spritesheet-lua-love2d) with HTML and CSS. The animation is introduced as the user scrolls to the footer through the intersection observer API.
-
-The spritesheet is modified to have the character, horizon line and field laid vertically one above the other. The assets share a common width of 64 pixels.
-
-The spritesheet does not include the tile repeated in the background, as I preferred to include the texture with SVG syntax instead.
-
--->
