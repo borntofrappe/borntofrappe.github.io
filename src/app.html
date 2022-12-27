@@ -5,13 +5,26 @@
 		<link rel="icon" href="%sveltekit.assets%/icon.png" />
 		<meta name="viewport" content="width=device-width" />
 
-		<link rel="preload" href="/fonts/webfont.woff2" as="font" type="font/woff2" crossorigin />
-		<link rel="preload" href="/fonts/webfont.woff" as="font" type="font/woff" crossorigin />
+		<link
+			rel="preload"
+			href="%sveltekit.assets%/fonts/webfont.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="%sveltekit.assets%/fonts/webfont.woff"
+			as="font"
+			type="font/woff"
+			crossorigin
+		/>
 
 		<style>
 			@font-face {
 				font-family: 'PixelFont';
-				src: url('/fonts/webfont.woff2') format('woff2'), url('/fonts/webfont.woff') format('woff');
+				src: url('%sveltekit.assets%/fonts/webfont.woff2') format('woff2'),
+					url('%sveltekit.assets%/fonts/webfont.woff') format('woff');
 				font-weight: 400;
 				font-style: normal;
 				font-display: swap;

@@ -5,12 +5,15 @@ const dev = process.argv.includes('dev');
 const config = {
 	kit: {
 		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
+			pages: 'docs',
+			assets: 'docs',
 			fallback: null,
 			precompress: false,
 			strict: true
-		})
+		}),
+		paths: {
+			base: dev ? '' : '/borntofrappe.github.io'
+		}
 	}
 };
 
