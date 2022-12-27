@@ -1,8 +1,8 @@
 const prefersReducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 
-let stopRate = 100;
-let timeout;
 const sprites = document.querySelector("#sprites");
+let stopRate = 100;
+let timeout = null;
 
 const step = () => {
   clearTimeout(timeout);
