@@ -1,3 +1,7 @@
-<h1>borntofrappe.github.io</h1>
+<svelte:head>
+	<title>borntofrappe</title>
+</svelte:head>
 
-<p>A static website with SvelteKit. Right on Github Pages.</p>
+<h1>Hi there</h1>
+
+<p>Welcome to my static website. Hosted on GitHub Pages. Build with SvelteKit.</p>
