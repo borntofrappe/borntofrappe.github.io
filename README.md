@@ -16,23 +16,11 @@ The demo includes a few Love2D specifc features, but understanding their purpose
 
 In the website, the player and field could be updated with an animation, on a loop, but also following a specific action, or again through the intersection observer API.
 
-<!--
-
-
-
-### spritesheet-html-css
-
-A small playground repeating the exercise with [lua and love2d](#spritesheet-lua-love2d) with HTML and CSS. The animation is introduced as the user scrolls to the footer through the intersection observer API.
-
-The spritesheet is modified to have the character, horizon line and field laid vertically one above the other. The assets share a common width of 64 pixels.
-
-The spritesheet does not include the tile repeated in the background, as I preferred to include the texture with SVG syntax instead.
-
 ### fonts
 
-A small playground showing how to include the custom, pixelated font.
+How to include the custom, pixelated font.
 
-Preload the assets.
+Preload the font files.
 
 ```html
 <link
@@ -42,13 +30,14 @@ Preload the assets.
   type="font/woff2"
   crossorigin
 />
+<!-- repeat for woff -->
 ```
 
 Reference in the `<style>` tag with the `@font-face` rule.
 
 ```css
 @font-face {
-  font-family: "04b03 Regular";
+  font-family: "PixelatedFont";
   src: url("webfont.woff2") format("woff2"), url("webfont.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -60,7 +49,19 @@ Use.
 
 ```css
 body {
-  font-family: "04b03 Regular", Menlo, Consolas, Monaco, Liberation Mono, Lucida
+  font-family: "PixelatedFont", Menlo, Consolas, Monaco, Liberation Mono, Lucida
       Console, monospace;
 }
-``` -->
+```
+
+<!--
+
+### spritesheet-html-css
+
+A small playground repeating the exercise with [lua and love2d](#spritesheet-lua-love2d) with HTML and CSS. The animation is introduced as the user scrolls to the footer through the intersection observer API.
+
+The spritesheet is modified to have the character, horizon line and field laid vertically one above the other. The assets share a common width of 64 pixels.
+
+The spritesheet does not include the tile repeated in the background, as I preferred to include the texture with SVG syntax instead.
+
+-->
