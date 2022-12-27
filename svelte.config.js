@@ -13,7 +13,8 @@ const config = {
 		}),
 		paths: {
 			base: dev ? '' : '/borntofrappe.github.io'
-		}
+		},
+		appDir: 'internal'
 	}
 };
 
