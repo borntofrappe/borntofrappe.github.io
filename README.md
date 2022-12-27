@@ -16,9 +16,11 @@ The demo includes a few Love2D specifc features, but understanding their purpose
 
 In the website, the player and field could be updated with an animation, on a loop, but also following a specific action, or again through the intersection observer API.
 
+### spritesheet-html-css
+
 ### fonts
 
-How to include the custom, pixelated font.
+How to include the custom, pixelated font chosen for the project.
 
 Preload the font files.
 
