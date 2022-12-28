@@ -8,7 +8,7 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"predeploy": "vite build",
-		"deploy": "gh-pages -d build",
+		"deploy": "gh-pages -d build -b dist -t true",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write ."
 	},
