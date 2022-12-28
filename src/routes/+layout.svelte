@@ -6,6 +6,8 @@
 	<div class="wrapper">
 		<slot />
 	</div>
+
+	<div id="sprites" />
 </div>
 
 <style>
@@ -16,6 +18,56 @@
 		background-size: 16px;
 		image-rendering: crisp-edges;
 		min-height: 100vh;
+		position: relative;
+		z-index: 0;
+	}
+
+	#root::before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background-color: inherit;
+		background-image: inherit;
+		background-size: inherit;
+		image-rendering: inherit;
+		z-index: -1;
+	}
+
+	#sprites {
+		position: fixed;
+		bottom: 0;
+		height: 64px;
+		width: 100%;
+		background-color: inherit;
+		background-image: inherit;
+		background-image: url('/images/spritesheet.png');
+		background-position-y: -264px;
+	}
+
+	#sprites::before {
+		content: '';
+		position: absolute;
+		bottom: 100%;
+		left: 0%;
+		width: 100%;
+		height: 8px;
+		background-image: url('/images/spritesheet.png');
+		background-position-y: -256px;
+	}
+
+	#sprites::after {
+		content: '';
+		position: absolute;
+		bottom: 100%;
+		bottom: calc(100% + 8px);
+		left: 8px;
+		width: 64px;
+		height: 64px;
+		background-image: url('/images/spritesheet.png');
+		background-position-y: 0px;
 	}
 
 	.wrapper {
