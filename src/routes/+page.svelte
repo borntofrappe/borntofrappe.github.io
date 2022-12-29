@@ -4,6 +4,10 @@
 
 <svelte:head>
 	<title>borntofrappe</title>
+	<meta
+		name="description"
+		content="Welcome to the little corner on the web of one Gabriele Corti, writing under the handle of borntofrappe."
+	/>
 </svelte:head>
 
 <h1>Hi there</h1>

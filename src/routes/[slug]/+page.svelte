@@ -4,6 +4,7 @@
 
 <svelte:head>
 	<title>Log entry {data.entry}: {data.title}</title>
+	<meta name="description" content="{data.title}. {data.brief}." />
 </svelte:head>
 
 <main>

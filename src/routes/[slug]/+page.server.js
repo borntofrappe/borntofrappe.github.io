@@ -18,12 +18,13 @@ export async function load({ params }) {
 
 		const { data, content } = matter(file);
 
-		const { title, entry } = data;
+		const { title, brief, entry } = data;
 
 		const html = markdown().render(content);
 
 		return {
 			title,
+			brief,
 			entry,
 			html
 		};
