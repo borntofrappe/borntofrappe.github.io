@@ -1,5 +1,39 @@
 <script>
 	import '$lib/styles/global.css';
+	import { onMount } from 'svelte';
+
+	let step = false;
+
+	onMount(() => {
+		let stopRate = 100;
+		let timeout = null;
+
+		const stepThrough = () => {
+			clearTimeout(timeout);
+			step = true;
+
+			timeout = setTimeout(() => {
+				clearInterval(timeout);
+				step = false;
+			}, stopRate);
+		};
+
+		const prefersReducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+
+		if (!prefersReducedMotion.matches) {
+			window.addEventListener('scroll', stepThrough);
+		}
+
+		prefersReducedMotion.addEventListener('change', ({ matches }) => {
+			if (matches) {
+				window.removeEventListener('scroll', stepThrough);
+			} else {
+				window.addEventListener('scroll', stepThrough);
+			}
+		});
+
+		return () => clearTimeout(timeout);
+	});
 </script>
 
 <div id="root">
@@ -7,7 +41,7 @@
 		<slot />
 	</div>
 
-	<div id="sprites" />
+	<div id="sprites" class:step />
 </div>
 
 <style>
@@ -80,5 +114,38 @@
 
 	.wrapper > :global(* + *) {
 		margin-top: 0.75em;
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		#sprites {
+			/* 4.4s = 0.8s  / 4 * 22 */
+			animation: step-field 4.4s steps(22) infinite;
+		}
+
+		#sprites::after {
+			animation: step-character 0.8s steps(4) infinite;
+		}
+
+		#sprites,
+		#sprites::after {
+			animation-play-state: paused;
+		}
+
+		#sprites.step,
+		#sprites.step::after {
+			animation-play-state: running;
+		}
+
+		@keyframes step-character {
+			to {
+				background-position-y: -256px;
+			}
+		}
+
+		@keyframes step-field {
+			to {
+				background-position-y: -352px;
+			}
+		}
 	}
 </style>
