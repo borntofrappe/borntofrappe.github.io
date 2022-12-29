@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./icon.png" />
+		<meta name="viewport" content="width=device-width" />
+
+		<link
+			rel="preload"
+			href="./fonts/webfont.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="./fonts/webfont.woff"
+			as="font"
+			type="font/woff"
+			crossorigin
+		/>
+
+		<link
+			rel="preload"
+			fetchpriority="high"
+			as="image"
+			href="./images/spritesheet.png"
+			type="image/png"
+		/>
+
+		<style>
+			@font-face {
+				font-family: 'PixelFont';
+				src: url('./fonts/webfont.woff2') format('woff2'),
+					url('./fonts/webfont.woff') format('woff');
+				font-weight: 400;
+				font-style: normal;
+				font-display: swap;
+			}
+
+			body {
+				font-family: 'PixelFont', Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+					monospace;
+				font-size: 1.25rem;
+			}
+		</style>
+
+		<meta http-equiv="content-security-policy" content="">
+		<link href="./_app/immutable/assets/_layout-a6e62067.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/_page-fb4d8b31.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/start-0198d275.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index-6a096205.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-2f7db3af.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-67f78edb.js">
+		<link rel="modulepreload" href="./_app/immutable/modules/pages/_layout.js-9cbb603b.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_layout-da46b06b.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/_slug_/_page.svelte-83ee9692.js"><title>Log entry 1: Pixel art</title><!-- HEAD_svelte-be5j8r_START --><meta name="description" content="Pixel art. An experiment, nay an excuse, to concoct more 2D sprites."><!-- HEAD_svelte-be5j8r_END -->
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+
+
+<div id="root" class="svelte-1cv9udz"><div class="wrapper svelte-1cv9udz">
+
+<main class="svelte-1ehtqwp"><h1>Pixel art</h1>
+	<!-- HTML_TAG_START --><p>This website has an undeniable preference for 2D sprites. Of course you won't notice this without CSS, but let's assume you are seeing the results of the stylesheet manicured just for you.</p>
+<p>Let's assume you did notice the art at the bottom of the page.</p>
+<p>Well, I've decided to tinker once more with pixel art. Not only that, I've dared to level up and go from a 8 pixel canvas to a 16 pixel one. Twice the number in each direction, four times the number of pixels.</p>
+<p>You could make a case that some of these pixels are not actually used, after all the images are in <code>.png</code> format, allowing for transparency, but you get the gist.</p>
+<p><img src="/images/spritesheet-16.png" alt="Spritesheet with 11 sprites"></p>
+<p>11 sprites, 16 by 16, Enough to make your head spin.</p>
+<h2>Use case</h2>
+<p>At the time of writing, there is no point to the spritesheet. There are a few leads, however. The star, moon and, let's pretend you're convinced the third sprite from the left looks like a sun, could make for a toggle between themes — not that I would implement the feature just yet.</p>
+<p>The map is perfect to describe the position in the website, and the cog right next to it might introduce a menu rather convincingly.</p>
+<p>The compass is perhaps the most versatile, for a loader, a timeout. It could use a few more frames to animate the visual, though.</p>
+<p>There are still five in the, admittedly small, sheet, but I'll let you figure out your favorite on your own — I've got my own.</p>
+<!-- HTML_TAG_END -->
+</main></div>
+
+	<div id="sprites" class="svelte-1cv9udz"></div>
+</div>
+
+
+		<script type="module" data-sveltekit-hydrate="1yyetiy">
+			import { start } from "./_app/immutable/start-0198d275.js";
+
+			start({
+				env: {},
+				paths: {"base":"","assets":""},
+				target: document.querySelector('[data-sveltekit-hydrate="1yyetiy"]').parentNode,
+				version: "1672335781140",
+				hydrate: {
+					node_ids: [0, 3],
+					data: [{type:"data",data:{posts:[{slug:"pixel-art",title:"Pixel art",brief:"An experiment, nay an excuse, to concoct more 2D sprites",entry:1}]},uses:{}},{type:"data",data:{title:"Pixel art",brief:"An experiment, nay an excuse, to concoct more 2D sprites",entry:1,html:"\u003Cp\u003EThis website has an undeniable preference for 2D sprites. Of course you won't notice this without CSS, but let's assume you are seeing the results of the stylesheet manicured just for you.\u003C\u002Fp\u003E\n\u003Cp\u003ELet's assume you did notice the art at the bottom of the page.\u003C\u002Fp\u003E\n\u003Cp\u003EWell, I've decided to tinker once more with pixel art. Not only that, I've dared to level up and go from a 8 pixel canvas to a 16 pixel one. Twice the number in each direction, four times the number of pixels.\u003C\u002Fp\u003E\n\u003Cp\u003EYou could make a case that some of these pixels are not actually used, after all the images are in \u003Ccode\u003E.png\u003C\u002Fcode\u003E format, allowing for transparency, but you get the gist.\u003C\u002Fp\u003E\n\u003Cp\u003E\u003Cimg src=\"\u002Fimages\u002Fspritesheet-16.png\" alt=\"Spritesheet with 11 sprites\"\u003E\u003C\u002Fp\u003E\n\u003Cp\u003E11 sprites, 16 by 16, Enough to make your head spin.\u003C\u002Fp\u003E\n\u003Ch2\u003EUse case\u003C\u002Fh2\u003E\n\u003Cp\u003EAt the time of writing, there is no point to the spritesheet. There are a few leads, however. The star, moon and, let's pretend you're convinced the third sprite from the left looks like a sun, could make for a toggle between themes — not that I would implement the feature just yet.\u003C\u002Fp\u003E\n\u003Cp\u003EThe map is perfect to describe the position in the website, and the cog right next to it might introduce a menu rather convincingly.\u003C\u002Fp\u003E\n\u003Cp\u003EThe compass is perhaps the most versatile, for a loader, a timeout. It could use a few more frames to animate the visual, though.\u003C\u002Fp\u003E\n\u003Cp\u003EThere are still five in the, admittedly small, sheet, but I'll let you figure out your favorite on your own — I've got my own.\u003C\u002Fp\u003E\n"},uses:{params:["slug"]}}],
+					form: null
+				}
+			});
+		</script>
+	</div>
+	</body>
+</html>
