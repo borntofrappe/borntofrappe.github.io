@@ -20,6 +20,7 @@
 		min-height: 100vh;
 		position: relative;
 		z-index: 0;
+		margin-bottom: 64px;
 	}
 
 	#root::before {
