@@ -1,6 +1,7 @@
 ---
 title: Pixel art
-entry: 0
+brief: An experiment, nay an excuse, to concoct more 2D sprites
+entry: 1
 datetime: '2022-12-29T15:38'
 tags: design, 2D, spritesheet
 ---
@@ -13,7 +14,7 @@ Well, today I've decided to tinker with more pixel art. What is more, I've dared
 
 You could make a case that some of these pixels are not actually used, after all the images are in `.png` format, allowing for transparency, but you get the gist.
 
-[Spritesheet with 11 sprites](./spritesheet.png).
+[Spritesheet with 11 sprites](./spritesheet-16.png).
 
 11 sprites, 16 by 16, Enough to make your head spin.
 
