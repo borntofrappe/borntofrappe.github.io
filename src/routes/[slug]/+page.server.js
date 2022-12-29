@@ -29,6 +29,6 @@ export async function load({ params }) {
 			html
 		};
 	} catch (error) {
-		throw new Error(`Unable to process log entry - ${slug}`);
+		throw new Error(`Unable to read log entry - ${slug}`);
 	}
 }

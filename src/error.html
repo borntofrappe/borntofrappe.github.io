@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Status code %sveltekit.status%</title>
+
+		<style>
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+			}
+
+			body,
+			h1,
+			h2,
+			h3,
+			h4,
+			p {
+				margin: 0;
+			}
+
+			body {
+				font-family: 'PixelFont', Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+					monospace;
+				font-size: 1.25rem;
+				color: hsl(120, 33%, 11%);
+				background-color: hsl(120, 12%, 67%);
+				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TxVIqDnYQdchQnSxIFXGUKhbBQmkrtOpgcukXNGlIUlwcBdeCgx+LVQcXZ10dXAVB8APE0clJ0UVK/F9SaBHjwXE/3t173L0DhGaVqWbPJKBqlpFOxMVcflXse0UIIwgigJjETD2ZWczCc3zdw8fXuyjP8j735+hXCiYDfCLxHNMNi3iDeGbT0jnvE4dZWVKIz4knDLog8SPXZZffOJccFnhm2Mim54nDxGKpi+UuZmVDJZ4mjiiqRvlCzmWF8xZntVpn7XvyF4YK2kqG6zRHkcASkkhBhIw6KqjCQpRWjRQTadqPe/iHHX+KXDK5KmDkWEANKiTHD/4Hv7s1i1MxNykUB3pfbPtjDOjbBVoN2/4+tu3WCeB/Bq60jr/WBGY/SW90tMgRMLANXFx3NHkPuNwBhp50yZAcyU9TKBaB9zP6pjwweAsE19ze2vs4fQCy1NXyDXBwCIyXKHvd492B7t7+PdPu7weat3K3lWHSdwAAAAZiS0dEAAEAAQABsubIbgAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB+YMGwoJFf+ptdQAAAA2SURBVAjXBcHBDcAwDMQw1defsz+QHTKilZZ89tmfV1KhV1NeAfDKzFCpAJAKKm+vZmZQScIPaoEYCqgtEKMAAAAASUVORK5CYII=);
+				background-size: 16px;
+				image-rendering: crisp-edges;
+				min-height: 100vh;
+			}
+
+			mark {
+				background: hsl(21, 100%, 59%);
+			}
+
+			mark::before {
+				content: '> ';
+			}
+
+			.wrapper {
+				max-width: 58rem;
+				width: 90vw;
+				margin-inline: auto;
+				padding-block: 1rem;
+				margin-block-end: 72px;
+			}
+
+			.wrapper > * + * {
+				margin-top: 0.75em;
+			}
+
+			body::after {
+				content: '';
+				position: fixed;
+				bottom: 0;
+				width: 100%;
+				height: 72px;
+				background: red;
+				background-color: inherit;
+				background-image: inherit;
+				background-image: url('/images/spritesheet.png');
+				background-position-y: -256px;
+			}
+		</style>
+	</head>
+	<body>
+		<body>
+			<div class="wrapper">
+				<h1>%sveltekit.status%</h1>
+
+				<p>Something went definitely, definitely wrong...Here's the error message to guide you:</p>
+
+				<p><mark>%sveltekit.error.message%</mark></p>
+
+				<p>I won't lie, the situation is dire.</p>
+
+				<p>
+					The most we can do is guide you <a href="/">home</a>, and hope to never stumble on this
+					place ever again.
+				</p>
+			</div>
+		</body>
+	</body>
+</html>
