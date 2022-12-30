@@ -71,6 +71,33 @@
 		z-index: -1;
 	}
 
+	#root :global(::selection) {
+		color: hsl(120, 33%, 11%);
+		background: hsl(21, 100%, 59%);
+	}
+
+	#root :global(a) {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	#root :global(a:focus) {
+		outline: none;
+		background: hsl(21, 100%, 59%);
+	}
+
+	#root :global(a:focus::before) {
+		content: '> ';
+	}
+
+	#root :global(a:focus:not(:focus-visible)) {
+		background: inherit;
+	}
+
+	#root :global(a:focus:not(:focus-visible)::before) {
+		content: '';
+	}
+
 	#sprites {
 		position: fixed;
 		bottom: 0;
