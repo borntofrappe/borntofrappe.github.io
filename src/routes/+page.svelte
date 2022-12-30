@@ -35,3 +35,9 @@
 		{/each}
 	</ol>
 {/if}
+
+<style>
+	ol > li + li {
+		margin-top: 0.75em;
+	}
+</style>

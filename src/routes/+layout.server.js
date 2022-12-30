@@ -23,7 +23,7 @@ export async function load() {
 			});
 
 		return {
-			posts: [...posts].sort((a, b) => a.entry - b.entry)
+			posts: [...posts].sort((a, b) => b.entry - a.entry)
 		};
 	} catch (error) {
 		throw new Error('Unable to read log folder');

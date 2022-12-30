@@ -54,7 +54,8 @@
 		min-height: 100vh;
 		position: relative;
 		z-index: 0;
-		margin-bottom: 64px;
+		margin-bottom: 136px;
+		margin-bottom: calc(64px + +8px + 64px);
 	}
 
 	#root::before {
