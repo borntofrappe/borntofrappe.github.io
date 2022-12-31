@@ -1,17 +1,16 @@
 import { error } from '@sveltejs/kit';
 
-export async function load({ url, fetch }) {
-	const { href } = url;
-
+export async function load({ params, fetch }) {
 	try {
 		const response = await fetch('/log');
 		const { posts } = await response.json();
 
-		const post = posts.find((d) => d.url === href);
+		const { slug } = params;
+		const post = posts.find((d) => d.slug === slug);
 
 		if (!post) {
 			throw error(404, {
-				message: 'Log entry not found',
+				message: `Log entry "${slug}" not found`,
 				expected: true
 			});
 		}
@@ -23,7 +22,7 @@ export async function load({ url, fetch }) {
 		if (e.body.expected) {
 			throw error(e.status, e.body.message);
 		} else {
-			throw new Error(`Unable to find log entry - ${href}`);
+			throw new Error('Unable to fetch log entries');
 		}
 	}
 }

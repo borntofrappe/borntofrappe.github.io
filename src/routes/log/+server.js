@@ -22,6 +22,7 @@ export async function GET({ url }) {
 
 			return {
 				url,
+				slug,
 				...data,
 				html
 			};

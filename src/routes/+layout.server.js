@@ -4,12 +4,9 @@ export async function load({ fetch }) {
 		const { posts } = await response.json();
 
 		return {
-			posts: posts.map((d) => ({
-				...d,
-				slug: d.url.split('/').pop()
-			}))
+			posts
 		};
 	} catch (error) {
-		throw new Error('Unable to find log entries');
+		throw new Error('Unable to fetch log entries');
 	}
 }
