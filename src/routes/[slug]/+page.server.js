@@ -1,34 +1,29 @@
-import markdown from 'markdown-it';
-import { readFile } from 'node:fs/promises';
-import matter from 'gray-matter';
 import { error } from '@sveltejs/kit';
-import { existsSync } from 'node:fs';
 
-export async function load({ params }) {
-	const { slug } = params;
-
-	const path = `src/log/${slug}.md`;
-
-	if (!existsSync(path)) {
-		throw error(404, 'Log entry not found');
-	}
+export async function load({ url, fetch }) {
+	const { href } = url;
 
 	try {
-		const file = await readFile(path, { encoding: 'utf-8' });
+		const response = await fetch('/log');
+		const { posts } = await response.json();
 
-		const { data, content } = matter(file);
+		const post = posts.find((d) => d.url === href);
 
-		const { title, brief, entry } = data;
-
-		const html = markdown().render(content);
+		if (!post) {
+			throw error(404, {
+				message: 'Log entry not found',
+				expected: true
+			});
+		}
 
 		return {
-			title,
-			brief,
-			entry,
-			html
+			...post
 		};
-	} catch (error) {
-		throw new Error(`Unable to read log entry - ${slug}`);
+	} catch (e) {
+		if (e.body.expected) {
+			throw error(e.status, e.body.message);
+		} else {
+			throw new Error(`Unable to find log entry - ${href}`);
+		}
 	}
 }
