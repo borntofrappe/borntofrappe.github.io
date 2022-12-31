@@ -1,6 +1,5 @@
 /* prettier-ignore */
-export async function GET({ url, fetch, page }) {
-    console.log(page)
+export async function GET({ url, fetch }) {
     const { origin } = url;
 	const response = await fetch('/log');
 	const { posts } = await response.json();

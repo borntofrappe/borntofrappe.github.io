@@ -18,12 +18,19 @@ export async function GET({ url }) {
 			const slug = file.split('.md')[0];
 			const url = `${origin}/${slug}`;
 
+			const tags = data.tags.split(/, ?/);
+			const date = new Date(
+				...data.datetime.split(/[-T:]/).map((d, i) => (i === 1 ? parseInt(d - 1) : d))
+			);
+
 			const html = markdown().render(content);
 
 			return {
 				url,
 				slug,
 				...data,
+				date,
+				tags,
 				html
 			};
 		});
