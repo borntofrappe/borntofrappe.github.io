@@ -1,31 +1,15 @@
-import { readdir } from 'node:fs/promises';
-import { readFileSync, existsSync } from 'node:fs';
-import { resolve, extname } from 'node:path';
-import matter from 'gray-matter';
-
-export async function load() {
+export async function load({ fetch }) {
 	try {
-		const files = await readdir(resolve('src/log/'), { encoding: 'utf-8' });
-		const posts = files
-			.filter((file) => extname(file) === '.md')
-			.map((file) => {
-				const slug = file.split('.md')[0];
-
-				const { data } = matter(readFileSync(`src/log/${file}`));
-				const { title, brief, entry } = data;
-
-				return {
-					slug,
-					title,
-					brief,
-					entry
-				};
-			});
+		const response = await fetch('/log');
+		const { posts } = await response.json();
 
 		return {
-			posts: [...posts].sort((a, b) => b.entry - a.entry)
+			posts: posts.map((d) => ({
+				...d,
+				slug: d.url.split('/').pop()
+			}))
 		};
 	} catch (error) {
-		throw new Error('Unable to read log folder');
+		throw new Error('Unable to find log entries');
 	}
 }
