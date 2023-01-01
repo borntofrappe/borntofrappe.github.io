@@ -3,7 +3,7 @@ export const prerender = true;
 export async function GET({ url, fetch }) {
 	const { origin } = url;
 
-	const response = await fetch('/api/log');
+	const response = await fetch('/log');
 	const { posts } = await response.json();
 
 	/* prettier-ignore */
