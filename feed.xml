@@ -2,8 +2,8 @@
     <feed xmlns="http://www.w3.org/2005/Atom">
         <title>borntofrappe</title>
         <subtitle>The little corner on the web of one Gabriele Corti.</subtitle>
-        <link href="http://sveltekit-prerender/feed.xml" rel="self" />
-        <link href="http://sveltekit-prerender" />
+        <link href="https://borntofrappe.github.io/feed.xml" rel="self" />
+        <link href="https://borntofrappe.github.io" />
         <id>borntofrappe.github.io</id>
         <author>
         <name>Gabriele Corti</name>
@@ -12,8 +12,8 @@
         
             <entry>
                 <title>Bien le bonjour!</title>
-                <link href="http://sveltekit-prerender/bien-le-bonjour"/>
-                <id>http://sveltekit-prerender/bien-le-bonjour</id>
+                <link href="https://borntofrappe.github.io/bien-le-bonjour"/>
+                <id>https://borntofrappe.github.io/bien-le-bonjour</id>
                 <content type="html"><![CDATA[<p>One of the skills I intend to master relates to the French language. I've been reading news from continental France for quite some time, to the point where I can comprehend and even describe most articles. There is however an entire vocabulary which eludes me. Familiar dialogue. Words, expressions, perhaps less intentional than those cherry-picked for the written press, used freely, born out of instinct and the difficult to experience reality which comes from just living locally.</p>
 <p>Barring a move to a not-so-distant border, a way to tap into the vernacular is through different media. Books, movies, podcasts, streamers broadcasting their daily endeavors. And yes, games. Watching people enjoy games, through ups and downs, through the impact of a heart-felt cut-scene, through the tension and reward from a hard-fought battle.</p>
 <h2>Bon! on y va, non?</h2>
@@ -36,8 +36,8 @@
             </entry>
             <entry>
                 <title>Pixel art</title>
-                <link href="http://sveltekit-prerender/pixel-art"/>
-                <id>http://sveltekit-prerender/pixel-art</id>
+                <link href="https://borntofrappe.github.io/pixel-art"/>
+                <id>https://borntofrappe.github.io/pixel-art</id>
                 <content type="html"><![CDATA[<p>This website has an undeniable preference for 2D sprites. Of course you won't notice this without CSS, but let's assume you are seeing the results of the stylesheet manicured just for you.</p>
 <p>Let's assume you did notice the art at the bottom of the page.</p>
 <p>Well, I've decided to tinker once more with pixel art. Not only that, I've dared to level up and go from a 8 pixel canvas to a 16 pixel one. Twice the number in each direction, four times the number of pixels.</p>
