@@ -1,8 +1,8 @@
 export const prerender = true;
 
-export async function GET({ url, fetch }) {
-	const { origin } = url;
+import { origin } from '$lib/config.js';
 
+export async function GET({ fetch }) {
 	const response = await fetch('/log.json');
 	const { posts } = await response.json();
 

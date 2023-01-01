@@ -7,11 +7,11 @@ import markdown from 'markdown-it';
 
 import { json } from '@sveltejs/kit';
 
+import { origin } from '$lib/config.js';
+
 export const prerender = true;
 
-export async function GET({ url }) {
-	const { origin } = url;
-
+export async function GET() {
 	const files = await readdir(resolve('src/log/'), { encoding: 'utf-8' });
 	const posts = files
 		.filter((file) => extname(file) === '.md')
