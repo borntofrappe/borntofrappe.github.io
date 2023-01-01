@@ -19,9 +19,12 @@ export async function GET({ url }) {
 			const url = `${origin}/${slug}`;
 
 			const tags = data.tags.split(/, ?/);
+
 			const date = new Date(
-				...data.datetime.split(/[-T:]/).map((d, i) => (i === 1 ? parseInt(d - 1) : d))
+				...data.datetime.split(/[-T:]/).map((d, i) => (i === 1 ? parseFloat(d - 1) : parseFloat(d)))
 			);
+
+			date.setTime(date.getTime() + date.getTimezoneOffset() * 60 * 1000 * -1);
 
 			const html = markdown().render(content);
 
