@@ -1,6 +1,6 @@
 export async function load({ fetch }) {
 	try {
-		const response = await fetch('/log');
+		const response = await fetch('/api/log');
 		const { posts } = await response.json();
 
 		return {

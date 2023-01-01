@@ -2,7 +2,7 @@ import { error } from '@sveltejs/kit';
 
 export async function load({ params, fetch }) {
 	try {
-		const response = await fetch('/log');
+		const response = await fetch('/api/log');
 		const { posts } = await response.json();
 
 		const { slug } = params;
