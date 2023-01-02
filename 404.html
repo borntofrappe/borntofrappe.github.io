@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/icon.png" />
+		<meta name="viewport" content="width=device-width" />
+
+		<link
+			rel="preload"
+			href="/fonts/webfont.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="/fonts/webfont.woff"
+			as="font"
+			type="font/woff"
+			crossorigin
+		/>
+
+		<link
+			rel="preload"
+			fetchpriority="high"
+			as="image"
+			href="/images/spritesheet.png"
+			type="image/png"
+		/>
+
+		<style>
+			@font-face {
+				font-family: 'PixelFont';
+				src: url('/fonts/webfont.woff2') format('woff2'),
+					url('/fonts/webfont.woff') format('woff');
+				font-weight: 400;
+				font-style: normal;
+				font-display: swap;
+			}
+
+			body {
+				font-family: 'PixelFont', Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+					monospace;
+				font-size: 1.25rem;
+			}
+		</style>
+
+		<meta http-equiv="content-security-policy" content="">
+		<link rel="modulepreload" href="/_app/immutable/start-fd362d3b.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/index-3cc9ff20.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/singletons-8a1360ee.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+		<script type="module" data-sveltekit-hydrate="45h">
+			import { start } from "/_app/immutable/start-fd362d3b.js";
+
+			start({
+				env: {},
+				paths: {"base":"","assets":""},
+				target: document.querySelector('[data-sveltekit-hydrate="45h"]').parentNode,
+				version: "1672656930458"
+			});
+		</script></div>
+	</body>
+</html>
