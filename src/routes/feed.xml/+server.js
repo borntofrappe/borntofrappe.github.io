@@ -14,7 +14,7 @@ export async function GET({ fetch }) {
         <link href="${origin}/feed.xml" rel="self" />
         <link href="${origin}" />
         <updated>${new Date().toISOString()}</updated>
-        <id>${origin}</id>
+        <id>${origin}/</id>
         <author>
         <name>Gabriele Corti</name>
         <email>borntofrappe@gmail.com</email>
@@ -23,9 +23,9 @@ export async function GET({ fetch }) {
             <entry>
                 <title>${title}</title>
                 <link href="${url}"/>
-                <id>${url}</id>
+                <id>${url}/</id>
                 <updated>${new Date(date).toISOString()}</updated>
-                ${tags.map((tag) => `<category>${tag}</category>`).join('')}
+                ${tags.map((tag) => `<category term="${tag}" />`).join('')}
                 <content type="html"><![CDATA[${html}]]></content>
             </entry>`).join('')}
     </feed>`;
