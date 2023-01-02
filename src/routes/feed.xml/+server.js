@@ -1,6 +1,6 @@
 export const prerender = true;
 
-import { origin } from '$lib/config.js';
+import { origin } from '$lib/site.js';
 
 export async function GET({ fetch }) {
 	const response = await fetch('/log.json');

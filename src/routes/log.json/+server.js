@@ -7,7 +7,7 @@ import markdown from 'markdown-it';
 
 import { json } from '@sveltejs/kit';
 
-import { origin } from '$lib/config.js';
+import { origin } from '$lib/site.js';
 
 export const prerender = true;
 
