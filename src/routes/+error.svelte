@@ -4,7 +4,7 @@
 
 <svelte:head>
 	<title>Status code {$page.status}</title>
-	<meta name="description" content="Status code {$page.status}. Something went definitely wrong." />
+	<meta name="description" content="Status code {$page.status}. Something went quite wrong." />
 </svelte:head>
 
 <h1>{$page.status}</h1>
