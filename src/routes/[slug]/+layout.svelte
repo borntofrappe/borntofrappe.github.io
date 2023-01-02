@@ -1,7 +1,7 @@
 <script>
 	export let data;
 	$: prev = data.prev;
-	$: next = data.textnext;
+	$: next = data.next;
 </script>
 
 <div>
