@@ -9,20 +9,23 @@ export async function GET({ fetch }) {
 	/* prettier-ignore */
 	const feed = `<?xml version="1.0" encoding="utf-8"?>
     <feed xmlns="http://www.w3.org/2005/Atom">
-        <title>borntofrappe</title>
-        <subtitle>The little corner on the web of one Gabriele Corti.</subtitle>
+        <title>Gabriele Corti's Log</title>
+        <subtitle>Verbose entries by Gabriele Corti, in a rather pixelated corner of the web.</subtitle>
         <link href="${origin}/feed.xml" rel="self" />
         <link href="${origin}" />
-        <id>borntofrappe.github.io</id>
+        <updated>${new Date().toISOString()}</updated>
+        <id>${origin}</id>
         <author>
         <name>Gabriele Corti</name>
         <email>borntofrappe@gmail.com</email>
         </author>
-        ${posts.map(({ url, title, html }) => `
+        ${posts.map(({ url, title, date, tags, html }) => `
             <entry>
                 <title>${title}</title>
                 <link href="${url}"/>
                 <id>${url}</id>
+                <updated>${new Date(date).toISOString()}</updated>
+                ${tags.map((tag) => `<category>${tag}</category>`).join('')}
                 <content type="html"><![CDATA[${html}]]></content>
             </entry>`).join('')}
     </feed>`;
