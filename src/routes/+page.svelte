@@ -3,25 +3,34 @@
 </script>
 
 <svelte:head>
-	<title>borntofrappe</title>
+	<title>Gabriele's Pixelated Corner</title>
 	<meta
 		name="description"
-		content="Welcome to the little corner on the web of one Gabriele Corti, writing under the handle of borntofrappe."
+		content="Welcome to the little, pixelated corner on the web devoted to the ramblings and verbose entries of one Gabriele Corti."
 	/>
 </svelte:head>
 
-<h1>Hi there</h1>
+<h1>Hi there!</h1>
 
-<p>Welcome to my static website. Hosted on GitHub Pages. Built with SvelteKit.</p>
+<figure>
+	<blockquote>
+		<p>Welcome to a little, pixelated, personal corner on the web.</p>
+		<p>
+			This is where I jot down a note or through as I further my quest as a software developer. And
+			who knows, maybe grow in the process.
+		</p>
+	</blockquote>
+	<figcaption>
+		<cite>Gabriele Corti</cite>
+	</figcaption>
+</figure>
+
+<p />
 
 {#if data.posts.length > 0}
 	<h2>Log</h2>
 
-	<p>
-		Hope you won't mind a few verbose entries as I design and develop my own little corner on the
-		web.
-	</p>
-
+	<p>I hope you won't mind a few, rambling entries — there's bound to be more than one.</p>
 	<ol>
 		{#each data.posts as { slug, title, brief, entry }}
 			<li value={entry}>
@@ -37,6 +46,10 @@
 {/if}
 
 <style>
+	blockquote > * + * {
+		margin-top: 0.55em;
+	}
+
 	ol > li + li {
 		margin-top: 0.75em;
 	}
