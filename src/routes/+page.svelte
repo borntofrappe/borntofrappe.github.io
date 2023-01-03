@@ -16,8 +16,8 @@
 	<blockquote>
 		<p>Welcome to a little, pixelated, personal corner on the web.</p>
 		<p>
-			This is where I jot down a note or through as I further my quest as a software developer. And
-			who knows, maybe grow in the process.
+			This is where I jot down a note or two as I further my quest as a software developer. And who
+			knows, maybe grow in the process.
 		</p>
 	</blockquote>
 	<figcaption>
@@ -30,7 +30,7 @@
 {#if data.posts.length > 0}
 	<h2 class="visually-hidden" style:margin-bottom="0">Log</h2>
 
-	<p>I hope you won't mind a few, rambling entries — there's bound to be more than one.</p>
+	<p>Hope you won't mind a few rambling entries, cause this log's choke full of them!</p>
 	<ol>
 		{#each data.posts as { slug, title, brief, entry }}
 			<li value={entry}>
@@ -47,8 +47,8 @@
 
 <style>
 	figure {
-		color: hsl(185, 12%, 90%);
-		background-color: hsl(176, 28%, 7%);
+		color: var(--grey-000);
+		background-color: var(--grey-900);
 		font-size: 1.75rem;
 		position: relative;
 		--inset-size: 10px;
@@ -97,6 +97,11 @@
 				calc(var(--inset-size) + calc(var(--inset-size) / 2)),
 			calc(var(--inset-size) / 2) calc(var(--inset-size) + calc(var(--inset-size) / 2))
 		);
+	}
+
+	figure ::selection {
+		color: var(--main-color-000);
+		background: var(--main-color-700);
 	}
 
 	blockquote > * + * {
