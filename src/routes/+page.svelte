@@ -10,9 +10,9 @@
 	/>
 </svelte:head>
 
-<h1>Hi there!</h1>
+<h1 class="visually-hidden">Hi there!</h1>
 
-<figure>
+<figure style:margin-top="0">
 	<blockquote>
 		<p>Welcome to a little, pixelated, personal corner on the web.</p>
 		<p>
@@ -28,7 +28,7 @@
 <p />
 
 {#if data.posts.length > 0}
-	<h2>Log</h2>
+	<h2 class="visually-hidden" style:margin-bottom="0">Log</h2>
 
 	<p>I hope you won't mind a few, rambling entries — there's bound to be more than one.</p>
 	<ol>
@@ -46,6 +46,59 @@
 {/if}
 
 <style>
+	figure {
+		color: hsl(185, 12%, 90%);
+		background-color: hsl(176, 28%, 7%);
+		font-size: 1.75rem;
+		position: relative;
+		--inset-size: 10px;
+		padding: calc(var(--inset-size) * 2);
+	}
+
+	figure::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		content: '';
+		background: currentColor;
+		clip-path: polygon(
+			0 var(--inset-size),
+			var(--inset-size) var(--inset-size),
+			var(--inset-size) 0,
+			calc(100% - var(--inset-size)) 0,
+			calc(100% - var(--inset-size)) var(--inset-size),
+			100% var(--inset-size),
+			100% calc(100% - var(--inset-size)),
+			calc(100% - var(--inset-size)) calc(100% - var(--inset-size)),
+			calc(100% - var(--inset-size)) 100%,
+			var(--inset-size) 100%,
+			var(--inset-size) calc(100% - var(--inset-size)),
+			0 calc(100% - var(--inset-size)),
+			0 var(--inset-size),
+			calc(var(--inset-size) / 2) calc(var(--inset-size) + calc(var(--inset-size) / 2)),
+			calc(var(--inset-size) / 2) calc(100% - var(--inset-size) - calc(var(--inset-size) / 2)),
+			calc(var(--inset-size) + calc(var(--inset-size) / 2))
+				calc(100% - var(--inset-size) - calc(var(--inset-size) / 2)),
+			calc(var(--inset-size) + calc(var(--inset-size) / 2)) calc(100% - calc(var(--inset-size) / 2)),
+			calc(100% - var(--inset-size) - calc(var(--inset-size) / 2))
+				calc(100% - calc(var(--inset-size) / 2)),
+			calc(100% - var(--inset-size) - calc(var(--inset-size) / 2))
+				calc(100% - var(--inset-size) - calc(var(--inset-size) / 2)),
+			calc(100% - calc(var(--inset-size) / 2))
+				calc(100% - var(--inset-size) - calc(var(--inset-size) / 2)),
+			calc(100% - calc(var(--inset-size) / 2)) calc(var(--inset-size) + calc(var(--inset-size) / 2)),
+			calc(100% - var(--inset-size) - calc(var(--inset-size) / 2))
+				calc(var(--inset-size) + calc(var(--inset-size) / 2)),
+			calc(100% - var(--inset-size) - calc(var(--inset-size) / 2)) calc(var(--inset-size) / 2),
+			calc(var(--inset-size) + calc(var(--inset-size) / 2)) calc(var(--inset-size) / 2),
+			calc(var(--inset-size) + calc(var(--inset-size) / 2))
+				calc(var(--inset-size) + calc(var(--inset-size) / 2)),
+			calc(var(--inset-size) / 2) calc(var(--inset-size) + calc(var(--inset-size) / 2))
+		);
+	}
+
 	blockquote > * + * {
 		margin-top: 0.55em;
 	}
