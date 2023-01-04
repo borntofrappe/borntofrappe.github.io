@@ -7,12 +7,15 @@ import markdown from 'markdown-it';
 
 import { json } from '@sveltejs/kit';
 
-import { origin } from '$lib/site.js';
+import site from '$lib/site.js';
 
 export const prerender = true;
 
 export async function GET() {
 	const files = await readdir(resolve('src/log/'), { encoding: 'utf-8' });
+
+	const { origin } = site;
+
 	const entries = files
 		.filter((file) => extname(file) === '.md')
 		.map((file) => {
