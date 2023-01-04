@@ -25,6 +25,8 @@
 	</figcaption>
 </figure>
 
+<hr />
+
 {#if data.posts.length > 0}
 	<h2 class="visually-hidden">Log</h2>
 

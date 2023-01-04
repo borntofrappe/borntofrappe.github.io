@@ -7,6 +7,8 @@
 <div>
 	<slot />
 
+	<hr />
+
 	<aside>
 		<h2>More from the log:</h2>
 		<ol>
@@ -32,10 +34,6 @@
 
 	div > :global(* + *) {
 		margin-top: 0.75em;
-	}
-
-	aside {
-		margin-top: 2em;
 	}
 
 	aside > * + * {
