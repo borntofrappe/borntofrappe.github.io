@@ -4,8 +4,8 @@
         <subtitle>Verbose entries by Gabriele Corti, in a rather pixelated corner of the web.</subtitle>
         <link href="https://borntofrappe.github.io/feed.xml" rel="self" />
         <link href="https://borntofrappe.github.io" />
-        <updated>2023-01-02T10:55:33.566Z</updated>
-        <id>https://borntofrappe.github.io</id>
+        <updated>2023-01-04T10:09:02.542Z</updated>
+        <id>https://borntofrappe.github.io/</id>
         <author>
         <name>Gabriele Corti</name>
         <email>borntofrappe@gmail.com</email>
@@ -14,9 +14,9 @@
             <entry>
                 <title>5196</title>
                 <link href="https://borntofrappe.github.io/five-one-nine-six"/>
-                <id>https://borntofrappe.github.io/five-one-nine-six</id>
+                <id>https://borntofrappe.github.io/five-one-nine-six/</id>
                 <updated>2023-01-01T22:46:00.000Z</updated>
-                <category>random</category>
+                <category term="random" />
                 <content type="html"><![CDATA[<p>What's 5196?</p>
 <p>One more than 5195? Most assuredly.</p>
 <p>The number of feet it takes to walk a mile? That would be coincidental, if at all true.</p>
@@ -27,9 +27,9 @@
             <entry>
                 <title>Bien le bonjour!</title>
                 <link href="https://borntofrappe.github.io/bien-le-bonjour"/>
-                <id>https://borntofrappe.github.io/bien-le-bonjour</id>
+                <id>https://borntofrappe.github.io/bien-le-bonjour/</id>
                 <updated>2022-12-30T21:56:00.000Z</updated>
-                <category>french</category><category>learning</category>
+                <category term="french" /><category term="learning" />
                 <content type="html"><![CDATA[<p>One of the skills I intend to master relates to the French language. I've been reading news from continental France for quite some time, to the point where I can comprehend and even describe most articles. There is however an entire vocabulary which eludes me. Familiar dialogue. Words, expressions, perhaps less intentional than those cherry-picked for the written press, used freely, born out of instinct and the difficult to experience reality which comes from just living locally.</p>
 <p>Barring a move to a not-so-distant border, a way to tap into the vernacular is through different media. Books, movies, podcasts, streamers broadcasting their daily endeavors. And yes, games. Watching people enjoy games, through ups and downs, through the impact of a heart-felt cut-scene, through the tension and reward from a hard-fought battle.</p>
 <h2>Bon! on y va, non?</h2>
@@ -53,9 +53,9 @@
             <entry>
                 <title>Pixel art</title>
                 <link href="https://borntofrappe.github.io/pixel-art"/>
-                <id>https://borntofrappe.github.io/pixel-art</id>
+                <id>https://borntofrappe.github.io/pixel-art/</id>
                 <updated>2022-12-29T15:38:00.000Z</updated>
-                <category>design</category><category>2D</category><category>spritesheet</category>
+                <category term="design" /><category term="2D" /><category term="spritesheet" />
                 <content type="html"><![CDATA[<p>This website has an undeniable preference for 2D sprites. Of course you won't notice this without CSS, but let's assume you are seeing the results of the stylesheet manicured just for you.</p>
 <p>Let's assume you did notice the art at the bottom of the page.</p>
 <p>Well, I've decided to tinker once more with pixel art. Not only that, I've dared to level up and go from a 8 pixel canvas to a 16 pixel one. Twice the number in each direction, four times the number of pixels.</p>
