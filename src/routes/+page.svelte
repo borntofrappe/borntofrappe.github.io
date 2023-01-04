@@ -1,8 +1,8 @@
 <script>
-	export let data;
 	import site from '$lib/site.js';
-
 	const { name, desc } = site;
+
+	export let data;
 </script>
 
 <svelte:head>
@@ -14,10 +14,11 @@
 
 <figure style:margin-top="0" class="notched-frame">
 	<blockquote>
-		<p>Welcome to a little, pixelated, personal corner on the web.</p>
+		<p>Welcome to a pixelated, personal corner on the web.</p>
 		<p>
-			This is where I jot down a note or two as I further my quest as a software developer. And who
-			knows, maybe grow in the process.
+			This is where I jot down a note or two as I further my quest as a programmer.
+			<br />
+			And who knows, maybe grow in the process.
 		</p>
 	</blockquote>
 	<figcaption>
@@ -27,7 +28,7 @@
 
 <hr />
 
-{#if data.posts.length > 0}
+{#if data.entries.length > 0}
 	<h2 class="visually-hidden">Log</h2>
 
 	<p style:margin-top="0">
@@ -35,7 +36,7 @@
 	</p>
 
 	<ol>
-		{#each data.posts as { slug, title, brief, entry }}
+		{#each data.entries as { slug, title, brief, entry }}
 			<li value={entry}>
 				<h3>
 					<a href="/{slug}">{title}</a>

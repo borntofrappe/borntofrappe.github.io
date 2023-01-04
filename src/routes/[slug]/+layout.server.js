@@ -3,10 +3,10 @@ import { error } from '@sveltejs/kit';
 export async function load({ params, fetch }) {
 	try {
 		const response = await fetch('/log.json');
-		const { posts } = await response.json();
+		const { entries } = await response.json();
 
 		const { slug } = params;
-		const i = posts.findIndex((d) => d.slug === slug);
+		const i = entries.findIndex((d) => d.slug === slug);
 
 		if (i === -1) {
 			throw error(404, {
@@ -15,11 +15,9 @@ export async function load({ params, fetch }) {
 			});
 		}
 
-		const entries = [posts[i - 1], posts[i + 1]].filter((d) => d);
-
 		return {
-			post: posts[i],
-			entries
+			entry: entries[i],
+			entries: [entries[i - 1], entries[i + 1]].filter((d) => d)
 		};
 	} catch (e) {
 		if (e.body.expected) {

@@ -13,7 +13,7 @@ export const prerender = true;
 
 export async function GET() {
 	const files = await readdir(resolve('src/log/'), { encoding: 'utf-8' });
-	const posts = files
+	const entries = files
 		.filter((file) => extname(file) === '.md')
 		.map((file) => {
 			const { data, content } = matter(readFileSync(`src/log/${file}`));
@@ -41,6 +41,6 @@ export async function GET() {
 		});
 
 	return json({
-		posts: [...posts].sort((a, b) => b.entry - a.entry)
+		entries: [...entries].sort((a, b) => b.entry - a.entry)
 	});
 }

@@ -4,7 +4,7 @@ import site from '$lib/site.js';
 
 export async function GET({ fetch }) {
 	const response = await fetch('/log.json');
-	const { posts } = await response.json();
+	const { entries } = await response.json();
 
 	const { name, desc, origin } = site;
 
@@ -21,7 +21,7 @@ export async function GET({ fetch }) {
         <name>Gabriele Corti</name>
         <email>borntofrappe@gmail.com</email>
         </author>
-        ${posts.map(({ url, title, date, tags, html }) => `
+        ${entries.map(({ url, title, date, tags, html }) => `
             <entry>
                 <title>${title}</title>
                 <link href="${url}"/>

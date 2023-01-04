@@ -1,6 +1,6 @@
 export async function load({ parent }) {
-	const { post } = await parent();
+	const { entry } = await parent();
 	return {
-		...post
+		...entry
 	};
 }

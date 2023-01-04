@@ -1,10 +1,10 @@
 export async function load({ fetch }) {
 	try {
 		const response = await fetch('/log.json');
-		const { posts } = await response.json();
+		const { entries } = await response.json();
 
 		return {
-			posts
+			entries
 		};
 	} catch (error) {
 		throw new Error('Unable to fetch log entries');
