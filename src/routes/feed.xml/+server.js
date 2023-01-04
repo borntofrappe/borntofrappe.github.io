@@ -1,16 +1,18 @@
 export const prerender = true;
 
-import { origin } from '$lib/site.js';
+import site from '$lib/site.js';
 
 export async function GET({ fetch }) {
 	const response = await fetch('/log.json');
 	const { posts } = await response.json();
 
+	const { name, desc, origin } = site;
+
 	/* prettier-ignore */
 	const feed = `<?xml version="1.0" encoding="utf-8"?>
     <feed xmlns="http://www.w3.org/2005/Atom">
-        <title>Gabriele Corti's Log</title>
-        <subtitle>Verbose entries by Gabriele Corti, in a rather pixelated corner of the web.</subtitle>
+        <title>${name}</title>
+        <subtitle>${desc}</subtitle>
         <link href="${origin}/feed.xml" rel="self" />
         <link href="${origin}" />
         <updated>${new Date().toISOString()}</updated>

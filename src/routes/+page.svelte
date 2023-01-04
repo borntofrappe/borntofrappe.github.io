@@ -1,13 +1,13 @@
 <script>
 	export let data;
+	import site from '$lib/site.js';
+
+	const { name, desc } = site;
 </script>
 
 <svelte:head>
-	<title>Gabriele's Pixelated Corner</title>
-	<meta
-		name="description"
-		content="Welcome to the little, pixelated corner on the web devoted to the ramblings and verbose entries of one Gabriele Corti."
-	/>
+	<title>{name}</title>
+	<meta name="description" content={desc} />
 </svelte:head>
 
 <h1 class="visually-hidden">Hi there!</h1>
