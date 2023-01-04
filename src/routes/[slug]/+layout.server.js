@@ -15,10 +15,11 @@ export async function load({ params, fetch }) {
 			});
 		}
 
+		const entries = [posts[i - 1], posts[i + 1]].filter((d) => d);
+
 		return {
 			post: posts[i],
-			prev: posts[i + 1],
-			next: posts[i - 1]
+			entries
 		};
 	} catch (e) {
 		if (e.body.expected) {

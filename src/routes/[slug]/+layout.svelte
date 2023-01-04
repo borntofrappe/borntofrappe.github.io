@@ -1,29 +1,25 @@
 <script>
 	export let data;
-	$: prev = data.prev;
-	$: next = data.next;
+	$: entries = data.entries;
 </script>
 
 <div>
 	<slot />
 
-	<hr />
+	{#if entries.length > 0}
+		<hr />
 
-	<aside>
-		<h2>More from the log:</h2>
-		<ol>
-			{#if next}
-				<li value={next.entry}>
-					<a href="/{next.slug}">{next.title}</a>
-				</li>
-			{/if}
-			{#if prev}
-				<li value={prev.entry}>
-					<a href="/{prev.slug}">{prev.title}</a>
-				</li>
-			{/if}
-		</ol>
-	</aside>
+		<aside>
+			<h2>More from the log:</h2>
+			<ol>
+				{#each entries as { entry, slug, title }}
+					<li value={entry}>
+						<a href="/{slug}">{title}</a>
+					</li>
+				{/each}
+			</ol>
+		</aside>
+	{/if}
 </div>
 
 <style>
