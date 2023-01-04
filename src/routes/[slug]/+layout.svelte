@@ -39,9 +39,4 @@
 	aside > * + * {
 		margin-top: 0.5em;
 	}
-
-	a {
-		scroll-margin-bottom: 136px;
-		scroll-margin-bottom: calc(64px + +8px + 64px);
-	}
 </style>
