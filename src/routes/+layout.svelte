@@ -1,5 +1,6 @@
 <script>
 	import '$lib/styles/global.css';
+	import '$lib/styles/style.css';
 	import { onMount } from 'svelte';
 
 	let step = false;

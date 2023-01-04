@@ -1,0 +1,50 @@
+.notched-frame {
+	color: var(--grey-000);
+	background-color: var(--grey-900);
+	position: relative;
+	--i: var(--inset-size, 10px);
+	padding: calc(var(--i) * 2);
+}
+
+.notched-frame::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: '';
+	background: currentColor;
+	clip-path: polygon(
+		0 var(--i),
+		var(--i) var(--i),
+		var(--i) 0,
+		calc(100% - var(--i)) 0,
+		calc(100% - var(--i)) var(--i),
+		100% var(--i),
+		100% calc(100% - var(--i)),
+		calc(100% - var(--i)) calc(100% - var(--i)),
+		calc(100% - var(--i)) 100%,
+		var(--i) 100%,
+		var(--i) calc(100% - var(--i)),
+		0 calc(100% - var(--i)),
+		0 var(--i),
+		calc(var(--i) / 2) calc(var(--i) + calc(var(--i) / 2)),
+		calc(var(--i) / 2) calc(100% - var(--i) - calc(var(--i) / 2)),
+		calc(var(--i) + calc(var(--i) / 2)) calc(100% - var(--i) - calc(var(--i) / 2)),
+		calc(var(--i) + calc(var(--i) / 2)) calc(100% - calc(var(--i) / 2)),
+		calc(100% - var(--i) - calc(var(--i) / 2)) calc(100% - calc(var(--i) / 2)),
+		calc(100% - var(--i) - calc(var(--i) / 2)) calc(100% - var(--i) - calc(var(--i) / 2)),
+		calc(100% - calc(var(--i) / 2)) calc(100% - var(--i) - calc(var(--i) / 2)),
+		calc(100% - calc(var(--i) / 2)) calc(var(--i) + calc(var(--i) / 2)),
+		calc(100% - var(--i) - calc(var(--i) / 2)) calc(var(--i) + calc(var(--i) / 2)),
+		calc(100% - var(--i) - calc(var(--i) / 2)) calc(var(--i) / 2),
+		calc(var(--i) + calc(var(--i) / 2)) calc(var(--i) / 2),
+		calc(var(--i) + calc(var(--i) / 2)) calc(var(--i) + calc(var(--i) / 2)),
+		calc(var(--i) / 2) calc(var(--i) + calc(var(--i) / 2))
+	);
+}
+
+.notched-frame ::selection {
+	color: var(--main-color-000);
+	background: var(--main-color-700);
+}

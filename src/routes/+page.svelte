@@ -12,7 +12,7 @@
 
 <h1 class="visually-hidden">Hi there!</h1>
 
-<figure style:margin-top="0">
+<figure style:margin-top="0" class="notched-frame">
 	<blockquote>
 		<p>Welcome to a little, pixelated, personal corner on the web.</p>
 		<p>
@@ -25,12 +25,13 @@
 	</figcaption>
 </figure>
 
-<p />
-
 {#if data.posts.length > 0}
-	<h2 class="visually-hidden" style:margin-bottom="0">Log</h2>
+	<h2 class="visually-hidden">Log</h2>
 
-	<p>Hope you won't mind a few rambling entries, cause this log's choke full of them!</p>
+	<p style:margin-top="0">
+		Hope you won't mind a few rambling entries, cause this log's choke full of them!
+	</p>
+
 	<ol>
 		{#each data.posts as { slug, title, brief, entry }}
 			<li value={entry}>
@@ -46,66 +47,8 @@
 {/if}
 
 <style>
-	figure {
-		color: var(--grey-000);
-		background-color: var(--grey-900);
-		font-size: 1.75rem;
-		position: relative;
-		--inset-size: 10px;
-		padding: calc(var(--inset-size) * 2);
-	}
-
-	figure::before {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		content: '';
-		background: currentColor;
-		clip-path: polygon(
-			0 var(--inset-size),
-			var(--inset-size) var(--inset-size),
-			var(--inset-size) 0,
-			calc(100% - var(--inset-size)) 0,
-			calc(100% - var(--inset-size)) var(--inset-size),
-			100% var(--inset-size),
-			100% calc(100% - var(--inset-size)),
-			calc(100% - var(--inset-size)) calc(100% - var(--inset-size)),
-			calc(100% - var(--inset-size)) 100%,
-			var(--inset-size) 100%,
-			var(--inset-size) calc(100% - var(--inset-size)),
-			0 calc(100% - var(--inset-size)),
-			0 var(--inset-size),
-			calc(var(--inset-size) / 2) calc(var(--inset-size) + calc(var(--inset-size) / 2)),
-			calc(var(--inset-size) / 2) calc(100% - var(--inset-size) - calc(var(--inset-size) / 2)),
-			calc(var(--inset-size) + calc(var(--inset-size) / 2))
-				calc(100% - var(--inset-size) - calc(var(--inset-size) / 2)),
-			calc(var(--inset-size) + calc(var(--inset-size) / 2)) calc(100% - calc(var(--inset-size) / 2)),
-			calc(100% - var(--inset-size) - calc(var(--inset-size) / 2))
-				calc(100% - calc(var(--inset-size) / 2)),
-			calc(100% - var(--inset-size) - calc(var(--inset-size) / 2))
-				calc(100% - var(--inset-size) - calc(var(--inset-size) / 2)),
-			calc(100% - calc(var(--inset-size) / 2))
-				calc(100% - var(--inset-size) - calc(var(--inset-size) / 2)),
-			calc(100% - calc(var(--inset-size) / 2)) calc(var(--inset-size) + calc(var(--inset-size) / 2)),
-			calc(100% - var(--inset-size) - calc(var(--inset-size) / 2))
-				calc(var(--inset-size) + calc(var(--inset-size) / 2)),
-			calc(100% - var(--inset-size) - calc(var(--inset-size) / 2)) calc(var(--inset-size) / 2),
-			calc(var(--inset-size) + calc(var(--inset-size) / 2)) calc(var(--inset-size) / 2),
-			calc(var(--inset-size) + calc(var(--inset-size) / 2))
-				calc(var(--inset-size) + calc(var(--inset-size) / 2)),
-			calc(var(--inset-size) / 2) calc(var(--inset-size) + calc(var(--inset-size) / 2))
-		);
-	}
-
-	figure ::selection {
-		color: var(--main-color-000);
-		background: var(--main-color-700);
-	}
-
 	blockquote > * + * {
-		margin-top: 0.55em;
+		margin-top: 0.5em;
 	}
 
 	ol > li + li {
