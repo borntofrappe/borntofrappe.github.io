@@ -26,4 +26,4 @@ The map is perfect to describe the position in the website, and the cog right ne
 
 The compass is perhaps the most versatile, for a loader, a timeout. It could use a few more frames to animate the visual, though.
 
-There are still five in the, admittedly small, sheet, but I'll let you figure out your favorite on your own — I've got my own.
+There are still five in the, admittedly small, sheet, but I'll let you figure out your favorite on your own — I've got mine.

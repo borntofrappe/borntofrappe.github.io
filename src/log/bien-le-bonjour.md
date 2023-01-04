@@ -20,9 +20,9 @@ It helps to have a leg up. In this instance, it helps to experience the games fi
 
 You might believe this a convoluted, long-winded excuse to waste more time playing games, but honestly that is a delightful added bonus.
 
-The intent is to soften a steep learning curve, much like a CSS transition eases changes with a thoughtful timing function. And what better curve than an ease-out function, starting slowly with a title I already completed in its anglophone variant?
+The intent is to soften a steep learning curve, much like a CSS transition smoothes changes with a thoughtful timing function. And what better curve than an ease-in function, starting slowly with a title I already completed in its anglophone variant?
 
-Not a better pretext than to dive back into the pixelated marvel which is Pokemon Red, err Pokemon Rouge.
+Not a better pretext to dive back into the pixelated marvel which is Pokemon Red, err Pokemon Rouge.
 
 ## Found in translation
 
@@ -32,7 +32,7 @@ Being a rather popular game, there is no shortage of material in video form.
 
 Being a game actually finished more times than I care to admit, I can personally find correspondence with the English dialogue, and enjoy the idiosyncrasies baked by the translating team as they try to adapt to the adventure to the local audience.
 
-In the exploration of the luxury cruise liner S.S. Anne in Pokemon Red, for instance, you meet a young lady confounding you for a waiter and asking for a specific sweet. On one side of the ocean this is a cherry pie, but on the opposite land the dessert becomes _une tarte aux poires_. Curious.
+In the exploration of the luxury cruise liner S.S. Anne in Pokemon Red, for instance, you meet a young lady confounding you for a waiter and asking for a specific sweet. On one side of the ocean this is a cherry pie, but in the opposing continent the dessert becomes _une tarte aux poires_. Curious.
 
 A few steps later, in the kitchen hold of the same ship, the cook proposes one of three menus, described if you ask enough times to compensate for randomness. While the options do not change radically — prime beef steak becomes _cotes de boeuf_, eels au barbeque turns into _pates d'anguilles_ and salmon du salad literally morphs into to _salade de saumon_, it is intriguing to see the comment for each entry — especially for the last, vegetable-based entree.
 

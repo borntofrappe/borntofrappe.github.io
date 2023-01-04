@@ -86,6 +86,9 @@ body {
 	color: var(--color);
 	background: var(--background);
 	accent-color: var(--accent);
+
+	--code-color: #e0def4;
+	--code-background: #232136;
 }
 
 ::selection {

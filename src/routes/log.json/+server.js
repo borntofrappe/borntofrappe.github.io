@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 
 import matter from 'gray-matter';
 import markdown from 'markdown-it';
+import { getHighlighter } from 'shiki';
 
 import { json } from '@sveltejs/kit';
 
@@ -13,6 +14,7 @@ export const prerender = true;
 
 export async function GET() {
 	const files = await readdir(resolve('src/log/'), { encoding: 'utf-8' });
+	const highlighter = await getHighlighter({ theme: 'rose-pine-moon' });
 
 	const { origin } = site;
 
@@ -31,7 +33,12 @@ export async function GET() {
 
 			date.setTime(date.getTime() + date.getTimezoneOffset() * 60 * 1000 * -1);
 
-			const html = markdown().render(content);
+			const md = markdown({
+				html: true,
+				highlight: (code, lang) => highlighter.codeToHtml(code, { lang })
+			});
+
+			const html = md.render(content);
 
 			return {
 				url,

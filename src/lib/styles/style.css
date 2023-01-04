@@ -89,3 +89,12 @@ hr {
 	color: var(--main-color-000);
 	background: var(--main-color-700);
 }
+
+p > code {
+	color: var(--code-color);
+	background: var(--code-background);
+}
+
+pre {
+	padding: 1rem;
+}
