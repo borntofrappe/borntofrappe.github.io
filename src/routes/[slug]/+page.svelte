@@ -1,5 +1,6 @@
 <script>
 	export let data;
+	import Heading from './Heading.svelte';
 </script>
 
 <svelte:head>
@@ -8,7 +9,9 @@
 </svelte:head>
 
 <main>
-	<h1>{data.title}</h1>
+	<Heading>
+		{data.title}
+	</Heading>
 	{@html data.html}
 </main>
 
