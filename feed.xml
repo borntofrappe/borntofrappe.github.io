@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
     <feed xmlns="http://www.w3.org/2005/Atom">
-        <title>Gabriele Corti's Log</title>
-        <subtitle>Verbose entries by Gabriele Corti, in a rather pixelated corner of the web.</subtitle>
+        <title>Gabriele's Pixelated Corner</title>
+        <subtitle>A pixelated, personal corner on the web belonging to an aspiring programmer named Gabriele Corti.</subtitle>
         <link href="https://borntofrappe.github.io/feed.xml" rel="self" />
         <link href="https://borntofrappe.github.io" />
-        <updated>2023-01-04T10:09:02.542Z</updated>
+        <updated>2023-01-05T17:33:05.734Z</updated>
         <id>https://borntofrappe.github.io/</id>
         <author>
         <name>Gabriele Corti</name>
@@ -37,13 +37,13 @@
 <p>A couple of tests lead me to believe that French people are quite fond of being quick-witted, jamming three words where you'd think only two would fit. While I do appreciate the efficiency, this tendency makes it easy to lose your bearing, even in a short conversation.</p>
 <p>It helps to have a leg up. In this instance, it helps to experience the games first-hand. In tongue, most assuredly.</p>
 <p>You might believe this a convoluted, long-winded excuse to waste more time playing games, but honestly that is a delightful added bonus.</p>
-<p>The intent is to soften a steep learning curve, much like a CSS transition eases changes with a thoughtful timing function. And what better curve than an ease-out function, starting slowly with a title I already completed in its anglophone variant?</p>
-<p>Not a better pretext than to dive back into the pixelated marvel which is Pokemon Red, err Pokemon Rouge.</p>
+<p>The intent is to soften a steep learning curve, much like a CSS transition smoothes changes with a thoughtful timing function. And what better curve than an ease-in function, starting slowly with a title I already completed in its anglophone variant?</p>
+<p>Not a better pretext to dive back into the pixelated marvel which is Pokemon Red, err Pokemon Rouge.</p>
 <h2>Found in translation</h2>
 <p>Being a role-playing game, you can enjoy the Game Boy gem at your own pace, you are able to digest every line of dialogue with the help of a quick lookup online.</p>
 <p>Being a rather popular game, there is no shortage of material in video form.</p>
 <p>Being a game actually finished more times than I care to admit, I can personally find correspondence with the English dialogue, and enjoy the idiosyncrasies baked by the translating team as they try to adapt to the adventure to the local audience.</p>
-<p>In the exploration of the luxury cruise liner S.S. Anne in Pokemon Red, for instance, you meet a young lady confounding you for a waiter and asking for a specific sweet. On one side of the ocean this is a cherry pie, but on the opposite land the dessert becomes <em>une tarte aux poires</em>. Curious.</p>
+<p>In the exploration of the luxury cruise liner S.S. Anne in Pokemon Red, for instance, you meet a young lady confounding you for a waiter and asking for a specific sweet. On one side of the ocean this is a cherry pie, but in the opposing continent the dessert becomes <em>une tarte aux poires</em>. Curious.</p>
 <p>A few steps later, in the kitchen hold of the same ship, the cook proposes one of three menus, described if you ask enough times to compensate for randomness. While the options do not change radically — prime beef steak becomes <em>cotes de boeuf</em>, eels au barbeque turns into <em>pates d'anguilles</em> and salmon du salad literally morphs into to <em>salade de saumon</em>, it is intriguing to see the comment for each entry — especially for the last, vegetable-based entree.</p>
 <p>In Shakespeare's tongue <em>Les guests may gripe it's fish again</em>. Dans la langue de Molière, on the other hand, <em>Pour ceux qui ne sont pas content, c'est la meme chose!</em>.</p>
 <p>I'll leave to you the homework of typing these words in a translator, and delight in the accompanying humor.</p>
@@ -66,7 +66,7 @@
 <p>At the time of writing, there is no point to the spritesheet. There are a few leads, however. The star, moon and, let's pretend you're convinced the third sprite from the left looks like a sun, could make for a toggle between themes — not that I would implement the feature just yet.</p>
 <p>The map is perfect to describe the position in the website, and the cog right next to it might introduce a menu rather convincingly.</p>
 <p>The compass is perhaps the most versatile, for a loader, a timeout. It could use a few more frames to animate the visual, though.</p>
-<p>There are still five in the, admittedly small, sheet, but I'll let you figure out your favorite on your own — I've got my own.</p>
+<p>There are still five in the, admittedly small, sheet, but I'll let you figure out your favorite on your own — I've got mine.</p>
 ]]></content>
             </entry>
     </feed>

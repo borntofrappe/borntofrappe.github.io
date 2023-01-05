@@ -1,38 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="/icon.png" />
-		<meta name="viewport" content="width=device-width" />
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Status code 404</title>
+		<meta name="description" content="Status code 404. Something went quite wrong." />
+		<link rel="icon" href="./icon.png" />
 
-		<link
-			rel="preload"
-			href="/fonts/webfont.woff2"
-			as="font"
-			type="font/woff2"
-			crossorigin
-		/>
-		<link
-			rel="preload"
-			href="/fonts/webfont.woff"
-			as="font"
-			type="font/woff"
-			crossorigin
-		/>
+		<link rel="preload" href="./fonts/webfont.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="./fonts/webfont.woff" as="font" type="font/woff" crossorigin />
 
 		<link
 			rel="preload"
 			fetchpriority="high"
 			as="image"
-			href="/images/spritesheet.png"
+			href="./images/spritesheet.png"
 			type="image/png"
 		/>
 
 		<style>
 			@font-face {
 				font-family: 'PixelFont';
-				src: url('/fonts/webfont.woff2') format('woff2'),
-					url('/fonts/webfont.woff') format('woff');
+				src: url('./fonts/webfont.woff2') format('woff2'),
+					url('./fonts/webfont.woff') format('woff');
 				font-weight: 400;
 				font-style: normal;
 				font-display: swap;
@@ -41,26 +32,185 @@
 			body {
 				font-family: 'PixelFont', Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
 					monospace;
-				font-size: 1.25rem;
+			}
+
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+			}
+
+			body,
+			h1,
+			p {
+				margin: 0;
+			}
+
+			:root {
+				--size-300: 0.8rem;
+				--size-400: 1rem;
+				--size-500: 1.25rem;
+				--size-600: 1.56rem;
+				--size-700: 1.95rem;
+				--size-800: 2.44rem;
+				--size-900: 3.05rem;
+			}
+
+			body {
+				--color: hsl(210, 24%, 16%);
+				--background: hsl(216, 33%, 97%);
+				--accent: hsl(16, 94%, 61%);
+				color: var(--color);
+				background: var(--background);
+				accent-color: var(--accent);
+			}
+
+			::selection {
+				color: var(--background);
+				background: var(--color);
+			}
+
+			body::-webkit-scrollbar {
+				width: 0.8rem;
+			}
+
+			body::-webkit-scrollbar-track {
+				background: var(--background);
+			}
+
+			body::-webkit-scrollbar-thumb {
+				border: 0.2rem solid var(--background);
+				border-radius: 0.4rem;
+				background: var(--accent);
+			}
+
+			p {
+				line-height: 1.5;
+			}
+
+			h1 {
+				font-size: 2.44rem;
+				font-size: var(--size-800);
+			}
+
+			h2 {
+				font-size: 1.56rem;
+				font-size: var(--size-600);
+			}
+
+			h3 {
+				font-size: 1.56rem;
+				font-size: var(--size-600);
+			}
+
+			@media (min-width: 42rem) {
+				body {
+					font-size: 1.25rem;
+					font-size: var(--size-500);
+				}
+
+				h1 {
+					font-size: 3.05rem;
+					font-size: var(--size-900);
+				}
+
+				h2 {
+					font-size: 1.95rem;
+					font-size: var(--size-700);
+				}
+
+				h3 {
+					font-size: 1.95rem;
+					font-size: var(--size-700);
+				}
+			}
+
+			body {
+				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TxVIqDnYQdchQnSxIFXGUKhbBQmkrtOpgcukXNGlIUlwcBdeCgx+LVQcXZ10dXAVB8APE0clJ0UVK/F9SaBHjwXE/3t173L0DhGaVqWbPJKBqlpFOxMVcflXse0UIIwgigJjETD2ZWczCc3zdw8fXuyjP8j735+hXCiYDfCLxHNMNi3iDeGbT0jnvE4dZWVKIz4knDLog8SPXZZffOJccFnhm2Mim54nDxGKpi+UuZmVDJZ4mjiiqRvlCzmWF8xZntVpn7XvyF4YK2kqG6zRHkcASkkhBhIw6KqjCQpRWjRQTadqPe/iHHX+KXDK5KmDkWEANKiTHD/4Hv7s1i1MxNykUB3pfbPtjDOjbBVoN2/4+tu3WCeB/Bq60jr/WBGY/SW90tMgRMLANXFx3NHkPuNwBhp50yZAcyU9TKBaB9zP6pjwweAsE19ze2vs4fQCy1NXyDXBwCIyXKHvd492B7t7+PdPu7weat3K3lWHSdwAAAAZiS0dEAAEAAQABsubIbgAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB+YMGwoJFf+ptdQAAAA2SURBVAjXBcHBDcAwDMQw1defsz+QHTKilZZ89tmfV1KhV1NeAfDKzFCpAJAKKm+vZmZQScIPaoEYCqgtEKMAAAAASUVORK5CYII=);
+				background-size: 16px;
+				image-rendering: crisp-edges;
+				min-height: 100vh;
+				z-index: 0;
+				margin-bottom: 72px;
+				margin-bottom: calc(64px + 8px);
+			}
+
+			body::after {
+				content: '';
+				position: fixed;
+				bottom: 0;
+				width: 100%;
+				height: 72px;
+				background-image: inherit;
+				background-image: url('./images/spritesheet.png');
+				background-position-y: -256px;
+				z-index: -1;
+			}
+
+			.wrapper {
+				max-width: 60ch;
+				width: 95vw;
+				margin-left: auto;
+				margin-right: auto;
+				padding-top: 1rem;
+				padding-bottom: 1rem;
+			}
+
+			.wrapper > * + * {
+				margin-top: 0.75em;
+			}
+
+			a {
+				scroll-margin-bottom: 72px;
+				scroll-margin-bottom: calc(64px + 8px);
+			}
+
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+
+			a:focus {
+				color: var(--background);
+				background: var(--color);
+				outline: 0.2rem solid var(--color);
+			}
+
+			a:focus::before {
+				content: '> ';
+			}
+
+			a:focus:not(:focus-visible) {
+				color: inherit;
+				background: inherit;
+				outline: none;
+			}
+
+			a:focus:not(:focus-visible)::before {
+				content: '';
+			}
+
+			mark {
+				background: var(--accent);
+				outline: 0.2rem solid var(--accent);
+			}
+
+			mark::before {
+				content: '> ';
 			}
 		</style>
-
-		<meta http-equiv="content-security-policy" content="">
-		<link rel="modulepreload" href="/_app/immutable/start-12734a9a.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/index-7f56960d.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/singletons-5e84a6d0.js">
 	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">
-		<script type="module" data-sveltekit-hydrate="45h">
-			import { start } from "/_app/immutable/start-12734a9a.js";
+	<body>
+		<body>
+			<div class="wrapper">
+				<h1>404</h1>
 
-			start({
-				env: {},
-				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="45h"]').parentNode,
-				version: "1672826939478"
-			});
-		</script></div>
+				<p>Something went quite wrong...Here's the error message to guide you:</p>
+
+				<p><mark>Page not found</mark></p>
+
+				<p>If you don't know where to start, there's always a place <a href="/">home</a>.</p>
+			</div>
+		</body>
 	</body>
 </html>
