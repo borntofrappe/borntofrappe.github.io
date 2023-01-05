@@ -56,16 +56,16 @@ select {
 	--main-color-800: hsl(172, 98%, 20%);
 	--main-color-900: hsl(176, 100%, 13%);
 
-	--accent-color-000: hsl(24, 100%, 93%);
-	--accent-color-100: hsl(22, 100%, 85%);
-	--accent-color-200: hsl(20, 100%, 77%);
-	--accent-color-300: hsl(18, 100%, 70%);
-	--accent-color-400: hsl(16, 94%, 61%);
-	--accent-color-500: hsl(14, 89%, 55%);
-	--accent-color-600: hsl(12, 86%, 47%);
-	--accent-color-700: hsl(10, 93%, 40%);
-	--accent-color-800: hsl(8, 92%, 35%);
-	--accent-color-900: hsl(6, 96%, 26%);
+	--highlight-color-000: hsl(24, 100%, 93%);
+	--highlight-color-100: hsl(22, 100%, 85%);
+	--highlight-color-200: hsl(20, 100%, 77%);
+	--highlight-color-300: hsl(18, 100%, 70%);
+	--highlight-color-400: hsl(16, 94%, 61%);
+	--highlight-color-500: hsl(14, 89%, 55%);
+	--highlight-color-600: hsl(12, 86%, 47%);
+	--highlight-color-700: hsl(10, 93%, 40%);
+	--highlight-color-800: hsl(8, 92%, 35%);
+	--highlight-color-900: hsl(6, 96%, 26%);
 
 	--grey-000: hsl(216, 33%, 97%);
 	--grey-100: hsl(214, 15%, 91%);
