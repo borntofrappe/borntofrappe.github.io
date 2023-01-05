@@ -18,13 +18,3 @@
 <p>
 	If you don't know where to start, there's always a place <a href="/">home</a>.
 </p>
-
-<style>
-	mark {
-		background: hsl(21, 100%, 59%);
-	}
-
-	mark::before {
-		content: '> ';
-	}
-</style>
