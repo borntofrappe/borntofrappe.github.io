@@ -17,7 +17,7 @@ export async function load({ params, fetch }) {
 
 		return {
 			entry: entries[i],
-			entries: [entries[i - 1], entries[i + 1]].filter((d) => d)
+			entries: entries.slice(Math.max(0, i - 2), i).reverse()
 		};
 	} catch (e) {
 		if (e.body.expected) {

@@ -5,12 +5,10 @@
 
 <div>
 	<slot />
-
-	{#if entries.length > 0}
-		<hr />
-
-		<aside>
-			<h2>More from the log:</h2>
+	<hr />
+	<aside>
+		{#if entries.length > 0}
+			<p>Continue reading? Here the next entries in the log:</p>
 			<ul>
 				{#each entries as { slug, title }}
 					<li>
@@ -18,8 +16,10 @@
 					</li>
 				{/each}
 			</ul>
-		</aside>
-	{/if}
+		{/if}
+
+		<p>Feeling lost? There's always <a href="/">home</a>.</p>
+	</aside>
 </div>
 
 <style>
