@@ -79,8 +79,9 @@
 		width: 100%;
 		background-color: inherit;
 		background-image: inherit;
-		background-image: url('/images/spritesheet.png');
+		background-image: url('/images/index.png');
 		background-position-y: -264px;
+		background-size: 64px;
 	}
 
 	#sprites::before {
@@ -90,8 +91,9 @@
 		left: 0%;
 		width: 100%;
 		height: 8px;
-		background-image: url('/images/spritesheet.png');
+		background-image: url('/images/index.png');
 		background-position-y: -256px;
+		background-size: 64px;
 	}
 
 	#sprites::after {
@@ -102,8 +104,9 @@
 		left: 8px;
 		width: 64px;
 		height: 64px;
-		background-image: url('/images/spritesheet.png');
+		background-image: url('/images/index.png');
 		background-position-y: 0px;
+		background-size: 64px;
 	}
 
 	.wrapper {

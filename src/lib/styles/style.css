@@ -33,10 +33,12 @@ hr {
 	width: 100%;
 	height: 4px;
 	background: var(--grey-900);
-	-webkit-mask-image: url('/images/spritesheet.png');
-	mask-image: url('/images/spritesheet.png');
+	-webkit-mask-image: url('/images/index.png');
+	mask-image: url('/images/index.png');
 	-webkit-mask-position: 0 -60px;
 	mask-position: 0 -60px;
+	-webkit-mask-size: 64px;
+	mask-size: 64px;
 }
 
 mark {
