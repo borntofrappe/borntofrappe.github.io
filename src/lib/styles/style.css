@@ -46,6 +46,7 @@ hr {
 	mask-position: 0 -60px;
 	-webkit-mask-size: 64px;
 	mask-size: 64px;
+	image-rendering: pixelated;
 }
 
 mark {

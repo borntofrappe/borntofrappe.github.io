@@ -82,6 +82,7 @@
 		background-image: url('/images/index.png');
 		background-position-y: -264px;
 		background-size: 64px;
+		image-rendering: pixelated;
 	}
 
 	#sprites::before {
@@ -94,6 +95,7 @@
 		background-image: url('/images/index.png');
 		background-position-y: -256px;
 		background-size: 64px;
+		image-rendering: pixelated;
 	}
 
 	#sprites::after {
@@ -107,6 +109,7 @@
 		background-image: url('/images/index.png');
 		background-position-y: 0px;
 		background-size: 64px;
+		image-rendering: pixelated;
 	}
 
 	.wrapper {
