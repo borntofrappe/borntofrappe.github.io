@@ -129,3 +129,8 @@ p > code::selection {
 pre {
 	padding: 1rem;
 }
+
+ul,
+ol {
+	list-style-type: square;
+}
