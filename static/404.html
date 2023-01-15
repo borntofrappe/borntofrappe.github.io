@@ -2,28 +2,26 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="icon" href="./icon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 		<title>Status code 404</title>
 		<meta name="description" content="Status code 404. Something went quite wrong." />
-		<link rel="icon" href="./icon.png" />
 
-		<link rel="preload" href="./fonts/webfont.woff2" as="font" type="font/woff2" crossorigin />
-		<link rel="preload" href="./fonts/webfont.woff" as="font" type="font/woff" crossorigin />
+		<link rel="preload" href="./fonts/PixelFont.woff2" as="font" type="font/woff2" crossorigin />
 
 		<link
 			rel="preload"
 			fetchpriority="high"
 			as="image"
-			href="./images/spritesheet.png"
+			href="./images/index.png"
 			type="image/png"
 		/>
 
 		<style>
 			@font-face {
 				font-family: 'PixelFont';
-				src: url('./fonts/webfont.woff2') format('woff2'),
-					url('./fonts/webfont.woff') format('woff');
+				src: url('./fonts/PixelFont.woff2') format('woff2');
 				font-weight: 400;
 				font-style: normal;
 				font-display: swap;
@@ -154,20 +152,27 @@
 				margin-top: 0.75em;
 			}
 
-			a {
-				scroll-margin-bottom: 72px;
-				scroll-margin-bottom: calc(64px + 8px);
+			h1,
+			h2,
+			h3,
+			h4 {
+				color: var(--color-900);
 			}
 
 			a {
+				scroll-margin-bottom: 136px;
+				scroll-margin-bottom: calc(64px + +8px + 64px);
+			}
+
+			a {
+				color: var(--color-900);
 				text-decoration: none;
-				color: inherit;
 			}
 
 			a:focus {
 				color: var(--color-000);
-				background: var(--color-800);
-				outline: 0.2rem solid var(--color-800);
+				background: var(--color-900);
+				outline: 0.2rem solid var(--color-900);
 			}
 
 			a:focus::before {
@@ -186,8 +191,8 @@
 
 			mark {
 				color: var(--color-000);
-				background: var(--color-800);
-				outline: 0.2rem solid var(--color-800);
+				background: var(--color-900);
+				outline: 0.2rem solid var(--color-900);
 			}
 
 			mark::before {
