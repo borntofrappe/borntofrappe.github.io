@@ -16,7 +16,7 @@
 	<blockquote>
 		<p>Welcome to a pixelated, personal corner on the web.</p>
 		<p>
-			This is where I jot down a note or two as I further my quest as a programmer.
+			This is where I jot down a note or two as I further my quest as a game developer.
 			<br />
 			And who knows, maybe grow in the process.
 		</p>
