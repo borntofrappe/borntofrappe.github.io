@@ -15,11 +15,7 @@
 <figure style:margin-top="0" class="notched-frame">
 	<blockquote>
 		<p>Welcome to a pixelated, personal corner on the web.</p>
-		<p>
-			This is where I jot down a note or two as I further my quest as a game developer.
-			<br />
-			And who knows, maybe grow in the process.
-		</p>
+		<p>This is where I jot down a note or two as I further my quest as a game developer.</p>
 	</blockquote>
 	<figcaption>
 		<cite>Gabriele Corti</cite>
@@ -32,7 +28,7 @@
 	<h2 class="visually-hidden">Log</h2>
 
 	<p style:margin-top="0">
-		Hope you won't mind a few rambling entries, cause this log's choke full of them!
+		Hope you won't mind a few rambling entries, cause this log's going to be choke full of them!
 	</p>
 
 	<ul>
