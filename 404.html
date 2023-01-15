@@ -2,28 +2,26 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="icon" href="./icon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 		<title>Status code 404</title>
 		<meta name="description" content="Status code 404. Something went quite wrong." />
-		<link rel="icon" href="./icon.png" />
 
-		<link rel="preload" href="./fonts/webfont.woff2" as="font" type="font/woff2" crossorigin />
-		<link rel="preload" href="./fonts/webfont.woff" as="font" type="font/woff" crossorigin />
+		<link rel="preload" href="./fonts/PixelFont.woff2" as="font" type="font/woff2" crossorigin />
 
 		<link
 			rel="preload"
 			fetchpriority="high"
 			as="image"
-			href="./images/spritesheet.png"
+			href="./images/index.png"
 			type="image/png"
 		/>
 
 		<style>
 			@font-face {
 				font-family: 'PixelFont';
-				src: url('./fonts/webfont.woff2') format('woff2'),
-					url('./fonts/webfont.woff') format('woff');
+				src: url('./fonts/PixelFont.woff2') format('woff2');
 				font-weight: 400;
 				font-style: normal;
 				font-display: swap;
@@ -47,6 +45,17 @@
 			}
 
 			:root {
+				--color-000: hsl(30, 5%, 93%);
+				--color-100: hsl(60, 6%, 87%);
+				--color-200: hsl(57, 6%, 72%);
+				--color-300: hsl(82, 6%, 63%);
+				--color-400: hsl(81, 8%, 50%);
+				--color-500: hsl(83, 10%, 42%);
+				--color-600: hsl(85, 18%, 29%);
+				--color-700: hsl(86, 25%, 22%);
+				--color-800: hsl(85, 33%, 17%);
+				--color-900: hsl(87, 33%, 8%);
+
 				--size-300: 0.8rem;
 				--size-400: 1rem;
 				--size-500: 1.25rem;
@@ -57,31 +66,14 @@
 			}
 
 			body {
-				--color: hsl(210, 24%, 16%);
-				--background: hsl(216, 33%, 97%);
-				--accent: hsl(16, 94%, 61%);
+				--color: var(--color-800);
+				--background: var(--color-100);
 				color: var(--color);
 				background: var(--background);
-				accent-color: var(--accent);
 			}
 
 			::selection {
-				color: var(--background);
-				background: var(--color);
-			}
-
-			body::-webkit-scrollbar {
-				width: 0.8rem;
-			}
-
-			body::-webkit-scrollbar-track {
-				background: var(--background);
-			}
-
-			body::-webkit-scrollbar-thumb {
-				border: 0.2rem solid var(--background);
-				border-radius: 0.4rem;
-				background: var(--accent);
+				background: var(--color-200);
 			}
 
 			p {
@@ -126,7 +118,7 @@
 			}
 
 			body {
-				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TxVIqDnYQdchQnSxIFXGUKhbBQmkrtOpgcukXNGlIUlwcBdeCgx+LVQcXZ10dXAVB8APE0clJ0UVK/F9SaBHjwXE/3t173L0DhGaVqWbPJKBqlpFOxMVcflXse0UIIwgigJjETD2ZWczCc3zdw8fXuyjP8j735+hXCiYDfCLxHNMNi3iDeGbT0jnvE4dZWVKIz4knDLog8SPXZZffOJccFnhm2Mim54nDxGKpi+UuZmVDJZ4mjiiqRvlCzmWF8xZntVpn7XvyF4YK2kqG6zRHkcASkkhBhIw6KqjCQpRWjRQTadqPe/iHHX+KXDK5KmDkWEANKiTHD/4Hv7s1i1MxNykUB3pfbPtjDOjbBVoN2/4+tu3WCeB/Bq60jr/WBGY/SW90tMgRMLANXFx3NHkPuNwBhp50yZAcyU9TKBaB9zP6pjwweAsE19ze2vs4fQCy1NXyDXBwCIyXKHvd492B7t7+PdPu7weat3K3lWHSdwAAAAZiS0dEAAEAAQABsubIbgAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB+YMGwoJFf+ptdQAAAA2SURBVAjXBcHBDcAwDMQw1defsz+QHTKilZZ89tmfV1KhV1NeAfDKzFCpAJAKKm+vZmZQScIPaoEYCqgtEKMAAAAASUVORK5CYII=);
+				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAEAgMAAADUn3btAAAADFBMVEW/w7m+wLi8vra4vbLVDp++AAAAEElEQVR42mNYwTCXYT+DLAAKCwIiOKegQQAAAABJRU5ErkJggg==);
 				background-size: 16px;
 				image-rendering: crisp-edges;
 				min-height: 100vh;
@@ -142,8 +134,9 @@
 				width: 100%;
 				height: 72px;
 				background-image: inherit;
-				background-image: url('./images/spritesheet.png');
+				background-image: url('./images/index.png');
 				background-position-y: -256px;
+				background-size: 64px;
 				z-index: -1;
 			}
 
@@ -160,20 +153,27 @@
 				margin-top: 0.75em;
 			}
 
-			a {
-				scroll-margin-bottom: 72px;
-				scroll-margin-bottom: calc(64px + 8px);
+			h1,
+			h2,
+			h3,
+			h4 {
+				color: var(--color-900);
 			}
 
 			a {
+				scroll-margin-bottom: 136px;
+				scroll-margin-bottom: calc(64px + +8px + 64px);
+			}
+
+			a {
+				color: var(--color-900);
 				text-decoration: none;
-				color: inherit;
 			}
 
 			a:focus {
-				color: var(--background);
-				background: var(--color);
-				outline: 0.2rem solid var(--color);
+				color: var(--color-000);
+				background: var(--color-900);
+				outline: 0.2rem solid var(--color-900);
 			}
 
 			a:focus::before {
@@ -191,12 +191,17 @@
 			}
 
 			mark {
-				background: var(--accent);
-				outline: 0.2rem solid var(--accent);
+				color: var(--color-000);
+				background: var(--color-900);
+				outline: 0.2rem solid var(--color-900);
 			}
 
 			mark::before {
 				content: '> ';
+			}
+
+			mark::selection {
+				background: var(--color-600);
 			}
 		</style>
 	</head>

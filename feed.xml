@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
     <feed xmlns="http://www.w3.org/2005/Atom">
         <title>Gabriele's Pixelated Corner</title>
-        <subtitle>A pixelated, personal corner on the web belonging to an aspiring programmer named Gabriele Corti.</subtitle>
+        <subtitle>A pixelated, personal corner on the web belonging to an aspiring game developer named Gabriele Corti.</subtitle>
         <link href="https://borntofrappe.github.io/feed.xml" rel="self" />
         <link href="https://borntofrappe.github.io" />
-        <updated>2023-01-05T17:33:05.734Z</updated>
+        <updated>2023-01-15T17:47:50.349Z</updated>
         <id>https://borntofrappe.github.io/</id>
         <author>
         <name>Gabriele Corti</name>
@@ -16,7 +16,6 @@
                 <link href="https://borntofrappe.github.io/five-one-nine-six"/>
                 <id>https://borntofrappe.github.io/five-one-nine-six/</id>
                 <updated>2023-01-01T22:46:00.000Z</updated>
-                <category term="random" />
                 <content type="html"><![CDATA[<p>What's 5196?</p>
 <p>One more than 5195? Most assuredly.</p>
 <p>The number of feet it takes to walk a mile? That would be coincidental, if at all true.</p>
@@ -29,7 +28,6 @@
                 <link href="https://borntofrappe.github.io/bien-le-bonjour"/>
                 <id>https://borntofrappe.github.io/bien-le-bonjour/</id>
                 <updated>2022-12-30T21:56:00.000Z</updated>
-                <category term="french" /><category term="learning" />
                 <content type="html"><![CDATA[<p>One of the skills I intend to master relates to the French language. I've been reading news from continental France for quite some time, to the point where I can comprehend and even describe most articles. There is however an entire vocabulary which eludes me. Familiar dialogue. Words, expressions, perhaps less intentional than those cherry-picked for the written press, used freely, born out of instinct and the difficult to experience reality which comes from just living locally.</p>
 <p>Barring a move to a not-so-distant border, a way to tap into the vernacular is through different media. Books, movies, podcasts, streamers broadcasting their daily endeavors. And yes, games. Watching people enjoy games, through ups and downs, through the impact of a heart-felt cut-scene, through the tension and reward from a hard-fought battle.</p>
 <h2>Bon! on y va, non?</h2>
@@ -55,12 +53,11 @@
                 <link href="https://borntofrappe.github.io/pixel-art"/>
                 <id>https://borntofrappe.github.io/pixel-art/</id>
                 <updated>2022-12-29T15:38:00.000Z</updated>
-                <category term="design" /><category term="2D" /><category term="spritesheet" />
                 <content type="html"><![CDATA[<p>This website has an undeniable preference for 2D sprites. Of course you won't notice this without CSS, but let's assume you are seeing the results of the stylesheet manicured just for you.</p>
 <p>Let's assume you did notice the art at the bottom of the page.</p>
 <p>Well, I've decided to tinker once more with pixel art. Not only that, I've dared to level up and go from a 8 pixel canvas to a 16 pixel one. Twice the number in each direction, four times the number of pixels.</p>
 <p>You could make a case that some of these pixels are not actually used, after all the images are in <code>.png</code> format, allowing for transparency, but you get the gist.</p>
-<p><img src="/images/spritesheet-16.png" alt="Spritesheet with 11 sprites"></p>
+<!-- ![Spritesheet with 11 sprites](/images/spritesheet-16.png) -->
 <p>11 sprites, 16 by 16, Enough to make your head spin.</p>
 <h2>Use case</h2>
 <p>At the time of writing, there is no point to the spritesheet. There are a few leads, however. The star, moon and, let's pretend you're convinced the third sprite from the left looks like a sun, could make for a toggle between themes — not that I would implement the feature just yet.</p>
