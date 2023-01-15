@@ -1,17 +1,24 @@
+h1,
+h2,
+h3,
+h4 {
+	color: var(--color-900);
+}
+
 a {
 	scroll-margin-bottom: 136px;
 	scroll-margin-bottom: calc(64px + +8px + 64px);
 }
 
 a {
+	color: var(--color-900);
 	text-decoration: none;
-	color: inherit;
 }
 
 a:focus {
-	color: var(--grey-000);
-	background: var(--grey-900);
-	outline: 0.2rem solid var(--grey-900);
+	color: var(--color-000);
+	background: var(--color-900);
+	outline: 0.2rem solid var(--color-900);
 }
 
 a:focus::before {
@@ -32,7 +39,7 @@ hr {
 	border: none;
 	width: 100%;
 	height: 4px;
-	background: var(--grey-900);
+	background: var(--color-900);
 	-webkit-mask-image: url('/images/index.png');
 	mask-image: url('/images/index.png');
 	-webkit-mask-position: 0 -60px;
@@ -42,17 +49,22 @@ hr {
 }
 
 mark {
-	background: var(--highlight-color-400);
-	outline: 0.2rem solid var(--highlight-color-400);
+	color: var(--color-000);
+	background: var(--color-900);
+	outline: 0.2rem solid var(--color-900);
 }
 
 mark::before {
 	content: '> ';
 }
 
+mark::selection {
+	background: var(--color-600);
+}
+
 .notched-frame {
-	color: var(--grey-000);
-	background-color: var(--grey-900);
+	color: var(--color-000);
+	background-color: var(--color-900);
 	position: relative;
 	--i: var(--inset-size, 10px);
 	padding: calc(var(--i) * 2);
@@ -97,13 +109,19 @@ mark::before {
 }
 
 .notched-frame ::selection {
-	color: var(--main-color-000);
-	background: var(--main-color-700);
+	color: var(--color-000);
+	background: var(--color-700);
 }
 
 p > code {
-	color: var(--code-color);
-	background: var(--code-background);
+	color: var(--color-000);
+	background: var(--color-900);
+	outline: 0.2rem solid var(--color-900);
+}
+
+p > code::selection {
+	color: var(--color-000);
+	background: var(--color-600);
 }
 
 pre {

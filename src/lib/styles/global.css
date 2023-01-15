@@ -37,6 +37,17 @@ select {
 }
 
 :root {
+	--color-000: hsl(30, 5%, 93%);
+	--color-100: hsl(60, 6%, 87%);
+	--color-200: hsl(57, 6%, 72%);
+	--color-300: hsl(82, 6%, 63%);
+	--color-400: hsl(81, 8%, 50%);
+	--color-500: hsl(83, 10%, 42%);
+	--color-600: hsl(85, 18%, 29%);
+	--color-700: hsl(86, 25%, 22%);
+	--color-800: hsl(85, 33%, 17%);
+	--color-900: hsl(87, 33%, 8%);
+
 	--size-300: 0.8rem;
 	--size-400: 1rem;
 	--size-500: 1.25rem;
@@ -44,70 +55,21 @@ select {
 	--size-700: 1.95rem;
 	--size-800: 2.44rem;
 	--size-900: 3.05rem;
-
-	--main-color-000: hsl(165, 67%, 96%);
-	--main-color-100: hsl(163, 75%, 87%);
-	--main-color-200: hsl(162, 73%, 74%);
-	--main-color-300: hsl(164, 70%, 63%);
-	--main-color-400: hsl(166, 64%, 49%);
-	--main-color-500: hsl(168, 78%, 41%);
-	--main-color-600: hsl(170, 91%, 32%);
-	--main-color-700: hsl(172, 94%, 26%);
-	--main-color-800: hsl(172, 98%, 20%);
-	--main-color-900: hsl(176, 100%, 13%);
-
-	--highlight-color-000: hsl(24, 100%, 93%);
-	--highlight-color-100: hsl(22, 100%, 85%);
-	--highlight-color-200: hsl(20, 100%, 77%);
-	--highlight-color-300: hsl(18, 100%, 70%);
-	--highlight-color-400: hsl(16, 94%, 61%);
-	--highlight-color-500: hsl(14, 89%, 55%);
-	--highlight-color-600: hsl(12, 86%, 47%);
-	--highlight-color-700: hsl(10, 93%, 40%);
-	--highlight-color-800: hsl(8, 92%, 35%);
-	--highlight-color-900: hsl(6, 96%, 26%);
-
-	--grey-000: hsl(216, 33%, 97%);
-	--grey-100: hsl(214, 15%, 91%);
-	--grey-200: hsl(210, 16%, 82%);
-	--grey-300: hsl(211, 13%, 65%);
-	--grey-400: hsl(211, 10%, 53%);
-	--grey-500: hsl(211, 12%, 43%);
-	--grey-600: hsl(209, 14%, 37%);
-	--grey-700: hsl(209, 18%, 30%);
-	--grey-800: hsl(209, 20%, 25%);
-	--grey-900: hsl(210, 24%, 16%);
 }
 
 body {
-	--color: var(--grey-900);
-	--background: var(--grey-000);
-	--accent: var(--main-color-500);
+	--color: var(--color-800);
+	--background: var(--color-200);
 	color: var(--color);
 	background: var(--background);
-	accent-color: var(--accent);
 
 	--code-color: #e0def4;
 	--code-background: #232136;
 }
 
 ::selection {
-	color: var(--main-color-000);
-	background: var(--main-color-900);
-}
-
-body::-webkit-scrollbar {
-	width: 0.8rem;
-}
-
-body::-webkit-scrollbar-track {
-	background: var(--background);
-}
-
-body::-webkit-scrollbar-thumb {
-	border: 0.2rem solid var(--background);
-	border-radius: 0.4rem;
-	background: var(--accent);
+	color: var(--color-900);
+	background: var(--color-400);
 }
 
 p {
