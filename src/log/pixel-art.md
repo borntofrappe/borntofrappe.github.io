@@ -1,9 +1,7 @@
 ---
 title: Pixel art
-brief: An experiment, nay an excuse, to concoct more 2D sprites
-entry: 1
-datetime: '2022-12-29T15:38'
-tags: design, 2D, spritesheet
+description: An experiment, nay an excuse, to concoct more 2D sprites
+date: 2022-12-29 15:38:00
 ---
 
 This website has an undeniable preference for 2D sprites. Of course you won't notice this without CSS, but let's assume you are seeing the results of the stylesheet manicured just for you.
@@ -14,7 +12,7 @@ Well, I've decided to tinker once more with pixel art. Not only that, I've dared
 
 You could make a case that some of these pixels are not actually used, after all the images are in `.png` format, allowing for transparency, but you get the gist.
 
-![Spritesheet with 11 sprites](/images/spritesheet-16.png)
+<!-- ![Spritesheet with 11 sprites](/images/spritesheet-16.png) -->
 
 11 sprites, 16 by 16, Enough to make your head spin.
 

@@ -1,11 +1,12 @@
 <script>
 	export let data;
 	import Heading from './Heading.svelte';
+	import site from '$lib/site.js';
 </script>
 
 <svelte:head>
-	<title>Log entry {data.entry}: {data.title}</title>
-	<meta name="description" content="{data.title}. {data.brief}." />
+	<title>{data.title} - {site.name}</title>
+	<meta name="description" content="{data.description}." />
 </svelte:head>
 
 <main>

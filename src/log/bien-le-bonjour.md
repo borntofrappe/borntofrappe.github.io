@@ -1,9 +1,7 @@
 ---
 title: Bien le bonjour!
-brief: There are many ways to learn something. It helps to start with the right foot
-entry: 2
-datetime: '2022-12-30T21:56'
-tags: french, learning
+description: There are many ways to learn something. It helps to start with the right foot
+date: 2022-12-30 21:56:00
 ---
 
 One of the skills I intend to master relates to the French language. I've been reading news from continental France for quite some time, to the point where I can comprehend and even describe most articles. There is however an entire vocabulary which eludes me. Familiar dialogue. Words, expressions, perhaps less intentional than those cherry-picked for the written press, used freely, born out of instinct and the difficult to experience reality which comes from just living locally.

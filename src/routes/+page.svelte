@@ -1,13 +1,13 @@
 <script>
 	import site from '$lib/site.js';
-	const { name, desc } = site;
+	const { name, description } = site;
 
 	export let data;
 </script>
 
 <svelte:head>
 	<title>{name}</title>
-	<meta name="description" content={desc} />
+	<meta name="description" content={description} />
 </svelte:head>
 
 <h1 class="visually-hidden">Hi there!</h1>
@@ -35,18 +35,18 @@
 		Hope you won't mind a few rambling entries, cause this log's choke full of them!
 	</p>
 
-	<ol>
-		{#each data.entries as { slug, title, brief, entry }}
-			<li value={entry}>
+	<ul>
+		{#each data.entries as { slug, title, description }}
+			<li>
 				<h3>
 					<a href="/{slug}">{title}</a>
 				</h3>
 				<p>
-					{brief}
+					{description}
 				</p>
 			</li>
 		{/each}
-	</ol>
+	</ul>
 {/if}
 
 <style>
@@ -54,7 +54,7 @@
 		margin-top: 0.5em;
 	}
 
-	ol > li + li {
-		margin-top: 0.75em;
+	ul > li + li {
+		margin-top: 0.5em;
 	}
 </style>

@@ -25,14 +25,6 @@ export async function GET() {
 			const slug = file.split('.md')[0];
 			const url = `${origin}/${slug}`;
 
-			const tags = data.tags.split(/, ?/);
-
-			const date = new Date(
-				...data.datetime.split(/[-T:]/).map((d, i) => (i === 1 ? parseFloat(d - 1) : parseFloat(d)))
-			);
-
-			date.setTime(date.getTime() + date.getTimezoneOffset() * 60 * 1000 * -1);
-
 			const md = markdown({
 				html: true,
 				highlight: (code, lang) => highlighter.codeToHtml(code, { lang })
@@ -44,13 +36,11 @@ export async function GET() {
 				url,
 				slug,
 				...data,
-				date,
-				tags,
 				html
 			};
 		});
 
 	return json({
-		entries: [...entries].sort((a, b) => b.entry - a.entry)
+		entries: [...entries].sort((a, b) => b.date - a.date)
 	});
 }

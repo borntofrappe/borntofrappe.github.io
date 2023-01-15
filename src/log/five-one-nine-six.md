@@ -1,9 +1,7 @@
 ---
 title: 5196
-brief: The not-so-hidden meaning behind not-so-random numbers
-entry: 3
-datetime: '2023-01-01T22:46'
-tags: random
+description: The not-so-hidden meaning behind not-so-random numbers
+date: 2023-01-01 22:46:00
 ---
 
 What's 5196?

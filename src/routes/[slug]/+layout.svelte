@@ -11,13 +11,13 @@
 
 		<aside>
 			<h2>More from the log:</h2>
-			<ol>
-				{#each entries as { entry, slug, title }}
-					<li value={entry}>
+			<ul>
+				{#each entries as { slug, title }}
+					<li>
 						<a href="/{slug}">{title}</a>
 					</li>
 				{/each}
-			</ol>
+			</ul>
 		</aside>
 	{/if}
 </div>
