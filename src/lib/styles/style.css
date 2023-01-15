@@ -108,6 +108,7 @@ mark::selection {
 	);
 }
 
+.notched-frame::selection,
 .notched-frame ::selection {
 	color: var(--color-000);
 	background: var(--color-700);
