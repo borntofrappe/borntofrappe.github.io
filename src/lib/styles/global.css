@@ -26,16 +26,6 @@ select {
 	font: inherit;
 }
 
-.visually-hidden:not(:focus):not(:active) {
-	clip: rect(0 0 0 0);
-	clip-path: inset(50%);
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	position: absolute;
-	white-space: nowrap;
-}
-
 :root {
 	--color-000: hsl(30, 5%, 93%);
 	--color-100: hsl(60, 6%, 87%);

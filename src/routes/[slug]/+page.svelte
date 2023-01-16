@@ -13,6 +13,7 @@
 	<Heading>
 		{data.title}
 	</Heading>
+
 	{@html data.html}
 </main>
 
@@ -27,6 +28,6 @@
 	}
 
 	main > :global(* + *) {
-		margin-top: 0.5em;
+		margin-block-start: 0.5em;
 	}
 </style>

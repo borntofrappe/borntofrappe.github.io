@@ -47,10 +47,10 @@
 
 <style>
 	blockquote > * + * {
-		margin-top: 0.5em;
+		margin-block-start: 0.5em;
 	}
 
 	ul > li + li {
-		margin-top: 0.5em;
+		margin-block-start: 0.5em;
 	}
 </style>

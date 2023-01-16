@@ -29,10 +29,10 @@
 	}
 
 	div > :global(* + *) {
-		margin-top: 0.75em;
+		margin-block-start: 0.75em;
 	}
 
 	aside > * + * {
-		margin-top: 0.5em;
+		margin-block-start: 0.5em;
 	}
 </style>

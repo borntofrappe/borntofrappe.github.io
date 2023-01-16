@@ -126,8 +126,8 @@
 				image-rendering: crisp-edges;
 				min-height: 100vh;
 				z-index: 0;
-				margin-bottom: 72px;
-				margin-bottom: calc(64px + 8px);
+				margin-block-end: 72px;
+				margin-block-end: calc(64px + 8px);
 			}
 
 			body::after {
@@ -146,14 +146,12 @@
 			.wrapper {
 				max-width: 60ch;
 				width: 95vw;
-				margin-left: auto;
-				margin-right: auto;
-				padding-top: 1rem;
-				padding-bottom: 1rem;
+				margin-inline: auto;
+				padding-block: 1rem;
 			}
 
 			.wrapper > * + * {
-				margin-top: 0.75em;
+				margin-block-start: 0.75em;
 			}
 
 			h1,
@@ -164,8 +162,8 @@
 			}
 
 			a {
-				scroll-margin-bottom: 136px;
-				scroll-margin-bottom: calc(64px + +8px + 64px);
+				scroll-margin-block-end: 136px;
+				scroll-margin-block-end: calc(64px + +8px + 64px);
 			}
 
 			a {

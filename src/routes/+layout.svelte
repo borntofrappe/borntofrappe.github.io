@@ -54,8 +54,8 @@
 		min-height: 100vh;
 		position: relative;
 		z-index: 0;
-		margin-bottom: 136px;
-		margin-bottom: calc(64px + +8px + 64px);
+		margin-block-end: 136px;
+		margin-block-end: calc(64px + +8px + 64px);
 	}
 
 	#root::before {
@@ -115,14 +115,12 @@
 	.wrapper {
 		max-width: 60ch;
 		width: 95vw;
-		margin-left: auto;
-		margin-right: auto;
-		padding-top: 1rem;
-		padding-bottom: 1rem;
+		margin-inline: auto;
+		padding-block: 1rem;
 	}
 
 	.wrapper > :global(* + *) {
-		margin-top: 0.75em;
+		margin-block-start: 0.75em;
 	}
 
 	@media (prefers-reduced-motion: no-preference) {
