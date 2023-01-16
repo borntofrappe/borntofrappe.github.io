@@ -119,20 +119,18 @@
 			}
 
 			body > * + * {
-				margin-top: 1em;
+				margin-block-start: 1em;
 			}
 
 			.wrapper {
 				max-width: 60ch;
 				width: 95vw;
-				margin-left: auto;
-				margin-right: auto;
-				padding-top: 1rem;
-				padding-bottom: 1rem;
+				margin-inline: auto;
+				padding-block: 1rem;
 			}
 
 			.wrapper > * + * {
-				margin-top: 0.75em;
+				margin-block-start: 0.75em;
 			}
 
 			h1,
@@ -143,8 +141,8 @@
 			}
 
 			a {
-				scroll-margin-bottom: 136px;
-				scroll-margin-bottom: calc(64px + +8px + 64px);
+				scroll-margin-block-end: 136px;
+				scroll-margin-block-end: calc(64px + +8px + 64px);
 			}
 
 			a {
@@ -234,6 +232,16 @@
 					animation-play-state: running;
 				}
 			}
+
+			.visually-hidden:not(:focus):not(:active) {
+				clip: rect(0 0 0 0);
+				clip-path: inset(50%);
+				height: 1px;
+				width: 1px;
+				overflow: hidden;
+				position: absolute;
+				white-space: nowrap;
+			}
 		</style>
 	</head>
 	<body>
@@ -241,13 +249,13 @@
 			<div id="sprites"></div>
 
 			<div class="wrapper">
-				<h1>404</h1>
+				<h1 class="visually-hidden">404</h1>
 
-				<p>
+				<p class="visually-hidden">
 					<mark>Page not found</mark>
 				</p>
 
-				<p>
+				<p style="margin-block-start: 0">
 					You've stumbled on a missing page...<br />If you don't know where to start, there's always
 					a place <a href="/">home</a>.
 				</p>
