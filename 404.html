@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
+		<meta charset="utf-8" />
 		<link rel="icon" href="./icon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width" />
 
-		<title>Status code 404</title>
-		<meta name="description" content="Status code 404. Something went quite wrong." />
+		<link
+			rel="preload"
+			href="./fonts/PixelFont.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
 
-		<link rel="preload" href="./fonts/PixelFont.woff2" as="font" type="font/woff2" crossorigin />
-
-		<link rel="preload" fetchpriority="high" as="image" href="./images/404.png" type="image/png" />
+		<link
+			rel="preload"
+			fetchpriority="high"
+			as="image"
+			href="./images/index.png"
+			type="image/png"
+		/>
 
 		<style>
 			@font-face {
@@ -21,245 +30,58 @@
 				font-display: swap;
 			}
 
-			body {
+			body,
+			code {
 				font-family: 'PixelFont', Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
 					monospace;
 			}
-
-			*,
-			*::before,
-			*::after {
-				box-sizing: border-box;
-			}
-
-			body,
-			h1,
-			p {
-				margin: 0;
-			}
-
-			:root {
-				--color-000: hsl(30, 5%, 93%);
-				--color-100: hsl(60, 6%, 87%);
-				--color-200: hsl(57, 6%, 72%);
-				--color-300: hsl(82, 6%, 63%);
-				--color-400: hsl(81, 8%, 50%);
-				--color-500: hsl(83, 10%, 42%);
-				--color-600: hsl(85, 18%, 29%);
-				--color-700: hsl(86, 25%, 22%);
-				--color-800: hsl(85, 33%, 17%);
-				--color-900: hsl(87, 33%, 8%);
-
-				--size-300: 0.8rem;
-				--size-400: 1rem;
-				--size-500: 1.25rem;
-				--size-600: 1.56rem;
-				--size-700: 1.95rem;
-				--size-800: 2.44rem;
-				--size-900: 3.05rem;
-			}
-
-			body {
-				--color: var(--color-800);
-				--background: var(--color-100);
-				color: var(--color);
-				background: var(--background);
-			}
-
-			::selection {
-				background: var(--color-200);
-			}
-
-			p {
-				line-height: 1.5;
-			}
-
-			h1 {
-				font-size: 2.44rem;
-				font-size: var(--size-800);
-			}
-
-			h2 {
-				font-size: 1.56rem;
-				font-size: var(--size-600);
-			}
-
-			h3 {
-				font-size: 1.56rem;
-				font-size: var(--size-600);
-			}
-
-			@media (min-width: 42rem) {
-				body {
-					font-size: 1.25rem;
-					font-size: var(--size-500);
-				}
-
-				h1 {
-					font-size: 3.05rem;
-					font-size: var(--size-900);
-				}
-
-				h2 {
-					font-size: 1.95rem;
-					font-size: var(--size-700);
-				}
-
-				h3 {
-					font-size: 1.95rem;
-					font-size: var(--size-700);
-				}
-			}
-
-			body {
-				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAEAgMAAADUn3btAAAADFBMVEW/w7m+wLi8vra4vbLVDp++AAAAEElEQVR42mNYwTCXYT+DLAAKCwIiOKegQQAAAABJRU5ErkJggg==);
-				background-size: 16px;
-				image-rendering: crisp-edges;
-				min-height: 100vh;
-			}
-
-			body > * + * {
-				margin-block-start: 1em;
-			}
-
-			.wrapper {
-				max-width: 60ch;
-				width: 95vw;
-				margin-inline: auto;
-				padding-block: 1rem;
-			}
-
-			.wrapper > * + * {
-				margin-block-start: 0.75em;
-			}
-
-			h1,
-			h2,
-			h3,
-			h4 {
-				color: var(--color-900);
-			}
-
-			a {
-				scroll-margin-block-end: 136px;
-				scroll-margin-block-end: calc(64px + +8px + 64px);
-			}
-
-			a {
-				color: var(--color-900);
-				text-decoration: none;
-			}
-
-			a:focus {
-				color: var(--color-000);
-				background: var(--color-900);
-				outline: 0.2rem solid var(--color-900);
-			}
-
-			a:focus::before {
-				content: '> ';
-			}
-
-			a:focus:not(:focus-visible) {
-				color: inherit;
-				background: inherit;
-				outline: none;
-			}
-
-			a:focus:not(:focus-visible)::before {
-				content: '';
-			}
-
-			mark {
-				color: var(--color-000);
-				background: var(--color-900);
-				outline: 0.2rem solid var(--color-900);
-			}
-
-			mark::before {
-				content: '> ';
-			}
-
-			mark::selection {
-				background: var(--color-600);
-			}
-
-			#sprites {
-				margin-block: 1em;
-				margin-inline: auto;
-				width: 800px;
-				height: 640px;
-				background: url('./images/404.png');
-				background-size: 800px;
-				background-repeat: no-repeat;
-				image-rendering: pixelated;
-				background-position-y: 0px;
-				animation: step-through steps(22) 2s infinite;
-				animation-delay: -1s;
-			}
-
-			@keyframes step-through {
-				to {
-					background-position-y: calc(22 * 640px * -1);
-				}
-			}
-
-			@media (max-width: 800px) {
-				#sprites {
-					margin-block: calc(1em + 20px);
-					width: 400px;
-					height: 480px;
-					background-position-x: -340px;
-					background-position-y: -120px;
-					animation: step-through-clipped steps(22) 2s infinite;
-					animation-delay: -1s;
-					box-shadow: 0 0 0 10px #2e3a1d, 0 0 0 20px #7d8470;
-				}
-
-				@keyframes step-through-clipped {
-					to {
-						background-position-y: calc(22 * 640px * -1 - 120px);
-					}
-				}
-			}
-
-			#sprites {
-				animation-play-state: paused;
-			}
-
-			@media (prefers-reduced-motion: no-preference) {
-				#sprites {
-					animation-play-state: running;
-				}
-			}
-
-			.visually-hidden:not(:focus):not(:active) {
-				clip: rect(0 0 0 0);
-				clip-path: inset(50%);
-				height: 1px;
-				width: 1px;
-				overflow: hidden;
-				position: absolute;
-				white-space: nowrap;
-			}
 		</style>
+
+		<meta http-equiv="content-security-policy" content="">
+		<link href="./_app/immutable/assets/_layout-236cc82e.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/_page-ac4669c5.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/start-8b236e1e.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index-7f56960d.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-5e84a6d0.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-cf7b0645.js">
+		<link rel="modulepreload" href="./_app/immutable/modules/pages/_layout.js-9cbb603b.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_layout-da46b06b.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/404/_page.svelte-7ff208a7.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/site-ccb01029.js"><title>404 - Gabriele's Pixelated Corner</title><!-- HEAD_svelte-1wf1u2v_START --><meta name="description" content="A missing page? Not quite. Here's a nice, pixelated visual instead."><!-- HEAD_svelte-1wf1u2v_END -->
 	</head>
-	<body>
-		<body>
-			<div id="sprites"></div>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
 
-			<div class="wrapper">
-				<h1 class="visually-hidden">404</h1>
 
-				<p class="visually-hidden">
-					<mark>Page not found</mark>
-				</p>
+<div id="root" class="svelte-12f82sh"><div class="wrapper svelte-12f82sh">
 
-				<p style="margin-block-start: 0">
-					You've stumbled on a missing page...<br />If you don't know where to start, there's always
-					a place <a href="/">home</a>.
-				</p>
-			</div>
-		</body>
+<div class="full-width svelte-cm92al"><div id="sprites" class="svelte-cm92al"></div></div>
+
+<p>You&#39;ve found the visual for a missing page...Nicely done.</p>
+
+<p>If you don&#39;t know where to go from here, there&#39;s always a place
+	<a href="/">home</a>.
+</p></div>
+
+	<div id="sprites" class="svelte-12f82sh"></div>
+</div>
+
+
+		<script type="module" data-sveltekit-hydrate="rle1cb">
+			import { start } from "./_app/immutable/start-8b236e1e.js";
+
+			start({
+				env: {},
+				paths: {"base":"","assets":""},
+				target: document.querySelector('[data-sveltekit-hydrate="rle1cb"]').parentNode,
+				version: "1674423624109",
+				hydrate: {
+					node_ids: [0, 4],
+					data: [null,null],
+					form: null
+				}
+			});
+		</script>
+	</div>
 	</body>
 </html>

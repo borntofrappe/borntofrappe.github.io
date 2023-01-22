@@ -4,7 +4,7 @@
         <subtitle>A pixelated, personal corner on the web belonging to an aspiring game developer named Gabriele Corti.</subtitle>
         <link href="https://borntofrappe.github.io/feed.xml" rel="self" />
         <link href="https://borntofrappe.github.io" />
-        <updated>2023-01-22T21:14:13.893Z</updated>
+        <updated>2023-01-22T21:40:27.700Z</updated>
         <id>https://borntofrappe.github.io/</id>
         <author>
         <name>Gabriele Corti</name>
@@ -17,7 +17,7 @@
                 <id>https://borntofrappe.github.io/pixel-art/</id>
                 <updated>2023-01-22T21:46:43.000Z</updated>
                 <content type="html"><![CDATA[<p>I decided to create a folder in the repository housing this very website. A directory purposed for, surpise surpise, <a href="https://github.com/borntofrappe/borntofrappe.github.io/tree/main/pixel-art">pixel art</a>. The first assets have quite a distinct appeal — you might have guessed it by the style of the entire app.</p>
-<p>I am particularly proud of three of them, combined and animated in a nice long strip. Unfortunately, you'll spot the visual only if you go looking for a page that does not exist. The irony. Just for once, however, I'll tip you to it. Here's a spiffy <a href="https://borntofrappe.github.io/404.html">404 page</a>.</p>
+<p>I am particularly proud of three of them, combined and animated in a nice long strip. Unfortunately, you'll spot the visual only if you go looking for a page that does not exist. The irony. Just for once, however, I'll tip you to it. Here's the spiffy <a href="/404">404 visual</a>.</p>
 ]]></content>
             </entry>
             <entry>
