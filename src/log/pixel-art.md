@@ -6,4 +6,4 @@ description: Here's a folder devoted to useful resources. Pixelated pictures for
 
 I decided to create a folder in the repository housing this very website. A directory purposed for, surpise surpise, [pixel art](https://github.com/borntofrappe/borntofrappe.github.io/tree/main/pixel-art). The first assets have quite a distinct appeal — you might have guessed it by the style of the entire app.
 
-I am particularly proud of three of them, combined and animated in a nice long strip. Unfortunately, you'll spot the visual only if you go looking for a page that does not exist. The irony. Just for once, however, I'll tip you to it. Here's a spiffy [404 page](https://borntofrappe.github.io/404.html).
+I am particularly proud of three of them, combined and animated in a nice long strip. Unfortunately, you'll spot the visual only if you go looking for a page that does not exist. The irony. Just for once, however, I'll tip you to it. Here's the spiffy [404 visual](/404).
